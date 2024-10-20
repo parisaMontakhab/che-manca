@@ -1,14 +1,21 @@
-import { useState } from 'react'
 
 import './App.css'
+import { Container } from '@mui/material'
+
 
 function App() {
   
 
   return (
-    <div>
+    <>
+    <Container maxWidth="sm" className='home-container' >
+     <div>
       salam
-    </div>
+     </div>
+
+    </Container>
+
+    </>
      
   )
 }
