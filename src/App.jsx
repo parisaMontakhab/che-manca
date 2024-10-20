@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css'
-import { Box, Container, Grid2, Typography,  } from '@mui/material'
+import { Box, Container, Grid2, Typography,TextField  } from '@mui/material'
 
 
 function App() {
@@ -28,10 +28,15 @@ function App() {
         <Typography variant="body1" gutterBottom>
         دﯾﻮار، ﭘﺎﯾﮕﺎه ﺧﺮﯾﺪ و ﻓﺮوش ﺑﯽ‌واﺳﻄﻪ‌!
         </Typography>
-        <Typography variant="body1" gutterBottom>
+        <Typography variant="body1" gutterBottom >
         اﮔﻪ دﻧﺒﺎل ﭼﯿﺰی ﻫﺴﺘﯽ، ﺷﻬﺮت رو اﻧﺘﺨﺎب ﮐﻦ و ﺗﻮ دﺳﺘﻪ‌ﺑﻨﺪی‌ﻫﺎ ﺑﻪ دﻧﺒﺎﻟﺶ ﺑﮕﺮد. اﮔﺮ ﻫﻢ ﻣﯽ‌ﺧﻮای ﭼﯿﺰی ﺑﻔﺮوﺷﯽ، ﭼﻨﺪ ﺗﺎ ﻋﮑﺲ ﺧﻮب ازش ﺑﮕﯿﺮ و آﮔﻬﯿﺖ رو ﺑﭽﺴﺒﻮن ﺑﻪ دﯾﻮار.
         </Typography>
+        
       </Box>
+     <div className='search-container'>
+      <input type='text' placeholder='جستجوی شهر' className='search-input'/>
+      <span class="search-icon">&#128269;</span>
+     </div>
      
     
 
