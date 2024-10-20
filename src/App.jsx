@@ -4,7 +4,7 @@ import { Box, Container, Grid2, Typography,TextField  } from '@mui/material'
 
 
 function App() {
-  
+  const cities =['تهران', 'مشهد', 'کرج', 'شیراز', 'اصفهان', 'اهواز', 'تبریز', 'کرمانشاه', 'قم', 'رشت'];
 
   return (
     <>
@@ -25,7 +25,7 @@ function App() {
         </nav>
       </header>
       <Box textAlign="center" my={4}>
-        <Typography variant="body1" gutterBottom>
+        <Typography variant="body1" gutterBottom >
         دﯾﻮار، ﭘﺎﯾﮕﺎه ﺧﺮﯾﺪ و ﻓﺮوش ﺑﯽ‌واﺳﻄﻪ‌!
         </Typography>
         <Typography variant="body1" gutterBottom >
@@ -37,6 +37,22 @@ function App() {
       <input type='text' placeholder='جستجوی شهر' className='search-input'/>
       <span class="search-icon">&#128269;</span>
      </div>
+     <Box my={4}>
+      <Typography variant='h6'>
+      شهرهای پربازدید
+      </Typography>
+      <Grid2 container  spacing={12}>
+        {
+          cities.map((city)=>(
+            <Grid2 key={city}>
+              <Typography>{city}</Typography>
+            </Grid2>
+          ))
+        }
+
+      </Grid2>
+
+     </Box>
      
     
 
