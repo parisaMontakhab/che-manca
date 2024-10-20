@@ -1,0 +1,17 @@
+/*home-page*/
+.home-header{
+    text-align: center;
+    margin: 60px 0;
+
+}
+.home-logo{
+    margin-bottom: 30px;
+}
+.home-nav{
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    border-bottom: 1px solid black;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+}
