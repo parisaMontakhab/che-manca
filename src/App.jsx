@@ -49,10 +49,15 @@ function App() {
             </Grid2>
           ))
         }
-
       </Grid2>
-
      </Box>
+     <footer style={{ textAlign: 'center', margin: '40px 0' }}>
+      <Box my={2}>
+        
+
+      </Box>
+
+     </footer>
      
     
 
