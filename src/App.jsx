@@ -1,6 +1,9 @@
 import React from 'react';
 import './App.css'
-import { Box, Container, Grid2, Typography,TextField  } from '@mui/material'
+import { Box, Container, Grid2, Typography,TextField  } from '@mui/material';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import TelegramIcon from '@mui/icons-material/Telegram';
 
 
 function App() {
@@ -52,10 +55,17 @@ function App() {
       </Grid2>
      </Box>
      <footer style={{ textAlign: 'center', margin: '40px 0' }}>
-      <Box my={2}>
-        
-
-      </Box>
+      <Grid2 container spacing={4}>
+        <Grid2><a href='#'>
+          <LinkedInIcon/>
+          </a></Grid2>
+          <Grid2><a href='#'>
+          <TelegramIcon/>
+          </a></Grid2>
+          <Grid2><a href='#'>
+          <InstagramIcon/>
+          </a></Grid2>
+      </Grid2>
 
      </footer>
      
