@@ -1,13 +1,13 @@
 import React from 'react';
 import './App.css';
-import { Box, Container, Grid2, Typography,TextField, Input  } from '@mui/material';
+import { Box, Container, Grid2, Typography,TextField,  } from '@mui/material';
 import InputAdornment from '@mui/material/InputAdornment';
 import SearchIcon from '@mui/icons-material/Search';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TelegramIcon from '@mui/icons-material/Telegram';
 import logo from './assets/img/logo.png';
-import { BorderBottom } from '@mui/icons-material';
+
 
 
 function App() {
