@@ -7,6 +7,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TelegramIcon from '@mui/icons-material/Telegram';
 import logo from './assets/img/logo.png';
+import { BorderBottom } from '@mui/icons-material';
 
 
 function App() {
@@ -50,15 +51,15 @@ function App() {
     }}}
     />
    </Box>
-     <Box my={4}>
-      <Typography variant='h6'>
+     <Box my={4} className='home-boxCity'>
+      <Typography variant='h6' className='home-desc' my={4}>
       شهرهای پربازدید
       </Typography>
-      <Grid2 container  spacing={12}>
+      <Grid2 container justifyContent='center' justifyItems='center' spacing={10}  >
         {
           cities.map((city)=>(
-            <Grid2 key={city}>
-              <Typography>{city}</Typography>
+            <Grid2 key={city} >
+              <Typography className='home-cityItem'>{city}</Typography>
             </Grid2>
           ))
         }

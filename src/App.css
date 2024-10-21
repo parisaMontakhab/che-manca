@@ -38,3 +38,12 @@
   box-shadow: 0 4px 18px rgba(255, 193, 7, 0.6);
   border-radius: 20px;
 }
+.home-cityItem{
+  color: #fff;
+  font-family: 'IranYekan',sans-serif !important;
+  
+}
+.home-boxCity{
+  border-bottom: 1px solid #fff !important;
+  padding-bottom: 1rem;
+}
