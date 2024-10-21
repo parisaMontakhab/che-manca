@@ -38,3 +38,10 @@
   }
   
  
+@font-face {
+  font-family: 'IranYekan';
+  src: url('./assets/fonts/Webfonts/woff/IRANYekanX-Regular.woff') format('woff');
+  src: url('./assets/fonts/Webfonts/woff/IRANYekanX-Regular.woff') format('woff');
+  src: url('./assets/fonts/Webfonts/woff2/IRANYekanX-Bold.woff2') format('woff2');
+  src: url('./assets/fonts/Webfonts/woff2/IRANYekanX-Regular.woff2') format('woff2');
+}
