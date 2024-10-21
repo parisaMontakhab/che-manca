@@ -16,6 +16,11 @@
     padding-bottom: 1rem;
     color: #fff;
 }
+.home-desc{
+  color: #fff;
+  font-family: 'IranYekan',sans-serif !important;
+  line-height: 2rem !important ;
+}
 .home-search-city{
   width: 550px;
   padding: 16px;
