@@ -16,7 +16,7 @@ function App() {
     <Container maxWidth="sm"  >
       <header className='home-header'>
      <Box display='flex' justifyContent='center' alignItems='center'p={2}>
-      <img src={logo}/>
+      <img src={logo} alt='chemanca-logo'/>
      </Box>
         <nav className='home-nav'>
         <Grid2 container spacing={6} >

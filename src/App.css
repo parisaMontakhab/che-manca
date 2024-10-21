@@ -11,9 +11,10 @@
     display: grid;
     justify-content: center;
     justify-items: center;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #fff;
     padding-top: 2rem;
     padding-bottom: 1rem;
+    color: #fff;
 }
 .home-search-city{
   width: 550px;
