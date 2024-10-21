@@ -9,6 +9,7 @@
   html, body {
     height: 100%;
     margin: 0;
+    
   }
   
   
@@ -44,4 +45,7 @@
   src: url('./assets/fonts/Webfonts/woff/IRANYekanX-Regular.woff') format('woff');
   src: url('./assets/fonts/Webfonts/woff2/IRANYekanX-Bold.woff2') format('woff2');
   src: url('./assets/fonts/Webfonts/woff2/IRANYekanX-Regular.woff2') format('woff2');
+}
+body{
+  font-family: 'IranYekan',sans-serif;
 }
