@@ -21,7 +21,7 @@ function App() {
         <nav className='home-nav'>
         <Grid2 container spacing={6} >
           <Grid2><a href='#'>ثبت آگهی</a></Grid2>
-          <Grid2><a href='#'>درباره دیوار</a></Grid2>
+          <Grid2><a href='#'>درباره  ما</a></Grid2>
           <Grid2><a href='#'>دریافت برنامه</a></Grid2>
           <Grid2><a href='#'>اتاق خبر</a> </Grid2>
           <Grid2><a href='#'>پشتیبانی</a></Grid2>
