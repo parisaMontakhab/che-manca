@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
-import { Box, Container, Grid2, Typography,TextField  } from '@mui/material';
+import { Box, Container, Grid2, Typography,TextField, Input  } from '@mui/material';
+import InputAdornment from '@mui/material/InputAdornment';
+import SearchIcon from '@mui/icons-material/Search';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TelegramIcon from '@mui/icons-material/Telegram';
@@ -37,10 +39,17 @@ function App() {
         </Typography>
         
       </Box>
-     <div className='search-container'>
-      <input type='text' placeholder='جستجوی شهر' className='search-input'/>
-      <span class="search-icon">&#128269;</span>
-     </div>
+   <Box my={8} >
+    <TextField  placeholder=' شهر سرچ کن ! ' type="search" fullWidth className='search-input'
+    slotProps={{input:{
+      startAdornment:(
+        <InputAdornment position='start'>
+        <SearchIcon/>
+        </InputAdornment>
+      )
+    }}}
+    />
+   </Box>
      <Box my={4}>
       <Typography variant='h6'>
       شهرهای پربازدید

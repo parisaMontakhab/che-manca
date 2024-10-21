@@ -21,33 +21,20 @@
   font-family: 'IranYekan',sans-serif !important;
   line-height: 2rem !important ;
 }
-.home-search-city{
-  width: 550px;
-  padding: 16px;
-  border:1px solid gray;
-  border-radius: 5px;
- text-align: right;
- direction: rtl;
-  }
-  .search-container{
-    position: relative;
-    width: 100%;
-    max-width: 550px;
-  }
-  .search-input{
-  width: 100%;
-  padding: 15px;
-  padding-right: 40px; /* فضای اضافی برای آیکن */
-  box-sizing: border-box;
-  border-radius: 5px;
-  border: 1px solid gray;
-  direction: rtl;
-  }
-  .search-icon {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 18px;
-    color: #aaa;
-  }
+
+.search-input{
+  background-color: #fff;
+  border-radius: 20px;
+  
+}
+.search-input .MuiOutlinedInput-root {
+  border-radius: 20px; 
+  border: none; 
+}
+
+.search-input .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border: 1px solid;
+  border-color: #ffc107;
+  box-shadow: 0 4px 18px rgba(255, 193, 7, 0.6);
+  border-radius: 20px;
+}
