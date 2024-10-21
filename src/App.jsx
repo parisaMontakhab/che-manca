@@ -65,16 +65,16 @@ function App() {
         }
       </Grid2>
      </Box>
-     <footer style={{ textAlign: 'center', margin: '40px 0' }}>
-      <Grid2 container spacing={4}>
+     <footer style={{ margin: '140px ' }}>
+      <Grid2 container spacing={4} justifyContent='center' justifyItems='center'>
         <Grid2><a href='#'>
-          <LinkedInIcon/>
+          <LinkedInIcon className='social-icon'/>
           </a></Grid2>
           <Grid2><a href='#'>
-          <TelegramIcon/>
+          <TelegramIcon className='social-icon'/>
           </a></Grid2>
           <Grid2><a href='#'>
-          <InstagramIcon/>
+          <InstagramIcon className='social-icon'/>
           </a></Grid2>
       </Grid2>
 
