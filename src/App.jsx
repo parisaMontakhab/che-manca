@@ -4,6 +4,7 @@ import { Box, Container, Grid2, Typography,TextField  } from '@mui/material';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TelegramIcon from '@mui/icons-material/Telegram';
+import logo from './assets/img/logo.png';
 
 
 function App() {
@@ -14,9 +15,9 @@ function App() {
 
     <Container maxWidth="sm"  >
       <header className='home-header'>
-        <Typography variant="h2" color="error" gutterBottom>
-        دیوار
-        </Typography>
+     <Box display='flex' justifyContent='center' alignItems='center'p={2}>
+      <img src={logo}/>
+     </Box>
         <nav className='home-nav'>
         <Grid2 container spacing={6} >
           <Grid2><a href='#'>ثبت آگهی</a></Grid2>
