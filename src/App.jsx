@@ -65,7 +65,7 @@ function App() {
         }
       </Grid2>
      </Box>
-     <footer style={{ margin: '140px ' }}>
+     <footer style={{ margin: '100px ' }}>
       <Grid2 container spacing={4} justifyContent='center' justifyItems='center'>
         <Grid2><a href='#'>
           <LinkedInIcon className='social-icon'/>
