@@ -1,53 +1,52 @@
 /*home-page*/
-.home-header{
-    text-align: center;
-    margin: 30px 0;
-
+.home-header {
+  text-align: center;
+  margin: 30px 0;
 }
 
-.home-nav{
-    display: grid;
-    justify-content: center;
-    justify-items: center;
-    border-bottom: 1px solid #fff;
-    padding-top: 2rem;
-    padding-bottom: 1rem;
-    color: #fff;
-}
-.home-desc{
+.home-nav {
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  border-bottom: 1px solid #fff;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
   color: #fff;
-  font-family: 'IranYekan',sans-serif !important;
+}
+.home-desc {
+  color: #fff;
+  font-family: "IranYekan", sans-serif !important;
   line-height: 2rem !important ;
 }
 
-.search-input{
+.search-input {
   background-color: #fff;
   border-radius: 20px;
-  
 }
 .search-input .MuiOutlinedInput-root {
-  border-radius: 20px; 
-  border: none; 
+  border-radius: 20px;
+  border: none;
 }
 
-.search-input .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+.search-input
+  .MuiOutlinedInput-root.Mui-focused
+  .MuiOutlinedInput-notchedOutline {
   border: 1px solid;
   border-color: #ffc107;
   box-shadow: 0 4px 18px rgba(255, 193, 7, 0.6);
   border-radius: 20px;
 }
-.home-cityItem{
+.home-cityItem {
   color: #fff;
-  font-family: 'IranYekan',sans-serif !important;
-  
+  font-family: "IranYekan", sans-serif !important;
 }
-.home-boxCity{
+.home-boxCity {
   border-bottom: 1px solid #fff !important;
   padding-bottom: 1rem;
 }
-.social-icon{
+.social-icon {
   color: #fff;
 }
-.footer-box{
+.footer-box {
   margin-top: 100px;
 }
