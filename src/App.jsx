@@ -3,10 +3,8 @@ import './App.css';
 import { Box, Container, Grid2, Typography,TextField,  } from '@mui/material';
 import InputAdornment from '@mui/material/InputAdornment';
 import SearchIcon from '@mui/icons-material/Search';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import TelegramIcon from '@mui/icons-material/Telegram';
 import Logo from './components/Logo';
+import Footer from './components/Footer';
 
 
 
@@ -64,18 +62,9 @@ function App() {
         }
       </Grid2>
      </Box>
-     <footer style={{ margin: '100px ' }}>
-      <Grid2 container spacing={4} justifyContent='center' justifyItems='center'>
-        <Grid2><a href='#'>
-          <LinkedInIcon className='social-icon'/>
-          </a></Grid2>
-          <Grid2><a href='#'>
-          <TelegramIcon className='social-icon'/>
-          </a></Grid2>
-          <Grid2><a href='#'>
-          <InstagramIcon className='social-icon'/>
-          </a></Grid2>
-      </Grid2>
+     <footer>
+      <Footer/>
+      
 
      </footer>
      
