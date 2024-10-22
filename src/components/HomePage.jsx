@@ -1,5 +1,6 @@
 import React from 'react';
-import { Box, Container, Grid2, Typography, TextField } from "@mui/material";
+import { Box, Container, Grid2, Typography, TextField, } from "@mui/material";
+import Autocomplete from '@mui/material/Autocomplete';
 import InputAdornment from "@mui/material/InputAdornment";
 import SearchIcon from "@mui/icons-material/Search";
 import Logo from "./Logo";
@@ -54,13 +55,18 @@ export default function HomePage() {
               </Typography>
             </Box>
             <Box my={8}>
-              <TextField
+                <Autocomplete
+                options={cities.map((city)=>city)}
+                renderInput={(params)=>(
+                    <TextField
+                    {...params}
                 placeholder=" شهر سرچ کن ! "
                 type="search"
                 fullWidth
                 className="search-input"
                 slotProps={{
                   input: {
+                    ...params.InputProps,
                     startAdornment: (
                       <InputAdornment position="start">
                         <SearchIcon />
@@ -69,6 +75,11 @@ export default function HomePage() {
                   },
                 }}
               />
+
+                )}
+                
+                />
+              
             </Box>
             <Box my={4} className="home-boxCity">
               <Typography variant="h6" className="home-desc" my={4}>
