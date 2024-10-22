@@ -6,7 +6,8 @@ import SearchIcon from '@mui/icons-material/Search';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TelegramIcon from '@mui/icons-material/Telegram';
-import logo from './assets/img/logo.png';
+import Logo from './components/Logo';
+
 
 
 
@@ -18,9 +19,7 @@ function App() {
 
     <Container maxWidth="sm"  >
       <header className='home-header'>
-     <Box display='flex' justifyContent='center' alignItems='center'p={2}>
-      <img src={logo} alt='chemanca-logo'/>
-     </Box>
+      <Logo/>
         <nav className='home-nav'>
         <Grid2 container spacing={6} >
           <Grid2><a href='#'>ثبت آگهی</a></Grid2>
