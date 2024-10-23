@@ -74,6 +74,7 @@ export default function HomePage() {
             options={cities.map((city) => city)}
             renderInput={(params) => (
               <TextField
+              sx={{'& ::placeholder':{fontFamily:'IranYekan'}}}
                 {...params}
                 placeholder=" شهر سرچ کن ! "
                 type="search"
