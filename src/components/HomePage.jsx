@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Container, Grid2, Typography, TextField, } from "@mui/material";
+import { Box, Container, Grid2, Typography, TextField, IconButton, } from "@mui/material";
 import Autocomplete from '@mui/material/Autocomplete';
 import InputAdornment from "@mui/material/InputAdornment";
 import SearchIcon from "@mui/icons-material/Search";
@@ -56,6 +56,7 @@ export default function HomePage() {
             </Box>
             <Box my={8}>
                 <Autocomplete
+                 
                 options={cities.map((city)=>city)}
                 renderInput={(params)=>(
                     <TextField
@@ -69,7 +70,11 @@ export default function HomePage() {
                     ...params.InputProps,
                     startAdornment: (
                       <InputAdornment position="start">
+                        <IconButton>
                         <SearchIcon />
+
+                        </IconButton>
+                        
                       </InputAdornment>
                     ),
                   },

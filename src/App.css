@@ -36,6 +36,13 @@
   box-shadow: 0 4px 18px rgba(255, 193, 7, 0.6);
   border-radius: 20px;
 }
+.search-input:hover .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
+
+  border: 1px solid;
+  border-color: #ffc107;
+  box-shadow: 0 4px 18px rgba(255, 193, 7, 0.6);
+  border-radius: 20px;
+}
 .home-cityItem {
   color: #fff;
   font-family: "IranYekan", sans-serif !important;
