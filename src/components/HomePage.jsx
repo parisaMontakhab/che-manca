@@ -91,7 +91,7 @@ export default function HomePage() {
                 />
               
             </Box>
-            <Box my={4} className="home-boxCity">
+            <Box my={4} className="home-cityBox">
               <Typography variant="h6" className="home-desc" my={4}>
                 شهرهای پربازدید
               </Typography>
