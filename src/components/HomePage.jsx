@@ -47,18 +47,18 @@ export default function HomePage() {
             </Grid2>
           </nav>
         </header>
-        <Box textAlign="center" my={4}>
-          <Typography className="home-desc" variant="body1" gutterBottom>
+        <Box textAlign="center" my={2}>
+          <Typography className="home-desc" variant="body1" >
             بزرگترین ، ﭘﺎﯾﮕﺎه ﺧﺮﯾﺪ و ﻓﺮوش ﺑﯽ‌واﺳﻄﻪ‌!
           </Typography>
-          <Typography className="home-desc" variant="body1" gutterBottom>
+          <Typography className="home-desc" variant="body1" >
             اﮔﻪ دﻧﺒﺎل ﭼﯿﺰی ﻫﺴﺘﯽ، ﺷﻬﺮت رو اﻧﺘﺨﺎب ﮐﻦ و ﺗﻮ دﺳﺘﻪ‌ﺑﻨﺪی‌ﻫﺎ ﺑﻪ دﻧﺒﺎﻟﺶ
             ﺑﮕﺮد. اﮔﺮ ﻫﻢ ﻣﯽ‌ﺧﻮای ﭼﯿﺰی ﺑﻔﺮوﺷﯽ، ﭼﻨﺪ ﺗﺎ ﻋﮑﺲ ﺧﻮب ازش ﺑﮕﯿﺮ و آﮔﻬﯿﺖ رو
             ﺑﭽﺴﺒﻮن ﺑﻪ ما.
           </Typography>
         </Box>
         <LocationSearch cities={cities}/>
-        <Box my={4} className="home-cityBox">
+        <Box my={2} className="home-cityBox">
           <Typography variant="h6" className="home-desc" my={4}>
             شهرهای پربازدید
           </Typography>

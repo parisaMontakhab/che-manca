@@ -26,11 +26,12 @@
 
 .search-input {
   background-color: #fff;
-  border-radius: 20px;
+  
 }
 .search-input .MuiOutlinedInput-root {
-  border-radius: 20px;
+  color: gray;
   font-family: "IranYekan", sans-serif;
+  margin: 10px;
 }
 
 .search-input
@@ -38,11 +39,11 @@
   .MuiOutlinedInput-notchedOutline {
   border: 1px solid;
   border: 1px solid gray;
-  border-radius: 20px;
+  
 }
 .search-input:hover .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
   border: 1px solid gray;
-  border-radius: 20px;
+  
 }
 .home-cityItem {
   color: gray;
@@ -59,7 +60,4 @@
   margin-top: 100px;
 }
 
-.autocomplete-listbox {
-  border-radius: 10px !important;
-  border: 1px solid rgb(218, 215, 215);
-}
+

@@ -30,31 +30,48 @@ export default function LocationSearch() {
   return (
     <Box my={8}  >
        <Autocomplete
+       PaperComponent={(props) => (
+        <Paper {...props} className="autocomplete-listbox" />
+      )}
        id='country-search'
         options={countries.map((country) => country.label)}
         onChange={handleCountryChange}
         renderInput={(params) => (
           <TextField
+          className="search-input"
+          type="search"
           sx={{'& ::placeholder':{fontFamily:'IranYekan'}}}
-           {...params}  placeholder="اول کشورتو انتخاب کن" />
+           {...params}  placeholder="اول کشورتو انتخاب کن"
+            />
         )}
       />
     { selectedCountry && <Autocomplete
+     PaperComponent={(props) => (
+      <Paper {...props} className="autocomplete-listbox" />
+    )}
       id='province-search'
         options={selectedCountry ? countries.find(c => c.label === selectedCountry).provinces : []}
         onChange={handleProvinceChange}
         renderInput={(params) => (
           <TextField
+           className="search-input"
+          type="search"
           sx={{'& ::placeholder':{fontFamily:'IranYekan'}}}
            {...params}  placeholder="حالا استانتو سرچ کن" />
         )}
         disabled={!selectedCountry}
       />}
          {selectedCountry && selectedProvince &&  <Autocomplete
+          PaperComponent={(props) => (
+            <Paper {...props} className="autocomplete-listbox" />
+          )}
+          id='city-search'
         options={selectedProvince ? provinces[selectedProvince] : []}
         onChange={(event, newCity) => setSelectedCity(newCity)}
         renderInput={(params) => (
           <TextField 
+           className="search-input"
+          type="search"
           sx={{'& ::placeholder':{fontFamily:'IranYekan'}}}
           {...params}  placeholder="اینجاهم باید شهرتو انتخاب کنی" />
         )}
