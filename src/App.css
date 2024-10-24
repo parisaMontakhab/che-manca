@@ -30,6 +30,7 @@
 }
 .search-input .MuiOutlinedInput-root {
   border-radius: 20px;
+  font-family: 'IranYekan',sans-serif;
 }
 
 .search-input
