@@ -3,7 +3,7 @@
   text-align: center;
   margin: 30px 0;
 }
-.logo{
+.logo {
   max-width: 70%;
   display: block;
   height: auto;
@@ -30,21 +30,18 @@
 }
 .search-input .MuiOutlinedInput-root {
   border-radius: 20px;
-  font-family: 'IranYekan',sans-serif;
+  font-family: "IranYekan", sans-serif;
 }
 
 .search-input
   .MuiOutlinedInput-root.Mui-focused
   .MuiOutlinedInput-notchedOutline {
   border: 1px solid;
-  border: 1px solid gainsboro;
-  
+  border: 1px solid gray;
   border-radius: 20px;
 }
 .search-input:hover .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
-  border: 1px solid;
-  border: none !important;
-  
+  border: 1px solid gray;
   border-radius: 20px;
 }
 .home-cityItem {
