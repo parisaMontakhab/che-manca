@@ -11,7 +11,7 @@ import {
   import SearchIcon from "@mui/icons-material/Search";
 
 
-export default function SearchInput({cities}) {
+export default function LocationSearch({cities}) {
   return (
     <Box my={8}>
           <Autocomplete

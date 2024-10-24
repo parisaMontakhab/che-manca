@@ -7,7 +7,7 @@ import {
 } from "@mui/material";
 import Logo from "./Logo";
 import Footer from "./Footer";
-import SearchInput from "./SearchInput";
+import LocationSearch from "./LocationSearch";
 const cities = [
   "تهران",
   "مشهد",
@@ -57,7 +57,7 @@ export default function HomePage() {
             ﺑﭽﺴﺒﻮن ﺑﻪ ما.
           </Typography>
         </Box>
-        <SearchInput cities={cities}/>
+        <LocationSearch cities={cities}/>
         <Box my={4} className="home-cityBox">
           <Typography variant="h6" className="home-desc" my={4}>
             شهرهای پربازدید
