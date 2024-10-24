@@ -26,12 +26,11 @@
 
 .search-input {
   background-color: #fff;
-  
 }
 .search-input .MuiOutlinedInput-root {
   color: gray;
   font-family: "IranYekan", sans-serif;
-  margin: 10px;
+  margin-bottom: 10px;
 }
 
 .search-input
@@ -39,11 +38,9 @@
   .MuiOutlinedInput-notchedOutline {
   border: 1px solid;
   border: 1px solid gray;
-  
 }
 .search-input:hover .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
   border: 1px solid gray;
-  
 }
 .home-cityItem {
   color: gray;
@@ -59,5 +56,3 @@
 .footer-box {
   margin-top: 100px;
 }
-
-

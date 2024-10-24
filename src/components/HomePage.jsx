@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  Box,
-  Container,
-  Grid2,
-  Typography,
-} from "@mui/material";
+import { Box, Container, Grid2, Typography } from "@mui/material";
 import Logo from "./Logo";
 import Footer from "./Footer";
 import LocationSearch from "./LocationSearch";
@@ -48,17 +43,17 @@ export default function HomePage() {
           </nav>
         </header>
         <Box textAlign="center" my={2}>
-          <Typography className="home-desc" variant="body1" >
+          <Typography className="home-desc" variant="body1">
             بزرگترین ، ﭘﺎﯾﮕﺎه ﺧﺮﯾﺪ و ﻓﺮوش ﺑﯽ‌واﺳﻄﻪ‌!
           </Typography>
-          <Typography className="home-desc" variant="body1" >
+          <Typography className="home-desc" variant="body1">
             اﮔﻪ دﻧﺒﺎل ﭼﯿﺰی ﻫﺴﺘﯽ، ﺷﻬﺮت رو اﻧﺘﺨﺎب ﮐﻦ و ﺗﻮ دﺳﺘﻪ‌ﺑﻨﺪی‌ﻫﺎ ﺑﻪ دﻧﺒﺎﻟﺶ
             ﺑﮕﺮد. اﮔﺮ ﻫﻢ ﻣﯽ‌ﺧﻮای ﭼﯿﺰی ﺑﻔﺮوﺷﯽ، ﭼﻨﺪ ﺗﺎ ﻋﮑﺲ ﺧﻮب ازش ﺑﮕﯿﺮ و آﮔﻬﯿﺖ رو
             ﺑﭽﺴﺒﻮن ﺑﻪ ما.
           </Typography>
         </Box>
-        <LocationSearch cities={cities}/>
-        <Box my={2} className="home-cityBox">
+        <LocationSearch cities={cities} />
+        <Box className="home-cityBox">
           <Typography variant="h6" className="home-desc" my={4}>
             شهرهای پربازدید
           </Typography>
