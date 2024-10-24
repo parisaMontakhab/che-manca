@@ -13,8 +13,9 @@ import {
 
 export default function LocationSearch({cities}) {
   return (
-    <Box my={8}>
+    <Box my={8} display='flex' justifyContent='center' justifyItems='center'>
           <Autocomplete
+          id='city-search'
             PopperComponent={(props) => (
               <Popper {...props} className="autocomplete-popper" />
             )}
