@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../assets/img/logo.png";
+import logo from "../assets/images/logo/logo.png";
 import { Box } from "@mui/material";
 
 export default function Logo() {
