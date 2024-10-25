@@ -1,10 +1,13 @@
-/*home-page*/
+
+/*Logo component*/
 
 .logo {
   max-width: 70%;
   display: block;
   height: auto;
 }
+
+/*home-page*/
 
 .homePage-menu {
   display: grid;
@@ -20,25 +23,6 @@
   font-family: "IranYekan", sans-serif !important;
   line-height: 2rem !important ;
 }
-
-.search-input {
-  background-color: #fff;
-}
-.search-input .MuiOutlinedInput-root {
-  color: gray;
-  font-family: "IranYekan", sans-serif;
-  margin-bottom: 10px;
-}
-
-.search-input
-  .MuiOutlinedInput-root.Mui-focused
-  .MuiOutlinedInput-notchedOutline {
-  border: 1px solid;
-  border: 1px solid gray;
-}
-.search-input:hover .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
-  border: 1px solid gray;
-}
 .homePage-cityItem {
   color: gray;
   font-family: "IranYekan", sans-serif !important;
@@ -52,4 +36,25 @@
 }
 .footer-box {
   margin-top: 100px;
+}
+
+/*LocationSearch component*/ 
+
+.locationSearch-input {
+  background-color: #fff;
+}
+.locationSearch-input .MuiOutlinedInput-root {
+  color: gray;
+  font-family: "IranYekan", sans-serif;
+  margin-bottom: 10px;
+}
+
+.locationSearch-input
+  .MuiOutlinedInput-root.Mui-focused
+  .MuiOutlinedInput-notchedOutline {
+  border: 1px solid;
+  border: 1px solid gray;
+}
+.locationSearch-input:hover .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
+  border: 1px solid gray;
 }

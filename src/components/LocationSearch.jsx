@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { Box, TextField, IconButton, Popper, Paper } from "@mui/material";
+import { Box, TextField,  Paper } from "@mui/material";
 import Autocomplete from "@mui/material/Autocomplete";
 import { countries, provinces } from "../data/LocationData";
 
@@ -30,7 +30,7 @@ export default function LocationSearch() {
         onChange={handleCountryChange}
         renderInput={(params) => (
           <TextField
-            className="search-input"
+            className="locationSearch-input"
             type="search"
             sx={{ "& ::placeholder": { fontFamily: "IranYekan" } }}
             {...params}
@@ -52,7 +52,7 @@ export default function LocationSearch() {
           onChange={handleProvinceChange}
           renderInput={(params) => (
             <TextField
-              className="search-input"
+              className="locationSearch-input"
               type="search"
               sx={{ "& ::placeholder": { fontFamily: "IranYekan" } }}
               {...params}
@@ -72,7 +72,7 @@ export default function LocationSearch() {
           onChange={(event, newCity) => setSelectedCity(newCity)}
           renderInput={(params) => (
             <TextField
-              className="search-input"
+              className="locationSearch-input"
               type="search"
               sx={{ "& ::placeholder": { fontFamily: "IranYekan" } }}
               {...params}
