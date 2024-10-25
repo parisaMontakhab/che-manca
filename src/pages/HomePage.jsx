@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Container, Grid2, Link, Typography } from "@mui/material";
-import Logo from "../components/Logo";
+import logo from "../assets/images/logo/logo.png";
 import Footer from "../components/Footer";
 import LocationSearch from "../components/LocationSearch";
 const cities = [
@@ -20,24 +20,36 @@ export default function HomePage() {
   return (
     <>
       <Container maxWidth="sm">
-        <header >
-          <Logo />
+        <header>
+          <Box display="flex" justifyContent="center" alignItems="center" p={2}>
+            <img src={logo} alt="chemanca-logo" className="logo" />
+          </Box>
           <nav className="homePage-menu">
             <Grid2 container spacing={6}>
               <Grid2>
-                <Link href="#" color="inherit" underline="none">ثبت آگهی</Link>
+                <Link href="#" color="inherit" underline="none">
+                  ثبت آگهی
+                </Link>
               </Grid2>
               <Grid2>
-                <Link href="#" color="inherit" underline="none">درباره ما</Link>
+                <Link href="#" color="inherit" underline="none">
+                  درباره ما
+                </Link>
               </Grid2>
               <Grid2>
-                <Link href="#" color="inherit" underline="none">دریافت برنامه</Link>
+                <Link href="#" color="inherit" underline="none">
+                  دریافت برنامه
+                </Link>
               </Grid2>
               <Grid2>
-                <Link href="#" color="inherit" underline="none">اتاق خبر</Link>{" "}
+                <Link href="#" color="inherit" underline="none">
+                  اتاق خبر
+                </Link>{" "}
               </Grid2>
               <Grid2>
-                <Link href="#" color="inherit" underline="none">پشتیبانی</Link>
+                <Link href="#" color="inherit" underline="none">
+                  پشتیبانی
+                </Link>
               </Grid2>
             </Grid2>
           </nav>
