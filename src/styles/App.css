@@ -1,13 +1,14 @@
 
-/*Logo component*/
 
-.logo {
+
+
+
+/*home-page*/
+.homePage-logo {
   max-width: 70%;
   display: block;
   height: auto;
 }
-
-/*home-page*/
 
 .homePage-menu {
   display: grid;

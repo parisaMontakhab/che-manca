@@ -22,7 +22,7 @@ export default function HomePage() {
       <Container maxWidth="sm">
         <header>
           <Box display="flex" justifyContent="center" alignItems="center" p={2}>
-            <img src={logo} alt="chemanca-logo" className="logo" />
+            <img src={logo} alt="chemanca-logo" className="homePage-logo" />
           </Box>
           <nav className="homePage-menu">
             <Grid2 container spacing={6}>
