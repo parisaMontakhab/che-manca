@@ -1,8 +1,8 @@
 import React from "react";
 import { Box, Container, Grid2, Typography } from "@mui/material";
-import Logo from "./Logo";
-import Footer from "./Footer";
-import LocationSearch from "./LocationSearch";
+import Logo from "../components/Logo";
+import Footer from "../components/Footer";
+import LocationSearch from "../components/LocationSearch";
 const cities = [
   "تهران",
   "مشهد",
