@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Container, Grid2 } from "@mui/material";
+import { Box, Grid2, Link } from "@mui/material";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TelegramIcon from "@mui/icons-material/Telegram";
@@ -14,19 +14,19 @@ export default function Footer() {
         justifyItems="center"
       >
         <Grid2>
-          <a href="#">
+          <Link href="#">
             <LinkedInIcon className="social-icon" />
-          </a>
+          </Link>
         </Grid2>
         <Grid2>
-          <a href="#">
+          <Link href="#">
             <TelegramIcon className="social-icon" />
-          </a>
+          </Link>
         </Grid2>
         <Grid2>
-          <a href="#">
+          <Link href="#">
             <InstagramIcon className="social-icon" />
-          </a>
+          </Link>
         </Grid2>
       </Grid2>
     </Box>
