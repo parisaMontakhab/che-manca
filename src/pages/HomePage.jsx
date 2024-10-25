@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Container, Grid2, Typography } from "@mui/material";
+import { Box, Container, Grid2, Link, Typography } from "@mui/material";
 import Logo from "../components/Logo";
 import Footer from "../components/Footer";
 import LocationSearch from "../components/LocationSearch";
@@ -25,19 +25,19 @@ export default function HomePage() {
           <nav className="homePage-menu">
             <Grid2 container spacing={6}>
               <Grid2>
-                <a href="#">ثبت آگهی</a>
+                <Link href="#" color="inherit" underline="none">ثبت آگهی</Link>
               </Grid2>
               <Grid2>
-                <a href="#">درباره ما</a>
+                <Link href="#" color="inherit" underline="none">درباره ما</Link>
               </Grid2>
               <Grid2>
-                <a href="#">دریافت برنامه</a>
+                <Link href="#" color="inherit" underline="none">دریافت برنامه</Link>
               </Grid2>
               <Grid2>
-                <a href="#">اتاق خبر</a>{" "}
+                <Link href="#" color="inherit" underline="none">اتاق خبر</Link>{" "}
               </Grid2>
               <Grid2>
-                <a href="#">پشتیبانی</a>
+                <Link href="#" color="inherit" underline="none">پشتیبانی</Link>
               </Grid2>
             </Grid2>
           </nav>
