@@ -59,3 +59,10 @@
 .locationSearch-input:hover .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
   border: 1px solid gray;
 }
+
+/* Ads Page*/
+
+.ads-header{
+  border-bottom: 1px solid gray;
+  padding: 1.5rem;
+}
