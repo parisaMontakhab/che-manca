@@ -33,9 +33,9 @@ export default function AdsPage() {
         <Box display="flex">
           <AppBar position="fixed" className="ads-bar">
             <Toolbar>
-              <img src={logo} alt="logo image" className="adsPage-logo" />
+              <img src={logo} alt="logo image" className="ads-bar_logo" />
 
-              <Button className="" >
+              <Button className="ads-bar_location" >
                 <LocationOnIcon />
                 <Link underline="none" >
                 <Typography >تهران</Typography>
