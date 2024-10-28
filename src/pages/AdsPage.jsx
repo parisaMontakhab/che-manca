@@ -37,9 +37,8 @@ export default function AdsPage() {
 
               <Button className="ads-bar_location" >
                 <LocationOnIcon />
-                <Link underline="none" >
-                <Typography >تهران</Typography>
-                </Link>
+                تهران
+                
               </Button>
             </Toolbar>
           </AppBar>
