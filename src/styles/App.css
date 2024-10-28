@@ -62,7 +62,8 @@
 
 /* Ads Page*/
 
-.ads-header{
-  border-bottom: 1px solid gray;
-  padding: 1.5rem;
+.app-bar{
+  background-color: #fff !important;
+  box-shadow: none !important;
+  border-bottom: 2px solid rgb(239, 236, 236);
 }
