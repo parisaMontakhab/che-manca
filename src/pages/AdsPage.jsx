@@ -1,7 +1,8 @@
 import React from "react";
 import logo from "../assets/images/logo/logo.png";
 import Button from "@mui/material/Button";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
+import LocationOnRoundedIcon from '@mui/icons-material/LocationOnRounded';
+import ArrowDropDownRoundedIcon from '@mui/icons-material/ArrowDropDownRounded';
 import {
   AppBar,
   Toolbar,
@@ -35,10 +36,12 @@ export default function AdsPage() {
             <Toolbar>
               <img src={logo} alt="logo image" className="ads-bar_logo" />
 
-              <Button className="ads-bar_location" >
-                <LocationOnIcon />
+              <Button className="ads-bar_btn">
+                <LocationOnRoundedIcon />
                 تهران
-                
+              </Button>
+              <Button className="ads-bar_btn">دسته ها
+              <ArrowDropDownRoundedIcon/>
               </Button>
             </Toolbar>
           </AppBar>

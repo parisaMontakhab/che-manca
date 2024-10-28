@@ -70,7 +70,7 @@
   width: 15%;
   border-left: 1px solid rgb(239, 236, 236);
 }
-.ads-bar_location {
+.ads-bar_btn {
   padding: 10px !important;
   margin-left: 8px !important;
   margin-right: 8px !important;
@@ -78,7 +78,8 @@
   font-family: "IranYekan", sans-serif !important;
 }
 
-.ads-bar_location:hover {
+.ads-bar_btn:hover {
   background-color: #f7f4f4;
   color: #575656 !important;
+  font-weight: 700;
 }
