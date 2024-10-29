@@ -31,10 +31,10 @@ export default function AdsPage() {
                 <ArrowDropDownRoundedIcon />
               </Button>
 
-              <Box component='div' className="ads-bar_searchBox">
+              <Box component="div" className="ads-bar_searchBox">
                 <InputBase
                   placeholder="جستجو در همهٔ  آگهی‌ها"
-                 className="ads-bar_searchInput"
+                  className="ads-bar_searchInput"
                 />
                 <SearchIcon className="ads-bar_searchIcon" />
               </Box>

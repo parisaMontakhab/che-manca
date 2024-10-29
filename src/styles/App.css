@@ -83,26 +83,25 @@
   color: #575656 !important;
   font-weight: 700;
 }
-.ads-bar_input{
+.ads-bar_input {
   width: 25%;
- 
 }
-.ads-bar_searchBox{
+.ads-bar_searchBox {
   display: flex;
   align-items: center;
   width: 100%;
   max-width: 400px;
   background-color: #f1f1f1;
   border-radius: 5px;
-  padding: 4px
+  padding: 4px;
 }
 .ads-bar_searchInput {
-  margin-right: 8px; 
+  margin-right: 8px;
   flex: 1;
   font-size: 16px;
-  font-family: 'IranYekan',sans-serif !important;
+  font-family: "IranYekan", sans-serif !important;
 }
-.ads-bar_searchIcon{
+.ads-bar_searchIcon {
   color: gray;
   margin-left: 8px;
 }
