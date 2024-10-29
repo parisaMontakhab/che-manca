@@ -73,7 +73,7 @@
 .ads-bar_btn {
   display: flex;
   align-items: center !important;
-  padding: 10px !important;
+  padding: 4px !important;
   margin-left: 8px !important;
   margin-right: 8px !important;
   color: gray !important;
@@ -107,4 +107,16 @@
 .ads-bar_searchIcon {
   color: gray;
   margin-left: 8px;
+}
+.ads-bar-saveaAdsBtn {
+  display: flex;
+  align-items: center !important;
+  padding-left: 14px !important;
+  padding-right: 14px !important;
+  margin-left: 8px !important;
+  margin-right: 8px !important;
+  background-color: #a62626 !important;
+  color: #fff !important;
+  font-family: "IranYekan", sans-serif !important;
+  
 }

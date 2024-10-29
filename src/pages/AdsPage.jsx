@@ -63,7 +63,7 @@ export default function AdsPage() {
                   <LanguageRoundedIcon sx={{ margin: 0.5, fontSize: 20 }} />
                   Fa
                 </Button>
-                <Button className="ads-bar_btn">ثبت آگهی</Button>
+                <Button className="ads-bar-saveaAdsBtn">ثبت آگهی</Button>
               </Box>
             </Toolbar>
           </AppBar>
