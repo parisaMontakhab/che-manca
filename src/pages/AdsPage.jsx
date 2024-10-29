@@ -31,28 +31,17 @@ export default function AdsPage() {
                 <ArrowDropDownRoundedIcon />
               </Button>
 
-              <Box
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  width: "100%",
-                  maxWidth: 400,
-                  backgroundColor: "#f1f1f1",
-                  borderRadius: "5px",
-                  p: 0.5,
-                }}
-              >
-                
+              <Box component='div' className="ads-bar_searchBox">
                 <InputBase
                   placeholder="جستجو در همهٔ  آگهی‌ها"
                   sx={{
                     mr: 1,
                     flex: 1,
                     fontSize: "16px",
-                    fontFamily:'IranYekan'
+                    fontFamily: "IranYekan",
                   }}
                 />
-                <SearchIcon sx={{ color: "gray", ml: 1 }}  />
+                <SearchIcon sx={{ color: "gray", ml: 1 }} />
               </Box>
             </Toolbar>
           </AppBar>
