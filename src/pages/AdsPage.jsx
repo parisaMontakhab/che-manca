@@ -36,7 +36,7 @@ export default function AdsPage() {
                   placeholder="جستجو در همهٔ  آگهی‌ها"
                  className="ads-bar_searchInput"
                 />
-                <SearchIcon sx={{ color: "gray", ml: 1 }} />
+                <SearchIcon className="ads-bar_searchIcon" />
               </Box>
             </Toolbar>
           </AppBar>
