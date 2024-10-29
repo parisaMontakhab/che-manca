@@ -34,12 +34,7 @@ export default function AdsPage() {
               <Box component='div' className="ads-bar_searchBox">
                 <InputBase
                   placeholder="جستجو در همهٔ  آگهی‌ها"
-                  sx={{
-                    mr: 1,
-                    flex: 1,
-                    fontSize: "16px",
-                    fontFamily: "IranYekan",
-                  }}
+                 className="ads-bar_searchInput"
                 />
                 <SearchIcon sx={{ color: "gray", ml: 1 }} />
               </Box>

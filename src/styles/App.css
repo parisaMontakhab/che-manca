@@ -96,3 +96,9 @@
   border-radius: 5px;
   padding: 4px
 }
+.ads-bar_searchInput {
+  margin-right: 8px; 
+  flex: 1;
+  font-size: 16px;
+  font-family: 'IranYekan',sans-serif !important;
+}
