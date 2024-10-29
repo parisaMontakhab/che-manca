@@ -1,36 +1,21 @@
 import React from "react";
 import logo from "../assets/images/logo/logo.png";
 import Button from "@mui/material/Button";
-import LocationOnRoundedIcon from '@mui/icons-material/LocationOnRounded';
-import ArrowDropDownRoundedIcon from '@mui/icons-material/ArrowDropDownRounded';
+import LocationOnRoundedIcon from "@mui/icons-material/LocationOnRounded";
+import ArrowDropDownRoundedIcon from "@mui/icons-material/ArrowDropDownRounded";
+import SearchIcon from "@mui/icons-material/Search";
 import {
   AppBar,
   Toolbar,
-  IconButton,
-  Typography,
-  Grid2,
-  Paper,
-  Drawer,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
   Box,
   Container,
-  Divider,
-  Link,
   TextField,
+  InputBase,
 } from "@mui/material";
-import {
-  Menu as MenuIcon,
-  Home as HomeIcon,
-  Category as CategoryIcon,
-} from "@mui/icons-material";
-import { styled } from "@mui/material/styles";
 
 export default function AdsPage() {
   return (
-    <Box>
+    <Container>
       <header>
         <Box display="flex">
           <AppBar position="fixed" className="ads-bar">
@@ -41,14 +26,38 @@ export default function AdsPage() {
                 <LocationOnRoundedIcon />
                 تهران
               </Button>
-              <Button className="ads-bar_btn">دسته ها
-              <ArrowDropDownRoundedIcon/>
+              <Button className="ads-bar_btn">
+                دسته ها
+                <ArrowDropDownRoundedIcon />
               </Button>
-              
+
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  width: "100%",
+                  maxWidth: 400,
+                  backgroundColor: "#f1f1f1",
+                  borderRadius: "5px",
+                  p: 0.5,
+                }}
+              >
+                
+                <InputBase
+                  placeholder="جستجو در همهٔ  آگهی‌ها"
+                  sx={{
+                    mr: 1,
+                    flex: 1,
+                    fontSize: "16px",
+                    fontFamily:'IranYekan'
+                  }}
+                />
+                <SearchIcon sx={{ color: "gray", ml: 1 }}  />
+              </Box>
             </Toolbar>
           </AppBar>
         </Box>
       </header>
-    </Box>
+    </Container>
   );
 }
