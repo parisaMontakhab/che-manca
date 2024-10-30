@@ -2,6 +2,7 @@ import React from "react";
 import {
   Box,
   Container,
+  Divider,
   List,
   ListItem,
   ListItemButton,
@@ -37,7 +38,98 @@ export default function SidBar() {
                 className="ads-sideBar_itemText"
               />
             </ListItem>
+            <ListItem className="ads-sideBar_listItem">
+              <ListItemIcon className="ads-sideBar_itemIcon">
+                <DirectionsCarFilledOutlinedIcon />
+              </ListItemIcon>
+              <ListItemText
+                primary="وسایل نقلیه"
+                disableTypography
+                className="ads-sideBar_itemText"
+              />
+            </ListItem>
+            <ListItem className="ads-sideBar_listItem">
+              <ListItemIcon className="ads-sideBar_itemIcon">
+                <PhoneIphoneOutlinedIcon />
+              </ListItemIcon>
+              <ListItemText
+                primary="کالای دیجیتال"
+                disableTypography
+                className="ads-sideBar_itemText"
+              />
+            </ListItem>
+            <ListItem className="ads-sideBar_listItem">
+              <ListItemIcon className="ads-sideBar_itemIcon">
+                <KitchenOutlinedIcon />
+              </ListItemIcon>
+              <ListItemText
+                primary="خانه و آشپزخانه"
+                disableTypography
+                className="ads-sideBar_itemText"
+              />
+            </ListItem>
+            <ListItem className="ads-sideBar_listItem">
+              <ListItemIcon className="ads-sideBar_itemIcon">
+                <CleaningServicesOutlinedIcon />
+              </ListItemIcon>
+              <ListItemText
+                primary="خدمات"
+                disableTypography
+                className="ads-sideBar_itemText"
+              />
+            </ListItem>
+            <ListItem className="ads-sideBar_listItem">
+              <ListItemIcon className="ads-sideBar_itemIcon">
+                <WatchOutlinedIcon />
+              </ListItemIcon>
+              <ListItemText
+                primary="وسایل شخصی"
+                disableTypography
+                className="ads-sideBar_itemText"
+              />
+            </ListItem>
+            <ListItem className="ads-sideBar_listItem">
+              <ListItemIcon className="ads-sideBar_itemIcon">
+                <SportsTennisOutlinedIcon />
+              </ListItemIcon>
+              <ListItemText
+                primary=" سرگرمی و فراغت"
+                disableTypography
+                className="ads-sideBar_itemText"
+              />
+            </ListItem>
+            <ListItem className="ads-sideBar_listItem">
+              <ListItemIcon className="ads-sideBar_itemIcon">
+                <GroupsOutlinedIcon />
+              </ListItemIcon>
+              <ListItemText
+                primary="اجتماعی"
+                disableTypography
+                className="ads-sideBar_itemText"
+              />
+            </ListItem>
+            <ListItem className="ads-sideBar_listItem">
+              <ListItemIcon className="ads-sideBar_itemIcon">
+                <ChairAltOutlinedIcon />
+              </ListItemIcon>
+              <ListItemText
+                primary=" تجهیزات و صنعتی"  
+                disableTypography
+                className="ads-sideBar_itemText"
+              />
+            </ListItem>
+            <ListItem className="ads-sideBar_listItem">
+              <ListItemIcon className="ads-sideBar_itemIcon">
+                <BusinessCenterOutlinedIcon />
+              </ListItemIcon>
+              <ListItemText
+                primary="استخدام و کاریابی"
+                disableTypography
+                className="ads-sideBar_itemText"
+              />
+            </ListItem>
           </List>
+          <Divider sx={{width:"80%"}}/>
         </Box>
       </aside>
     </Container>
