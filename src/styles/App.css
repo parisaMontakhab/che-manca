@@ -78,7 +78,6 @@
   margin-right: 10px !important;
   color: gray !important;
   font-family: "IranYekan", sans-serif !important;
-  
 }
 
 .ads-bar_btn:hover {
@@ -118,12 +117,14 @@
   background-color: #05017b !important;
   color: #ffc107 !important;
   font-family: "IranYekan", sans-serif !important;
- 
-  
 }
-.ads-bar-saveaAdsBtn:hover{
-  background-color:#292778 !important ;
+.ads-bar-saveaAdsBtn:hover {
+  background-color: #292778 !important ;
 }
 
 /* Ads page --sidbar*/
 
+.ads-sideBar {
+  margin-top: 8%;
+  width: 25%;
+}
