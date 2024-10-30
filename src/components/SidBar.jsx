@@ -28,8 +28,8 @@ export default function SidBar() {
           <Typography sx={{ fontFamily: "IranYekan" }}>دسته ها</Typography>
           <List >
             <ListItem>
-              <ListItemButton sx={{ display: "flex", alignItems: "center" }}>
-                <ListItemIcon sx={{ minWidth: 0, ml: 1 }}>
+              <ListItemButton className="ads-sideBar_listItemBtn">
+                <ListItemIcon className="ads-sideBar_itemIcon">
                   <HomeWorkOutlinedIcon />
                 </ListItemIcon>
                 <ListItemText
