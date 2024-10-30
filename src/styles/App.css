@@ -128,12 +128,26 @@
   margin-top: 8%;
   width: 25%;
 }
-.ads-sideBar_listItemBtn {
+.ads-sideBar_listItem {
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.ads-sideBar_itemIcon{
+
+.ads-sideBar_itemIcon {
+  color: gray !important;
   min-width: 0 !important;
   margin-left: 8px;
+}
+.ads-sideBar_itemText {
+  font-family: "IranYekan";
+  display: inline;
+  text-align: right;
+  color: gray !important;
+}
+.ads-sideBar_listItem:hover .ads-sideBar_itemIcon,
+.ads-sideBar_listItem:hover .ads-sideBar_itemText {
+  color: #575656 !important;
+  font-weight: 700;
 }

@@ -24,24 +24,18 @@ export default function SidBar() {
   return (
     <Container maxWidth="xl">
       <aside>
-        <Box component='div' className="ads-sideBar">
+        <Box component="div" className="ads-sideBar">
           <Typography sx={{ fontFamily: "IranYekan" }}>دسته ها</Typography>
-          <List >
-            <ListItem>
-              <ListItemButton className="ads-sideBar_listItemBtn">
-                <ListItemIcon className="ads-sideBar_itemIcon">
-                  <HomeWorkOutlinedIcon />
-                </ListItemIcon>
-                <ListItemText
-                  primary="املاک"
-                  disableTypography
-                  sx={{
-                    fontFamily: "IranYekan",
-                    display: "inline",
-                    textAlign: "right",
-                  }}
-                />
-              </ListItemButton>
+          <List>
+            <ListItem className="ads-sideBar_listItem">
+              <ListItemIcon className="ads-sideBar_itemIcon">
+                <HomeWorkOutlinedIcon />
+              </ListItemIcon>
+              <ListItemText
+                primary="املاک"
+                disableTypography
+                className="ads-sideBar_itemText"
+              />
             </ListItem>
           </List>
         </Box>
