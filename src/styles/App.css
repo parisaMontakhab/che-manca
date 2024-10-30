@@ -57,7 +57,7 @@
   border: 1px solid gray;
 }
 
-/* Ads Page*/
+/* Ads Page--navbar*/
 
 .ads-bar {
   background-color: #fff !important;
@@ -124,3 +124,6 @@
 .ads-bar-saveaAdsBtn:hover{
   background-color:#292778 !important ;
 }
+
+/* Ads page --sidbar*/
+
