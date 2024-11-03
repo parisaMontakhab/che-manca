@@ -152,7 +152,7 @@ export default function SidBar() {
             />
           </ListItem>
           <Collapse in={open} timeout="auto" unmountOnExit>
-            <Input placeholder="search" />
+            <Input placeholder="تعیین محل" />
           </Collapse>
           <Divider sx={{ width: "80%" }} />
         </Box>
