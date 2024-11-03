@@ -140,12 +140,19 @@ export default function SidBar() {
           </List>
           <Divider sx={{ width: "80%" }} />
           <ListItem onClick={handleClick} className="ads-sideBar_listItem">
-            {open ? <ExpandLess /> : <ExpandMore />}
-            <ListItemText primary="محل" disableTypography
-                className="ads-sideBar_itemText"/>
+            {open ? (
+              <ExpandLess className="ads-sideBar_itemIcon" />
+            ) : (
+              <ExpandMore className="ads-sideBar_itemIcon" />
+            )}
+            <ListItemText
+              primary="محل"
+              disableTypography
+              className="ads-sideBar_itemText"
+            />
           </ListItem>
           <Collapse in={open} timeout="auto" unmountOnExit>
-          <Input placeholder="search"/>
+            <Input placeholder="search" />
           </Collapse>
           <Divider sx={{ width: "80%" }} />
         </Box>
