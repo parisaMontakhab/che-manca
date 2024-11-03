@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Box,
+  Collapse,
   Container,
   Divider,
+  Input,
   List,
   ListItem,
   ListItemButton,
@@ -20,8 +22,15 @@ import SportsTennisOutlinedIcon from "@mui/icons-material/SportsTennisOutlined";
 import GroupsOutlinedIcon from "@mui/icons-material/GroupsOutlined";
 import ChairAltOutlinedIcon from "@mui/icons-material/ChairAltOutlined";
 import BusinessCenterOutlinedIcon from "@mui/icons-material/BusinessCenterOutlined";
+import ExpandLess from "@mui/icons-material/ExpandLess";
+import ExpandMore from "@mui/icons-material/ExpandMore";
 
 export default function SidBar() {
+  const [open, setOpen] = useState(false);
+
+  const handleClick = () => {
+    setOpen(!open);
+  };
   return (
     <Container maxWidth="xl">
       <aside>
@@ -113,7 +122,7 @@ export default function SidBar() {
                 <ChairAltOutlinedIcon />
               </ListItemIcon>
               <ListItemText
-                primary=" تجهیزات و صنعتی"  
+                primary=" تجهیزات و صنعتی"
                 disableTypography
                 className="ads-sideBar_itemText"
               />
@@ -129,7 +138,16 @@ export default function SidBar() {
               />
             </ListItem>
           </List>
-          <Divider sx={{width:"80%"}}/>
+          <Divider sx={{ width: "80%" }} />
+          <ListItem onClick={handleClick} className="ads-sideBar_listItem">
+            {open ? <ExpandLess /> : <ExpandMore />}
+            <ListItemText primary="محل" disableTypography
+                className="ads-sideBar_itemText"/>
+          </ListItem>
+          <Collapse in={open} timeout="auto" unmountOnExit>
+          <Input placeholder="search"/>
+          </Collapse>
+          <Divider sx={{ width: "80%" }} />
         </Box>
       </aside>
     </Container>
