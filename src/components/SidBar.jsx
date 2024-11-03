@@ -137,8 +137,7 @@ export default function SidBar() {
                 className="ads-sideBar_itemText"
               />
             </ListItem>
-          </List>
-          <Divider sx={{ width: "80%" }} />
+            <Divider sx={{ width: "80%" }} />
           <ListItem onClick={handleClick} className="ads-sideBar_listItem">
             {open ? (
               <ExpandLess className="ads-sideBar_itemIcon" />
@@ -155,6 +154,8 @@ export default function SidBar() {
             <Input placeholder="تعیین محل" />
           </Collapse>
           <Divider sx={{ width: "80%" }} />
+          </List>
+         
         </Box>
       </aside>
     </Container>
