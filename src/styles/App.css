@@ -170,4 +170,9 @@
   border-color: gray !important;
   background-color: transparent !important;
 }
-
+.ads-sideBar_collapsText{
+  font-family: "IranYekan";
+  font-weight:600;
+  display: inline;
+  text-align: right;
+}

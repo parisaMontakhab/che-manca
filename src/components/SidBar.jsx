@@ -150,7 +150,7 @@ export default function SidBar() {
             <ListItemText
               primary="محل"
               disableTypography
-              className="ads-sideBar_itemText"
+              className="ads-sideBar_collapsText"
             />
           </ListItem>
           <Collapse in={open} timeout="auto" unmountOnExit>
