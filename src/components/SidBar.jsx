@@ -13,6 +13,8 @@ import {
   ListItemText,
   TextField,
   Typography,
+  Grid2,
+  Link
 } from "@mui/material";
 import HomeWorkOutlinedIcon from "@mui/icons-material/HomeWorkOutlined";
 import DirectionsCarFilledOutlinedIcon from "@mui/icons-material/DirectionsCarFilledOutlined";
@@ -204,7 +206,43 @@ export default function SidBar() {
           </Collapse>
           <Divider sx={{ width: "80%",marginTop:2 }} />
           </List>
-          <footer style={{display:'flex',justifyContent:'center',maxWidth:200,marginTop:'10px'}}>
+          <nav style={{fontSize:'14px',color:'gray',maxWidth:'80%',marginTop:10}}>
+            <Grid2 container rowSpacing={2} columnSpacing={4} justifyContent='center'>
+              <Grid2 >
+                <Link href="#" color="inherit" underline="none">
+                   درباره ی دیوار
+                </Link>
+              </Grid2>
+              <Grid2>
+                <Link href="#" color="inherit" underline="none">
+                دریافت برنامه
+                </Link>
+              </Grid2>
+              <Grid2>
+                <Link href="#" color="inherit" underline="none">
+                اتاق خبر
+                </Link>
+              </Grid2>
+              <Grid2>
+                <Link href="#" color="inherit" underline="none">
+                   کسب و کارها
+                </Link>{" "}
+              </Grid2>
+              <Grid2>
+                <Link href="#" color="inherit" underline="none">
+                گزارش آسیب پذیری
+                </Link>
+              </Grid2>
+              <Grid2>
+                <Link href="#" color="inherit" underline="none">
+                  پشتیبانی و قوانین
+                </Link>
+              </Grid2>
+            </Grid2>
+          </nav>
+          <Divider sx={{ width: "80%",marginTop:2 }} />
+          
+          <footer style={{display:'flex',justifyContent:'center',maxWidth:'80%',marginTop:'20px'}}>
             <Footer />
           </footer>
         
