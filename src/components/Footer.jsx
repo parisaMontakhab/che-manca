@@ -6,7 +6,7 @@ import TelegramIcon from "@mui/icons-material/Telegram";
 
 export default function Footer() {
   return (
-    <Box className="footer-box">
+    <Box >
       <Grid2
         container
         spacing={4}

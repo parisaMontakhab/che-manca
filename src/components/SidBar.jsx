@@ -26,12 +26,14 @@ import ChairAltOutlinedIcon from "@mui/icons-material/ChairAltOutlined";
 import BusinessCenterOutlinedIcon from "@mui/icons-material/BusinessCenterOutlined";
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
-import KeyboardArrowLeftRoundedIcon from '@mui/icons-material/KeyboardArrowLeftRounded';
+import KeyboardArrowLeftRoundedIcon from "@mui/icons-material/KeyboardArrowLeftRounded";
+import Footer from "./Footer";
 
 export default function SidBar() {
   const [open, setOpen] = useState(false);
 
   const handleClick = () => {
+   
     setOpen(!open);
   };
   return (
@@ -141,14 +143,58 @@ export default function SidBar() {
               />
             </ListItem>
             <Divider sx={{ width: "80%" }} />
-          <ListItem onClick={handleClick} className="ads-sideBar_listItem">
+            <ListItem onClick={handleClick} className="ads-sideBar_listItem">
+              {open ? (
+                <ExpandLess className="ads-sideBar_itemIcon" />
+              ) : (
+                <ExpandMore className="ads-sideBar_itemIcon" />
+              )}
+              <ListItemText
+                primary="محل"
+                disableTypography
+                className="ads-sideBar_collapsText"
+              />
+            </ListItem>
+            <Collapse in={open} timeout="auto" unmountOnExit>
+              <Button
+                endIcon={<KeyboardArrowLeftRoundedIcon />}
+                fullWidth
+                className="ads-sideBar_btn"
+              >
+                تعیین محل
+              </Button>
+            </Collapse>
+            <Divider sx={{ width: "80%", marginTop: 2 }} />
+            <ListItem onClick={handleClick} className="ads-sideBar_listItem">
+              {open ? (
+                <ExpandLess className="ads-sideBar_itemIcon" />
+              ) : (
+                <ExpandMore className="ads-sideBar_itemIcon" />
+              )}
+              <ListItemText
+                primary="قیمت"
+                disableTypography
+                className="ads-sideBar_collapsText"
+              />
+            </ListItem>
+            <Collapse in={open} timeout="auto" unmountOnExit>
+              <Button
+                endIcon={<KeyboardArrowLeftRoundedIcon />}
+                fullWidth
+                className="ads-sideBar_btn"
+              >
+                تعیین محل
+              </Button>
+            </Collapse>
+            <Divider sx={{ width: "80%", marginTop: 2 }} />
+            <ListItem onClick={handleClick} className="ads-sideBar_listItem">
             {open ? (
               <ExpandLess className="ads-sideBar_itemIcon" />
             ) : (
               <ExpandMore className="ads-sideBar_itemIcon" />
             )}
             <ListItemText
-              primary="محل"
+              primary="وضعیت آگهی"
               disableTypography
               className="ads-sideBar_collapsText"
             />
@@ -157,28 +203,11 @@ export default function SidBar() {
             <Button endIcon={<KeyboardArrowLeftRoundedIcon/>}  fullWidth className="ads-sideBar_btn">تعیین محل</Button>
           </Collapse>
           <Divider sx={{ width: "80%",marginTop:2 }} />
-          <ListItem onClick={handleClick} className="ads-sideBar_listItem">
-            {open ? (
-              <ExpandLess className="ads-sideBar_itemIcon" />
-            ) : (
-              <ExpandMore className="ads-sideBar_itemIcon" />
-            )}
-            <ListItemText
-              primary="قیمت"
-              disableTypography
-              className="ads-sideBar_collapsText"
-            />
-          </ListItem>
-          <Collapse in={open} timeout="auto" unmountOnExit>
-            <Button endIcon={<KeyboardArrowLeftRoundedIcon/>}  fullWidth className="ads-sideBar_btn">تعیین محل</Button>
-          </Collapse>
-          <Divider sx={{ width: "80%",marginTop:2 }} />
-
-
-
-
-
           </List>
+          <footer style={{display:'flex',justifyContent:'center',maxWidth:200,marginTop:'10px'}}>
+            <Footer />
+          </footer>
+        
         </Box>
       </aside>
     </Container>

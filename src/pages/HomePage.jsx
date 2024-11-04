@@ -82,7 +82,7 @@ export default function HomePage() {
             ))}
           </Grid2>
         </Box>
-        <footer>
+        <footer style={{marginTop:'100px'}}>
           <Footer />
         </footer>
       </Container>
