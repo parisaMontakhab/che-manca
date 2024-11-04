@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import {
   Box,
+  Button,
   Collapse,
   Container,
   Divider,
@@ -10,6 +11,7 @@ import {
   ListItemButton,
   ListItemIcon,
   ListItemText,
+  TextField,
   Typography,
 } from "@mui/material";
 import HomeWorkOutlinedIcon from "@mui/icons-material/HomeWorkOutlined";
@@ -24,6 +26,7 @@ import ChairAltOutlinedIcon from "@mui/icons-material/ChairAltOutlined";
 import BusinessCenterOutlinedIcon from "@mui/icons-material/BusinessCenterOutlined";
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
+import KeyboardArrowLeftRoundedIcon from '@mui/icons-material/KeyboardArrowLeftRounded';
 
 export default function SidBar() {
   const [open, setOpen] = useState(false);
@@ -151,9 +154,9 @@ export default function SidBar() {
             />
           </ListItem>
           <Collapse in={open} timeout="auto" unmountOnExit>
-            <Input placeholder="تعیین محل" />
+            <Button endIcon={<KeyboardArrowLeftRoundedIcon/>}  fullWidth className="ads-sideBar_btn">تعیین محل</Button>
           </Collapse>
-          <Divider sx={{ width: "80%" }} />
+          <Divider sx={{ width: "80%",marginTop:2 }} />
           </List>
          
         </Box>
