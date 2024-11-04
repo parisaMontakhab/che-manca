@@ -157,8 +157,28 @@ export default function SidBar() {
             <Button endIcon={<KeyboardArrowLeftRoundedIcon/>}  fullWidth className="ads-sideBar_btn">تعیین محل</Button>
           </Collapse>
           <Divider sx={{ width: "80%",marginTop:2 }} />
+          <ListItem onClick={handleClick} className="ads-sideBar_listItem">
+            {open ? (
+              <ExpandLess className="ads-sideBar_itemIcon" />
+            ) : (
+              <ExpandMore className="ads-sideBar_itemIcon" />
+            )}
+            <ListItemText
+              primary="قیمت"
+              disableTypography
+              className="ads-sideBar_collapsText"
+            />
+          </ListItem>
+          <Collapse in={open} timeout="auto" unmountOnExit>
+            <Button endIcon={<KeyboardArrowLeftRoundedIcon/>}  fullWidth className="ads-sideBar_btn">تعیین محل</Button>
+          </Collapse>
+          <Divider sx={{ width: "80%",marginTop:2 }} />
+
+
+
+
+
           </List>
-         
         </Box>
       </aside>
     </Container>
