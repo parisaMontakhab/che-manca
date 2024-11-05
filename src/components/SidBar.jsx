@@ -15,6 +15,9 @@ import {
   Typography,
   Grid2,
   Link,
+  FormGroup,
+  FormControlLabel,
+  Switch,
 } from "@mui/material";
 import HomeWorkOutlinedIcon from "@mui/icons-material/HomeWorkOutlined";
 import DirectionsCarFilledOutlinedIcon from "@mui/icons-material/DirectionsCarFilledOutlined";
@@ -147,8 +150,11 @@ export default function SidBar() {
               />
             </ListItem>
             <Divider sx={{ width: "80%" }} />
-            <ListItem onClick={()=>handleClick('location')} className="ads-sideBar_listItem">
-              {openItems['location'] ? (
+            <ListItem
+              onClick={() => handleClick("location")}
+              className="ads-sideBar_listItem"
+            >
+              {openItems["location"] ? (
                 <ExpandLess className="ads-sideBar_itemIcon" />
               ) : (
                 <ExpandMore className="ads-sideBar_itemIcon" />
@@ -159,7 +165,7 @@ export default function SidBar() {
                 className="ads-sideBar_collapsText"
               />
             </ListItem>
-            <Collapse in={openItems['location']} timeout="auto" unmountOnExit>
+            <Collapse in={openItems["location"]} timeout="auto" unmountOnExit>
               <Button
                 endIcon={<KeyboardArrowLeftRoundedIcon />}
                 fullWidth
@@ -169,8 +175,11 @@ export default function SidBar() {
               </Button>
             </Collapse>
             <Divider sx={{ width: "80%", marginTop: 2 }} />
-            <ListItem onClick={()=>handleClick('price')} className="ads-sideBar_listItem">
-              {openItems['price'] ? (
+            <ListItem
+              onClick={() => handleClick("price")}
+              className="ads-sideBar_listItem"
+            >
+              {openItems["price"] ? (
                 <ExpandLess className="ads-sideBar_itemIcon" />
               ) : (
                 <ExpandMore className="ads-sideBar_itemIcon" />
@@ -181,7 +190,7 @@ export default function SidBar() {
                 className="ads-sideBar_collapsText"
               />
             </ListItem>
-            <Collapse in={openItems['price']} timeout="auto" unmountOnExit>
+            <Collapse in={openItems["price"]} timeout="auto" unmountOnExit>
               <Button
                 endIcon={<KeyboardArrowLeftRoundedIcon />}
                 fullWidth
@@ -191,8 +200,11 @@ export default function SidBar() {
               </Button>
             </Collapse>
             <Divider sx={{ width: "80%", marginTop: 2 }} />
-            <ListItem onClick={()=>handleClick('status')} className="ads-sideBar_listItem">
-              {openItems['status'] ? (
+            <ListItem
+              onClick={() => handleClick("status")}
+              className="ads-sideBar_listItem"
+            >
+              {openItems["status"] ? (
                 <ExpandLess className="ads-sideBar_itemIcon" />
               ) : (
                 <ExpandMore className="ads-sideBar_itemIcon" />
@@ -203,14 +215,57 @@ export default function SidBar() {
                 className="ads-sideBar_collapsText"
               />
             </ListItem>
-            <Collapse in={openItems['status']} timeout="auto" unmountOnExit>
-              <Button
-                endIcon={<KeyboardArrowLeftRoundedIcon />}
-                fullWidth
-                className="ads-sideBar_btn"
-              >
-                تعیین محل
-              </Button>
+            <Collapse in={openItems["status"]} timeout="auto" unmountOnExit>
+              <FormGroup>
+                <FormControlLabel
+                  sx={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    direction: "ltr",
+                    width: "80%",
+                    "& .MuiSwitch-switchBase.Mui-checked": { color: "#A62626" },
+                    "& .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track": {
+                      backgroundColor: "#A62626",
+                    },
+                  }}
+                  label={
+                    <Typography
+                      sx={{
+                        fontFamily: "IranYekan",
+                        fontSize: "12px",
+                        
+                      }}
+                    >
+                      عکس دار
+                    </Typography>
+                  }
+                  control={<Switch />}
+                />
+                 <FormControlLabel
+                  sx={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    direction: "ltr",
+                    width: "80%",
+                    "& .MuiSwitch-switchBase.Mui-checked": { color: "#A62626" },
+                    "& .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track": {
+                      backgroundColor: "#A62626",
+                    },
+                  }}
+                  label={
+                    <Typography
+                      sx={{
+                        fontFamily: "IranYekan",
+                        fontSize: "12px",
+                        
+                      }}
+                    >
+                       فوری
+                    </Typography>
+                  }
+                  control={<Switch />}
+                />
+              </FormGroup>
             </Collapse>
             <Divider sx={{ width: "80%", marginTop: 2 }} />
           </List>
