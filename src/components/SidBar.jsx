@@ -222,6 +222,12 @@ export default function SidBar() {
                 disableTypography
                 className="ads-sideBar_collapsText"
               />
+              {
+               checked['photo'] || checked['force']  ? <Button  onClick={(Event)=>setChecked({
+                [Event.target.name] : ! Event.target.checked
+
+               })}   sx={{fontFamily:"IranYekan",color:"#A62626",marginLeft:"40px"}}>حذف</Button> :''
+              }
             </ListItem>
             <Collapse in={openItems["status"]} timeout="auto" unmountOnExit>
               <FormGroup>
