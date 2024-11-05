@@ -14,7 +14,7 @@ import {
   TextField,
   Typography,
   Grid2,
-  Link
+  Link,
 } from "@mui/material";
 import HomeWorkOutlinedIcon from "@mui/icons-material/HomeWorkOutlined";
 import DirectionsCarFilledOutlinedIcon from "@mui/icons-material/DirectionsCarFilledOutlined";
@@ -32,11 +32,13 @@ import KeyboardArrowLeftRoundedIcon from "@mui/icons-material/KeyboardArrowLeftR
 import Footer from "./Footer";
 
 export default function SidBar() {
-  const [open, setOpen] = useState(false);
+  const [openItems, setOpenItems] = useState({});
 
-  const handleClick = () => {
-   
-    setOpen(!open);
+  const handleClick = (item) => {
+    setOpenItems((prev) => ({
+      ...prev,
+      [item]: !prev[item],
+    }));
   };
   return (
     <Container maxWidth="xl">
@@ -145,8 +147,8 @@ export default function SidBar() {
               />
             </ListItem>
             <Divider sx={{ width: "80%" }} />
-            <ListItem onClick={handleClick} className="ads-sideBar_listItem">
-              {open ? (
+            <ListItem onClick={()=>handleClick('location')} className="ads-sideBar_listItem">
+              {openItems['location'] ? (
                 <ExpandLess className="ads-sideBar_itemIcon" />
               ) : (
                 <ExpandMore className="ads-sideBar_itemIcon" />
@@ -157,7 +159,7 @@ export default function SidBar() {
                 className="ads-sideBar_collapsText"
               />
             </ListItem>
-            <Collapse in={open} timeout="auto" unmountOnExit>
+            <Collapse in={openItems['location']} timeout="auto" unmountOnExit>
               <Button
                 endIcon={<KeyboardArrowLeftRoundedIcon />}
                 fullWidth
@@ -167,8 +169,8 @@ export default function SidBar() {
               </Button>
             </Collapse>
             <Divider sx={{ width: "80%", marginTop: 2 }} />
-            <ListItem onClick={handleClick} className="ads-sideBar_listItem">
-              {open ? (
+            <ListItem onClick={()=>handleClick('price')} className="ads-sideBar_listItem">
+              {openItems['price'] ? (
                 <ExpandLess className="ads-sideBar_itemIcon" />
               ) : (
                 <ExpandMore className="ads-sideBar_itemIcon" />
@@ -179,7 +181,7 @@ export default function SidBar() {
                 className="ads-sideBar_collapsText"
               />
             </ListItem>
-            <Collapse in={open} timeout="auto" unmountOnExit>
+            <Collapse in={openItems['price']} timeout="auto" unmountOnExit>
               <Button
                 endIcon={<KeyboardArrowLeftRoundedIcon />}
                 fullWidth
@@ -189,48 +191,66 @@ export default function SidBar() {
               </Button>
             </Collapse>
             <Divider sx={{ width: "80%", marginTop: 2 }} />
-            <ListItem onClick={handleClick} className="ads-sideBar_listItem">
-            {open ? (
-              <ExpandLess className="ads-sideBar_itemIcon" />
-            ) : (
-              <ExpandMore className="ads-sideBar_itemIcon" />
-            )}
-            <ListItemText
-              primary="وضعیت آگهی"
-              disableTypography
-              className="ads-sideBar_collapsText"
-            />
-          </ListItem>
-          <Collapse in={open} timeout="auto" unmountOnExit>
-            <Button endIcon={<KeyboardArrowLeftRoundedIcon/>}  fullWidth className="ads-sideBar_btn">تعیین محل</Button>
-          </Collapse>
-          <Divider sx={{ width: "80%",marginTop:2 }} />
+            <ListItem onClick={()=>handleClick('status')} className="ads-sideBar_listItem">
+              {openItems['status'] ? (
+                <ExpandLess className="ads-sideBar_itemIcon" />
+              ) : (
+                <ExpandMore className="ads-sideBar_itemIcon" />
+              )}
+              <ListItemText
+                primary="وضعیت آگهی"
+                disableTypography
+                className="ads-sideBar_collapsText"
+              />
+            </ListItem>
+            <Collapse in={openItems['status']} timeout="auto" unmountOnExit>
+              <Button
+                endIcon={<KeyboardArrowLeftRoundedIcon />}
+                fullWidth
+                className="ads-sideBar_btn"
+              >
+                تعیین محل
+              </Button>
+            </Collapse>
+            <Divider sx={{ width: "80%", marginTop: 2 }} />
           </List>
-          <nav style={{fontSize:'14px',color:'gray',maxWidth:'80%',marginTop:10}}>
-            <Grid2 container rowSpacing={2} columnSpacing={4} justifyContent='center'>
-              <Grid2 >
+          <nav
+            style={{
+              fontSize: "14px",
+              color: "gray",
+              maxWidth: "80%",
+              marginTop: 10,
+            }}
+          >
+            <Grid2
+              container
+              rowSpacing={2}
+              columnSpacing={4}
+              justifyContent="center"
+            >
+              <Grid2>
                 <Link href="#" color="inherit" underline="none">
-                   درباره ی دیوار
+                  درباره ی دیوار
                 </Link>
               </Grid2>
               <Grid2>
                 <Link href="#" color="inherit" underline="none">
-                دریافت برنامه
+                  دریافت برنامه
                 </Link>
               </Grid2>
               <Grid2>
                 <Link href="#" color="inherit" underline="none">
-                اتاق خبر
+                  اتاق خبر
                 </Link>
               </Grid2>
               <Grid2>
                 <Link href="#" color="inherit" underline="none">
-                   کسب و کارها
+                  کسب و کارها
                 </Link>{" "}
               </Grid2>
               <Grid2>
                 <Link href="#" color="inherit" underline="none">
-                گزارش آسیب پذیری
+                  گزارش آسیب پذیری
                 </Link>
               </Grid2>
               <Grid2>
@@ -240,12 +260,18 @@ export default function SidBar() {
               </Grid2>
             </Grid2>
           </nav>
-          <Divider sx={{ width: "80%",marginTop:2 }} />
-          
-          <footer style={{display:'flex',justifyContent:'center',maxWidth:'80%',marginTop:'20px'}}>
+          <Divider sx={{ width: "80%", marginTop: 2 }} />
+
+          <footer
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              maxWidth: "80%",
+              marginTop: "20px",
+            }}
+          >
             <Footer />
           </footer>
-        
         </Box>
       </aside>
     </Container>
