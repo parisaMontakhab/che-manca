@@ -43,5 +43,6 @@ button {
 
 body {
   font-family: "IranYekan", sans-serif;
+  overflow-y:scroll;
   
 }
