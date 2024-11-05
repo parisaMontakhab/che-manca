@@ -36,6 +36,7 @@ import Footer from "./Footer";
 
 export default function SidBar() {
   const [openItems, setOpenItems] = useState({});
+  const [checked,setChecked] = useState({photo:false,force:false});
 
   const handleClick = (item) => {
     setOpenItems((prev) => ({
@@ -43,6 +44,13 @@ export default function SidBar() {
       [item]: !prev[item],
     }));
   };
+
+  const handleSwitch = (event)=>{
+    setChecked({
+      ...checked,
+      [event.target.name] :  event.target.checked
+    })
+  }
   return (
     <Container maxWidth="xl">
       <aside>
@@ -239,7 +247,7 @@ export default function SidBar() {
                       عکس دار
                     </Typography>
                   }
-                  control={<Switch />}
+                  control={<Switch  checked={checked.photo} onChange={handleSwitch} name="photo"/>}
                 />
                  <FormControlLabel
                   sx={{
@@ -263,7 +271,7 @@ export default function SidBar() {
                        فوری
                     </Typography>
                   }
-                  control={<Switch />}
+                  control={<Switch  checked={checked.force} onChange={handleSwitch} name="force"/>}
                 />
               </FormGroup>
             </Collapse>
