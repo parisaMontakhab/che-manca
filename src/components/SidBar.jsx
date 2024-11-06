@@ -32,11 +32,12 @@ import BusinessCenterOutlinedIcon from "@mui/icons-material/BusinessCenterOutlin
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 import KeyboardArrowLeftRoundedIcon from "@mui/icons-material/KeyboardArrowLeftRounded";
+import FiberManualRecordRoundedIcon from "@mui/icons-material/FiberManualRecordRounded";
 import Footer from "./Footer";
 
 export default function SidBar() {
   const [openItems, setOpenItems] = useState({});
-  const [checked,setChecked] = useState({photo:false,force:false});
+  const [checked, setChecked] = useState({ photo: false, force: false });
 
   const handleClick = (item) => {
     setOpenItems((prev) => ({
@@ -45,12 +46,12 @@ export default function SidBar() {
     }));
   };
 
-  const handleSwitch = (event)=>{
+  const handleSwitch = (event) => {
     setChecked({
       ...checked,
-      [event.target.name] :  event.target.checked
-    })
-  }
+      [event.target.name]: event.target.checked,
+    });
+  };
   return (
     <Container maxWidth="xl">
       <aside>
@@ -222,12 +223,32 @@ export default function SidBar() {
                 disableTypography
                 className="ads-sideBar_collapsText"
               />
-              {
-               checked['photo'] || checked['force']  ? <Button  onClick={(Event)=>setChecked({
-                [Event.target.name] : ! Event.target.checked
-
-               })}   sx={{fontFamily:"IranYekan",color:"#A62626",marginLeft:"40px"}}>حذف</Button> :''
-              }
+              {(checked["photo"] || checked["force"]) &&
+                (openItems["status"] ? (
+                  <Button
+                    onClick={(event) =>
+                      setChecked({
+                        [event.target.name]: !event.target.checked,
+                      })
+                    }
+                    sx={{
+                      fontFamily: "IranYekan",
+                      color: "#A62626",
+                      marginLeft: "40px",
+                    }}
+                  >
+                    حذف
+                  </Button>
+                ) : (
+                  <FiberManualRecordRoundedIcon
+                    sx={{
+                      fontFamily: "IranYekan",
+                      color: "#A62626",
+                      marginLeft: "60px",
+                      fontSize: "12px",
+                    }}
+                  />
+                ))}
             </ListItem>
             <Collapse in={openItems["status"]} timeout="auto" unmountOnExit>
               <FormGroup>
@@ -247,15 +268,20 @@ export default function SidBar() {
                       sx={{
                         fontFamily: "IranYekan",
                         fontSize: "12px",
-                        
                       }}
                     >
                       عکس دار
                     </Typography>
                   }
-                  control={<Switch  checked={checked.photo} onChange={handleSwitch} name="photo"/>}
+                  control={
+                    <Switch
+                      checked={checked.photo}
+                      onChange={handleSwitch}
+                      name="photo"
+                    />
+                  }
                 />
-                 <FormControlLabel
+                <FormControlLabel
                   sx={{
                     display: "flex",
                     justifyContent: "space-between",
@@ -271,13 +297,18 @@ export default function SidBar() {
                       sx={{
                         fontFamily: "IranYekan",
                         fontSize: "12px",
-                        
                       }}
                     >
-                       فوری
+                      فوری
                     </Typography>
                   }
-                  control={<Switch  checked={checked.force} onChange={handleSwitch} name="force"/>}
+                  control={
+                    <Switch
+                      checked={checked.force}
+                      onChange={handleSwitch}
+                      name="force"
+                    />
+                  }
                 />
               </FormGroup>
             </Collapse>
