@@ -46,7 +46,7 @@ export default function SidBar() {
     }));
   };
 
-  const handleSwitch = (event) => {
+  const handleCheckedClick = (event) => {
     setChecked({
       ...checked,
       [event.target.name]: event.target.checked,
@@ -278,7 +278,7 @@ export default function SidBar() {
                   control={
                     <Switch
                       checked={checked.photo}
-                      onChange={handleSwitch}
+                      onChange={handleCheckedClick}
                       name="photo"
                     />
                   }
@@ -307,7 +307,7 @@ export default function SidBar() {
                   control={
                     <Switch
                       checked={checked.force}
-                      onChange={handleSwitch}
+                      onChange={handleCheckedClick}
                       name="force"
                     />
                   }
