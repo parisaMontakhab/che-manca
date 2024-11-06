@@ -40,7 +40,7 @@ import Footer from "./Footer";
 export default function SidBar() {
   const [openItems, setOpenItems] = useState({});
   const [checked, setChecked] = useState({ photo: false, force: false });
-  const [value, setValue] = useState(null);
+  
 
 
   const handleClick = (item) => {
