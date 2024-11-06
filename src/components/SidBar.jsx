@@ -52,6 +52,16 @@ export default function SidBar() {
       [event.target.name]: event.target.checked,
     });
   };
+  const handleDeleteClick  = ()=>{
+    setChecked((prevChecked)=>{
+      const newChecked = {};
+      Object.keys(prevChecked).forEach((key) => {
+        newChecked[key] = false;
+      });
+      return newChecked
+
+    })
+  }
   return (
     <Container maxWidth="xl">
       <aside>
@@ -200,13 +210,9 @@ export default function SidBar() {
               />
             </ListItem>
             <Collapse in={openItems["price"]} timeout="auto" unmountOnExit>
-              <Button
-                endIcon={<KeyboardArrowLeftRoundedIcon />}
-                fullWidth
-                className="ads-sideBar_btn"
-              >
-                تعیین محل
-              </Button>
+              <Box>
+
+              </Box>
             </Collapse>
             <Divider sx={{ width: "80%", marginTop: 2 }} />
             <ListItem
@@ -226,11 +232,7 @@ export default function SidBar() {
               {(checked["photo"] || checked["force"]) &&
                 (openItems["status"] ? (
                   <Button
-                    onClick={(event) =>
-                      setChecked({
-                        [event.target.name]: !event.target.checked,
-                      })
-                    }
+                    onClick={handleDeleteClick  }
                     sx={{
                       fontFamily: "IranYekan",
                       color: "#A62626",
