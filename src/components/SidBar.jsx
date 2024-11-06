@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { priceOptions } from "../data/PriceData";
 import {
   Box,
   Button,
@@ -18,6 +19,7 @@ import {
   FormGroup,
   FormControlLabel,
   Switch,
+  Autocomplete,
 } from "@mui/material";
 import HomeWorkOutlinedIcon from "@mui/icons-material/HomeWorkOutlined";
 import DirectionsCarFilledOutlinedIcon from "@mui/icons-material/DirectionsCarFilledOutlined";
@@ -38,6 +40,8 @@ import Footer from "./Footer";
 export default function SidBar() {
   const [openItems, setOpenItems] = useState({});
   const [checked, setChecked] = useState({ photo: false, force: false });
+  const [value, setValue] = useState(null);
+
 
   const handleClick = (item) => {
     setOpenItems((prev) => ({
@@ -52,16 +56,16 @@ export default function SidBar() {
       [event.target.name]: event.target.checked,
     });
   };
-  const handleDeleteClick  = ()=>{
-    setChecked((prevChecked)=>{
+  const handleDeleteClick = () => {
+    setChecked((prevChecked) => {
       const newChecked = {};
       Object.keys(prevChecked).forEach((key) => {
         newChecked[key] = false;
       });
-      return newChecked
-
-    })
-  }
+      return newChecked;
+    });
+  };
+ 
   return (
     <Container maxWidth="xl">
       <aside>
@@ -211,7 +215,8 @@ export default function SidBar() {
             </ListItem>
             <Collapse in={openItems["price"]} timeout="auto" unmountOnExit>
               <Box>
-
+                <Typography variant="body1">حداقل</Typography>
+                
               </Box>
             </Collapse>
             <Divider sx={{ width: "80%", marginTop: 2 }} />
@@ -232,7 +237,7 @@ export default function SidBar() {
               {(checked["photo"] || checked["force"]) &&
                 (openItems["status"] ? (
                   <Button
-                    onClick={handleDeleteClick  }
+                    onClick={handleDeleteClick}
                     sx={{
                       fontFamily: "IranYekan",
                       color: "#A62626",
