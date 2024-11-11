@@ -20,6 +20,7 @@ import {
   FormControlLabel,
   Switch,
   Autocomplete,
+  InputAdornment,
 } from "@mui/material";
 import HomeWorkOutlinedIcon from "@mui/icons-material/HomeWorkOutlined";
 import DirectionsCarFilledOutlinedIcon from "@mui/icons-material/DirectionsCarFilledOutlined";
@@ -40,6 +41,8 @@ import Footer from "./Footer";
 export default function SidBar() {
   const [openItems, setOpenItems] = useState({});
   const [checked, setChecked] = useState({ photo: false, force: false });
+  
+  const [inputValue,setInputValue] = useState('');
   
 
 
@@ -230,12 +233,20 @@ export default function SidBar() {
                 }}}
                 freeSolo
                 options={priceOptions}
+               inputValue={inputValue}
+               onInputChange={(event,newValue) =>{
+                setInputValue(newValue)
+               }}
+               forcePopupIcon= {!inputValue ? true : false}
                 renderInput={(params)=><TextField {...params} placeholder="وارد کردن مقدار دلخواه" sx={{
                   '& .MuiInputBase-input::placeholder' :{
                     fontFamily:'IranYekan',
                     fontSize:'12px'
                   }
-                }}/>}
+                }}
+                
+                
+                />}
                 />
                 
               </Box>
