@@ -41,8 +41,7 @@ import Footer from "./Footer";
 export default function SidBar() {
   const [openItems, setOpenItems] = useState({});
   const [checked, setChecked] = useState({ photo: false, force: false });
-  
-  const [inputValue,setInputValue] = useState('');
+  const [prices,setPrices] = useState({minPrice:'',maxPrice:''});
   
 
 
@@ -233,11 +232,11 @@ export default function SidBar() {
                 }}}
                 freeSolo
                 options={priceOptions}
-               inputValue={inputValue}
+               inputValue={prices.minPrice}
                onInputChange={(event,newValue) =>{
-                setInputValue(newValue)
+                setPrices({...prices,minPrice:newValue})
                }}
-               forcePopupIcon= {!inputValue ? true : false}
+               forcePopupIcon= {!prices.minPrice ? true : false}
                 renderInput={(params)=><TextField {...params} placeholder="وارد کردن مقدار دلخواه" sx={{
                   '& .MuiInputBase-input::placeholder' :{
                     fontFamily:'IranYekan',
