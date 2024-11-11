@@ -249,6 +249,39 @@ export default function SidBar() {
                 />
                 
               </Box>
+              <Box sx={{display:'flex',alignItems:'center',justifyContent:'space-around' ,width:'80%',marginTop:'10px'}}>
+                <Typography variant="body1" sx={{fontFamily:'IranYekan',fontSize:'12px'}}>حداکثر</Typography>
+                <Autocomplete
+                size="small"
+                sx={{width:'70%','& .MuiOutlinedInput-root':{
+                  '&.Mui-focused .MuiOutlinedInput-notchedOutline':{
+                    borderColor:'gray',
+                    border:"1px solid gray"
+                  },
+                  '&:hover .MuiOutlinedInput-notchedOutline': {
+                   borderColor: 'gray', 
+                   border:"1px solid gray"
+          }
+                }}}
+                freeSolo
+                options={priceOptions}
+               inputValue={prices.maxPrice}
+               onInputChange={(event,newValue) =>{
+                setPrices({...prices,maxPrice:newValue})
+               }}
+               forcePopupIcon= {!prices.maxPrice ? true : false}
+                renderInput={(params)=><TextField {...params} placeholder="وارد کردن مقدار دلخواه" sx={{
+                  '& .MuiInputBase-input::placeholder' :{
+                    fontFamily:'IranYekan',
+                    fontSize:'12px'
+                  }
+                }}
+                
+                
+                />}
+                />
+                
+              </Box>
             </Collapse>
             <Divider sx={{ width: "80%", marginTop: 2 }} />
             <ListItem
