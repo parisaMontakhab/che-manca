@@ -1,6 +1,6 @@
 
 export const priceOptions =[
-    { label: "وارد کردن مقدار دلخواه", value: "custom" },
+    
     { label: "10 هزار تومان", value: 10000 },
     { label: "25 هزار تومان", value: 25000 },
     { label: "50 هزار تومان", value: 50000 },

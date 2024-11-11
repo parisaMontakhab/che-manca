@@ -228,9 +228,14 @@ export default function SidBar() {
                    border:"1px solid gray"
           }
                 }}}
-                
+                freeSolo
                 options={priceOptions}
-                renderInput={(params)=><TextField {...params} placeholder="gheymat"/>}
+                renderInput={(params)=><TextField {...params} placeholder="وارد کردن مقدار دلخواه" sx={{
+                  '& .MuiInputBase-input::placeholder' :{
+                    fontFamily:'IranYekan',
+                    fontSize:'12px'
+                  }
+                }}/>}
                 />
                 
               </Box>
