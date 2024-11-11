@@ -228,7 +228,7 @@ export default function SidBar() {
                    border:"1px solid gray"
           }
                 }}}
-                freeSolo
+                
                 options={priceOptions}
                 renderInput={(params)=><TextField {...params} placeholder="gheymat"/>}
                 />
