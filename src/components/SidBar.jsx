@@ -214,8 +214,24 @@ export default function SidBar() {
               />
             </ListItem>
             <Collapse in={openItems["price"]} timeout="auto" unmountOnExit>
-              <Box>
-                <Typography variant="body1">حداقل</Typography>
+              <Box sx={{display:'flex',alignItems:'center',justifyContent:'space-around' ,width:'80%'}}>
+                <Typography variant="body1" sx={{fontFamily:'IranYekan',fontSize:'12px'}}>حداقل</Typography>
+                <Autocomplete
+                size="small"
+                sx={{width:'70%','& .MuiOutlinedInput-root':{
+                  '&.Mui-focused .MuiOutlinedInput-notchedOutline':{
+                    borderColor:'gray',
+                    border:"1px solid gray"
+                  },
+                  '&:hover .MuiOutlinedInput-notchedOutline': {
+                   borderColor: 'gray', 
+                   border:"1px solid gray"
+          }
+                }}}
+                freeSolo
+                options={priceOptions}
+                renderInput={(params)=><TextField {...params} placeholder="gheymat"/>}
+                />
                 
               </Box>
             </Collapse>
