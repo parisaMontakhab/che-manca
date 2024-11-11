@@ -40,7 +40,7 @@ import Footer from "./Footer";
 
 export default function SidBar() {
   const [openItems, setOpenItems] = useState({});
-  const [checked, setChecked] = useState({ photo: false, force: false });
+  const [checked, setChecked] = useState({ photo: false, force: false});
   const [prices,setPrices] = useState({minPrice:'',maxPrice:''});
   
 
@@ -58,7 +58,7 @@ export default function SidBar() {
       [event.target.name]: event.target.checked,
     });
   };
-  const handleDeleteClick = () => {
+  const handleDeletChecked = () => {
     setChecked((prevChecked) => {
       const newChecked = {};
       Object.keys(prevChecked).forEach((key) => {
@@ -67,6 +67,9 @@ export default function SidBar() {
       return newChecked;
     });
   };
+ const handleDeletPrice = ()=>{
+ setPrices({minPrice:'',maxPrice:''})
+ };
  
   return (
     <Container maxWidth="xl">
@@ -214,7 +217,30 @@ export default function SidBar() {
                 disableTypography
                 className="ads-sideBar_collapsText"
               />
+                {(prices.minPrice || prices.maxPrice) &&
+                (openItems["price"] ? (
+                  <Button
+                    onClick={handleDeletPrice}
+                    sx={{
+                      fontFamily: "IranYekan",
+                      color: "#A62626",
+                      marginLeft: "40px",
+                    }}
+                  >
+                    حذف
+                  </Button>
+                ) : (
+                  <FiberManualRecordRoundedIcon
+                    sx={{
+                      fontFamily: "IranYekan",
+                      color: "#A62626",
+                      marginLeft: "60px",
+                      fontSize: "12px",
+                    }}
+                  />
+                ))}
             </ListItem>
+          
             <Collapse in={openItems["price"]} timeout="auto" unmountOnExit>
               <Box sx={{display:'flex',alignItems:'center',justifyContent:'space-around' ,width:'80%'}}>
                 <Typography variant="body1" sx={{fontFamily:'IranYekan',fontSize:'12px'}}>حداقل</Typography>
@@ -235,6 +261,7 @@ export default function SidBar() {
                inputValue={prices.minPrice}
                onInputChange={(event,newValue) =>{
                 setPrices({...prices,minPrice:newValue})
+                
                }}
                forcePopupIcon= {!prices.minPrice ? true : false}
                 renderInput={(params)=><TextField {...params} placeholder="وارد کردن مقدار دلخواه" sx={{
@@ -301,7 +328,7 @@ export default function SidBar() {
               {(checked["photo"] || checked["force"]) &&
                 (openItems["status"] ? (
                   <Button
-                    onClick={handleDeleteClick}
+                    onClick={handleDeletChecked}
                     sx={{
                       fontFamily: "IranYekan",
                       color: "#A62626",
