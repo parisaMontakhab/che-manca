@@ -40,10 +40,8 @@ import Footer from "./Footer";
 
 export default function SidBar() {
   const [openItems, setOpenItems] = useState({});
-  const [checked, setChecked] = useState({ photo: false, force: false});
-  const [prices,setPrices] = useState({minPrice:'',maxPrice:''});
-  
-
+  const [checked, setChecked] = useState({ photo: false, force: false });
+  const [prices, setPrices] = useState({ minPrice: "", maxPrice: "" });
 
   const handleClick = (item) => {
     setOpenItems((prev) => ({
@@ -67,10 +65,10 @@ export default function SidBar() {
       return newChecked;
     });
   };
- const handleDeletPrice = ()=>{
- setPrices({minPrice:'',maxPrice:''})
- };
- 
+  const handleDeletPrice = () => {
+    setPrices({ minPrice: "", maxPrice: "" });
+  };
+
   return (
     <Container maxWidth="xl">
       <aside>
@@ -78,7 +76,7 @@ export default function SidBar() {
           <Typography sx={{ fontFamily: "IranYekan" }}>دسته ها</Typography>
           <List>
             <ListItem className="ads-sideBar__listItem">
-              <ListItemIcon className="ads-sideBar_itemIcon">
+              <ListItemIcon className="ads-sideBar__itemIcon">
                 <HomeWorkOutlinedIcon />
               </ListItemIcon>
               <ListItemText
@@ -88,7 +86,7 @@ export default function SidBar() {
               />
             </ListItem>
             <ListItem className="ads-sideBar__listItem">
-              <ListItemIcon className="ads-sideBar_itemIcon">
+              <ListItemIcon className="ads-sideBar__itemIcon">
                 <DirectionsCarFilledOutlinedIcon />
               </ListItemIcon>
               <ListItemText
@@ -98,7 +96,7 @@ export default function SidBar() {
               />
             </ListItem>
             <ListItem className="ads-sideBar__listItem">
-              <ListItemIcon className="ads-sideBar_itemIcon">
+              <ListItemIcon className="ads-sideBar__itemIcon">
                 <PhoneIphoneOutlinedIcon />
               </ListItemIcon>
               <ListItemText
@@ -108,7 +106,7 @@ export default function SidBar() {
               />
             </ListItem>
             <ListItem className="ads-sideBar__listItem">
-              <ListItemIcon className="ads-sideBar_itemIcon">
+              <ListItemIcon className="ads-sideBar__itemIcon">
                 <KitchenOutlinedIcon />
               </ListItemIcon>
               <ListItemText
@@ -118,7 +116,7 @@ export default function SidBar() {
               />
             </ListItem>
             <ListItem className="ads-sideBar__listItem">
-              <ListItemIcon className="ads-sideBar_itemIcon">
+              <ListItemIcon className="ads-sideBar__itemIcon">
                 <CleaningServicesOutlinedIcon />
               </ListItemIcon>
               <ListItemText
@@ -128,7 +126,7 @@ export default function SidBar() {
               />
             </ListItem>
             <ListItem className="ads-sideBar__listItem">
-              <ListItemIcon className="ads-sideBar_itemIcon">
+              <ListItemIcon className="ads-sideBar__itemIcon">
                 <WatchOutlinedIcon />
               </ListItemIcon>
               <ListItemText
@@ -138,7 +136,7 @@ export default function SidBar() {
               />
             </ListItem>
             <ListItem className="ads-sideBar__listItem">
-              <ListItemIcon className="ads-sideBar_itemIcon">
+              <ListItemIcon className="ads-sideBar__itemIcon">
                 <SportsTennisOutlinedIcon />
               </ListItemIcon>
               <ListItemText
@@ -148,7 +146,7 @@ export default function SidBar() {
               />
             </ListItem>
             <ListItem className="ads-sideBar__listItem">
-              <ListItemIcon className="ads-sideBar_itemIcon">
+              <ListItemIcon className="ads-sideBar__itemIcon">
                 <GroupsOutlinedIcon />
               </ListItemIcon>
               <ListItemText
@@ -158,7 +156,7 @@ export default function SidBar() {
               />
             </ListItem>
             <ListItem className="ads-sideBar__listItem">
-              <ListItemIcon className="ads-sideBar_itemIcon">
+              <ListItemIcon className="ads-sideBar__itemIcon">
                 <ChairAltOutlinedIcon />
               </ListItemIcon>
               <ListItemText
@@ -168,7 +166,7 @@ export default function SidBar() {
               />
             </ListItem>
             <ListItem className="ads-sideBar__listItem">
-              <ListItemIcon className="ads-sideBar_itemIcon">
+              <ListItemIcon className="ads-sideBar__itemIcon">
                 <BusinessCenterOutlinedIcon />
               </ListItemIcon>
               <ListItemText
@@ -183,9 +181,9 @@ export default function SidBar() {
               className="ads-sideBar__listItem"
             >
               {openItems["location"] ? (
-                <ExpandLess className="ads-sideBar_itemIcon" />
+                <ExpandLess className="ads-sideBar__itemIcon" />
               ) : (
-                <ExpandMore className="ads-sideBar_itemIcon" />
+                <ExpandMore className="ads-sideBar__itemIcon" />
               )}
               <ListItemText
                 primary="محل"
@@ -208,16 +206,16 @@ export default function SidBar() {
               className="ads-sideBar__listItem "
             >
               {openItems["price"] ? (
-                <ExpandLess className="ads-sideBar_itemIcon" />
+                <ExpandLess className="ads-sideBar__itemIcon" />
               ) : (
-                <ExpandMore className="ads-sideBar_itemIcon" />
+                <ExpandMore className="ads-sideBar__itemIcon" />
               )}
               <ListItemText
                 primary="قیمت"
                 disableTypography
                 className="ads-sideBar_collapsText"
               />
-                {(prices.minPrice || prices.maxPrice) &&
+              {(prices.minPrice || prices.maxPrice) &&
                 (openItems["price"] ? (
                   <Button
                     onClick={handleDeletPrice}
@@ -240,74 +238,108 @@ export default function SidBar() {
                   />
                 ))}
             </ListItem>
-          
+
             <Collapse in={openItems["price"]} timeout="auto" unmountOnExit>
-              <Box sx={{display:'flex',alignItems:'center',justifyContent:'space-around' ,width:'80%'}}>
-                <Typography variant="body1" sx={{fontFamily:'IranYekan',fontSize:'12px'}}>حداقل</Typography>
-                <Autocomplete
-                size="small"
-                sx={{width:'70%','& .MuiOutlinedInput-root':{
-                  '&.Mui-focused .MuiOutlinedInput-notchedOutline':{
-                    borderColor:'gray',
-                    border:"1px solid gray"
-                  },
-                  '&:hover .MuiOutlinedInput-notchedOutline': {
-                   borderColor: 'gray', 
-                   border:"1px solid gray"
-          }
-                }}}
-                freeSolo
-                options={priceOptions}
-               inputValue={prices.minPrice}
-               onInputChange={(event,newValue) =>{
-                setPrices({...prices,minPrice:newValue})
-                
-               }}
-               forcePopupIcon= {!prices.minPrice ? true : false}
-                renderInput={(params)=><TextField {...params} placeholder="وارد کردن مقدار دلخواه" sx={{
-                  '& .MuiInputBase-input::placeholder' :{
-                    fontFamily:'IranYekan',
-                    fontSize:'12px'
-                  }
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-around",
+                  width: "80%",
                 }}
-                
-                
-                />}
+              >
+                <Typography
+                  variant="body1"
+                  sx={{ fontFamily: "IranYekan", fontSize: "12px" }}
+                >
+                  حداقل
+                </Typography>
+                <Autocomplete
+                  size="small"
+                  sx={{
+                    width: "70%",
+                    "& .MuiOutlinedInput-root": {
+                      "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                        borderColor: "gray",
+                        border: "1px solid gray",
+                      },
+                      "&:hover .MuiOutlinedInput-notchedOutline": {
+                        borderColor: "gray",
+                        border: "1px solid gray",
+                      },
+                    },
+                  }}
+                  freeSolo
+                  options={priceOptions}
+                  inputValue={prices.minPrice}
+                  onInputChange={(event, newValue) => {
+                    setPrices({ ...prices, minPrice: newValue });
+                  }}
+                  forcePopupIcon={!prices.minPrice ? true : false}
+                  renderInput={(params) => (
+                    <TextField
+                      {...params}
+                      placeholder="وارد کردن مقدار دلخواه"
+                      sx={{
+                        "& .MuiInputBase-input::placeholder": {
+                          fontFamily: "IranYekan",
+                          fontSize: "12px",
+                        },
+                      }}
+                    />
+                  )}
                 />
-                
               </Box>
-              <Box sx={{display:'flex',alignItems:'center',justifyContent:'space-around' ,width:'80%',marginTop:'10px'}}>
-                <Typography variant="body1" sx={{fontFamily:'IranYekan',fontSize:'12px'}}>حداکثر</Typography>
-                <Autocomplete
-                size="small"
-                sx={{width:'70%','& .MuiOutlinedInput-root':{
-                  '&.Mui-focused .MuiOutlinedInput-notchedOutline':{
-                    borderColor:'gray',
-                    border:"1px solid gray"
-                  },
-                  '&:hover .MuiOutlinedInput-notchedOutline': {
-                   borderColor: 'gray', 
-                   border:"1px solid gray"
-          }
-                }}}
-                freeSolo
-                options={priceOptions}
-               inputValue={prices.maxPrice}
-               onInputChange={(event,newValue) =>{
-                setPrices({...prices,maxPrice:newValue})
-               }}
-               forcePopupIcon= {!prices.maxPrice ? true : false}
-                renderInput={(params)=><TextField {...params} placeholder="وارد کردن مقدار دلخواه" sx={{
-                  '& .MuiInputBase-input::placeholder' :{
-                    fontFamily:'IranYekan',
-                    fontSize:'12px'
-                  }
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-around",
+                  width: "80%",
+                  marginTop: "10px",
                 }}
-                
-                
-                />}
+              >
+                <Typography
+                  variant="body1"
+                  sx={{ fontFamily: "IranYekan", fontSize: "12px" }}
+                >
+                  حداکثر
+                </Typography>
+                <Autocomplete
+                  size="small"
+                  sx={{
+                    width: "70%",
+                    "& .MuiOutlinedInput-root": {
+                      "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                        borderColor: "gray",
+                        border: "1px solid gray",
+                      },
+                      "&:hover .MuiOutlinedInput-notchedOutline": {
+                        borderColor: "gray",
+                        border: "1px solid gray",
+                      },
+                    },
+                  }}
+                  freeSolo
+                  options={priceOptions}
+                  inputValue={prices.maxPrice}
+                  onInputChange={(event, newValue) => {
+                    setPrices({ ...prices, maxPrice: newValue });
+                  }}
+                  forcePopupIcon={!prices.maxPrice ? true : false}
+                  renderInput={(params) => (
+                    <TextField
+                      {...params}
+                      placeholder="وارد کردن مقدار دلخواه"
+                      sx={{
+                        "& .MuiInputBase-input::placeholder": {
+                          fontFamily: "IranYekan",
+                          fontSize: "12px",
+                        },
+                      }}
+                    />
+                  )}
                 />
-                
               </Box>
             </Collapse>
             <Divider sx={{ width: "80%", marginTop: 2 }} />
@@ -316,9 +348,9 @@ export default function SidBar() {
               className="ads-sideBar__listItem "
             >
               {openItems["status"] ? (
-                <ExpandLess className="ads-sideBar_itemIcon" />
+                <ExpandLess className="ads-sideBar__itemIcon" />
               ) : (
-                <ExpandMore className="ads-sideBar_itemIcon" />
+                <ExpandMore className="ads-sideBar__itemIcon" />
               )}
               <ListItemText
                 primary="وضعیت آگهی"
