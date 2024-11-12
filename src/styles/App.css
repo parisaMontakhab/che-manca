@@ -104,7 +104,7 @@
   color: gray;
   margin-left: 8px;
 }
-.ads-navBar-saveaAdsBtn {
+.ads-navBar__adsBtn {
   display: flex;
   align-items: center !important;
   padding-left: 16px !important;
@@ -115,7 +115,7 @@
   color: #ffc107 !important;
   font-family: "IranYekan", sans-serif !important;
 }
-.ads-navBar-saveaAdsBtn:hover {
+.ads-navBar__adsBtn:hover {
   background-color: #292778 !important ;
 }
 

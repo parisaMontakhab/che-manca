@@ -63,7 +63,7 @@ export default function NavBar() {
                   <LanguageRoundedIcon sx={{ margin: 0.5, fontSize: 20 }} />
                   Fa
                 </Button>
-                <Button className="ads-navBar-saveaAdsBtn">ثبت آگهی</Button>
+                <Button className="ads-navBar__adsBtn">ثبت آگهی</Button>
               </Box>
             </Toolbar>
           </AppBar>
