@@ -23,7 +23,7 @@
   color: gray;
   font-family: "IranYekan", sans-serif !important;
 }
-.homePage-cityBox {
+.homePage__cityBox {
   border-bottom: 1px solid gray !important;
   padding-bottom: 1rem;
 }
