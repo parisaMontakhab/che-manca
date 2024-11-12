@@ -126,7 +126,7 @@
   margin-top: 6%;
   width: 25%;
 }
-.ads-sideBar_listItem {
+.ads-sideBar__listItem {
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -146,8 +146,8 @@
   text-align: right;
   color: gray !important;
 }
-.ads-sideBar_listItem:hover .ads-sideBar_itemIcon,
-.ads-sideBar_listItem:hover .ads-sideBar_itemText {
+.ads-sideBar__listItem:hover .ads-sideBar_itemIcon,
+.ads-sideBar__listItem:hover .ads-sideBar_itemText {
   color: #575656 !important;
   font-weight: 700;
 }

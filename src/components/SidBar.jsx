@@ -77,7 +77,7 @@ export default function SidBar() {
         <Box component="div" className="ads-sideBar">
           <Typography sx={{ fontFamily: "IranYekan" }}>دسته ها</Typography>
           <List>
-            <ListItem className="ads-sideBar_listItem">
+            <ListItem className="ads-sideBar__listItem">
               <ListItemIcon className="ads-sideBar_itemIcon">
                 <HomeWorkOutlinedIcon />
               </ListItemIcon>
@@ -87,7 +87,7 @@ export default function SidBar() {
                 className="ads-sideBar_itemText"
               />
             </ListItem>
-            <ListItem className="ads-sideBar_listItem">
+            <ListItem className="ads-sideBar__listItem">
               <ListItemIcon className="ads-sideBar_itemIcon">
                 <DirectionsCarFilledOutlinedIcon />
               </ListItemIcon>
@@ -97,7 +97,7 @@ export default function SidBar() {
                 className="ads-sideBar_itemText"
               />
             </ListItem>
-            <ListItem className="ads-sideBar_listItem">
+            <ListItem className="ads-sideBar__listItem">
               <ListItemIcon className="ads-sideBar_itemIcon">
                 <PhoneIphoneOutlinedIcon />
               </ListItemIcon>
@@ -107,7 +107,7 @@ export default function SidBar() {
                 className="ads-sideBar_itemText"
               />
             </ListItem>
-            <ListItem className="ads-sideBar_listItem">
+            <ListItem className="ads-sideBar__listItem">
               <ListItemIcon className="ads-sideBar_itemIcon">
                 <KitchenOutlinedIcon />
               </ListItemIcon>
@@ -117,7 +117,7 @@ export default function SidBar() {
                 className="ads-sideBar_itemText"
               />
             </ListItem>
-            <ListItem className="ads-sideBar_listItem">
+            <ListItem className="ads-sideBar__listItem">
               <ListItemIcon className="ads-sideBar_itemIcon">
                 <CleaningServicesOutlinedIcon />
               </ListItemIcon>
@@ -127,7 +127,7 @@ export default function SidBar() {
                 className="ads-sideBar_itemText"
               />
             </ListItem>
-            <ListItem className="ads-sideBar_listItem">
+            <ListItem className="ads-sideBar__listItem">
               <ListItemIcon className="ads-sideBar_itemIcon">
                 <WatchOutlinedIcon />
               </ListItemIcon>
@@ -137,7 +137,7 @@ export default function SidBar() {
                 className="ads-sideBar_itemText"
               />
             </ListItem>
-            <ListItem className="ads-sideBar_listItem">
+            <ListItem className="ads-sideBar__listItem">
               <ListItemIcon className="ads-sideBar_itemIcon">
                 <SportsTennisOutlinedIcon />
               </ListItemIcon>
@@ -147,7 +147,7 @@ export default function SidBar() {
                 className="ads-sideBar_itemText"
               />
             </ListItem>
-            <ListItem className="ads-sideBar_listItem">
+            <ListItem className="ads-sideBar__listItem">
               <ListItemIcon className="ads-sideBar_itemIcon">
                 <GroupsOutlinedIcon />
               </ListItemIcon>
@@ -157,7 +157,7 @@ export default function SidBar() {
                 className="ads-sideBar_itemText"
               />
             </ListItem>
-            <ListItem className="ads-sideBar_listItem">
+            <ListItem className="ads-sideBar__listItem">
               <ListItemIcon className="ads-sideBar_itemIcon">
                 <ChairAltOutlinedIcon />
               </ListItemIcon>
@@ -167,7 +167,7 @@ export default function SidBar() {
                 className="ads-sideBar_itemText"
               />
             </ListItem>
-            <ListItem className="ads-sideBar_listItem">
+            <ListItem className="ads-sideBar__listItem">
               <ListItemIcon className="ads-sideBar_itemIcon">
                 <BusinessCenterOutlinedIcon />
               </ListItemIcon>
@@ -180,7 +180,7 @@ export default function SidBar() {
             <Divider sx={{ width: "80%" }} />
             <ListItem
               onClick={() => handleClick("location")}
-              className="ads-sideBar_listItem"
+              className="ads-sideBar__listItem"
             >
               {openItems["location"] ? (
                 <ExpandLess className="ads-sideBar_itemIcon" />
@@ -205,7 +205,7 @@ export default function SidBar() {
             <Divider sx={{ width: "80%", marginTop: 2 }} />
             <ListItem
               onClick={() => handleClick("price")}
-              className="ads-sideBar_listItem"
+              className="ads-sideBar__listItem "
             >
               {openItems["price"] ? (
                 <ExpandLess className="ads-sideBar_itemIcon" />
@@ -313,7 +313,7 @@ export default function SidBar() {
             <Divider sx={{ width: "80%", marginTop: 2 }} />
             <ListItem
               onClick={() => handleClick("status")}
-              className="ads-sideBar_listItem"
+              className="ads-sideBar__listItem "
             >
               {openItems["status"] ? (
                 <ExpandLess className="ads-sideBar_itemIcon" />
