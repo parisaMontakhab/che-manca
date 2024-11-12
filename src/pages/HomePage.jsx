@@ -24,7 +24,7 @@ export default function HomePage() {
           <Box display="flex" justifyContent="center" alignItems="center" p={2}>
             <img src={logo} alt="chemanca-logo" className="homePage-logo" />
           </Box>
-          <nav className="homePage-menu">
+          <nav className="homePage__menu">
             <Grid2 container spacing={6}>
               <Grid2>
                 <Link href="#" color="inherit" underline="none">
@@ -82,7 +82,7 @@ export default function HomePage() {
             ))}
           </Grid2>
         </Box>
-        <footer style={{marginTop:'100px'}}>
+        <footer style={{ marginTop: "100px" }}>
           <Footer />
         </footer>
       </Container>

@@ -5,7 +5,7 @@
   height: auto;
 }
 
-.homePage-menu {
+.homePage__menu {
   display: grid;
   justify-content: center;
   justify-items: center;
