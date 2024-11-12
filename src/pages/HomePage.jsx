@@ -55,10 +55,10 @@ export default function HomePage() {
           </nav>
         </header>
         <Box textAlign="center" my={2}>
-          <Typography className="homePage-description" variant="body1">
+          <Typography className="homePage__description" variant="body1">
             بزرگترین ، ﭘﺎﯾﮕﺎه ﺧﺮﯾﺪ و ﻓﺮوش ﺑﯽ‌واﺳﻄﻪ‌!
           </Typography>
-          <Typography className="homePage-description" variant="body1">
+          <Typography className="homePage__description" variant="body1">
             اﮔﻪ دﻧﺒﺎل ﭼﯿﺰی ﻫﺴﺘﯽ، ﺷﻬﺮت رو اﻧﺘﺨﺎب ﮐﻦ و ﺗﻮ دﺳﺘﻪ‌ﺑﻨﺪی‌ﻫﺎ ﺑﻪ دﻧﺒﺎﻟﺶ
             ﺑﮕﺮد. اﮔﺮ ﻫﻢ ﻣﯽ‌ﺧﻮای ﭼﯿﺰی ﺑﻔﺮوﺷﯽ، ﭼﻨﺪ ﺗﺎ ﻋﮑﺲ ﺧﻮب ازش ﺑﮕﯿﺮ و آﮔﻬﯿﺖ رو
             ﺑﭽﺴﺒﻮن ﺑﻪ ما.
@@ -66,7 +66,7 @@ export default function HomePage() {
         </Box>
         <LocationSearch cities={cities} />
         <Box className="homePage-cityBox">
-          <Typography variant="h6" className="homePage-description" my={4}>
+          <Typography variant="h6" className="homePage__description" my={4}>
             شهرهای پربازدید
           </Typography>
           <Grid2
