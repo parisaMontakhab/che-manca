@@ -166,7 +166,7 @@
   border-color: gray !important;
   background-color: transparent !important;
 }
-.ads-sideBar_collapsText {
+.ads-sideBar__collapsText {
   font-family: "IranYekan";
   font-weight: 600;
   display: inline;

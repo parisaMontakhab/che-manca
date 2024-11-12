@@ -188,7 +188,7 @@ export default function SidBar() {
               <ListItemText
                 primary="محل"
                 disableTypography
-                className="ads-sideBar_collapsText"
+                className="ads-sideBar__collapsText"
               />
             </ListItem>
             <Collapse in={openItems["location"]} timeout="auto" unmountOnExit>
@@ -213,7 +213,7 @@ export default function SidBar() {
               <ListItemText
                 primary="قیمت"
                 disableTypography
-                className="ads-sideBar_collapsText"
+                className="ads-sideBar__collapsText"
               />
               {(prices.minPrice || prices.maxPrice) &&
                 (openItems["price"] ? (
@@ -355,7 +355,7 @@ export default function SidBar() {
               <ListItemText
                 primary="وضعیت آگهی"
                 disableTypography
-                className="ads-sideBar_collapsText"
+                className="ads-sideBar__collapsText"
               />
               {(checked["photo"] || checked["force"]) &&
                 (openItems["status"] ? (
