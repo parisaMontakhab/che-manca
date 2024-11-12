@@ -151,7 +151,7 @@
   font-weight: 700;
 }
 
-.ads-sideBar_btn {
+.ads-sideBar__btn {
   font-family: "IranYekan", sans-serif !important;
   font-size: 12px !important;
   color: gray !important;
@@ -162,7 +162,7 @@
   width: 100%;
   max-width: 80%;
 }
-.ads-sideBar_btn:hover {
+.ads-sideBar__btn:hover {
   border-color: gray !important;
   background-color: transparent !important;
 }
