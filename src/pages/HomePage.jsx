@@ -77,7 +77,7 @@ export default function HomePage() {
           >
             {cities.map((city) => (
               <Grid2 key={city}>
-                <Typography className="homePage-cityItem">{city}</Typography>
+                <Typography className="homePage__cityItem">{city}</Typography>
               </Grid2>
             ))}
           </Grid2>
