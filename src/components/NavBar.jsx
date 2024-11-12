@@ -24,7 +24,7 @@ export default function NavBar() {
         <Box display="flex">
           <AppBar position="fixed" className="ads-navBar">
             <Toolbar>
-              <img src={logo} alt="logo image" className="ads-navBar_logo" />
+              <img src={logo} alt="logo image" className="ads-navBar__logo" />
 
               <Button className="ads-navBar_btn">
                 <LocationOnRoundedIcon sx={{ margin: 0.5, fontSize: 20 }} />
