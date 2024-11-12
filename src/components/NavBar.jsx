@@ -40,7 +40,7 @@ export default function NavBar() {
                   placeholder="جستجو در همهٔ  آگهی‌ها"
                   className="ads-navBar__searchInput"
                 />
-                <SearchIcon className="ads-navBar_searchIcon" />
+                <SearchIcon className="ads-navBar__searchIcon" />
               </Box>
               <Box sx={{ marginRight: 18 }}>
                 <Button className="ads-navBar__btn">
