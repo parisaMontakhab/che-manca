@@ -26,11 +26,11 @@ export default function NavBar() {
             <Toolbar>
               <img src={logo} alt="logo image" className="ads-navBar__logo" />
 
-              <Button className="ads-navBar_btn">
+              <Button className="ads-navBar__btn">
                 <LocationOnRoundedIcon sx={{ margin: 0.5, fontSize: 20 }} />
                 تهران
               </Button>
-              <Button className="ads-navBar_btn">
+              <Button className="ads-navBar__btn">
                 دسته ها
                 <ArrowDropDownRoundedIcon sx={{ margin: 0.5, fontSize: 22 }} />
               </Button>
@@ -43,23 +43,23 @@ export default function NavBar() {
                 <SearchIcon className="ads-navBar_searchIcon" />
               </Box>
               <Box sx={{ marginRight: 18 }}>
-                <Button className="ads-navBar_btn">
+                <Button className="ads-navBar__btn">
                   <PersonOutlineRoundedIcon
                     sx={{ margin: 0.5, fontSize: 20 }}
                   />
                   دیوار من
                 </Button>
-                <Button className="ads-navBar_btn">
+                <Button className="ads-navBar__btn">
                   <ChatBubbleOutlineRoundedIcon
                     sx={{ margin: 0.5, fontSize: 20 }}
                   />
                   چت
                 </Button>
-                <Button className="ads-navBar_btn">
+                <Button className="ads-navBar__btn">
                   <SupportRoundedIcon sx={{ margin: 0.5, fontSize: 20 }} />
                   پشتیبانی
                 </Button>
-                <Button className="ads-navBar_btn">
+                <Button className="ads-navBar__btn">
                   <LanguageRoundedIcon sx={{ margin: 0.5, fontSize: 20 }} />
                   Fa
                 </Button>
