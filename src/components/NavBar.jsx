@@ -35,7 +35,7 @@ export default function NavBar() {
                 <ArrowDropDownRoundedIcon sx={{ margin: 0.5, fontSize: 22 }} />
               </Button>
 
-              <Box component="div" className="ads-navBar_searchBox">
+              <Box component="div" className="ads-navBar__searchBox">
                 <InputBase
                   placeholder="جستجو در همهٔ  آگهی‌ها"
                   className="ads-navBar_searchInput"

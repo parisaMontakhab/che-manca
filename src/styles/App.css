@@ -85,7 +85,7 @@
 .ads-navBar_input {
   width: 25%;
 }
-.ads-navBar_searchBox {
+.ads-navBar__searchBox {
   display: flex;
   align-items: center;
   width: 100%;
