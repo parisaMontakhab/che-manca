@@ -82,7 +82,7 @@ export default function SidBar() {
               <ListItemText
                 primary="املاک"
                 disableTypography
-                className="ads-sideBar_itemText"
+                className="ads-sideBar__itemText"
               />
             </ListItem>
             <ListItem className="ads-sideBar__listItem">
@@ -92,7 +92,7 @@ export default function SidBar() {
               <ListItemText
                 primary="وسایل نقلیه"
                 disableTypography
-                className="ads-sideBar_itemText"
+                className="ads-sideBar__itemText"
               />
             </ListItem>
             <ListItem className="ads-sideBar__listItem">
@@ -102,7 +102,7 @@ export default function SidBar() {
               <ListItemText
                 primary="کالای دیجیتال"
                 disableTypography
-                className="ads-sideBar_itemText"
+                className="ads-sideBar__itemText"
               />
             </ListItem>
             <ListItem className="ads-sideBar__listItem">
@@ -112,7 +112,7 @@ export default function SidBar() {
               <ListItemText
                 primary="خانه و آشپزخانه"
                 disableTypography
-                className="ads-sideBar_itemText"
+                className="ads-sideBar__itemText"
               />
             </ListItem>
             <ListItem className="ads-sideBar__listItem">
@@ -122,7 +122,7 @@ export default function SidBar() {
               <ListItemText
                 primary="خدمات"
                 disableTypography
-                className="ads-sideBar_itemText"
+                className="ads-sideBar__itemText"
               />
             </ListItem>
             <ListItem className="ads-sideBar__listItem">
@@ -132,7 +132,7 @@ export default function SidBar() {
               <ListItemText
                 primary="وسایل شخصی"
                 disableTypography
-                className="ads-sideBar_itemText"
+                className="ads-sideBar__itemText"
               />
             </ListItem>
             <ListItem className="ads-sideBar__listItem">
@@ -142,7 +142,7 @@ export default function SidBar() {
               <ListItemText
                 primary=" سرگرمی و فراغت"
                 disableTypography
-                className="ads-sideBar_itemText"
+                className="ads-sideBar__itemText"
               />
             </ListItem>
             <ListItem className="ads-sideBar__listItem">
@@ -152,7 +152,7 @@ export default function SidBar() {
               <ListItemText
                 primary="اجتماعی"
                 disableTypography
-                className="ads-sideBar_itemText"
+                className="ads-sideBar__itemText"
               />
             </ListItem>
             <ListItem className="ads-sideBar__listItem">
@@ -162,7 +162,7 @@ export default function SidBar() {
               <ListItemText
                 primary=" تجهیزات و صنعتی"
                 disableTypography
-                className="ads-sideBar_itemText"
+                className="ads-sideBar__itemText"
               />
             </ListItem>
             <ListItem className="ads-sideBar__listItem">
@@ -172,7 +172,7 @@ export default function SidBar() {
               <ListItemText
                 primary="استخدام و کاریابی"
                 disableTypography
-                className="ads-sideBar_itemText"
+                className="ads-sideBar__itemText"
               />
             </ListItem>
             <Divider sx={{ width: "80%" }} />
