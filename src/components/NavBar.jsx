@@ -22,48 +22,48 @@ export default function NavBar() {
     <Container>
       <header>
         <Box display="flex">
-          <AppBar position="fixed" className="ads-bar">
+          <AppBar position="fixed" className="ads-navBar">
             <Toolbar>
-              <img src={logo} alt="logo image" className="ads-bar_logo" />
+              <img src={logo} alt="logo image" className="ads-navBar_logo" />
 
-              <Button className="ads-bar_btn">
+              <Button className="ads-navBar_btn">
                 <LocationOnRoundedIcon sx={{ margin: 0.5, fontSize: 20 }} />
                 تهران
               </Button>
-              <Button className="ads-bar_btn">
+              <Button className="ads-navBar_btn">
                 دسته ها
                 <ArrowDropDownRoundedIcon sx={{ margin: 0.5, fontSize: 22 }} />
               </Button>
 
-              <Box component="div" className="ads-bar_searchBox">
+              <Box component="div" className="ads-navBar_searchBox">
                 <InputBase
                   placeholder="جستجو در همهٔ  آگهی‌ها"
-                  className="ads-bar_searchInput"
+                  className="ads-navBar_searchInput"
                 />
-                <SearchIcon className="ads-bar_searchIcon" />
+                <SearchIcon className="ads-navBar_searchIcon" />
               </Box>
               <Box sx={{ marginRight: 18 }}>
-                <Button className="ads-bar_btn">
+                <Button className="ads-navBar_btn">
                   <PersonOutlineRoundedIcon
                     sx={{ margin: 0.5, fontSize: 20 }}
                   />
                   دیوار من
                 </Button>
-                <Button className="ads-bar_btn">
+                <Button className="ads-navBar_btn">
                   <ChatBubbleOutlineRoundedIcon
                     sx={{ margin: 0.5, fontSize: 20 }}
                   />
                   چت
                 </Button>
-                <Button className="ads-bar_btn">
+                <Button className="ads-navBar_btn">
                   <SupportRoundedIcon sx={{ margin: 0.5, fontSize: 20 }} />
                   پشتیبانی
                 </Button>
-                <Button className="ads-bar_btn">
+                <Button className="ads-navBar_btn">
                   <LanguageRoundedIcon sx={{ margin: 0.5, fontSize: 20 }} />
                   Fa
                 </Button>
-                <Button className="ads-bar-saveaAdsBtn">ثبت آگهی</Button>
+                <Button className="ads-navBar-saveaAdsBtn">ثبت آگهی</Button>
               </Box>
             </Toolbar>
           </AppBar>
