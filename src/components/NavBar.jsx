@@ -38,7 +38,7 @@ export default function NavBar() {
               <Box component="div" className="ads-navBar__searchBox">
                 <InputBase
                   placeholder="جستجو در همهٔ  آگهی‌ها"
-                  className="ads-navBar_searchInput"
+                  className="ads-navBar__searchInput"
                 />
                 <SearchIcon className="ads-navBar_searchIcon" />
               </Box>
