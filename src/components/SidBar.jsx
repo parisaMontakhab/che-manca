@@ -371,12 +371,7 @@ export default function SidBar() {
             <Divider sx={{ width: "80%", marginTop: 2 }} />
           </List>
           <nav
-            style={{
-              fontSize: "14px",
-              color: "gray",
-              maxWidth: "80%",
-              marginTop: 10,
-            }}
+           className="ads-sideBar__nav"
           >
             <Grid2
               container
@@ -419,12 +414,7 @@ export default function SidBar() {
           <Divider sx={{ width: "80%", marginTop: 2 }} />
 
           <footer
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              maxWidth: "80%",
-              marginTop: "20px",
-            }}
+           className="ads-sideBar__footer"
           >
             <Footer />
           </footer>

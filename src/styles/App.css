@@ -216,3 +216,15 @@ font-family: "IranYekan" !important;
   font-family: "IranYekan";
   font-size: 12px;
 }
+.ads-sideBar__nav {
+  font-size: 14px;
+  color: gray;
+  max-width: 80%;
+  margin-top: 10px,
+}
+.ads-sideBar__footer{
+  display: flex;
+  justify-content: center;
+  max-width: 80%;
+  margin-top: 20px;
+}
