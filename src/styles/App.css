@@ -216,6 +216,28 @@ font-family: "IranYekan" !important;
   font-family: "IranYekan";
   font-size: 12px;
 }
+
+.ads-sideBar__swichStatus {
+  display: flex;
+  justify-content: space-between;
+  direction: ltr;
+  width: 80%;
+
+}
+
+.ads-sideBar__swichStatus .MuiSwitch-switchBase.Mui-checked {
+  color: #A62626;
+}
+
+.ads-sideBar__swichStatus
+  .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track {
+  background-color: #A62626;
+}
+
+
+
+
+
 .ads-sideBar__nav {
   font-size: 14px;
   color: gray;

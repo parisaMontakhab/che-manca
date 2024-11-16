@@ -312,16 +312,7 @@ export default function SidBar() {
             <Collapse in={openItems["status"]} timeout="auto" unmountOnExit>
               <FormGroup>
                 <FormControlLabel
-                  sx={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    direction: "ltr",
-                    width: "80%",
-                    "& .MuiSwitch-switchBase.Mui-checked": { color: "#A62626" },
-                    "& .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track": {
-                      backgroundColor: "#A62626",
-                    },
-                  }}
+                 className="ads-sideBar__swichStatus"
                   label={
                     <Typography
                     className="ads-sideBar__priceBox__title"
@@ -338,16 +329,7 @@ export default function SidBar() {
                   }
                 />
                 <FormControlLabel
-                  sx={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    direction: "ltr",
-                    width: "80%",
-                    "& .MuiSwitch-switchBase.Mui-checked": { color: "#A62626" },
-                    "& .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track": {
-                      backgroundColor: "#A62626",
-                    },
-                  }}
+                 className="ads-sideBar__swichStatus"
                   label={
                     <Typography
                       sx={{
