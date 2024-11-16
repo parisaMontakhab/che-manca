@@ -225,12 +225,7 @@ export default function SidBar() {
                   </Button>
                 ) : (
                   <FiberManualRecordRoundedIcon
-                    sx={{
-                      fontFamily: "IranYekan",
-                      color: "#A62626",
-                      marginLeft: "60px",
-                      fontSize: "12px",
-                    }}
+                   className="ads-sideBar__deletIcon"
                   />
                 ))}
             </ListItem>
@@ -363,12 +358,7 @@ export default function SidBar() {
                   </Button>
                 ) : (
                   <FiberManualRecordRoundedIcon
-                    sx={{
-                      fontFamily: "IranYekan",
-                      color: "#A62626",
-                      marginLeft: "60px",
-                      fontSize: "12px",
-                    }}
+                   className="ads-sideBar__deletIcon"
                   />
                 ))}
             </ListItem>
