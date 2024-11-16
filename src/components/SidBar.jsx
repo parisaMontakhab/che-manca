@@ -195,7 +195,7 @@ export default function SidBar() {
               <Button
                 endIcon={<KeyboardArrowLeftRoundedIcon />}
                 fullWidth
-                className="ads-sideBar__btn"
+                className="ads-sideBar__locBtn"
               >
                 تعیین محل
               </Button>
