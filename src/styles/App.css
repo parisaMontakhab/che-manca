@@ -172,3 +172,9 @@
   display: inline;
   text-align: right;
 }
+
+.ads-sideBar__deletBtn{
+  font-family: "IranYekan" !important;
+  color: #A62626 !important;
+  margin-left: 40px !important;
+}

@@ -219,11 +219,7 @@ export default function SidBar() {
                 (openItems["price"] ? (
                   <Button
                     onClick={handleDeletPrice}
-                    sx={{
-                      fontFamily: "IranYekan",
-                      color: "#A62626",
-                      marginLeft: "40px",
-                    }}
+                  className="ads-sideBar__deletBtn"
                   >
                     حذف
                   </Button>
@@ -361,11 +357,7 @@ export default function SidBar() {
                 (openItems["status"] ? (
                   <Button
                     onClick={handleDeletChecked}
-                    sx={{
-                      fontFamily: "IranYekan",
-                      color: "#A62626",
-                      marginLeft: "40px",
-                    }}
+                   className="ads-sideBar__deletBtn"
                   >
                     حذف
                   </Button>
