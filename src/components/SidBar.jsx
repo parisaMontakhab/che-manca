@@ -324,10 +324,7 @@ export default function SidBar() {
                   }}
                   label={
                     <Typography
-                      sx={{
-                        fontFamily: "IranYekan",
-                        fontSize: "12px",
-                      }}
+                    className="ads-sideBar__priceBox__title"
                     >
                       عکس دار
                     </Typography>
