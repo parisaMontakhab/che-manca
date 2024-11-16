@@ -332,10 +332,7 @@ export default function SidBar() {
                  className="ads-sideBar__swichStatus"
                   label={
                     <Typography
-                      sx={{
-                        fontFamily: "IranYekan",
-                        fontSize: "12px",
-                      }}
+                     className="ads-sideBar__priceBox__title "
                     >
                       فوری
                     </Typography>
