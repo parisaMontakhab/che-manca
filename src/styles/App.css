@@ -192,3 +192,22 @@
   width: 80% !important;
   margin-bottom: 10px;
 }
+
+.ads-sideBar__priceBox__title {
+font-family: "IranYekan" !important;
+ font-size: 12px !important;
+}
+
+.ads-sideBar__priceAutocomplete{
+  width: 70%;
+}
+
+.ads-sideBar__priceAutocomplete .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+  border-color: gray;
+  border: 1px solid gray;
+}
+
+.ads-sideBar__priceAutocomplete .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: gray;
+  border: 1px solid gray;
+}

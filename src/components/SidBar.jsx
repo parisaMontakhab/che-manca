@@ -219,42 +219,26 @@ export default function SidBar() {
                 (openItems["price"] ? (
                   <Button
                     onClick={handleDeletPrice}
-                  className="ads-sideBar__deletBtn"
+                    className="ads-sideBar__deletBtn"
                   >
                     حذف
                   </Button>
                 ) : (
-                  <FiberManualRecordRoundedIcon
-                   className="ads-sideBar__deletIcon"
-                  />
+                  <FiberManualRecordRoundedIcon className="ads-sideBar__deletIcon" />
                 ))}
             </ListItem>
 
             <Collapse in={openItems["price"]} timeout="auto" unmountOnExit>
-              <Box
-              className="ads-sideBar__priceBox"
-              >
+              <Box className="ads-sideBar__priceBox">
                 <Typography
                   variant="body1"
-                  sx={{ fontFamily: "IranYekan", fontSize: "12px" }}
+                  className="ads-sideBar__priceBox__title"
                 >
                   حداقل
                 </Typography>
                 <Autocomplete
                   size="small"
-                  sx={{
-                    width: "70%",
-                    "& .MuiOutlinedInput-root": {
-                      "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-                        borderColor: "gray",
-                        border: "1px solid gray",
-                      },
-                      "&:hover .MuiOutlinedInput-notchedOutline": {
-                        borderColor: "gray",
-                        border: "1px solid gray",
-                      },
-                    },
-                  }}
+                  className="ads-sideBar__priceAutocomplete"
                   freeSolo
                   options={priceOptions}
                   inputValue={prices.minPrice}
@@ -276,30 +260,16 @@ export default function SidBar() {
                   )}
                 />
               </Box>
-              <Box
-              className="ads-sideBar__priceBox"
-              >
+              <Box className="ads-sideBar__priceBox">
                 <Typography
                   variant="body1"
-                  sx={{ fontFamily: "IranYekan", fontSize: "12px" }}
+                  className="ads-sideBar__priceBox__title"
                 >
                   حداکثر
                 </Typography>
                 <Autocomplete
                   size="small"
-                  sx={{
-                    width: "70%",
-                    "& .MuiOutlinedInput-root": {
-                      "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-                        borderColor: "gray",
-                        border: "1px solid gray",
-                      },
-                      "&:hover .MuiOutlinedInput-notchedOutline": {
-                        borderColor: "gray",
-                        border: "1px solid gray",
-                      },
-                    },
-                  }}
+                  className="ads-sideBar__priceAutocomplete"
                   freeSolo
                   options={priceOptions}
                   inputValue={prices.maxPrice}
@@ -341,14 +311,12 @@ export default function SidBar() {
                 (openItems["status"] ? (
                   <Button
                     onClick={handleDeletChecked}
-                   className="ads-sideBar__deletBtn"
+                    className="ads-sideBar__deletBtn"
                   >
                     حذف
                   </Button>
                 ) : (
-                  <FiberManualRecordRoundedIcon
-                   className="ads-sideBar__deletIcon"
-                  />
+                  <FiberManualRecordRoundedIcon className="ads-sideBar__deletIcon" />
                 ))}
             </ListItem>
             <Collapse in={openItems["status"]} timeout="auto" unmountOnExit>
