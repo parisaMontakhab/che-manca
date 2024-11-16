@@ -232,12 +232,7 @@ export default function SidBar() {
 
             <Collapse in={openItems["price"]} timeout="auto" unmountOnExit>
               <Box
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "space-around",
-                  width: "80%",
-                }}
+              className="ads-sideBar__priceBox"
               >
                 <Typography
                   variant="body1"
@@ -282,13 +277,7 @@ export default function SidBar() {
                 />
               </Box>
               <Box
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "space-around",
-                  width: "80%",
-                  marginTop: "10px",
-                }}
+              className="ads-sideBar__priceBox"
               >
                 <Typography
                   variant="body1"
