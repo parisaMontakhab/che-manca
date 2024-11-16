@@ -211,3 +211,8 @@ font-family: "IranYekan" !important;
   border-color: gray;
   border: 1px solid gray;
 }
+
+.ads-sideBar_priceSpan .MuiInputBase-input::placeholder {
+  font-family: "IranYekan";
+  font-size: 12px;
+}

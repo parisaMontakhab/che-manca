@@ -250,12 +250,7 @@ export default function SidBar() {
                     <TextField
                       {...params}
                       placeholder="وارد کردن مقدار دلخواه"
-                      sx={{
-                        "& .MuiInputBase-input::placeholder": {
-                          fontFamily: "IranYekan",
-                          fontSize: "12px",
-                        },
-                      }}
+                     className="ads-sideBar_priceSpan"
                     />
                   )}
                 />
@@ -281,12 +276,7 @@ export default function SidBar() {
                     <TextField
                       {...params}
                       placeholder="وارد کردن مقدار دلخواه"
-                      sx={{
-                        "& .MuiInputBase-input::placeholder": {
-                          fontFamily: "IranYekan",
-                          fontSize: "12px",
-                        },
-                      }}
+                      className="ads-sideBar_priceSpan"
                     />
                   )}
                 />
