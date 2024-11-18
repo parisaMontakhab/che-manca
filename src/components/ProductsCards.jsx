@@ -1,7 +1,11 @@
-import React from 'react'
+import React from 'react';
+import {Box, Container} from "@mui/material";
 
 export default function ProductsCards() {
   return (
-    <div>ProductsCards</div>
+    <Box >
+        salam
+
+    </Box>
   )
 }

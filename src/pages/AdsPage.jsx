@@ -4,11 +4,13 @@ import SidBar from "../components/SidBar";
 import { Box, Container } from "@mui/material";
 
 
+
 export default function AdsPage() {
   return (
     <>
      <NavBar/>
      <SidBar/>
+     
      
     </>
   );
