@@ -21,6 +21,7 @@ import {
   Switch,
   Autocomplete,
   InputAdornment,
+  Paper,
 } from "@mui/material";
 import HomeWorkOutlinedIcon from "@mui/icons-material/HomeWorkOutlined";
 import DirectionsCarFilledOutlinedIcon from "@mui/icons-material/DirectionsCarFilledOutlined";
@@ -250,7 +251,7 @@ export default function SidBar() {
                     <TextField
                       {...params}
                       placeholder="وارد کردن مقدار دلخواه"
-                     className="ads-sideBar_priceSpan"
+                      className="ads-sideBar__priceSpan"
                     />
                   )}
                 />
@@ -276,7 +277,7 @@ export default function SidBar() {
                     <TextField
                       {...params}
                       placeholder="وارد کردن مقدار دلخواه"
-                      className="ads-sideBar_priceSpan"
+                      className="ads-sideBar__priceSpan"
                     />
                   )}
                 />
@@ -312,11 +313,9 @@ export default function SidBar() {
             <Collapse in={openItems["status"]} timeout="auto" unmountOnExit>
               <FormGroup>
                 <FormControlLabel
-                 className="ads-sideBar__swichStatus"
+                  className="ads-sideBar__swichStatus"
                   label={
-                    <Typography
-                    className="ads-sideBar__priceBox__title"
-                    >
+                    <Typography className="ads-sideBar__priceBox__title">
                       عکس دار
                     </Typography>
                   }
@@ -329,11 +328,9 @@ export default function SidBar() {
                   }
                 />
                 <FormControlLabel
-                 className="ads-sideBar__swichStatus"
+                  className="ads-sideBar__swichStatus"
                   label={
-                    <Typography
-                     className="ads-sideBar__priceBox__title "
-                    >
+                    <Typography className="ads-sideBar__priceBox__title ">
                       فوری
                     </Typography>
                   }
@@ -349,9 +346,7 @@ export default function SidBar() {
             </Collapse>
             <Divider sx={{ width: "80%", marginTop: 2 }} />
           </List>
-          <nav
-           className="ads-sideBar__nav"
-          >
+          <nav className="ads-sideBar__nav">
             <Grid2
               container
               rowSpacing={2}
@@ -392,9 +387,7 @@ export default function SidBar() {
           </nav>
           <Divider sx={{ width: "80%", marginTop: 2 }} />
 
-          <footer
-           className="ads-sideBar__footer"
-          >
+          <footer className="ads-sideBar__footer">
             <Footer />
           </footer>
         </Box>

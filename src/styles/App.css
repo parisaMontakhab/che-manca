@@ -173,46 +173,51 @@
   text-align: right;
 }
 
-.ads-sideBar__deletBtn{
+.ads-sideBar__deletBtn {
   font-family: "IranYekan" !important;
-  color: #A62626 !important;
+  color: #a62626 !important;
   margin-left: 40px !important;
 }
 .ads-sideBar__deletIcon {
   font-family: "IranYekan" !important;
-  color: #A62626 !important;
+  color: #a62626 !important;
   margin-left: 60px !important;
   font-size: 12px !important;
 }
 
 .ads-sideBar__priceBox {
-  display:flex !important;
+  display: flex !important;
   align-items: center !important;
-  justify-content:space-around !important;
+  justify-content: space-around !important;
   width: 80% !important;
   margin-bottom: 10px;
 }
 
 .ads-sideBar__priceBox__title {
-font-family: "IranYekan" !important;
- font-size: 12px !important;
+  font-family: "IranYekan" !important;
+  font-size: 12px !important;
 }
 
-.ads-sideBar__priceAutocomplete{
+.ads-sideBar__priceAutocomplete {
   width: 70%;
+  font-family: "IranYekan", sans-serif !important;
 }
 
-.ads-sideBar__priceAutocomplete .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+.ads-sideBar__priceAutocomplete
+  .MuiOutlinedInput-root:hover
+  .MuiOutlinedInput-notchedOutline {
   border-color: gray;
   border: 1px solid gray;
 }
 
-.ads-sideBar__priceAutocomplete .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+.ads-sideBar__priceAutocomplete
+  .MuiOutlinedInput-root.Mui-focused
+  .MuiOutlinedInput-notchedOutline {
   border-color: gray;
   border: 1px solid gray;
 }
 
-.ads-sideBar_priceSpan .MuiInputBase-input::placeholder {
+.ads-sideBar__priceSpan .MuiInputBase-input::placeholder {
   font-family: "IranYekan";
   font-size: 12px;
 }
@@ -222,29 +227,23 @@ font-family: "IranYekan" !important;
   justify-content: space-between;
   direction: ltr;
   width: 80%;
-
 }
 
 .ads-sideBar__swichStatus .MuiSwitch-switchBase.Mui-checked {
-  color: #A62626;
+  color: #a62626;
 }
 
-.ads-sideBar__swichStatus
-  .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track {
-  background-color: #A62626;
+.ads-sideBar__swichStatus .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track {
+  background-color: #a62626;
 }
-
-
-
-
 
 .ads-sideBar__nav {
   font-size: 14px;
   color: gray;
   max-width: 80%;
-  margin-top: 10px,
+  margin-top: 10px;
 }
-.ads-sideBar__footer{
+.ads-sideBar__footer {
   display: flex;
   justify-content: center;
   max-width: 80%;
