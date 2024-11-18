@@ -221,6 +221,11 @@
   font-family: "IranYekan";
   font-size: 12px;
 }
+.ads-sideBar__priceSpan .MuiInputBase-input{
+  font-family: "IranYekan" !important;
+  font-size: 12px;
+}
+
 
 .ads-sideBar__swichStatus {
   display: flex;
