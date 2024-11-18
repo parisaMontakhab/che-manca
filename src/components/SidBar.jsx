@@ -69,9 +69,9 @@ export default function SidBar() {
   };
 
   return (
-    <Container>
-      <Grid2 container spacing={2} justifyContent="space-between">
-        <Grid2 sx={{ marginTop: "80px" }} xs={6} md={4}>
+    <div>
+      <Grid2 container spacing={2} component='div' className="ads-container">
+        <Grid2 component='div' className="ads-sideBar__gridOne" >
           <aside>
             <Box component="div" className="ads-sideBar">
               <Typography sx={{ fontFamily: "IranYekan" }}>دسته ها</Typography>
@@ -404,12 +404,12 @@ export default function SidBar() {
           </aside>
         </Grid2>
 
-        <Grid2 sx={{ marginTop: "90px" }} xs={6} md={8}>
+        <Grid2  component='div' className="ads-sideBar__gridTwo" >
           <main>
             <ProductsCards />
           </main>
         </Grid2>
       </Grid2>
-    </Container>
+    </div>
   );
 }

@@ -120,10 +120,28 @@
 }
 
 /* Ads page --sidbar*/
+.ads-container {
+  display: grid;
+}
+.ads-sideBar__gridOne {
+  margin-top: 80px;
 
+  width: 25%;
+  position: fixed;
+  margin-right: 4%;
+  height: 100vh;
+}
+.ads-sideBar__gridTwo {
+  margin-top: 90px;
+
+  width: 60%;
+  overflow: "auto";
+  margin-right: 30%;
+}
 .ads-sideBar {
-  
-  width: 55%;
+  width: 70%;
+  margin-right: auto;
+  overflow: auto;
 }
 .ads-sideBar__listItem {
   cursor: pointer;
@@ -221,7 +239,7 @@
   font-family: "IranYekan";
   font-size: 12px;
 }
-.ads-sideBar__priceSpan .MuiInputBase-input{
+.ads-sideBar__priceSpan .MuiInputBase-input {
   font-family: "IranYekan" !important;
   font-size: 12px;
 }
@@ -257,3 +275,5 @@
   max-width: 80%;
   margin-top: 20px;
 }
+
+/*taghirat*/
