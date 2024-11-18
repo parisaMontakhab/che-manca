@@ -238,6 +238,9 @@ export default function SidBar() {
                   حداقل
                 </Typography>
                 <Autocomplete
+                 PaperComponent={(props) => (
+                  <Paper {...props} className="ads-sideBar__pricePaper" />
+                )}
                   size="small"
                   className="ads-sideBar__priceAutocomplete"
                   freeSolo
@@ -264,6 +267,9 @@ export default function SidBar() {
                   حداکثر
                 </Typography>
                 <Autocomplete
+                  PaperComponent={(props) => (
+                    <Paper {...props} className="ads-sideBar__pricePaper" />
+                  )}
                   size="small"
                   className="ads-sideBar__priceAutocomplete"
                   freeSolo

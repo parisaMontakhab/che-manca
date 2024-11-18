@@ -225,7 +225,10 @@
   font-family: "IranYekan" !important;
   font-size: 12px;
 }
-
+.ads-sideBar__pricePaper {
+  font-family: "IranYekan" !important;
+  font-size: 12px !important;
+}
 
 .ads-sideBar__swichStatus {
   display: flex;
