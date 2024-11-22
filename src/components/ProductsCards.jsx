@@ -15,9 +15,12 @@ export default function ProductsCards() {
         spacing={2}
         sx={{ overflowY: "auto", justifyContent: "center" }}
       >
-        <Grid2>
-          <ProductCard />
-        </Grid2>
+       <ProductCard/>
+       
+
+
+
+        
       </Grid2>
     </Box>
   );

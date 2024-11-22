@@ -1,11 +1,12 @@
 import React from "react";
-import { Box, Card, CardContent, CardMedia, Typography } from "@mui/material";
+import { Box, Card, CardContent, CardMedia, Grid2, Typography } from "@mui/material";
 import ChatBubbleOutlineRoundedIcon from "@mui/icons-material/ChatBubbleOutlineRounded";
 import ShoesAdidas from "../assets/images/image/shoes.jpg";
 
 export default function ProductCard() {
   return (
-    <Card sx={{ display: "flex", border: "1px solid #9999", width: 350 }}>
+    <Grid2>
+        <Card sx={{ display: "flex", border: "1px solid #9999", width: 350,cursor:'pointer' }}>
       <Box sx={{ display: "flex", flexDirection: "column", width: "60%" }}>
         <CardContent>
           <Typography
@@ -57,5 +58,6 @@ export default function ProductCard() {
         sx={{ width: 150, padding: 1.5, borderRadius: "16px" }}
       />
     </Card>
+    </Grid2>
   );
 }
