@@ -4,10 +4,10 @@ import {Box, Button, Card, CardActionArea, CardActions, CardContent, CardMedia, 
 export default function ProductsCards() {
   return (
    <Box >
-    <Typography variant='body1'>agahihay tehran</Typography>
+    <Typography variant='body1' className='ads-products__title'> انواع آگهی ها و نیازمندی های  تهران</Typography>
      <Grid2 container spacing={2} sx={{overflowY:'auto',justifyContent:'center'}} >
        
-       <Grid2  item >
+       <Grid2   >
        <Card sx={{ maxWidth: 345 }}>
       <CardActionArea>
         <CardMedia

@@ -276,4 +276,13 @@
   margin-top: 20px;
 }
 
-/*taghirat*/
+/*ads-page---ProductsCards*/
+
+.ads-products__title{
+  font-family: 'IranYekan' !important;
+  font-size: 12px !important;
+  color: gray;
+  direction: ltr;
+  margin-bottom: 2% !important;
+  margin-left: 10% !important;
+}

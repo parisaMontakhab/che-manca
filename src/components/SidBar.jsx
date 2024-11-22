@@ -381,7 +381,7 @@ export default function SidBar() {
                   <Grid2>
                     <Link href="#" color="inherit" underline="none">
                       کسب و کارها
-                    </Link>{" "}
+                    </Link>
                   </Grid2>
                   <Grid2>
                     <Link href="#" color="inherit" underline="none">
