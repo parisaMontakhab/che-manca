@@ -290,3 +290,12 @@
   overflow-y: auto !important;
   justify-content: center !important;
 }
+
+/*ProducCard*/
+
+.productCard__card {
+  display: flex;
+  border: 1px solid #cdcaca;
+  width: 350px !important;
+  cursor:pointer;
+}

@@ -6,7 +6,7 @@ import ShoesAdidas from "../assets/images/image/shoes.jpg";
 export default function ProductCard() {
   return (
     <Grid2>
-        <Card sx={{ display: "flex", border: "1px solid #9999", width: 350,cursor:'pointer' }}>
+        <Card className="productCard__card ">
       <Box sx={{ display: "flex", flexDirection: "column", width: "60%" }}>
         <CardContent>
           <Typography
