@@ -41,7 +41,7 @@ export default function ProductCard() {
           >
             <Typography
               component="div"
-              sx={{ fontFamily: "IranYekan", fontSize: 12, color: "gray" }}
+              className="productCard__iconBox__desc"
             >
               لحظاتی پیش در اقدسیه
             </Typography>
