@@ -297,5 +297,10 @@
   display: flex;
   border: 1px solid #cdcaca;
   width: 350px !important;
-  cursor:pointer;
+  cursor: pointer;
+}
+.productCard__box {
+  display: flex;
+  flex-direction: column;
+  width: 60% !important;
 }

@@ -7,7 +7,7 @@ export default function ProductCard() {
   return (
     <Grid2>
         <Card className="productCard__card ">
-      <Box sx={{ display: "flex", flexDirection: "column", width: "60%" }}>
+      <Box component='div' className="productCard__box">
         <CardContent>
           <Typography
             component="div"
