@@ -35,12 +35,9 @@ export default function ProductCard() {
             </Typography>
           </CardContent>
           <Box
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-around",
-              marginBottom: 2,
-            }}
+           component='div'
+           className="productCard__iconBox"
+          
           >
             <Typography
               component="div"

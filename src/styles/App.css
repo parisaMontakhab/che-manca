@@ -313,3 +313,9 @@
   color: gray;
    font-family: "IranYekan" !important;
 }
+.productCard__iconBox{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 8px !important;
+}
