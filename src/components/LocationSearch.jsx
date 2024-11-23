@@ -19,6 +19,7 @@ export default function LocationSearch() {
     setSelectedProvince(newProvince);
     setSelectedCity(null);
   };
+
   return (
     <Box my={8}>
       <Autocomplete
@@ -68,7 +69,11 @@ export default function LocationSearch() {
             <Paper {...props} className="autocomplete-listbox" />
           )}
           id="city-search"
-          options={selectedProvince ? provinces[selectedProvince] : []}
+          options={
+            selectedProvince
+              ? provinces.find((p) => p.province === selectedProvince).cities
+              : []
+          }
           onChange={(event, newCity) => setSelectedCity(newCity)}
           renderInput={(params) => (
             <TextField
