@@ -309,11 +309,11 @@
   font-weight: bold !important;
   margin-bottom: 8px !important;
 }
-.productCard__desc{
+.productCard__desc {
   color: gray;
-   font-family: "IranYekan" !important;
+  font-family: "IranYekan" !important;
 }
-.productCard__iconBox{
+.productCard__iconBox {
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -321,6 +321,11 @@
 }
 .productCard__iconBox__desc {
   font-family: "IranYekan" !important;
-   font-size: 12px !important; 
-   color:gray; 
+  font-size: 12px !important;
+  color: gray;
+}
+.productCard__mediaCard {
+  width: 150px !important;
+  padding: 0.5rem !important;
+  border-radius: 1rem !important;
 }

@@ -46,13 +46,13 @@ export default function ProductCard() {
               لحظاتی پیش در اقدسیه
             </Typography>
 
-            <ChatBubbleOutlineRoundedIcon sx={{ color: "gray" }} />
+            <ChatBubbleOutlineRoundedIcon className="social-icon " />
           </Box>
         </Box>
         <CardMedia
           component="img"
           image={ShoesAdidas}
-          sx={{ width: 150, padding: 1.5, borderRadius: "16px" }}
+          className="productCard__mediaCard"
         />
       </Card>
     </Grid2>
