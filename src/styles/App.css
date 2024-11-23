@@ -299,8 +299,13 @@
   width: 350px !important;
   cursor: pointer;
 }
-.productCard__box {
+.productCard__mainBox {
   display: flex;
   flex-direction: column;
   width: 60% !important;
+}
+.productCard__title {
+  font-family: "IranYekan" !important;
+  font-weight: bold !important;
+  margin-bottom: 8px !important;
 }

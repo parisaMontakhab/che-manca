@@ -7,15 +7,11 @@ export default function ProductCard() {
   return (
     <Grid2>
         <Card className="productCard__card ">
-      <Box component='div' className="productCard__box">
+      <Box component='div' className="productCard__mainBox">
         <CardContent>
           <Typography
             component="div"
-            sx={{
-              fontFamily: "IranYekan",
-              fontWeight: "bold",
-              marginBottom: 2,
-            }}
+          className="productCard__title "
           >
             کفش کتونی اصل آدیداس
           </Typography>
