@@ -286,3 +286,7 @@
   margin-bottom: 2% !important;
   margin-left: 10% !important;
 }
+.ads-productsCards__grid {
+  overflow-y: auto !important;
+  justify-content: center !important;
+}

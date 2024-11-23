@@ -13,7 +13,8 @@ export default function ProductsCards() {
       <Grid2
         container
         spacing={2}
-        sx={{ overflowY: "auto", justifyContent: "center" }}
+        component='div'
+        className="ads-productsCards__grid"
       >
         <ProductCard />
       </Grid2>
