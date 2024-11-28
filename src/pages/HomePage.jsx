@@ -1,5 +1,7 @@
 import React from "react";
-import { Box, Container, Grid2, Link, Typography } from "@mui/material";
+import { Box, Container, Grid2, Typography } from "@mui/material";
+import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom'
+
 import logo from "../assets/images/logo/logo.png";
 import Footer from "../components/Footer";
 import LocationSearch from "../components/LocationSearch";
@@ -27,29 +29,29 @@ export default function HomePage() {
           <nav className="homePage__menu">
             <Grid2 container spacing={6}>
               <Grid2>
-                <Link href="#" color="inherit" underline="none">
+                <NavLink href="#" color="inherit" underline="none">
                   ثبت آگهی
-                </Link>
+                </NavLink>
               </Grid2>
               <Grid2>
-                <Link href="#" color="inherit" underline="none">
+                <NavLink href="#" color="inherit" underline="none">
                   درباره ما
-                </Link>
+                </NavLink>
               </Grid2>
               <Grid2>
-                <Link href="#" color="inherit" underline="none">
+                <NavLink href="#" color="inherit" underline="none">
                   دریافت برنامه
-                </Link>
+                </NavLink>
               </Grid2>
               <Grid2>
-                <Link href="#" color="inherit" underline="none">
+                <NavLink href="#" color="inherit" underline="none">
                   اتاق خبر
-                </Link>{" "}
+                </NavLink>{" "}
               </Grid2>
               <Grid2>
-                <Link href="#" color="inherit" underline="none">
+                <NavLink href="#" color="inherit" underline="none">
                   پشتیبانی
-                </Link>
+                </NavLink>
               </Grid2>
             </Grid2>
           </nav>
@@ -77,7 +79,7 @@ export default function HomePage() {
           >
             {cities.map((city) => (
               <Grid2 key={city}>
-                <Typography className="homePage__cityItem">{city}</Typography>
+                <Typography className="homePage__cityItem"><NavLink to='/Ads' color="inherit"  sx={{cursor:'pointer'}} underline="none">{city}</NavLink></Typography>
               </Grid2>
             ))}
           </Grid2>
