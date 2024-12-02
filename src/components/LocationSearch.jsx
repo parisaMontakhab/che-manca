@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { Box, TextField, Paper } from "@mui/material";
+import { Box, TextField, Paper, Skeleton } from "@mui/material";
 import Autocomplete from "@mui/material/Autocomplete";
 import { useCountries } from "../api/location";
 import { useSubCountries } from "../api/location";
@@ -42,13 +42,14 @@ export default function LocationSearch() {
   if (subCountriesError) return <div>Error loading provinces!</div>;
   if (citiesError) return <div>Error loading cities!</div>;
   //Loading//
-  if (isCountriesLoading) return <div>Loading countries...</div>;
-  if (isSubCountriesLoading) return <div>Loading provinces...</div>;
-  if (isCitiesLoading) return <div>Loading cities...</div>;
+  
+ 
 
   return (
-    <Box my={8}>
-      <Autocomplete
+    <Box my={8}> {
+      isCountriesLoading ? (<Skeleton variant="rounded" sx={{width:556,height:56}} />) :
+      (
+        <Autocomplete
         PaperComponent={(props) => (
           <Paper {...props} className="autocomplete-listbox" />
         )}
@@ -69,8 +70,12 @@ export default function LocationSearch() {
           />
         )}
       />
-      {selectedCountry && (
-        <Autocomplete
+      )
+    }
+     
+      {selectedCountry && ( isSubCountriesLoading ? (<Skeleton variant="rounded" sx={{width:556,height:56}} />) :
+        (
+          <Autocomplete
           PaperComponent={(props) => (
             <Paper {...props} className="autocomplete-listbox" />
           )}
@@ -92,9 +97,11 @@ export default function LocationSearch() {
           )}
           disabled={!selectedCountry}
         />
+        )
       )}
       {selectedCountry && selectedSubCountry && (
-        <Autocomplete
+        isCitiesLoading ? (<Skeleton variant="rounded" sx={{width:556,height:56}}  />) :
+       ( <Autocomplete
           PaperComponent={(props) => (
             <Paper {...props} className="autocomplete-listbox" />
           )}
@@ -112,7 +119,7 @@ export default function LocationSearch() {
             />
           )}
           disabled={!selectedSubCountry}
-        />
+        />)
       )}
     </Box>
   );
