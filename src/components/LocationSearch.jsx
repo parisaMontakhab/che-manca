@@ -1,24 +1,50 @@
 import React from "react";
 import { useState } from "react";
-import { Box, TextField,  Paper } from "@mui/material";
+import { Box, TextField, Paper } from "@mui/material";
 import Autocomplete from "@mui/material/Autocomplete";
-import { countries, provinces } from "../data/LocationData";
+import { useCountries } from "../api/location";
+import { useSubCountries } from "../api/location";
+import { useCities } from "../api/location";
 
 export default function LocationSearch() {
   const [selectedCountry, setSelectedCountry] = useState(null);
-  const [selectedProvince, setSelectedProvince] = useState(null);
+  const [selectedSubCountry, setselectedSubCountry] = useState(null);
   const [selectedCity, setSelectedCity] = useState(null);
+
+  const {
+    data: countries,
+    isLoading: isCountriesLoading,
+    error: countriesError,
+  } = useCountries();
+  const {
+    data: subCountries,
+    isLoading: isSubCountriesLoading,
+    error: subCountriesError,
+  } = useSubCountries(selectedCountry?.id);
+  const {
+    data: cities,
+    isLoading: isCitiesLoading,
+    error: citiesError,
+  } = useCities(selectedSubCountry?.id);
 
   const handleCountryChange = (event, newCountry) => {
     setSelectedCountry(newCountry);
-    setSelectedProvince(null);
+    setselectedSubCountry(null);
     setSelectedCity(null);
   };
 
-  const handleProvinceChange = (event, newProvince) => {
-    setSelectedProvince(newProvince);
+  const handlesubCountryChange = (event, newSubCountry) => {
+    setselectedSubCountry(newSubCountry);
     setSelectedCity(null);
   };
+  //Error//
+  if (countriesError) return <div>Error loading countries!</div>;
+  if (subCountriesError) return <div>Error loading provinces!</div>;
+  if (citiesError) return <div>Error loading cities!</div>;
+  //Loading//
+  if (isCountriesLoading) return <div>Loading countries...</div>;
+  if (isSubCountriesLoading) return <div>Loading provinces...</div>;
+  if (isCitiesLoading) return <div>Loading cities...</div>;
 
   return (
     <Box my={8}>
@@ -27,7 +53,10 @@ export default function LocationSearch() {
           <Paper {...props} className="autocomplete-listbox" />
         )}
         id="country-search"
-        options={countries.map((country) => country.label)}
+        options={countries?.map((country) => ({
+          label: country.text,
+          id: country.value,
+        }))}
         onChange={handleCountryChange}
         renderInput={(params) => (
           <TextField
@@ -45,12 +74,11 @@ export default function LocationSearch() {
             <Paper {...props} className="autocomplete-listbox" />
           )}
           id="province-search"
-          options={
-            selectedCountry
-              ? countries.find((c) => c.label === selectedCountry).provinces
-              : []
-          }
-          onChange={handleProvinceChange}
+          options={subCountries?.map((subCountry) => ({
+            label: subCountry.text,
+            id: subCountry.value,
+          }))}
+          onChange={handlesubCountryChange}
           renderInput={(params) => (
             <TextField
               className="locationSearch-input"
@@ -63,17 +91,13 @@ export default function LocationSearch() {
           disabled={!selectedCountry}
         />
       )}
-      {selectedCountry && selectedProvince && (
+      {selectedCountry && selectedSubCountry && (
         <Autocomplete
           PaperComponent={(props) => (
             <Paper {...props} className="autocomplete-listbox" />
           )}
           id="city-search"
-          options={
-            selectedProvince
-              ? provinces.find((p) => p.province === selectedProvince).cities
-              : []
-          }
+          options={cities?.map((city) => ({ label: city.text, id: city.value }))}
           onChange={(event, newCity) => setSelectedCity(newCity)}
           renderInput={(params) => (
             <TextField
@@ -84,7 +108,7 @@ export default function LocationSearch() {
               placeholder="اینجاهم باید شهرتو انتخاب کنی"
             />
           )}
-          disabled={!selectedProvince}
+          disabled={!selectedSubCountry}
         />
       )}
     </Box>
