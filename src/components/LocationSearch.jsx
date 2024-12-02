@@ -57,6 +57,7 @@ export default function LocationSearch() {
           label: country.text,
           id: country.value,
         }))}
+        value={selectedCountry}
         onChange={handleCountryChange}
         renderInput={(params) => (
           <TextField
@@ -78,6 +79,7 @@ export default function LocationSearch() {
             label: subCountry.text,
             id: subCountry.value,
           }))}
+          value={selectedSubCountry}
           onChange={handlesubCountryChange}
           renderInput={(params) => (
             <TextField
@@ -98,6 +100,7 @@ export default function LocationSearch() {
           )}
           id="city-search"
           options={cities?.map((city) => ({ label: city.text, id: city.value }))}
+          value={selectedCity}
           onChange={(event, newCity) => setSelectedCity(newCity)}
           renderInput={(params) => (
             <TextField
