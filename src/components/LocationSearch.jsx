@@ -47,7 +47,7 @@ export default function LocationSearch() {
 
   return (
     <Box my={8}> {
-      isCountriesLoading ? (<Skeleton variant="rounded" sx={{width:556,height:56}} />) :
+      isCountriesLoading ? (<Skeleton variant="rounded" sx={{width:556,height:56}} />) : 
       (
         <Autocomplete
         PaperComponent={(props) => (
