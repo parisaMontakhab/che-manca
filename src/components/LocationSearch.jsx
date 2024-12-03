@@ -5,6 +5,7 @@ import Autocomplete from "@mui/material/Autocomplete";
 import { useCountries } from "../api/location";
 import { useSubCountries } from "../api/location";
 import { useCities } from "../api/location";
+import LoadingBtn from "../commons/LoadingBtn";
 
 export default function LocationSearch() {
   const [selectedCountry, setSelectedCountry] = useState(null);
@@ -41,13 +42,13 @@ export default function LocationSearch() {
   if (countriesError) return <div>Error loading countries!</div>;
   if (subCountriesError) return <div>Error loading provinces!</div>;
   if (citiesError) return <div>Error loading cities!</div>;
-  //Loading//
+
   
  
 
   return (
     <Box my={8}> {
-      isCountriesLoading ? (<Skeleton variant="rounded" sx={{width:556,height:56}} />) : 
+      isCountriesLoading ? (<LoadingBtn/>) : 
       (
         <Autocomplete
         PaperComponent={(props) => (
@@ -73,7 +74,7 @@ export default function LocationSearch() {
       )
     }
      
-      {selectedCountry && ( isSubCountriesLoading ? (<Skeleton variant="rounded" sx={{width:556,height:56}} />) :
+      {selectedCountry && ( isSubCountriesLoading ? (<LoadingBtn/>) :
         (
           <Autocomplete
           PaperComponent={(props) => (
@@ -100,7 +101,7 @@ export default function LocationSearch() {
         )
       )}
       {selectedCountry && selectedSubCountry && (
-        isCitiesLoading ? (<Skeleton variant="rounded" sx={{width:556,height:56}}  />) :
+        isCitiesLoading ?(<LoadingBtn/>) :
        ( <Autocomplete
           PaperComponent={(props) => (
             <Paper {...props} className="autocomplete-listbox" />
