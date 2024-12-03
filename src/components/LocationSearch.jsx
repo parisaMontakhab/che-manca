@@ -6,6 +6,7 @@ import { useCountries } from "../api/location";
 import { useSubCountries } from "../api/location";
 import { useCities } from "../api/location";
 import LoadingBtn from "../commons/LoadingBtn";
+import ErrorBtn from "../commons/ErrorBtn";
 
 export default function LocationSearch() {
   const [selectedCountry, setSelectedCountry] = useState(null);
@@ -38,17 +39,14 @@ export default function LocationSearch() {
     setselectedSubCountry(newSubCountry);
     setSelectedCity(null);
   };
-  //Error//
-  if (countriesError) return <div>Error loading countries!</div>;
-  if (subCountriesError) return <div>Error loading provinces!</div>;
-  if (citiesError) return <div>Error loading cities!</div>;
+  
 
   
  
 
   return (
     <Box my={8}> {
-      isCountriesLoading ? (<LoadingBtn/>) : 
+      isCountriesLoading ? (<LoadingBtn/>) : countriesError ? (<ErrorBtn/>) :
       (
         <Autocomplete
         PaperComponent={(props) => (
@@ -74,7 +72,7 @@ export default function LocationSearch() {
       )
     }
      
-      {selectedCountry && ( isSubCountriesLoading ? (<LoadingBtn/>) :
+      {selectedCountry && ( isSubCountriesLoading ? (<LoadingBtn/>) : countriesError ? (<ErrorBtn/>) :
         (
           <Autocomplete
           PaperComponent={(props) => (
@@ -101,7 +99,7 @@ export default function LocationSearch() {
         )
       )}
       {selectedCountry && selectedSubCountry && (
-        isCitiesLoading ?(<LoadingBtn/>) :
+        isCitiesLoading ?(<LoadingBtn/>) : countriesError ? (<ErrorBtn/>) :
        ( <Autocomplete
           PaperComponent={(props) => (
             <Paper {...props} className="autocomplete-listbox" />
