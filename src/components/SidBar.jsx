@@ -28,6 +28,8 @@ import FiberManualRecordRoundedIcon from "@mui/icons-material/FiberManualRecordR
 import Footer from "./Footer";
 import ProductsCards from "./ProductsCards";
 
+import LoadingText from "../commons/LoadingText";
+
 export default function SidBar() {
   const [openItems, setOpenItems] = useState({});
   const [checked, setChecked] = useState({ photo: false, force: false });
@@ -59,7 +61,7 @@ export default function SidBar() {
     setPrices({ minPrice: "", maxPrice: "" });
   };
 
-  const { data: categories } = useCategories();
+  const { data: categories, isLoading: isCategoriesLoading } = useCategories();
 
   return (
     <div>
@@ -69,18 +71,22 @@ export default function SidBar() {
             <Box component="div" className="ads-sideBar">
               <Typography sx={{ fontFamily: "IranYekan" }}>دسته ها</Typography>
               <List>
-                {categories?.map((category) => (
-                  <ListItem
-                    className="ads-sideBar__listItem"
-                    key={category.uniqueId}
-                  >
-                    <ListItemText
-                      primary={category.brandCategory}
-                      disableTypography
-                      className="ads-sideBar__itemText"
-                    />
-                  </ListItem>
-                ))}
+                {isCategoriesLoading ? (
+                  <LoadingText />
+                ) : (
+                  categories?.map((category) => (
+                    <ListItem
+                      className="ads-sideBar__listItem"
+                      key={category.uniqueId}
+                    >
+                      <ListItemText
+                        primary={category.brandCategory}
+                        disableTypography
+                        className="ads-sideBar__itemText"
+                      />
+                    </ListItem>
+                  ))
+                )}
 
                 <Divider sx={{ width: "80%" }} />
                 <ListItem

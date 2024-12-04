@@ -5,8 +5,9 @@ import Autocomplete from "@mui/material/Autocomplete";
 import { useCountries } from "../api/location";
 import { useSubCountries } from "../api/location";
 import { useCities } from "../api/location";
-import LoadingBtn from "../commons/LoadingBtn";
+
 import ErrorBtn from "../commons/ErrorBtn";
+import LoadingText from "../commons/LoadingText";
 
 export default function LocationSearch() {
   const [selectedCountry, setSelectedCountry] = useState(null);
@@ -39,87 +40,96 @@ export default function LocationSearch() {
     setselectedSubCountry(newSubCountry);
     setSelectedCity(null);
   };
-  
-
-  
- 
 
   return (
-    <Box my={8}> {
-      isCountriesLoading ? (<LoadingBtn/>) : countriesError ? (<ErrorBtn/>) :
-      (
+    <Box my={8}>
+      {" "}
+      {isCountriesLoading ? (
+        <LoadingText />
+      ) : countriesError ? (
+        <ErrorBtn />
+      ) : (
         <Autocomplete
-        PaperComponent={(props) => (
-          <Paper {...props} className="autocomplete-listbox" />
-        )}
-        id="country-search"
-        options={countries?.map((country) => ({
-          label: country.text,
-          id: country.value,
-        }))}
-        value={selectedCountry}
-        onChange={handleCountryChange}
-        renderInput={(params) => (
-          <TextField
-            className="locationSearch-input"
-            type="search"
-            sx={{ "& ::placeholder": { fontFamily: "IranYekan" } }}
-            {...params}
-            placeholder="اول کشورتو انتخاب کن"
-          />
-        )}
-      />
-      )
-    }
-     
-      {selectedCountry && ( isSubCountriesLoading ? (<LoadingBtn/>) : subCountriesError ? (<ErrorBtn/>) :
-        (
-          <Autocomplete
           PaperComponent={(props) => (
             <Paper {...props} className="autocomplete-listbox" />
           )}
-          id="province-search"
-          options={subCountries?.map((subCountry) => ({
-            label: subCountry.text,
-            id: subCountry.value,
+          id="country-search"
+          options={countries?.map((country) => ({
+            label: country.text,
+            id: country.value,
           }))}
-          value={selectedSubCountry}
-          onChange={handlesubCountryChange}
+          value={selectedCountry}
+          onChange={handleCountryChange}
           renderInput={(params) => (
             <TextField
               className="locationSearch-input"
               type="search"
               sx={{ "& ::placeholder": { fontFamily: "IranYekan" } }}
               {...params}
-              placeholder="حالا استانتو سرچ کن"
+              placeholder="اول کشورتو انتخاب کن"
             />
           )}
-          disabled={!selectedCountry}
         />
-        )
       )}
-      {selectedCountry && selectedSubCountry && (
-        isCitiesLoading ?(<LoadingBtn/>) : citiesError ? (<ErrorBtn/>) :
-       ( <Autocomplete
-          PaperComponent={(props) => (
-            <Paper {...props} className="autocomplete-listbox" />
-          )}
-          id="city-search"
-          options={cities?.map((city) => ({ label: city.text, id: city.value }))}
-          value={selectedCity}
-          onChange={(event, newCity) => setSelectedCity(newCity)}
-          renderInput={(params) => (
-            <TextField
-              className="locationSearch-input"
-              type="search"
-              sx={{ "& ::placeholder": { fontFamily: "IranYekan" } }}
-              {...params}
-              placeholder="اینجاهم باید شهرتو انتخاب کنی"
-            />
-          )}
-          disabled={!selectedSubCountry}
-        />)
-      )}
+      {selectedCountry &&
+        (isSubCountriesLoading ? (
+          <LoadingText />
+        ) : subCountriesError ? (
+          <ErrorBtn />
+        ) : (
+          <Autocomplete
+            PaperComponent={(props) => (
+              <Paper {...props} className="autocomplete-listbox" />
+            )}
+            id="province-search"
+            options={subCountries?.map((subCountry) => ({
+              label: subCountry.text,
+              id: subCountry.value,
+            }))}
+            value={selectedSubCountry}
+            onChange={handlesubCountryChange}
+            renderInput={(params) => (
+              <TextField
+                className="locationSearch-input"
+                type="search"
+                sx={{ "& ::placeholder": { fontFamily: "IranYekan" } }}
+                {...params}
+                placeholder="حالا استانتو سرچ کن"
+              />
+            )}
+            disabled={!selectedCountry}
+          />
+        ))}
+      {selectedCountry &&
+        selectedSubCountry &&
+        (isCitiesLoading ? (
+          <LoadingText />
+        ) : citiesError ? (
+          <ErrorBtn />
+        ) : (
+          <Autocomplete
+            PaperComponent={(props) => (
+              <Paper {...props} className="autocomplete-listbox" />
+            )}
+            id="city-search"
+            options={cities?.map((city) => ({
+              label: city.text,
+              id: city.value,
+            }))}
+            value={selectedCity}
+            onChange={(event, newCity) => setSelectedCity(newCity)}
+            renderInput={(params) => (
+              <TextField
+                className="locationSearch-input"
+                type="search"
+                sx={{ "& ::placeholder": { fontFamily: "IranYekan" } }}
+                {...params}
+                placeholder="اینجاهم باید شهرتو انتخاب کنی"
+              />
+            )}
+            disabled={!selectedSubCountry}
+          />
+        ))}
     </Box>
   );
 }
