@@ -33,6 +33,7 @@ import LoadingText from "../commons/LoadingText";
 import ErrorBtn from "../commons/ErrorBtn";
 
 export default function SidBar() {
+  const [selectedCategory,setSelectedCategory] = useState(null)
   const [openItems, setOpenItems] = useState({});
   const [checked, setChecked] = useState({ photo: false, force: false });
   const [prices, setPrices] = useState({ minPrice: "", maxPrice: "" });
@@ -63,13 +64,16 @@ export default function SidBar() {
   const handleDeletPrice = () => {
     setPrices({ minPrice: "", maxPrice: "" });
   };
-
+ const handleCategoryClick = (id)=>{
+ setSelectedCategory(id)
+ console.log(id)
+ }
   const {
     data: categories,
     isLoading: isCategoriesLoading,
     isError: categoriesError,
   } = useCategories();
-  const { data: subCategories } = useSubCategories();
+  const { data: subCategories } = useSubCategories(selectedCategory);
 
   return (
     <div>
@@ -86,13 +90,16 @@ export default function SidBar() {
                 ) : (
                   categories?.map((category) => (
                     <div key={category.uniqueId}>
-                      <ListItem className="ads-sideBar__listItem">
+                      <ListItem 
+                      onClick={()=>handleCategoryClick(category.uniqueId)}
+                      className="ads-sideBar__listItem">
                         <ListItemText
                           primary={category.brandCategory}
                           disableTypography
                           className="ads-sideBar__itemText"
                         />
                       </ListItem>
+                      
                     </div>
                   ))
                 )}
