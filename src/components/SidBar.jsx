@@ -20,14 +20,13 @@ import {
   Autocomplete,
   Paper,
 } from "@mui/material";
-
+import { useCategories } from "../api/categories";
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 import KeyboardArrowLeftRoundedIcon from "@mui/icons-material/KeyboardArrowLeftRounded";
 import FiberManualRecordRoundedIcon from "@mui/icons-material/FiberManualRecordRounded";
 import Footer from "./Footer";
 import ProductsCards from "./ProductsCards";
-
 
 export default function SidBar() {
   const [openItems, setOpenItems] = useState({});
@@ -60,17 +59,29 @@ export default function SidBar() {
     setPrices({ minPrice: "", maxPrice: "" });
   };
 
-
+  const { data: categories } = useCategories();
 
   return (
     <div>
-      <Grid2 container spacing={2} component='div' className="ads-container">
-        <Grid2 component='div' className="ads-sideBar__gridOne" >
+      <Grid2 container spacing={2} component="div" className="ads-container">
+        <Grid2 component="div" className="ads-sideBar__gridOne">
           <aside>
             <Box component="div" className="ads-sideBar">
               <Typography sx={{ fontFamily: "IranYekan" }}>دسته ها</Typography>
               <List>
-              
+                {categories?.map((category) => (
+                  <ListItem
+                    className="ads-sideBar__listItem"
+                    key={category.uniqueId}
+                  >
+                    <ListItemText
+                      primary={category.brandCategory}
+                      disableTypography
+                      className="ads-sideBar__itemText"
+                    />
+                  </ListItem>
+                ))}
+
                 <Divider sx={{ width: "80%" }} />
                 <ListItem
                   onClick={() => handleClick("location")}
@@ -299,7 +310,7 @@ export default function SidBar() {
           </aside>
         </Grid2>
 
-        <Grid2  component='div' className="ads-sideBar__gridTwo" >
+        <Grid2 component="div" className="ads-sideBar__gridTwo">
           <main>
             <ProductsCards />
           </main>

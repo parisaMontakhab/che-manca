@@ -6,6 +6,7 @@ import axios from "axios";
 const fetchCategories = async ()=>{
     const {data} = await axios.get('https://client.mobile.chemanca.com/api/advertisements/AdsCategory/GetAllAdvertisementCategories');
     
+    
     return data;
 }
 
