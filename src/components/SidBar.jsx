@@ -20,7 +20,8 @@ import {
   Autocomplete,
   Paper,
 } from "@mui/material";
-import { useCategories } from "../api/categories";
+import { useCategories, useSubCategories } from "../api/categories";
+
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 import KeyboardArrowLeftRoundedIcon from "@mui/icons-material/KeyboardArrowLeftRounded";
@@ -35,6 +36,7 @@ export default function SidBar() {
   const [openItems, setOpenItems] = useState({});
   const [checked, setChecked] = useState({ photo: false, force: false });
   const [prices, setPrices] = useState({ minPrice: "", maxPrice: "" });
+  const [openCategory, setOpenCategory] = useState(null);
 
   const handleClick = (item) => {
     setOpenItems((prev) => ({
@@ -62,7 +64,12 @@ export default function SidBar() {
     setPrices({ minPrice: "", maxPrice: "" });
   };
 
-  const { data: categories, isLoading: isCategoriesLoading,isError:categoriesError } = useCategories();
+  const {
+    data: categories,
+    isLoading: isCategoriesLoading,
+    isError: categoriesError,
+  } = useCategories();
+  const { data: subCategories } = useSubCategories();
 
   return (
     <div>
@@ -74,18 +81,19 @@ export default function SidBar() {
               <List>
                 {isCategoriesLoading ? (
                   <LoadingText />
-                ) : categoriesError ?(<ErrorBtn/>) : (
+                ) : categoriesError ? (
+                  <ErrorBtn />
+                ) : (
                   categories?.map((category) => (
-                    <ListItem
-                      className="ads-sideBar__listItem"
-                      key={category.uniqueId}
-                    >
-                      <ListItemText
-                        primary={category.brandCategory}
-                        disableTypography
-                        className="ads-sideBar__itemText"
-                      />
-                    </ListItem>
+                    <div key={category.uniqueId}>
+                      <ListItem className="ads-sideBar__listItem">
+                        <ListItemText
+                          primary={category.brandCategory}
+                          disableTypography
+                          className="ads-sideBar__itemText"
+                        />
+                      </ListItem>
+                    </div>
                   ))
                 )}
 
