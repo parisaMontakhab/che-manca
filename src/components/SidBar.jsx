@@ -20,22 +20,14 @@ import {
   Autocomplete,
   Paper,
 } from "@mui/material";
-import HomeWorkOutlinedIcon from "@mui/icons-material/HomeWorkOutlined";
-import DirectionsCarFilledOutlinedIcon from "@mui/icons-material/DirectionsCarFilledOutlined";
-import PhoneIphoneOutlinedIcon from "@mui/icons-material/PhoneIphoneOutlined";
-import KitchenOutlinedIcon from "@mui/icons-material/KitchenOutlined";
-import CleaningServicesOutlinedIcon from "@mui/icons-material/CleaningServicesOutlined";
-import WatchOutlinedIcon from "@mui/icons-material/WatchOutlined";
-import SportsTennisOutlinedIcon from "@mui/icons-material/SportsTennisOutlined";
-import GroupsOutlinedIcon from "@mui/icons-material/GroupsOutlined";
-import ChairAltOutlinedIcon from "@mui/icons-material/ChairAltOutlined";
-import BusinessCenterOutlinedIcon from "@mui/icons-material/BusinessCenterOutlined";
+
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 import KeyboardArrowLeftRoundedIcon from "@mui/icons-material/KeyboardArrowLeftRounded";
 import FiberManualRecordRoundedIcon from "@mui/icons-material/FiberManualRecordRounded";
 import Footer from "./Footer";
 import ProductsCards from "./ProductsCards";
+
 
 export default function SidBar() {
   const [openItems, setOpenItems] = useState({});
@@ -68,6 +60,8 @@ export default function SidBar() {
     setPrices({ minPrice: "", maxPrice: "" });
   };
 
+
+
   return (
     <div>
       <Grid2 container spacing={2} component='div' className="ads-container">
@@ -76,7 +70,7 @@ export default function SidBar() {
             <Box component="div" className="ads-sideBar">
               <Typography sx={{ fontFamily: "IranYekan" }}>دسته ها</Typography>
               <List>
-               
+              
                 <Divider sx={{ width: "80%" }} />
                 <ListItem
                   onClick={() => handleClick("location")}

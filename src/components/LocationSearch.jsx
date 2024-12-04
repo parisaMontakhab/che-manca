@@ -72,7 +72,7 @@ export default function LocationSearch() {
       )
     }
      
-      {selectedCountry && ( isSubCountriesLoading ? (<LoadingBtn/>) : countriesError ? (<ErrorBtn/>) :
+      {selectedCountry && ( isSubCountriesLoading ? (<LoadingBtn/>) : subCountriesError ? (<ErrorBtn/>) :
         (
           <Autocomplete
           PaperComponent={(props) => (
@@ -99,7 +99,7 @@ export default function LocationSearch() {
         )
       )}
       {selectedCountry && selectedSubCountry && (
-        isCitiesLoading ?(<LoadingBtn/>) : countriesError ? (<ErrorBtn/>) :
+        isCitiesLoading ?(<LoadingBtn/>) : citiesError ? (<ErrorBtn/>) :
        ( <Autocomplete
           PaperComponent={(props) => (
             <Paper {...props} className="autocomplete-listbox" />
