@@ -29,6 +29,7 @@ import Footer from "./Footer";
 import ProductsCards from "./ProductsCards";
 
 import LoadingText from "../commons/LoadingText";
+import ErrorBtn from "../commons/ErrorBtn";
 
 export default function SidBar() {
   const [openItems, setOpenItems] = useState({});
@@ -61,7 +62,7 @@ export default function SidBar() {
     setPrices({ minPrice: "", maxPrice: "" });
   };
 
-  const { data: categories, isLoading: isCategoriesLoading } = useCategories();
+  const { data: categories, isLoading: isCategoriesLoading,isError:categoriesError } = useCategories();
 
   return (
     <div>
@@ -73,7 +74,7 @@ export default function SidBar() {
               <List>
                 {isCategoriesLoading ? (
                   <LoadingText />
-                ) : (
+                ) : categoriesError ?(<ErrorBtn/>) : (
                   categories?.map((category) => (
                     <ListItem
                       className="ads-sideBar__listItem"
