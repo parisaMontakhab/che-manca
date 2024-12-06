@@ -77,7 +77,7 @@ export default function SidBar() {
     isLoading: isCategoriesLoading,
     isError: categoriesError,
   } = useCategories();
-  const { data: subCategories } = useSubCategories(selectedCategory);
+  const { data: subCategories,isError:subCategoriesError,isLoading:isSubCategoriesLoading } = useSubCategories(selectedCategory);
 
   return (
     <div>
@@ -106,6 +106,7 @@ export default function SidBar() {
                       {
                         (openCategory === category.uniqueId) ?(<Collapse in={true}>
                           {
+                            subCategoriesError ? (<ErrorBtn/>) : isSubCategoriesLoading ? (<LoadingText/>):
                             subCategories?.map((sub)=>(
                               <Typography key={sub.uniqueId}>{sub.localizedName}</Typography>
                             ))
