@@ -35,7 +35,7 @@ import ErrorBtn from "../commons/ErrorBtn";
 import { Category } from "@mui/icons-material";
 
 export default function SidBar() {
-  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState({});
   const [openItems, setOpenItems] = useState({});
   const [checked, setChecked] = useState({ photo: false, force: false });
   const [prices, setPrices] = useState({ minPrice: "", maxPrice: "" });
@@ -66,28 +66,23 @@ export default function SidBar() {
   const handleDeletPrice = () => {
     setPrices({ minPrice: "", maxPrice: "" });
   };
-  const handleCategoryClick = (id) => {
-    setSelectedCategory(id);
-    if (id) {
-      setOpenCategory((prev) => (prev === id ? null : id));
+  const handleCategoryClick = (category) => {
+    setSelectedCategory(category);
+    if (category.uniqueId) {
+      
+      setOpenCategory((prev) => (prev === category.uniqueId ? null : category.uniqueId));
     }
   };
 
-  const handleBackClick = ()=>{
-   
-    setSelectedCategory(null)
-    setOpenCategory(null)
-  }
+  const handleBackClick = () => {
+    setSelectedCategory(null);
+    setOpenCategory(null);
+  };
   const {
     data: categories,
     isLoading: isCategoriesLoading,
     isError: categoriesError,
-  } = useCategories(selectedCategory);
-  // const {
-  //   data: subCategories,
-  //   isError: subCategoriesError,
-  //   isLoading: isSubCategoriesLoading,
-  // } = useSubCategories(selectedCategory);
+  } = useCategories(selectedCategory?.uniqueId);
 
   return (
     <div>
@@ -98,17 +93,26 @@ export default function SidBar() {
               <Typography sx={{ fontFamily: "IranYekan" }}>دسته ها</Typography>
               <List>
                 {openCategory != null ? (
-                  <ListItem onClick={handleBackClick} className="ads-sideBar__listItem">
-                    <ArrowForwardIcon
-                      sx={{  marginLeft: 1, fontSize: 18 }}
-                    />
+                 <List>
+                   <ListItem
+                    onClick={handleBackClick}
+                    className="ads-sideBar__listItem"
+                  >
+                    <ArrowForwardIcon sx={{ marginLeft: 1, fontSize: 18 }} />
                     <ListItemText
                       disableTypography
                       primary="همه ی آگهی ها"
                       className="ads-sideBar__itemText--color"
-                      
                     />
                   </ListItem>
+                  <ListItem>
+                  <ListItemText
+                      disableTypography
+                      primary={selectedCategory.localizedName}
+                      className="ads-sideBar__itemText--color"
+                    />
+                  </ListItem>
+                 </List>
                 ) : (
                   ""
                 )}
@@ -120,7 +124,7 @@ export default function SidBar() {
                   categories?.map((category) => (
                     <div key={category.uniqueId}>
                       <ListItem
-                        onClick={() => handleCategoryClick(category.uniqueId)}
+                        onClick={() => handleCategoryClick(category)}
                         className="ads-sideBar__listItem"
                       >
                         <ListItemText

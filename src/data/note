@@ -5,4 +5,8 @@
                       /> -->
 
 
-                     
+                      <ListItemText
+                      disableTypography
+                      primary={selectedCategory.localizedName}
+                      className="ads-sideBar__itemText--color"
+                    />
