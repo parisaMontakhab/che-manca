@@ -66,7 +66,11 @@ export default function SidBar() {
   };
  const handleCategoryClick = (id)=>{
  setSelectedCategory(id)
- console.log(id)
+ if(id){
+  setOpenCategory((prev)=> prev===id ? null : id)
+ }
+ 
+ 
  }
   const {
     data: categories,
@@ -99,6 +103,17 @@ export default function SidBar() {
                           className="ads-sideBar__itemText"
                         />
                       </ListItem>
+                      {
+                        (openCategory === category.uniqueId) ?(<Collapse in={true}>
+                          {
+                            subCategories?.map((sub)=>(
+                              <Typography key={sub.uniqueId}>{sub.localizedName}</Typography>
+                            ))
+                          }
+                        </Collapse>
+
+                        ):('')
+                      }
                       
                     </div>
                   ))

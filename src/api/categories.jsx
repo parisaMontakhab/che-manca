@@ -20,7 +20,7 @@ export const useCategories = () => {
 //subCategories//
 const fetchSubCategories = async (parentId)=>{
     const {data} = await axios.get(`https://client.mobile.chemanca.com/api/advertisements/AdsCategory/GetAllAdvertisementCategories?parentId=${parentId}`);
-    console.log(data)
+    
     return data;
 }
 export const useSubCategories = (parentId) => {
