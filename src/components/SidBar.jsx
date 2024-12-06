@@ -33,7 +33,7 @@ import LoadingText from "../commons/LoadingText";
 import ErrorBtn from "../commons/ErrorBtn";
 
 export default function SidBar() {
-  const [selectedCategory,setSelectedCategory] = useState(null)
+  const [selectedCategory, setSelectedCategory] = useState(null);
   const [openItems, setOpenItems] = useState({});
   const [checked, setChecked] = useState({ photo: false, force: false });
   const [prices, setPrices] = useState({ minPrice: "", maxPrice: "" });
@@ -64,20 +64,22 @@ export default function SidBar() {
   const handleDeletPrice = () => {
     setPrices({ minPrice: "", maxPrice: "" });
   };
- const handleCategoryClick = (id)=>{
- setSelectedCategory(id)
- if(id){
-  setOpenCategory((prev)=> prev===id ? null : id)
- }
- 
- 
- }
+  const handleCategoryClick = (id) => {
+    setSelectedCategory(id);
+    if (id) {
+      setOpenCategory((prev) => (prev === id ? null : id));
+    }
+  };
   const {
     data: categories,
     isLoading: isCategoriesLoading,
     isError: categoriesError,
   } = useCategories();
-  const { data: subCategories,isError:subCategoriesError,isLoading:isSubCategoriesLoading } = useSubCategories(selectedCategory);
+  const {
+    data: subCategories,
+    isError: subCategoriesError,
+    isLoading: isSubCategoriesLoading,
+  } = useSubCategories(selectedCategory);
 
   return (
     <div>
@@ -94,28 +96,41 @@ export default function SidBar() {
                 ) : (
                   categories?.map((category) => (
                     <div key={category.uniqueId}>
-                      <ListItem 
-                      onClick={()=>handleCategoryClick(category.uniqueId)}
-                      className="ads-sideBar__listItem">
+                      <ListItem
+                        onClick={() => handleCategoryClick(category.uniqueId)}
+                        className="ads-sideBar__listItem"
+                      >
                         <ListItemText
                           primary={category.brandCategory}
                           disableTypography
                           className="ads-sideBar__itemText"
                         />
                       </ListItem>
-                      {
-                        (openCategory === category.uniqueId) ?(<Collapse in={true}>
-                          {
-                            subCategoriesError ? (<ErrorBtn/>) : isSubCategoriesLoading ? (<LoadingText/>):
-                         (   subCategories?.map((sub)=>(
-                              <Typography key={sub.uniqueId}>{sub.localizedName}</Typography>
-                            )))
-                          }
+                      {openCategory === category.uniqueId ? (
+                        <Collapse in={true} timeout="auto" unmountOnExit>
+                          {subCategoriesError ? (
+                            <ErrorBtn />
+                          ) : isSubCategoriesLoading ? (
+                            <LoadingText />
+                          ) : (
+                            subCategories?.map((sub) => (
+                              <Box key={sub.uniqueId} component="div" className="ads-SideBar__subCategories">
+                                <List>
+                                  <ListItem  >
+                                    <ListItemText
+                                    className="subCategories__ItemText"
+                                      disableTypography
+                                      primary={sub.localizedName}
+                                    />
+                                  </ListItem>
+                                </List>
+                              </Box>
+                            ))
+                          )}
                         </Collapse>
-
-                        ):('')
-                      }
-                      
+                      ) : (
+                        ""
+                      )}
                     </div>
                   ))
                 )}
