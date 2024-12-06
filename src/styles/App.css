@@ -163,6 +163,12 @@
   text-align: right;
   color: gray !important;
 }
+.ads-sideBar__itemText--color{
+  font-family: "IranYekan" !important;
+  display: inline;
+  text-align: right;
+  color: black !important;
+}
 .ads-sideBar__listItem:hover .ads-sideBar__itemIcon,
 .ads-sideBar__listItem:hover .ads-sideBar__itemText {
   color: #575656 !important;
@@ -275,19 +281,7 @@
   max-width: 80%;
   margin-top: 20px;
 }
-/* ads-sideBar--categories*/
-.ads-SideBar__subCategories {
-  display: flex !important;
-  justify-content: start !important;
-  margin-right: 40px !important;
-  cursor: pointer;
-}
-.subCategories__ItemText {
-  font-size: 14px;
-}
-.subCategories__ItemText:hover {
-  color: #575656;
-}
+
 
 /*ads-page---ProductsCards*/
 

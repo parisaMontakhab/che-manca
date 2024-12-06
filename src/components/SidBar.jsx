@@ -32,6 +32,7 @@ import ProductsCards from "./ProductsCards";
 
 import LoadingText from "../commons/LoadingText";
 import ErrorBtn from "../commons/ErrorBtn";
+import { Category } from "@mui/icons-material";
 
 export default function SidBar() {
   const [selectedCategory, setSelectedCategory] = useState(null);
@@ -71,6 +72,12 @@ export default function SidBar() {
       setOpenCategory((prev) => (prev === id ? null : id));
     }
   };
+
+  const handleBackClick = ()=>{
+   
+    setSelectedCategory(null)
+    setOpenCategory(null)
+  }
   const {
     data: categories,
     isLoading: isCategoriesLoading,
@@ -91,10 +98,17 @@ export default function SidBar() {
               <Typography sx={{ fontFamily: "IranYekan" }}>دسته ها</Typography>
               <List>
                 {openCategory != null ? (
-                  <ArrowForwardIcon
-                   
-                    sx={{ color: "gray", marginLeft: 1, fontSize: 18 }}
-                  />
+                  <ListItem onClick={handleBackClick} className="ads-sideBar__listItem">
+                    <ArrowForwardIcon
+                      sx={{  marginLeft: 1, fontSize: 18 }}
+                    />
+                    <ListItemText
+                      disableTypography
+                      primary="همه ی آگهی ها"
+                      className="ads-sideBar__itemText--color"
+                      
+                    />
+                  </ListItem>
                 ) : (
                   ""
                 )}
