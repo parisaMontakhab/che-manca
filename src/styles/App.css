@@ -288,6 +288,9 @@
 .subCategories__ItemText{
   font-size: 14px;
 }
+.subCategories__ItemText:hover{
+  color: #575656;
+}
 
 /*ads-page---ProductsCards*/
 
