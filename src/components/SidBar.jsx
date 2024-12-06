@@ -20,8 +20,8 @@ import {
   Autocomplete,
   Paper,
 } from "@mui/material";
-import { useCategories, useSubCategories } from "../api/categories";
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import { useCategories } from "../api/categories";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
@@ -75,12 +75,12 @@ export default function SidBar() {
     data: categories,
     isLoading: isCategoriesLoading,
     isError: categoriesError,
-  } = useCategories();
-  const {
-    data: subCategories,
-    isError: subCategoriesError,
-    isLoading: isSubCategoriesLoading,
-  } = useSubCategories(selectedCategory);
+  } = useCategories(selectedCategory);
+  // const {
+  //   data: subCategories,
+  //   isError: subCategoriesError,
+  //   isLoading: isSubCategoriesLoading,
+  // } = useSubCategories(selectedCategory);
 
   return (
     <div>
@@ -90,6 +90,14 @@ export default function SidBar() {
             <Box component="div" className="ads-sideBar">
               <Typography sx={{ fontFamily: "IranYekan" }}>دسته ها</Typography>
               <List>
+                {openCategory != null ? (
+                  <ArrowForwardIcon
+                   
+                    sx={{ color: "gray", marginLeft: 1, fontSize: 18 }}
+                  />
+                ) : (
+                  ""
+                )}
                 {isCategoriesLoading ? (
                   <LoadingText />
                 ) : categoriesError ? (
@@ -101,40 +109,12 @@ export default function SidBar() {
                         onClick={() => handleCategoryClick(category.uniqueId)}
                         className="ads-sideBar__listItem"
                       >
-                        {
-                          openCategory === category.uniqueId ? (<ArrowForwardIcon sx={{color:"gray",marginLeft:1,fontSize:18}}/>):("")
-                        }
                         <ListItemText
-                          primary={ category.brandCategory}
+                          primary={category.localizedName}
                           disableTypography
                           className="ads-sideBar__itemText"
                         />
                       </ListItem>
-                      {openCategory === category.uniqueId ? (
-                        <Collapse in={true} timeout="auto" unmountOnExit>
-                          {subCategoriesError ? (
-                            <ErrorBtn />
-                          ) : isSubCategoriesLoading ? (
-                            <LoadingText />
-                          ) : (
-                            subCategories?.map((sub) => (
-                              <Box key={sub.uniqueId} component="div" className="ads-SideBar__subCategories">
-                                <List>
-                                  <ListItem  >
-                                    <ListItemText
-                                    className="subCategories__ItemText"
-                                      disableTypography
-                                      primary={sub.localizedName}
-                                    />
-                                  </ListItem>
-                                </List>
-                              </Box>
-                            ))
-                          )}
-                        </Collapse>
-                      ) : (
-                        ""
-                      )}
                     </div>
                   ))
                 )}
