@@ -105,7 +105,7 @@ export default function SidBar() {
                           openCategory === category.uniqueId ? (<ArrowForwardIcon sx={{color:"gray",marginLeft:1,fontSize:18}}/>):("")
                         }
                         <ListItemText
-                          primary={category.brandCategory}
+                          primary={ category.brandCategory}
                           disableTypography
                           className="ads-sideBar__itemText"
                         />

@@ -279,7 +279,7 @@
 .ads-SideBar__subCategories {
   display: flex !important;
   justify-content: start !important;
-  margin-right: 30px !important;
+  margin-right: 40px !important;
   cursor: pointer;
 }
 .subCategories__ItemText {
