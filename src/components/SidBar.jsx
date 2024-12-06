@@ -21,6 +21,7 @@ import {
   Paper,
 } from "@mui/material";
 import { useCategories, useSubCategories } from "../api/categories";
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
@@ -100,6 +101,9 @@ export default function SidBar() {
                         onClick={() => handleCategoryClick(category.uniqueId)}
                         className="ads-sideBar__listItem"
                       >
+                        {
+                          openCategory === category.uniqueId ? (<ArrowForwardIcon sx={{color:"gray",marginLeft:1,fontSize:18}}/>):("")
+                        }
                         <ListItemText
                           primary={category.brandCategory}
                           disableTypography

@@ -277,18 +277,15 @@
 }
 /* ads-sideBar--categories*/
 .ads-SideBar__subCategories {
-  display:flex !important;
-  justify-content:start !important;
-  margin-right:30px !important;
-  border-right:1px solid #b3b0b0 !important;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
+  display: flex !important;
+  justify-content: start !important;
+  margin-right: 30px !important;
   cursor: pointer;
 }
-.subCategories__ItemText{
+.subCategories__ItemText {
   font-size: 14px;
 }
-.subCategories__ItemText:hover{
+.subCategories__ItemText:hover {
   color: #575656;
 }
 
