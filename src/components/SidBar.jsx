@@ -107,9 +107,9 @@ export default function SidBar() {
                         (openCategory === category.uniqueId) ?(<Collapse in={true}>
                           {
                             subCategoriesError ? (<ErrorBtn/>) : isSubCategoriesLoading ? (<LoadingText/>):
-                            subCategories?.map((sub)=>(
+                         (   subCategories?.map((sub)=>(
                               <Typography key={sub.uniqueId}>{sub.localizedName}</Typography>
-                            ))
+                            )))
                           }
                         </Collapse>
 
