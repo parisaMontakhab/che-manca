@@ -32,6 +32,7 @@ import ProductsCards from "./ProductsCards";
 
 import LoadingText from "../commons/LoadingText";
 import ErrorBtn from "../commons/ErrorBtn";
+import BackArrowCategory from "./BackArrowCategory";
 
 
 export default function SidBar() {
@@ -93,26 +94,7 @@ export default function SidBar() {
               <Typography sx={{ fontFamily: "IranYekan" }}>دسته ها</Typography>
               <List>
                 {openCategory != null ? (
-                 <List>
-                   <ListItem
-                    onClick={handleBackClick}
-                    className="ads-sideBar__listItem"
-                  >
-                    <ArrowForwardIcon sx={{ marginLeft: 1, fontSize: 18 }} />
-                    <ListItemText
-                      disableTypography
-                      primary="همه ی آگهی ها"
-                      className="ads-sideBar__itemText--color"
-                    />
-                  </ListItem>
-                  <ListItem>
-                  <ListItemText
-                      disableTypography
-                      primary={selectedCategory.localizedName}
-                      className="ads-sideBar__itemText--margin"
-                    />
-                  </ListItem>
-                 </List>
+                 <BackArrowCategory selectedCategory={selectedCategory} handleBackClick={handleBackClick}/>
                 ) : (
                   ""
                 )}
