@@ -32,7 +32,7 @@ import ProductsCards from "./ProductsCards";
 
 import LoadingText from "../commons/LoadingText";
 import ErrorBtn from "../commons/ErrorBtn";
-import { Category } from "@mui/icons-material";
+
 
 export default function SidBar() {
   const [selectedCategory, setSelectedCategory] = useState({});
@@ -367,7 +367,7 @@ export default function SidBar() {
 
         <Grid2 component="div" className="ads-sideBar__gridTwo">
           <main>
-            <ProductsCards />
+            {/* <ProductsCards /> */}
           </main>
         </Grid2>
       </Grid2>
