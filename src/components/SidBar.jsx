@@ -4,11 +4,9 @@ import {
   Box,
   Button,
   Collapse,
-  Container,
   Divider,
   List,
   ListItem,
-  ListItemIcon,
   ListItemText,
   TextField,
   Typography,
@@ -21,19 +19,17 @@ import {
   Paper,
 } from "@mui/material";
 import { useCategories } from "../api/categories";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 import KeyboardArrowLeftRoundedIcon from "@mui/icons-material/KeyboardArrowLeftRounded";
 import FiberManualRecordRoundedIcon from "@mui/icons-material/FiberManualRecordRounded";
 import Footer from "./Footer";
-import ProductsCards from "./ProductsCards";
 
 import LoadingText from "../commons/LoadingText";
 import ErrorBtn from "../commons/ErrorBtn";
 import BackArrowCategory from "./BackArrowCategory";
-
+import CategoryList from "./CategoryList";
 
 export default function SidBar() {
   const [selectedCategory, setSelectedCategory] = useState({});
@@ -70,8 +66,9 @@ export default function SidBar() {
   const handleCategoryClick = (category) => {
     setSelectedCategory(category);
     if (category.uniqueId) {
-      
-      setOpenCategory((prev) => (prev === category.uniqueId ? null : category.uniqueId));
+      setOpenCategory((prev) =>
+        prev === category.uniqueId ? null : category.uniqueId
+      );
     }
   };
 
@@ -94,7 +91,10 @@ export default function SidBar() {
               <Typography sx={{ fontFamily: "IranYekan" }}>دسته ها</Typography>
               <List>
                 {openCategory != null ? (
-                 <BackArrowCategory selectedCategory={selectedCategory} handleBackClick={handleBackClick}/>
+                  <BackArrowCategory
+                    selectedCategory={selectedCategory}
+                    handleBackClick={handleBackClick}
+                  />
                 ) : (
                   ""
                 )}
@@ -105,16 +105,10 @@ export default function SidBar() {
                 ) : (
                   categories?.map((category) => (
                     <div key={category.uniqueId}>
-                      <ListItem
-                        onClick={() => handleCategoryClick(category)}
-                        className="ads-sideBar__listItem"
-                      >
-                        <ListItemText
-                          primary={category.localizedName}
-                          disableTypography
-                          className={category.parentId === null ? "ads-sideBar__itemText" : "ads-sideBar__itemText--child"}
-                        />
-                      </ListItem>
+                      <CategoryList
+                        category={category}
+                        handleCategoryClick={handleCategoryClick}
+                      />
                     </div>
                   ))
                 )}
@@ -348,9 +342,7 @@ export default function SidBar() {
         </Grid2>
 
         <Grid2 component="div" className="ads-sideBar__gridTwo">
-          <main>
-            {/* <ProductsCards /> */}
-          </main>
+          <main>{/* <ProductsCards /> */}</main>
         </Grid2>
       </Grid2>
     </div>
