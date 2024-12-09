@@ -5,8 +5,8 @@ import axios from "axios";
 //country//
 
 const fetchCountries = async ()=>{
-    const {data} = await axios.get('https://client.mobile.chemanca.com/api/basicinfo/country/getall');
-    return data;
+    const response = await axios.get('https://client.mobile.chemanca.com/api/basicinfo/country/getall');
+    return response.data;
 }
 
 export const useCountries = ()=>{
@@ -18,9 +18,9 @@ export const useCountries = ()=>{
 
 //subcountry//
 const fetchSubCountries = async (countryId)=>{
-    const {data} = await axios.get(`https://client.mobile.chemanca.com/api/basicinfo/SubCountry/GetAllSubCountryByCountryId?countryId=${countryId}`);
+    const response = await axios.get(`https://client.mobile.chemanca.com/api/basicinfo/SubCountry/GetAllSubCountryByCountryId?countryId=${countryId}`);
     
-    return data;
+    return response.data;
     }
 
 
@@ -37,10 +37,10 @@ const fetchSubCountries = async (countryId)=>{
 
     //city//
     const fetchCities = async (subCountryId) => {
-        const { data } = await axios.get(
+        const response = await axios.get(
           `https://client.mobile.chemanca.com/api/basicinfo/City/GetAllCityBySubCountryId?subCountryId=${subCountryId}`
         );
-        return data;
+        return response.data;
       };
       
       export const useCities = (subCountryId) => {
