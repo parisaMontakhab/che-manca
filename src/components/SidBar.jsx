@@ -30,6 +30,7 @@ import LoadingText from "../commons/LoadingText";
 import ErrorBtn from "../commons/ErrorBtn";
 import BackArrowCategory from "./BackArrowCategory";
 import CategoryList from "./CategoryList";
+import BtnComponent from "./BtnComponent";
 
 export default function SidBar() {
   const [selectedCategory, setSelectedCategory] = useState({});
@@ -114,35 +115,7 @@ export default function SidBar() {
                 )}
 
                 <Divider sx={{ width: "80%" }} />
-                <ListItem
-                  onClick={() => handleClick("location")}
-                  className="ads-sideBar__listItem"
-                >
-                  {openItems["location"] ? (
-                    <ExpandLess className="ads-sideBar__itemIcon" />
-                  ) : (
-                    <ExpandMore className="ads-sideBar__itemIcon" />
-                  )}
-                  <ListItemText
-                    primary="محل"
-                    disableTypography
-                    className="ads-sideBar__collapsText"
-                  />
-                </ListItem>
-                <Collapse
-                  in={openItems["location"]}
-                  timeout="auto"
-                  unmountOnExit
-                >
-                  <Button
-                    endIcon={<KeyboardArrowLeftRoundedIcon />}
-                    fullWidth
-                    className="ads-sideBar__locBtn"
-                  >
-                    تعیین محل
-                  </Button>
-                </Collapse>
-                <Divider sx={{ width: "80%", marginTop: 2 }} />
+               <BtnComponent openItems={openItems} handleClick={handleClick}/>
                 <ListItem
                   onClick={() => handleClick("price")}
                   className="ads-sideBar__listItem "
