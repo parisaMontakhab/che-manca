@@ -109,7 +109,7 @@ export default function SidBar() {
                   <ListItemText
                       disableTypography
                       primary={selectedCategory.localizedName}
-                      className="ads-sideBar__itemText--color"
+                      className="ads-sideBar__itemText--margin"
                     />
                   </ListItem>
                  </List>
@@ -130,7 +130,7 @@ export default function SidBar() {
                         <ListItemText
                           primary={category.localizedName}
                           disableTypography
-                          className="ads-sideBar__itemText"
+                          className={category.parentId === null ? "ads-sideBar__itemText" : "ads-sideBar__itemText--child"}
                         />
                       </ListItem>
                     </div>

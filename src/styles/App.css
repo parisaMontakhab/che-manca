@@ -163,11 +163,27 @@
   text-align: right;
   color: gray !important;
 }
+.ads-sideBar__itemText--child {
+  font-family: "IranYekan" !important;
+  display: inline;
+  text-align: right;
+  color: gray !important;
+  margin-right: 8% !important;
+}
 .ads-sideBar__itemText--color{
   font-family: "IranYekan" !important;
   display: inline;
   text-align: right;
   color: black !important;
+ 
+}
+.ads-sideBar__itemText--margin{
+  font-family: "IranYekan" !important;
+  display: inline;
+  text-align: right;
+  color: black !important;
+  margin-right: 5% !important;
+ 
 }
 .ads-sideBar__listItem:hover .ads-sideBar__itemIcon,
 .ads-sideBar__listItem:hover .ads-sideBar__itemText {
