@@ -1,25 +1,8 @@
 import React, { useState } from "react";
 
-import {
-  Box,
-  Button,
-  Collapse,
-  Divider,
-  List,
-  ListItem,
-  ListItemText,
-  Typography,
-  Grid2,
-  Link,
-  FormGroup,
-  FormControlLabel,
-  Switch,
-} from "@mui/material";
+import { Box, Divider, List, Typography, Grid2, Link } from "@mui/material";
 import { useCategories } from "../api/categories";
 
-import ExpandLess from "@mui/icons-material/ExpandLess";
-import ExpandMore from "@mui/icons-material/ExpandMore";
-import FiberManualRecordRoundedIcon from "@mui/icons-material/FiberManualRecordRounded";
 import Footer from "./Footer";
 
 import LoadingText from "../commons/LoadingText";
@@ -28,6 +11,7 @@ import BackArrowCategory from "./BackArrowCategory";
 import CategoryList from "./CategoryList";
 import BtnComponent from "./BtnComponent";
 import NumeriComponent from "./NumeriComponent";
+import SwitchComponent from "./SwitchComponent";
 
 export default function SidBar() {
   const [selectedCategory, setSelectedCategory] = useState({});
@@ -120,67 +104,13 @@ export default function SidBar() {
                   handleClick={handleClick}
                   handleDeletPrice={handleDeletPrice}
                 />
-                <ListItem
-                  onClick={() => handleClick("status")}
-                  className="ads-sideBar__listItem "
-                >
-                  {openItems["status"] ? (
-                    <ExpandLess className="ads-sideBar__itemIcon" />
-                  ) : (
-                    <ExpandMore className="ads-sideBar__itemIcon" />
-                  )}
-                  <ListItemText
-                    primary="وضعیت آگهی"
-                    disableTypography
-                    className="ads-sideBar__collapsText"
-                  />
-                  {(checked["photo"] || checked["force"]) &&
-                    (openItems["status"] ? (
-                      <Button
-                        onClick={handleDeletChecked}
-                        className="ads-sideBar__deletBtn"
-                      >
-                        حذف
-                      </Button>
-                    ) : (
-                      <FiberManualRecordRoundedIcon className="ads-sideBar__deletIcon" />
-                    ))}
-                </ListItem>
-                <Collapse in={openItems["status"]} timeout="auto" unmountOnExit>
-                  <FormGroup>
-                    <FormControlLabel
-                      className="ads-sideBar__swichStatus"
-                      label={
-                        <Typography className="ads-sideBar__priceBox__title">
-                          عکس دار
-                        </Typography>
-                      }
-                      control={
-                        <Switch
-                          checked={checked.photo}
-                          onChange={handleCheckedClick}
-                          name="photo"
-                        />
-                      }
-                    />
-                    <FormControlLabel
-                      className="ads-sideBar__swichStatus"
-                      label={
-                        <Typography className="ads-sideBar__priceBox__title ">
-                          فوری
-                        </Typography>
-                      }
-                      control={
-                        <Switch
-                          checked={checked.force}
-                          onChange={handleCheckedClick}
-                          name="force"
-                        />
-                      }
-                    />
-                  </FormGroup>
-                </Collapse>
-                <Divider sx={{ width: "80%", marginTop: 2 }} />
+                <SwitchComponent
+                  openItems={openItems}
+                  handleClick={handleClick}
+                  checked={checked}
+                  handleDeletChecked={handleDeletChecked}
+                  handleCheckedClick={handleCheckedClick}
+                />
               </List>
               <nav className="ads-sideBar__nav">
                 <Grid2
