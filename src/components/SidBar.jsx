@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { priceOptions } from "../data/PriceData";
+
 import {
   Box,
   Button,
@@ -8,21 +8,17 @@ import {
   List,
   ListItem,
   ListItemText,
-  TextField,
   Typography,
   Grid2,
   Link,
   FormGroup,
   FormControlLabel,
   Switch,
-  Autocomplete,
-  Paper,
 } from "@mui/material";
 import { useCategories } from "../api/categories";
 
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
-import KeyboardArrowLeftRoundedIcon from "@mui/icons-material/KeyboardArrowLeftRounded";
 import FiberManualRecordRoundedIcon from "@mui/icons-material/FiberManualRecordRounded";
 import Footer from "./Footer";
 
@@ -31,6 +27,7 @@ import ErrorBtn from "../commons/ErrorBtn";
 import BackArrowCategory from "./BackArrowCategory";
 import CategoryList from "./CategoryList";
 import BtnComponent from "./BtnComponent";
+import NumeriComponent from "./NumeriComponent";
 
 export default function SidBar() {
   const [selectedCategory, setSelectedCategory] = useState({});
@@ -115,95 +112,14 @@ export default function SidBar() {
                 )}
 
                 <Divider sx={{ width: "80%" }} />
-               <BtnComponent openItems={openItems} handleClick={handleClick}/>
-                <ListItem
-                  onClick={() => handleClick("price")}
-                  className="ads-sideBar__listItem "
-                >
-                  {openItems["price"] ? (
-                    <ExpandLess className="ads-sideBar__itemIcon" />
-                  ) : (
-                    <ExpandMore className="ads-sideBar__itemIcon" />
-                  )}
-                  <ListItemText
-                    primary="قیمت"
-                    disableTypography
-                    className="ads-sideBar__collapsText"
-                  />
-                  {(prices.minPrice || prices.maxPrice) &&
-                    (openItems["price"] ? (
-                      <Button
-                        onClick={handleDeletPrice}
-                        className="ads-sideBar__deletBtn"
-                      >
-                        حذف
-                      </Button>
-                    ) : (
-                      <FiberManualRecordRoundedIcon className="ads-sideBar__deletIcon" />
-                    ))}
-                </ListItem>
-
-                <Collapse in={openItems["price"]} timeout="auto" unmountOnExit>
-                  <Box className="ads-sideBar__priceBox">
-                    <Typography
-                      variant="body1"
-                      className="ads-sideBar__priceBox__title"
-                    >
-                      حداقل
-                    </Typography>
-                    <Autocomplete
-                      PaperComponent={(props) => (
-                        <Paper {...props} className="ads-sideBar__pricePaper" />
-                      )}
-                      size="small"
-                      className="ads-sideBar__priceAutocomplete"
-                      freeSolo
-                      options={priceOptions}
-                      inputValue={prices.minPrice}
-                      onInputChange={(event, newValue) => {
-                        setPrices({ ...prices, minPrice: newValue });
-                      }}
-                      forcePopupIcon={!prices.minPrice ? true : false}
-                      renderInput={(params) => (
-                        <TextField
-                          {...params}
-                          placeholder="وارد کردن مقدار دلخواه"
-                          className="ads-sideBar__priceSpan"
-                        />
-                      )}
-                    />
-                  </Box>
-                  <Box className="ads-sideBar__priceBox">
-                    <Typography
-                      variant="body1"
-                      className="ads-sideBar__priceBox__title"
-                    >
-                      حداکثر
-                    </Typography>
-                    <Autocomplete
-                      PaperComponent={(props) => (
-                        <Paper {...props} className="ads-sideBar__pricePaper" />
-                      )}
-                      size="small"
-                      className="ads-sideBar__priceAutocomplete"
-                      freeSolo
-                      options={priceOptions}
-                      inputValue={prices.maxPrice}
-                      onInputChange={(event, newValue) => {
-                        setPrices({ ...prices, maxPrice: newValue });
-                      }}
-                      forcePopupIcon={!prices.maxPrice ? true : false}
-                      renderInput={(params) => (
-                        <TextField
-                          {...params}
-                          placeholder="وارد کردن مقدار دلخواه"
-                          className="ads-sideBar__priceSpan"
-                        />
-                      )}
-                    />
-                  </Box>
-                </Collapse>
-                <Divider sx={{ width: "80%", marginTop: 2 }} />
+                <BtnComponent openItems={openItems} handleClick={handleClick} />
+                <NumeriComponent
+                  openItems={openItems}
+                  prices={prices}
+                  setPrices={setPrices}
+                  handleClick={handleClick}
+                  handleDeletPrice={handleDeletPrice}
+                />
                 <ListItem
                   onClick={() => handleClick("status")}
                   className="ads-sideBar__listItem "
