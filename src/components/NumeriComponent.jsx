@@ -16,7 +16,13 @@ import ExpandMore from "@mui/icons-material/ExpandMore";
 import FiberManualRecordRoundedIcon from "@mui/icons-material/FiberManualRecordRounded";
 import { priceOptions } from "../data/PriceData";
 
-export default function NumeriComponent({openItems,handleClick,prices,handleDeletPrice,setPrices}) {
+export default function NumeriComponent({
+  openItems,
+  handleClick,
+  prices,
+  handleDeletPrice,
+  setPrices,
+}) {
   return (
     <div>
       <ListItem
@@ -48,16 +54,13 @@ export default function NumeriComponent({openItems,handleClick,prices,handleDele
 
       <Collapse in={openItems["price"]} timeout="auto" unmountOnExit>
         <Box className="ads-sideBar__priceBox">
-          <Typography variant="body1" className="ads-sideBar__priceBox__title">
-            حداقل
-          </Typography>
           <Autocomplete
+            fullWidth
             PaperComponent={(props) => (
               <Paper {...props} className="ads-sideBar__pricePaper" />
             )}
             size="small"
             className="ads-sideBar__priceAutocomplete"
-            freeSolo
             options={priceOptions}
             inputValue={prices.minPrice}
             onInputChange={(event, newValue) => {
@@ -67,33 +70,7 @@ export default function NumeriComponent({openItems,handleClick,prices,handleDele
             renderInput={(params) => (
               <TextField
                 {...params}
-                placeholder="وارد کردن مقدار دلخواه"
-                className="ads-sideBar__priceSpan"
-              />
-            )}
-          />
-        </Box>
-        <Box className="ads-sideBar__priceBox">
-          <Typography variant="body1" className="ads-sideBar__priceBox__title">
-            حداکثر
-          </Typography>
-          <Autocomplete
-            PaperComponent={(props) => (
-              <Paper {...props} className="ads-sideBar__pricePaper" />
-            )}
-            size="small"
-            className="ads-sideBar__priceAutocomplete"
-            freeSolo
-            options={priceOptions}
-            inputValue={prices.maxPrice}
-            onInputChange={(event, newValue) => {
-              setPrices({ ...prices, maxPrice: newValue });
-            }}
-            forcePopupIcon={!prices.maxPrice ? true : false}
-            renderInput={(params) => (
-              <TextField
-                {...params}
-                placeholder="وارد کردن مقدار دلخواه"
+                placeholder=" لطفا یه مورد انتخاب کن"
                 className="ads-sideBar__priceSpan"
               />
             )}
