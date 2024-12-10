@@ -186,7 +186,7 @@
  
 }
 .ads-sideBar__listItem:hover .ads-sideBar__itemIcon,
-.ads-sideBar__listItem:hover .ads-sideBar__itemText {
+.ads-sideBar__listItem:hover .ads-sideBar__itemText ,.ads-sideBar__itemText--child:hover {
   color: #575656 !important;
   font-weight: 700;
 }
