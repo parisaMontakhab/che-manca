@@ -96,7 +96,7 @@ export default function SidBar() {
                 )}
 
                 <Divider sx={{ width: "80%" }} />
-                <BtnComponent openItems={openItems} handleClick={handleClick} />
+
                 <NumeriComponent
                   openItems={openItems}
                   prices={prices}
