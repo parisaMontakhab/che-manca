@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import { Box, Divider, List, Typography, Grid2, Link } from "@mui/material";
-import { useCategories, useCategoryDetails } from "../api/categories";
+import { useCategories } from "../api/categories";
 
 import Footer from "./Footer";
 
@@ -20,7 +20,6 @@ export default function SidBar() {
   const [checked, setChecked] = useState({ photo: false, force: false });
   const [prices, setPrices] = useState({ minPrice: "", maxPrice: "" });
   const [openCategory, setOpenCategory] = useState(null);
-  const [selectedLeaf, setSelectedLeaf] = useState(null);
 
   const handleClick = (item) => {
     setOpenItems((prev) => ({
@@ -54,9 +53,6 @@ export default function SidBar() {
         prev === category.uniqueId ? null : category.uniqueId
       );
     }
-    if (category.isLeaf === true) {
-      setSelectedLeaf(category.uniqueId);
-    }
   };
 
   const handleBackClick = () => {
@@ -70,9 +66,7 @@ export default function SidBar() {
     isError: categoriesError,
   } = useCategories(selectedCategory?.uniqueId);
 
-  const { data: categoryDetails } = useCategoryDetails(selectedLeaf);
-  console.log(categoryDetails);
-
+  
   return (
     <div>
       <Grid2 container spacing={2} component="div" className="ads-container">
@@ -105,7 +99,7 @@ export default function SidBar() {
                 )}
 
                 <Divider sx={{ width: "80%" }} />
-                {selectedLeaf === null ? (
+                {selectedCategory?.isLeaf !== true ? (
                   <>
                     <NumeriComponent
                       openItems={openItems}
@@ -123,7 +117,14 @@ export default function SidBar() {
                     />
                   </>
                 ) : (
-                  <AdsCategoryDetails/>
+                  <AdsCategoryDetails
+                    openItems={openItems}
+                    setOpenItems={setOpenItems}
+                    checked={checked}
+                    setChecked={setChecked}
+                    selectedCategory={selectedCategory}
+                    setSelectedCategory={setSelectedCategory}
+                  />
                 )}
               </List>
               <nav className="ads-sideBar__nav">

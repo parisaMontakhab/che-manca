@@ -7,7 +7,7 @@ const fetchCategories = async (parentId) => {
     parentId || ""
   }`;
   const response = await axios.get(url);
-  console.log(response.data)
+ // console.log(response.data)
   return response.data;
 };
 
@@ -20,13 +20,14 @@ export const useCategories = (parentId) => {
 
 //categoryDetails//
 
+
 const fetchCategoryDetails = async (adsCategoryId) => {
  
   const response = await axios.get(
     `https://client.mobile.chemanca.com/api/advertisements/AdsCategoryDetail/GetAllAdvertisementCategoryDetails?categoryId=${adsCategoryId}`
   );
- 
-  return response.data;
+   return response.data;
+  
 };
 
 export const useCategoryDetails = (adsCategoryId) => {

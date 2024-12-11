@@ -12,3 +12,11 @@ checked={checked}
 handleDeletChecked={handleDeletChecked}
 handleCheckedClick={handleCheckedClick}
 /> -->
+
+<AdsCategoryDetails
+openItems={openItems}
+setOpenItems={setOpenItems}
+checked={checked}
+setChecked={setChecked}
+categoryDetails={categoryDetails}
+/>
