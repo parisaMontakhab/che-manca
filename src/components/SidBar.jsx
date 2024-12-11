@@ -12,6 +12,7 @@ import CategoryList from "./CategoryList";
 import BtnComponent from "./BtnComponent";
 import NumeriComponent from "./NumeriComponent";
 import SwitchComponent from "./SwitchComponent";
+import AdsCategoryDetails from "./AdsCategoryDetails";
 
 export default function SidBar() {
   const [selectedCategory, setSelectedCategory] = useState({});
@@ -19,8 +20,7 @@ export default function SidBar() {
   const [checked, setChecked] = useState({ photo: false, force: false });
   const [prices, setPrices] = useState({ minPrice: "", maxPrice: "" });
   const [openCategory, setOpenCategory] = useState(null);
-  const [ selectedLeaf,setSelectedLeaf] = useState(null);
- 
+  const [selectedLeaf, setSelectedLeaf] = useState(null);
 
   const handleClick = (item) => {
     setOpenItems((prev) => ({
@@ -54,7 +54,7 @@ export default function SidBar() {
         prev === category.uniqueId ? null : category.uniqueId
       );
     }
-    if(category.isLeaf === true){
+    if (category.isLeaf === true) {
       setSelectedLeaf(category.uniqueId);
     }
   };
@@ -63,17 +63,15 @@ export default function SidBar() {
     setSelectedCategory(null);
     setOpenCategory(null);
   };
-  
 
   const {
     data: categories,
     isLoading: isCategoriesLoading,
     isError: categoriesError,
   } = useCategories(selectedCategory?.uniqueId);
-  
-const {data:categoryDetails } = useCategoryDetails(selectedLeaf);
-console.log(categoryDetails);
- 
+
+  const { data: categoryDetails } = useCategoryDetails(selectedLeaf);
+  console.log(categoryDetails);
 
   return (
     <div>
@@ -107,10 +105,26 @@ console.log(categoryDetails);
                 )}
 
                 <Divider sx={{ width: "80%" }} />
-
-             
-
-               
+                {selectedLeaf === null ? (
+                  <>
+                    <NumeriComponent
+                      openItems={openItems}
+                      prices={prices}
+                      setPrices={setPrices}
+                      handleClick={handleClick}
+                      handleDeletPrice={handleDeletPrice}
+                    />
+                    <SwitchComponent
+                      openItems={openItems}
+                      handleClick={handleClick}
+                      checked={checked}
+                      handleDeletChecked={handleDeletChecked}
+                      handleCheckedClick={handleCheckedClick}
+                    />
+                  </>
+                ) : (
+                  <AdsCategoryDetails/>
+                )}
               </List>
               <nav className="ads-sideBar__nav">
                 <Grid2
