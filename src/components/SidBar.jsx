@@ -17,7 +17,7 @@ import AdsCategoryDetails from "./AdsCategoryDetails";
 export default function SidBar() {
   const [selectedCategory, setSelectedCategory] = useState({});
   const [openItems, setOpenItems] = useState({});
-  const [checked, setChecked] = useState({ photo: false, force: false });
+  const [checked, setChecked] = useState({});
   const [prices, setPrices] = useState({ minPrice: "", maxPrice: "" });
   const [openCategory, setOpenCategory] = useState(null);
 
@@ -29,10 +29,10 @@ export default function SidBar() {
   };
 
   const handleCheckedClick = (event) => {
-    setChecked({
-      ...checked,
-      [event.target.name]: event.target.checked,
-    });
+    setChecked((prev)=>({
+      ...prev,
+      [event.target.name]:event.target.checked
+    }));
   };
   const handleDeletChecked = () => {
     setChecked((prevChecked) => {
@@ -126,9 +126,9 @@ export default function SidBar() {
                           }
                           control={
                             <Switch
-                              checked={checked.photo}
+                              checked={checked.adsStatusPhoto || false}
                               onChange={handleCheckedClick}
-                              name="photo"
+                              name="adsStatusPhoto"
                             />
                           }
                         />
@@ -141,9 +141,9 @@ export default function SidBar() {
                           }
                           control={
                             <Switch
-                              checked={checked.force}
+                              checked={checked.adsStatusForce || false}
                               onChange={handleCheckedClick}
-                              name="force"
+                              name="adsStatusForce"
                             />
                           }
                         />

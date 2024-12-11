@@ -13,7 +13,7 @@ import {
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 import FiberManualRecordRoundedIcon from "@mui/icons-material/FiberManualRecordRounded";
-import { Title } from "@mui/icons-material";
+import { Key, Title } from "@mui/icons-material";
 
 export default function SwitchComponent({handleClick,openItems,checked,handleDeletChecked,handleCheckedClick,title,children}) {
   return (
@@ -32,7 +32,7 @@ export default function SwitchComponent({handleClick,openItems,checked,handleDel
           disableTypography
           className="ads-sideBar__collapsText"
         />
-        {(checked["photo"] || checked["force"]) &&
+        { !checked.key &&
           (openItems[title] ? (
             <Button
               onClick={handleDeletChecked}

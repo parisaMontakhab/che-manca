@@ -46,9 +46,9 @@ export default function AdsCategoryDetails({
                 }
                 control={
                   <Switch
-                    checked={checked.photo}
+                    checked={checked.locFilterHas || false}
                     onChange={handleCheckedClick}
-                    name='photo'
+                    name="locFilterHas"
                   />
                 }
               />
@@ -61,9 +61,9 @@ export default function AdsCategoryDetails({
                 }
                 control={
                   <Switch
-                    checked={checked.force}
+                    checked={checked.locFilterNotHas || false}
                     onChange={handleCheckedClick}
-                    name=""
+                    name="locFilterNotHas"
                   />
                 }
               />
