@@ -119,11 +119,17 @@ export default function SidBar() {
                 ) : (
                   <AdsCategoryDetails
                     openItems={openItems}
+                    prices={prices}
+                    setPrices={setPrices}
                     setOpenItems={setOpenItems}
                     checked={checked}
                     setChecked={setChecked}
+                    handleDeletChecked={handleDeletChecked}
+                    handleCheckedClick={handleCheckedClick}
                     selectedCategory={selectedCategory}
                     setSelectedCategory={setSelectedCategory}
+                    handleClick={handleClick}
+                    handleDeletPrice={handleDeletPrice}
                   />
                 )}
               </List>
