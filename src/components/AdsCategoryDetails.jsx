@@ -1,4 +1,5 @@
 import React from "react";
+import { FormGroup, Typography, FormControlLabel, Switch } from "@mui/material";
 import { useCategoryDetails } from "../api/categories";
 import BtnComponent from "./BtnComponent";
 import NumeriComponent from "./NumeriComponent";
@@ -16,7 +17,7 @@ export default function AdsCategoryDetails({
   handleClick,
   handleDeletPrice,
   handleDeletChecked,
-  handleCheckedClick
+  handleCheckedClick,
 }) {
   const { data: categoryDetails } = useCategoryDetails(
     selectedCategory?.uniqueId
@@ -27,12 +28,46 @@ export default function AdsCategoryDetails({
       <div>
         {categoryDetails.hasLocationFilter ? (
           <SwitchComponent
+            title='فیلتر مکان'
             openItems={openItems}
             handleClick={handleClick}
             checked={checked}
             handleDeletChecked={handleDeletChecked}
             handleCheckedClick={handleCheckedClick}
-          />
+          >
+            <FormGroup>
+              <FormControlLabel
+                className="ads-sideBar__swichStatus"
+                label={
+                  <Typography className="ads-sideBar__priceBox__title">
+                    داره
+                  </Typography>
+                }
+                control={
+                  <Switch
+                    checked={checked.photo}
+                    onChange={handleCheckedClick}
+                    name='photo'
+                  />
+                }
+              />
+              <FormControlLabel
+                className="ads-sideBar__swichStatus"
+                label={
+                  <Typography className="ads-sideBar__priceBox__title ">
+                    نداره
+                  </Typography>
+                }
+                control={
+                  <Switch
+                    checked={checked.force}
+                    onChange={handleCheckedClick}
+                    name=""
+                  />
+                }
+              />
+            </FormGroup>
+          </SwitchComponent>
         ) : (
           "salam"
         )}

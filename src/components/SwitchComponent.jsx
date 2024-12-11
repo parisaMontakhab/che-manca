@@ -13,8 +13,9 @@ import {
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 import FiberManualRecordRoundedIcon from "@mui/icons-material/FiberManualRecordRounded";
+import { Title } from "@mui/icons-material";
 
-export default function SwitchComponent({handleClick,openItems,checked,handleDeletChecked,handleCheckedClick}) {
+export default function SwitchComponent({handleClick,openItems,checked,handleDeletChecked,handleCheckedClick,title,children}) {
   return (
     <div>
       <ListItem
@@ -27,7 +28,7 @@ export default function SwitchComponent({handleClick,openItems,checked,handleDel
           <ExpandMore className="ads-sideBar__itemIcon" />
         )}
         <ListItemText
-          primary="وضعیت آگهی"
+          primary={title}
           disableTypography
           className="ads-sideBar__collapsText"
         />
@@ -44,40 +45,45 @@ export default function SwitchComponent({handleClick,openItems,checked,handleDel
           ))}
       </ListItem>
       <Collapse in={openItems["status"]} timeout="auto" unmountOnExit>
-        <FormGroup>
-          <FormControlLabel
-            className="ads-sideBar__swichStatus"
-            label={
-              <Typography className="ads-sideBar__priceBox__title">
-                عکس دار
-              </Typography>
-            }
-            control={
-              <Switch
-                checked={checked.photo}
-                onChange={handleCheckedClick}
-                name="photo"
-              />
-            }
-          />
-          <FormControlLabel
-            className="ads-sideBar__swichStatus"
-            label={
-              <Typography className="ads-sideBar__priceBox__title ">
-                فوری
-              </Typography>
-            }
-            control={
-              <Switch
-                checked={checked.force}
-                onChange={handleCheckedClick}
-                name="force"
-              />
-            }
-          />
-        </FormGroup>
+      {
+        children
+      }
+       
       </Collapse>
       <Divider sx={{ width: "80%", marginTop: 2 }} />
     </div>
   );
 }
+
+{/* <FormGroup>
+<FormControlLabel
+  className="ads-sideBar__swichStatus"
+  label={
+    <Typography className="ads-sideBar__priceBox__title">
+      عکس دار
+    </Typography>
+  }
+  control={
+    <Switch
+      checked={checked.photo}
+      onChange={handleCheckedClick}
+      name="photo"
+    />
+  }
+/>
+<FormControlLabel
+  className="ads-sideBar__swichStatus"
+  label={
+    <Typography className="ads-sideBar__priceBox__title ">
+      فوری
+    </Typography>
+  }
+  control={
+    <Switch
+      checked={checked.force}
+      onChange={handleCheckedClick}
+      name="force"
+    />
+  }
+/>
+</FormGroup> */}

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { Box, Divider, List, Typography, Grid2, Link } from "@mui/material";
+import { Box, Divider, List, Typography, Grid2, Link,FormGroup,FormControlLabel,Switch } from "@mui/material";
 import { useCategories } from "../api/categories";
 
 import Footer from "./Footer";
@@ -66,7 +66,6 @@ export default function SidBar() {
     isError: categoriesError,
   } = useCategories(selectedCategory?.uniqueId);
 
-  
   return (
     <div>
       <Grid2 container spacing={2} component="div" className="ads-container">
@@ -109,12 +108,46 @@ export default function SidBar() {
                       handleDeletPrice={handleDeletPrice}
                     />
                     <SwitchComponent
+                      title="وضعیت آگهی"
                       openItems={openItems}
                       handleClick={handleClick}
                       checked={checked}
                       handleDeletChecked={handleDeletChecked}
                       handleCheckedClick={handleCheckedClick}
-                    />
+                    >
+                      <FormGroup>
+                        <FormControlLabel
+                          className="ads-sideBar__swichStatus"
+                          label={
+                            <Typography className="ads-sideBar__priceBox__title">
+                              عکس دار
+                            </Typography>
+                          }
+                          control={
+                            <Switch
+                              checked={checked.photo}
+                              onChange={handleCheckedClick}
+                              name="photo"
+                            />
+                          }
+                        />
+                        <FormControlLabel
+                          className="ads-sideBar__swichStatus"
+                          label={
+                            <Typography className="ads-sideBar__priceBox__title ">
+                              فوری
+                            </Typography>
+                          }
+                          control={
+                            <Switch
+                              checked={checked.force}
+                              onChange={handleCheckedClick}
+                              name="force"
+                            />
+                          }
+                        />
+                      </FormGroup>
+                    </SwitchComponent>
                   </>
                 ) : (
                   <AdsCategoryDetails
