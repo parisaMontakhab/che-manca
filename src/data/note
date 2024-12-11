@@ -1,12 +1,14 @@
-  <!-- <ListItemText
-                        primary={category.brandCategory}
-                        disableTypography
-                        className="ads-sideBar__itemText"
-                      /> -->
-
-
-                      <ListItemText
-                      disableTypography
-                      primary={selectedCategory.localizedName}
-                      className="ads-sideBar__itemText--color"
-                    />
+<!-- <NumeriComponent
+openItems={openItems}
+prices={prices}
+setPrices={setPrices}
+handleClick={handleClick}
+handleDeletPrice={handleDeletPrice}
+/>
+<SwitchComponent
+openItems={openItems}
+handleClick={handleClick}
+checked={checked}
+handleDeletChecked={handleDeletChecked}
+handleCheckedClick={handleCheckedClick}
+/> -->

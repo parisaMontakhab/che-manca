@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import { Box, Divider, List, Typography, Grid2, Link } from "@mui/material";
-import { useCategories } from "../api/categories";
+import { useCategories, useCategoryDetails } from "../api/categories";
 
 import Footer from "./Footer";
 
@@ -19,6 +19,8 @@ export default function SidBar() {
   const [checked, setChecked] = useState({ photo: false, force: false });
   const [prices, setPrices] = useState({ minPrice: "", maxPrice: "" });
   const [openCategory, setOpenCategory] = useState(null);
+  const [ selectedLeaf,setSelectedLeaf] = useState(null);
+ 
 
   const handleClick = (item) => {
     setOpenItems((prev) => ({
@@ -52,17 +54,26 @@ export default function SidBar() {
         prev === category.uniqueId ? null : category.uniqueId
       );
     }
+    if(category.isLeaf === true){
+      setSelectedLeaf(category.uniqueId);
+    }
   };
 
   const handleBackClick = () => {
     setSelectedCategory(null);
     setOpenCategory(null);
   };
+  
+
   const {
     data: categories,
     isLoading: isCategoriesLoading,
     isError: categoriesError,
   } = useCategories(selectedCategory?.uniqueId);
+  
+const {data:categoryDetails } = useCategoryDetails(selectedLeaf);
+console.log(categoryDetails);
+ 
 
   return (
     <div>
@@ -97,20 +108,9 @@ export default function SidBar() {
 
                 <Divider sx={{ width: "80%" }} />
 
-                <NumeriComponent
-                  openItems={openItems}
-                  prices={prices}
-                  setPrices={setPrices}
-                  handleClick={handleClick}
-                  handleDeletPrice={handleDeletPrice}
-                />
-                <SwitchComponent
-                  openItems={openItems}
-                  handleClick={handleClick}
-                  checked={checked}
-                  handleDeletChecked={handleDeletChecked}
-                  handleCheckedClick={handleCheckedClick}
-                />
+             
+
+               
               </List>
               <nav className="ads-sideBar__nav">
                 <Grid2

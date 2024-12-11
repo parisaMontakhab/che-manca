@@ -7,6 +7,7 @@ const fetchCategories = async (parentId) => {
     parentId || ""
   }`;
   const response = await axios.get(url);
+  console.log(response.data)
   return response.data;
 };
 
@@ -17,16 +18,21 @@ export const useCategories = (parentId) => {
   });
 };
 
-//subCategories//
-// const fetchSubCategories = async (parentId)=>{
-//     const {data} = await axios.get(`https://client.mobile.chemanca.com/api/advertisements/AdsCategory/GetAllAdvertisementCategories?parentId=${parentId}`);
+//categoryDetails//
 
-//     return data;
-// }
-// export const useSubCategories = (parentId) => {
-//     return useQuery({
-//       queryKey: ["subCategories",parentId],
-//       queryFn: ()=>fetchSubCategories(parentId),
-//       enabled: !!parentId,
-//     });
-//   };
+const fetchCategoryDetails = async (adsCategoryId) => {
+ 
+  const response = await axios.get(
+    `https://client.mobile.chemanca.com/api/advertisements/AdsCategoryDetail/GetAllAdvertisementCategoryDetails?categoryId=${adsCategoryId}`
+  );
+ 
+  return response.data;
+};
+
+export const useCategoryDetails = (adsCategoryId) => {
+  return useQuery({
+    queryKey: ["categoryDetails", adsCategoryId],
+    queryFn: () => fetchCategoryDetails(adsCategoryId),
+    enabled: !!adsCategoryId,
+  });
+};
