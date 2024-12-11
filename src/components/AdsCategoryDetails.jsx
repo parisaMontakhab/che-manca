@@ -29,6 +29,7 @@ export default function AdsCategoryDetails({
         {categoryDetails.hasLocationFilter ? (
           <SwitchComponent
             title='فیلتر مکان'
+            handleClickTitle='hasLocationFilter'
             openItems={openItems}
             handleClick={handleClick}
             checked={checked}

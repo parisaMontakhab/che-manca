@@ -19,10 +19,10 @@ export default function SwitchComponent({handleClick,openItems,checked,handleDel
   return (
     <div>
       <ListItem
-        onClick={() => handleClick("status")}
+        onClick={() => handleClick(title)}
         className="ads-sideBar__listItem "
       >
-        {openItems["status"] ? (
+        {openItems[title] ? (
           <ExpandLess className="ads-sideBar__itemIcon" />
         ) : (
           <ExpandMore className="ads-sideBar__itemIcon" />
@@ -33,7 +33,7 @@ export default function SwitchComponent({handleClick,openItems,checked,handleDel
           className="ads-sideBar__collapsText"
         />
         {(checked["photo"] || checked["force"]) &&
-          (openItems["status"] ? (
+          (openItems[title] ? (
             <Button
               onClick={handleDeletChecked}
               className="ads-sideBar__deletBtn"
@@ -44,7 +44,7 @@ export default function SwitchComponent({handleClick,openItems,checked,handleDel
             <FiberManualRecordRoundedIcon className="ads-sideBar__deletIcon" />
           ))}
       </ListItem>
-      <Collapse in={openItems["status"]} timeout="auto" unmountOnExit>
+      <Collapse in={openItems[title]} timeout="auto" unmountOnExit>
       {
         children
       }

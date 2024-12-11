@@ -109,6 +109,7 @@ export default function SidBar() {
                     />
                     <SwitchComponent
                       title="وضعیت آگهی"
+                      
                       openItems={openItems}
                       handleClick={handleClick}
                       checked={checked}
