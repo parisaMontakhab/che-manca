@@ -56,35 +56,3 @@ export default function SwitchComponent({handleClick,openItems,checked,setChecke
   );
 }
 
-{/* <FormGroup>
-<FormControlLabel
-  className="ads-sideBar__swichStatus"
-  label={
-    <Typography className="ads-sideBar__priceBox__title">
-      عکس دار
-    </Typography>
-  }
-  control={
-    <Switch
-      checked={checked.photo}
-      onChange={handleCheckedClick}
-      name="photo"
-    />
-  }
-/>
-<FormControlLabel
-  className="ads-sideBar__swichStatus"
-  label={
-    <Typography className="ads-sideBar__priceBox__title ">
-      فوری
-    </Typography>
-  }
-  control={
-    <Switch
-      checked={checked.force}
-      onChange={handleCheckedClick}
-      name="force"
-    />
-  }
-/>
-</FormGroup> */}

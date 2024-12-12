@@ -26,49 +26,8 @@ export default function AdsCategoryDetails({
   if (categoryDetails) {
     return (
       <div>
-        {categoryDetails.hasLocationFilter ? (
-          <SwitchComponent
-            title='فیلتر مکان'
-            handleClickTitle='hasLocationFilter'
-            openItems={openItems}
-            handleClick={handleClick}
-            checked={checked}
-            handleDeletChecked={handleDeletChecked}
-            handleCheckedClick={handleCheckedClick}
-          >
-            <FormGroup>
-              <FormControlLabel
-                className="ads-sideBar__swichStatus"
-                label={
-                  <Typography className="ads-sideBar__priceBox__title">
-                    داره
-                  </Typography>
-                }
-                control={
-                  <Switch
-                    checked={checked.locFilterHas || false}
-                    onChange={handleCheckedClick}
-                    name="locFilterHas"
-                  />
-                }
-              />
-              <FormControlLabel
-                className="ads-sideBar__swichStatus"
-                label={
-                  <Typography className="ads-sideBar__priceBox__title ">
-                    نداره
-                  </Typography>
-                }
-                control={
-                  <Switch
-                    checked={checked.locFilterNotHas || false}
-                    onChange={handleCheckedClick}
-                    name="locFilterNotHas"
-                  />
-                }
-              />
-            </FormGroup>
-          </SwitchComponent>
+        {categoryDetails.hasDepositeFilter ? ("deposit"
+         
         ) : (
           "salam"
         )}
@@ -77,12 +36,4 @@ export default function AdsCategoryDetails({
   }
 }
 
-{
-  /* <NumeriComponent
-            openItems={openItems}
-            prices={prices}
-            setPrices={setPrices}
-            handleClick={handleClick}
-            handleDeletPrice={handleDeletPrice}
-          /> */
-}
+

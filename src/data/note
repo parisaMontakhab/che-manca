@@ -5,6 +5,9 @@ setPrices={setPrices}
 handleClick={handleClick}
 handleDeletPrice={handleDeletPrice}
 />
+
+
+ 
 <SwitchComponent
 openItems={openItems}
 handleClick={handleClick}
@@ -20,3 +23,85 @@ checked={checked}
 setChecked={setChecked}
 categoryDetails={categoryDetails}
 />
+
+//haslocationfilter// ke hanoz chon moshakhjas nist az toye component baresh midarim//
+
+<SwitchComponent
+title='فیلتر مکان'
+handleClickTitle='hasLocationFilter'
+openItems={openItems}
+handleClick={handleClick}
+checked={checked}
+handleDeletChecked={handleDeletChecked}
+handleCheckedClick={handleCheckedClick}
+>
+<FormGroup>
+  <FormControlLabel
+    className="ads-sideBar__swichStatus"
+    label={
+      <Typography className="ads-sideBar__priceBox__title">
+        داره
+      </Typography>
+    }
+    control={
+      <Switch
+        checked={checked.locFilterHas || false}
+        onChange={handleCheckedClick}
+        name="locFilterHas"
+      />
+    }
+  />
+  <FormControlLabel
+    className="ads-sideBar__swichStatus"
+    label={
+      <Typography className="ads-sideBar__priceBox__title ">
+        نداره
+      </Typography>
+    }
+    control={
+      <Switch
+        checked={checked.locFilterNotHas || false}
+        onChange={handleCheckedClick}
+        name="locFilterNotHas"
+      />
+    }
+  />
+</FormGroup>
+</SwitchComponent>
+
+
+
+
+// hamon swich component childreneshe//
+{/* <FormGroup>
+<FormControlLabel
+  className="ads-sideBar__swichStatus"
+  label={
+    <Typography className="ads-sideBar__priceBox__title">
+      عکس دار
+    </Typography>
+  }
+  control={
+    <Switch
+      checked={checked.photo}
+      onChange={handleCheckedClick}
+      name="photo"
+    />
+  }
+/>
+<FormControlLabel
+  className="ads-sideBar__swichStatus"
+  label={
+    <Typography className="ads-sideBar__priceBox__title ">
+      فوری
+    </Typography>
+  }
+  control={
+    <Switch
+      checked={checked.force}
+      onChange={handleCheckedClick}
+      name="force"
+    />
+  }
+/>
+</FormGroup> */}
