@@ -15,7 +15,8 @@ import ExpandMore from "@mui/icons-material/ExpandMore";
 import FiberManualRecordRoundedIcon from "@mui/icons-material/FiberManualRecordRounded";
 import { Key, Title } from "@mui/icons-material";
 
-export default function SwitchComponent({handleClick,openItems,checked,handleDeletChecked,handleCheckedClick,title,children}) {
+export default function SwitchComponent({handleClick,openItems,checked,setChecked,handleDeletChecked,handleCheckedClick,title,children}) {
+  const hasCheckedTrue = Object.values(checked).includes(true);
   return (
     <div>
       <ListItem
@@ -32,7 +33,7 @@ export default function SwitchComponent({handleClick,openItems,checked,handleDel
           disableTypography
           className="ads-sideBar__collapsText"
         />
-        { !checked.key &&
+        { hasCheckedTrue &&
           (openItems[title] ? (
             <Button
               onClick={handleDeletChecked}

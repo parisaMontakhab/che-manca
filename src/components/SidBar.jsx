@@ -113,6 +113,7 @@ export default function SidBar() {
                       openItems={openItems}
                       handleClick={handleClick}
                       checked={checked}
+                      setChecked={setChecked}
                       handleDeletChecked={handleDeletChecked}
                       handleCheckedClick={handleCheckedClick}
                     >
