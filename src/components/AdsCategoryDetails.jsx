@@ -1,6 +1,6 @@
 import React from "react";
 import { FormGroup, Typography, FormControlLabel, Switch } from "@mui/material";
-import { useCategoryDetails } from "../api/categories";
+import { useCategoryDetails } from "../api/CategoriesApi";
 import BtnComponent from "./BtnComponent";
 import NumeriComponent from "./NumeriComponent";
 import SwitchComponent from "./SwitchComponent";
@@ -26,14 +26,18 @@ export default function AdsCategoryDetails({
   if (categoryDetails) {
     return (
       <div>
-        {categoryDetails.hasDepositeFilter ? ("deposit"
-         
+        {categoryDetails.hasDepositeFilter ? (
+          "deposit"
         ) : (
-          "salam"
+          <NumeriComponent
+            openItems={openItems}
+            prices={prices}
+            setPrices={setPrices}
+            handleClick={handleClick}
+            handleDeletPrice={handleDeletPrice}
+          />
         )}
       </div>
     );
   }
 }
-
-

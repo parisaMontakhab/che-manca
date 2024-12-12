@@ -1,7 +1,17 @@
 import React, { useState } from "react";
 
-import { Box, Divider, List, Typography, Grid2, Link,FormGroup,FormControlLabel,Switch } from "@mui/material";
-import { useCategories } from "../api/categories";
+import {
+  Box,
+  Divider,
+  List,
+  Typography,
+  Grid2,
+  Link,
+  FormGroup,
+  FormControlLabel,
+  Switch,
+} from "@mui/material";
+import { useCategories } from "../api/CategoriesApi";
 
 import Footer from "./Footer";
 
@@ -29,9 +39,9 @@ export default function SidBar() {
   };
 
   const handleCheckedClick = (event) => {
-    setChecked((prev)=>({
+    setChecked((prev) => ({
       ...prev,
-      [event.target.name]:event.target.checked
+      [event.target.name]: event.target.checked,
     }));
   };
   const handleDeletChecked = () => {
@@ -109,7 +119,6 @@ export default function SidBar() {
                     />
                     <SwitchComponent
                       title="وضعیت آگهی"
-                      
                       openItems={openItems}
                       handleClick={handleClick}
                       checked={checked}
