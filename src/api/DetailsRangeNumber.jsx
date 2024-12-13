@@ -43,3 +43,19 @@ export  const useMeterageList = ()=>{
         queryFn:fetchMeterageList
     })
 }
+
+//NumberOfRoom//
+
+const fetchNumberOfRoom = async ()=>{
+    const response = await axios.get('https://client.mobile.chemanca.com/api/advertisements/AdsDetail/GetAllGroupedNumberOfRoomPerFloorAsync');
+   
+    return response.data;
+}
+
+export  const useNumberOfRoom = ()=>{
+    return useQuery({
+        queryKey:['numberOfRoom'],
+        queryFn:fetchNumberOfRoom
+    })
+}
+

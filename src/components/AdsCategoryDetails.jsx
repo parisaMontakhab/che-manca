@@ -5,7 +5,8 @@ import NumeriComponent from "./NumeriComponent";
 import {
   useDepositPriceList,
   useRentPriceList,
-  useMeterageList
+  useMeterageList,
+  useNumberOfRoom,
 } from "../api/DetailsRangeNumber";
 
 export default function AdsCategoryDetails({
@@ -19,6 +20,7 @@ export default function AdsCategoryDetails({
   const { data: depositPriceList } = useDepositPriceList();
   const { data: rentPriceList } = useRentPriceList();
   const {data:meterageList} = useMeterageList();
+  const {data:numberOfRoom} = useNumberOfRoom();
  
  
  
@@ -59,6 +61,18 @@ export default function AdsCategoryDetails({
             openItems={openItems}
             handleClick={handleClick}
             key="meterage"
+          />
+        ),
+      },
+      {
+        condition: categoryDetails.hasNumberOfRoomFilter,
+        component: (
+          <NumeriComponent
+            title="تعداد اتاق "
+            options={numberOfRoom}
+            openItems={openItems}
+            handleClick={handleClick}
+            key="numberOfRoom"
           />
         ),
       },
