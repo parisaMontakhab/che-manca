@@ -32,6 +32,7 @@ export default function AdsCategoryDetails({
  
  
   if (categoryDetails) {
+
     const conditions = [
       {
         condition: categoryDetails.hasDepositFilter,
@@ -120,20 +121,3 @@ export default function AdsCategoryDetails({
 
 
 
-{
-  /*
-          <NumeriComponent
-          title="مبلغ بیعانه"
-          options={depositPriceList}
-          openItems={openItems}
-          handleClick={handleClick}
-          key="deposit"
-        /> */
-}
-//   <NumeriComponent
-//   title="مبلغ اجاره"
-//   options={rentPriceList}
-//   openItems={openItems}
-//   handleClick={handleClick}
-//   key="deposit"
-// />
