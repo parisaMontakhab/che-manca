@@ -7,7 +7,8 @@ import {
   useRentPriceList,
   useMeterageList,
   useNumberOfRoom,
-  useNumberOfUnitsPerFloor
+  useNumberOfUnitsPerFloor,
+  useProductStatus
 } from "../api/DetailsRangeNumber";
 
 export default function AdsCategoryDetails({
@@ -23,7 +24,9 @@ export default function AdsCategoryDetails({
   const {data:meterageList} = useMeterageList();
   const {data:numberOfRoom} = useNumberOfRoom();
   const {data:numberOfUnitsPerFloor} = useNumberOfUnitsPerFloor();
- 
+  const {data:productStatus} = useProductStatus();
+  const productstatusList = productStatus?.map((item)=>  item.text);
+  
  
  
  
@@ -79,7 +82,7 @@ export default function AdsCategoryDetails({
         ),
       },
       {
-        condition: categoryDetails.hasNumberOfRoomFilter,
+        condition: categoryDetails.hasNumberOfUnitsPerFloorFilter,
         component: (
           <NumeriComponent
             title="تعداد واحد در طبقه "
@@ -87,6 +90,18 @@ export default function AdsCategoryDetails({
             openItems={openItems}
             handleClick={handleClick}
             key="numberOfUnitsPerfloor"
+          />
+        ),
+      },
+      {
+        condition: categoryDetails.hasProductStatusFilter,
+        component: (
+          <NumeriComponent
+            title="وضعیت محصول"
+            options={productstatusList}
+            openItems={openItems}
+            handleClick={handleClick}
+            key="productStatus"
           />
         ),
       },

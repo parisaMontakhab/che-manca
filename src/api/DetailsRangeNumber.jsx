@@ -73,3 +73,19 @@ export  const useNumberOfUnitsPerFloor = ()=>{
         queryFn:fetchNumberOfUnitsPerFloor
     })
 }
+
+//ProductsStatusFilter//
+
+const fetchProductStatus = async ()=>{
+    const response = await axios.get('https://client.mobile.chemanca.com/api/products/ProductStatus/GetAllProductStaus');
+   
+    return response.data;
+}
+
+export  const useProductStatus = ()=>{
+    return useQuery({
+        queryKey:['productStatus'],
+        queryFn:fetchProductStatus
+    })
+}
+
