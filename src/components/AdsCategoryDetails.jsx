@@ -7,7 +7,7 @@ import {
   useRentPriceList,
   useMeterageList,
   useNumberOfRoom,
-  fetchNumberOfUnitsPerFloor
+  useNumberOfUnitsPerFloor
 } from "../api/DetailsRangeNumber";
 
 export default function AdsCategoryDetails({
@@ -22,7 +22,7 @@ export default function AdsCategoryDetails({
   const {data: rentPriceList } = useRentPriceList();
   const {data:meterageList} = useMeterageList();
   const {data:numberOfRoom} = useNumberOfRoom();
-  const {data:numberOfUnitsPerFloor} = fetchNumberOfUnitsPerFloor();
+  const {data:numberOfUnitsPerFloor} = useNumberOfUnitsPerFloor();
  
  
  
@@ -75,6 +75,18 @@ export default function AdsCategoryDetails({
             openItems={openItems}
             handleClick={handleClick}
             key="numberOfRoom"
+          />
+        ),
+      },
+      {
+        condition: categoryDetails.hasNumberOfRoomFilter,
+        component: (
+          <NumeriComponent
+            title="تعداد واحد در طبقه "
+            options={numberOfUnitsPerFloor}
+            openItems={openItems}
+            handleClick={handleClick}
+            key="numberOfUnitsPerfloor"
           />
         ),
       },
