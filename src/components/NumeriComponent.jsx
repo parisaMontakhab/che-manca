@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   ListItem,
   ListItemText,
@@ -14,7 +14,6 @@ import {
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 import FiberManualRecordRoundedIcon from "@mui/icons-material/FiberManualRecordRounded";
-import { priceOptions } from "../data/PriceData";
 
 export default function NumeriComponent({
   title,
@@ -25,6 +24,9 @@ export default function NumeriComponent({
   handleDeletPrice,
   setPrices,
 }) {
+  const [ value,setValue] = useState([]);
+  const [inputValue, setInputValue] = useState('');
+  
   return (
     <div>
       <ListItem
@@ -41,7 +43,7 @@ export default function NumeriComponent({
           disableTypography
           className="ads-sideBar__collapsText"
         />
-        {(prices.minPrice || prices.maxPrice) &&
+        {(inputValue.trim() !== '')  &&
           (openItems[title] ? (
             <Button
               onClick={handleDeletPrice}
@@ -64,11 +66,16 @@ export default function NumeriComponent({
             size="small"
             className="ads-sideBar__priceAutocomplete"
             options={options}
-            inputValue={prices.minPrice}
-            onInputChange={(event, newValue) => {
-              setPrices({ ...prices, minPrice: newValue });
+            getOptionLabel={(option) => String(option)}
+            value={value}
+            onChange={(event,newValue) => {
+              setValue(newValue)
             }}
-            forcePopupIcon={!prices.minPrice ? true : false}
+            inputValue={inputValue}
+            onInputChange={(event, newInputValue) => {
+              setInputValue(newInputValue);
+            }}
+          
             renderInput={(params) => (
               <TextField
                 {...params}

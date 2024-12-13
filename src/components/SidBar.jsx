@@ -12,6 +12,7 @@ import {
   Switch,
 } from "@mui/material";
 import { useCategories } from "../api/CategoriesApi";
+import { priceOptions } from "../data/PriceData";
 
 import Footer from "./Footer";
 
@@ -111,7 +112,8 @@ export default function SidBar() {
                 {selectedCategory?.isLeaf !== true ? (
                   <>
                     <NumeriComponent
-                    title="قیمت"
+                      title="قیمت"
+                      options={priceOptions}
                       openItems={openItems}
                       prices={prices}
                       setPrices={setPrices}
