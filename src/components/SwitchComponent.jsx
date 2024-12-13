@@ -4,18 +4,20 @@ import {
   ListItemText,
   Button,
   Collapse,
-  FormGroup,
-  FormControlLabel,
-  Typography,
-  Switch,
   Divider,
 } from "@mui/material";
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 import FiberManualRecordRoundedIcon from "@mui/icons-material/FiberManualRecordRounded";
-import { Key, Title } from "@mui/icons-material";
 
-export default function SwitchComponent({handleClick,openItems,checked,setChecked,handleDeletChecked,handleCheckedClick,title,children}) {
+export default function SwitchComponent({
+  handleClick,
+  openItems,
+  checked,
+  handleDeletChecked,
+  title,
+  children,
+}) {
   const hasCheckedTrue = Object.values(checked).includes(true);
   return (
     <div>
@@ -33,7 +35,7 @@ export default function SwitchComponent({handleClick,openItems,checked,setChecke
           disableTypography
           className="ads-sideBar__collapsText"
         />
-        { hasCheckedTrue &&
+        {hasCheckedTrue &&
           (openItems[title] ? (
             <Button
               onClick={handleDeletChecked}
@@ -46,13 +48,9 @@ export default function SwitchComponent({handleClick,openItems,checked,setChecke
           ))}
       </ListItem>
       <Collapse in={openItems[title]} timeout="auto" unmountOnExit>
-      {
-        children
-      }
-       
+        {children}
       </Collapse>
       <Divider sx={{ width: "80%", marginTop: 2 }} />
     </div>
   );
 }
-

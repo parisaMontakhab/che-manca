@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import { FormGroup, Typography, FormControlLabel, Switch } from "@mui/material";
 import { useCategoryDetails } from "../api/CategoriesApi";
 import NumeriComponent from "./NumeriComponent";
@@ -25,12 +25,9 @@ export default function AdsCategoryDetails({
   const {data:numberOfRoom} = useNumberOfRoom();
   const {data:numberOfUnitsPerFloor} = useNumberOfUnitsPerFloor();
   const {data:productStatus} = useProductStatus();
-  const productstatusList = productStatus?.map((item)=>  item.text);
+  const productStatusList = productStatus?.map((item)=> item.text);
+
   
- 
- 
- 
- 
   if (categoryDetails) {
 
     const conditions = [
@@ -99,7 +96,7 @@ export default function AdsCategoryDetails({
         component: (
           <NumeriComponent
             title="وضعیت محصول"
-            options={productstatusList}
+            options={productStatusList}
             openItems={openItems}
             handleClick={handleClick}
             key="productStatus"
