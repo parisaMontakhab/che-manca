@@ -7,6 +7,7 @@ import {
   useRentPriceList,
   useMeterageList,
   useNumberOfRoom,
+  fetchNumberOfUnitsPerFloor
 } from "../api/DetailsRangeNumber";
 
 export default function AdsCategoryDetails({
@@ -17,10 +18,11 @@ export default function AdsCategoryDetails({
   const { data: categoryDetails } = useCategoryDetails(
     selectedCategory?.uniqueId
   );
-  const { data: depositPriceList } = useDepositPriceList();
-  const { data: rentPriceList } = useRentPriceList();
+  const {data: depositPriceList } = useDepositPriceList();
+  const {data: rentPriceList } = useRentPriceList();
   const {data:meterageList} = useMeterageList();
   const {data:numberOfRoom} = useNumberOfRoom();
+  const {data:numberOfUnitsPerFloor} = fetchNumberOfUnitsPerFloor();
  
  
  

@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 
-// DepositPriceList//
+// DepositFilter//
 
 const fetchDepositPriceList = async ()=>{
     const response = await axios.get('https://client.mobile.chemanca.com/api/advertisements/AdsDetail/GetAllGroupedDepositePricesAsync');
@@ -15,7 +15,7 @@ export const useDepositPriceList = ()=>{
     })
 };
 
-//RentPriceList//
+//RentPriceFilter//
 const fetchRentPriceList = async ()=>{
     const response = await axios.get('https://client.mobile.chemanca.com/api/advertisements/AdsDetail/GetAllGroupedRentPricesAsync');
     
@@ -44,7 +44,7 @@ export  const useMeterageList = ()=>{
     })
 }
 
-//NumberOfRoom//
+//NumberOfRoomFilter//
 
 const fetchNumberOfRoom = async ()=>{
     const response = await axios.get('https://client.mobile.chemanca.com/api/advertisements/AdsDetail/GetAllGroupedNumberOfRoomPerFloorAsync');
@@ -59,3 +59,17 @@ export  const useNumberOfRoom = ()=>{
     })
 }
 
+//NumberOfUnitsPerFloorFilter//
+
+const fetchNumberOfUnitsPerFloor = async ()=>{
+    const response = await axios.get('https://client.mobile.chemanca.com/api/advertisements/AdsDetail/GetAllGroupedUnitsPerFloorAsync');
+   
+    return response.data;
+}
+
+export  const useNumberOfUnitsPerFloor = ()=>{
+    return useQuery({
+        queryKey:['numberOfUnitsPerFloor'],
+        queryFn:fetchNumberOfUnitsPerFloor
+    })
+}
