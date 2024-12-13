@@ -106,7 +106,7 @@ export default function SidBar() {
                 )}
 
                 <Divider sx={{ width: "80%" }} />
-                {selectedCategory?.isLeaf !== true ? (
+                {selectedCategory?.isLeaf != true ? (
                   <>
                     <NumeriComponent
                       title="قیمت"
