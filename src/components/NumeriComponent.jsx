@@ -67,7 +67,7 @@ export default function NumeriComponent({
             )}
             size="small"
             className="ads-sideBar__priceAutocomplete"
-            options={options}
+            options={options || []}
             getOptionLabel={(option) => String(option)}
             value={value}
             onChange={(event, newValue) => {

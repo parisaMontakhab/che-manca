@@ -18,7 +18,7 @@ export const useDepositPriceList = ()=>{
 //RentPriceList//
 const fetchRentPriceList = async ()=>{
     const response = await axios.get('https://client.mobile.chemanca.com/api/advertisements/AdsDetail/GetAllGroupedRentPricesAsync');
-    console.log(response.data)
+    
     return response.data;
 }
 
@@ -28,3 +28,18 @@ export const useRentPriceList = ()=>{
         queryFn: fetchRentPriceList
     })
 };
+
+//MetrageFilter//
+
+const fetchMeterageList = async ()=>{
+    const response = await axios.get('https://client.mobile.chemanca.com/api/advertisements/AdsDetail/GetAllGroupedMeterageAsync');
+   
+    return response.data;
+}
+
+export  const useMeterageList = ()=>{
+    return useQuery({
+        queryKey:['meterageList'],
+        queryFn:fetchMeterageList
+    })
+}
