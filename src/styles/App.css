@@ -299,9 +299,11 @@
 }
 
 .ads-sideBar__toggleGroup{
-  border: 1px solid #05017b;
+  border:none;
+  overflow: hidden;
   background-color: #05017b;
   border-radius: 10px !important;
+ 
 }
 .ads-sideBar__toggleBtn{
   font-family: 'IranYekan' !important;
