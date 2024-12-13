@@ -20,10 +20,10 @@ import LoadingText from "../commons/LoadingText";
 import ErrorBtn from "../commons/ErrorBtn";
 import BackArrowCategory from "./BackArrowCategory";
 import CategoryList from "./CategoryList";
-import BtnComponent from "./BtnComponent";
 import NumeriComponent from "./NumeriComponent";
 import SwitchComponent from "./SwitchComponent";
 import AdsCategoryDetails from "./AdsCategoryDetails";
+import ToggleComponent from "./ToggleComponent";
 
 export default function SidBar() {
   const [selectedCategory, setSelectedCategory] = useState({});
@@ -156,6 +156,7 @@ export default function SidBar() {
                         />
                       </FormGroup>
                     </SwitchComponent>
+                   <ToggleComponent openItems={openItems} handleClick={handleClick} title="تستی"/>
                   </>
                 ) : (
                   <AdsCategoryDetails
