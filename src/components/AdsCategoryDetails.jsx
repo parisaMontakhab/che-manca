@@ -24,7 +24,7 @@ export default function AdsCategoryDetails({
     selectedCategory?.uniqueId
   );
   const { data: depositPriceList } = useDepositPriceList();
-  console.log(depositPriceList);
+  
 
   if (categoryDetails) {
     return (
@@ -36,10 +36,7 @@ export default function AdsCategoryDetails({
             title="مبلغ بیعانه"
             options={depositPriceList}
             openItems={openItems}
-            prices={prices}
-            setPrices={setPrices}
             handleClick={handleClick}
-            handleDeletPrice={handleDeletPrice}
           />
         )}
       </div>

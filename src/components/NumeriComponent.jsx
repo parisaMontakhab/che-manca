@@ -20,13 +20,15 @@ export default function NumeriComponent({
   options,
   openItems,
   handleClick,
-  prices,
-  handleDeletPrice,
-  setPrices,
 }) {
-  const [ value,setValue] = useState([]);
-  const [inputValue, setInputValue] = useState('');
-  
+  const [value, setValue] = useState([]);
+  const [inputValue, setInputValue] = useState("");
+
+  const handleDeletValue = ()=>{
+    setValue([]);
+    setInputValue('');
+  }
+
   return (
     <div>
       <ListItem
@@ -43,10 +45,10 @@ export default function NumeriComponent({
           disableTypography
           className="ads-sideBar__collapsText"
         />
-        {(inputValue.trim() !== '')  &&
+        {inputValue.trim() !== "" &&
           (openItems[title] ? (
             <Button
-              onClick={handleDeletPrice}
+              onClick={handleDeletValue}
               className="ads-sideBar__deletBtn"
             >
               حذف
@@ -68,14 +70,13 @@ export default function NumeriComponent({
             options={options}
             getOptionLabel={(option) => String(option)}
             value={value}
-            onChange={(event,newValue) => {
-              setValue(newValue)
+            onChange={(event, newValue) => {
+              setValue(newValue);
             }}
             inputValue={inputValue}
             onInputChange={(event, newInputValue) => {
               setInputValue(newInputValue);
             }}
-          
             renderInput={(params) => (
               <TextField
                 {...params}

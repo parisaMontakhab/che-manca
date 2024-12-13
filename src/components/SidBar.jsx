@@ -29,7 +29,6 @@ export default function SidBar() {
   const [selectedCategory, setSelectedCategory] = useState({});
   const [openItems, setOpenItems] = useState({});
   const [checked, setChecked] = useState({});
-  const [prices, setPrices] = useState({ minPrice: "", maxPrice: "" });
   const [openCategory, setOpenCategory] = useState(null);
 
   const handleClick = (item) => {
@@ -54,9 +53,7 @@ export default function SidBar() {
       return newChecked;
     });
   };
-  const handleDeletPrice = () => {
-    setPrices({ minPrice: "", maxPrice: "" });
-  };
+
   const handleCategoryClick = (category) => {
     setSelectedCategory(category);
     if (category.uniqueId) {
@@ -115,10 +112,7 @@ export default function SidBar() {
                       title="قیمت"
                       options={priceOptions}
                       openItems={openItems}
-                      prices={prices}
-                      setPrices={setPrices}
                       handleClick={handleClick}
-                      handleDeletPrice={handleDeletPrice}
                     />
                     <SwitchComponent
                       title="وضعیت آگهی"
@@ -166,8 +160,6 @@ export default function SidBar() {
                 ) : (
                   <AdsCategoryDetails
                     openItems={openItems}
-                    prices={prices}
-                    setPrices={setPrices}
                     setOpenItems={setOpenItems}
                     checked={checked}
                     setChecked={setChecked}
@@ -176,7 +168,6 @@ export default function SidBar() {
                     selectedCategory={selectedCategory}
                     setSelectedCategory={setSelectedCategory}
                     handleClick={handleClick}
-                    handleDeletPrice={handleDeletPrice}
                   />
                 )}
               </List>
