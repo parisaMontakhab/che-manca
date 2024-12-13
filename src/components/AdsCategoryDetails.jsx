@@ -8,7 +8,7 @@ import {
   useMeterageList,
   useNumberOfRoom,
   useNumberOfUnitsPerFloor,
-  useProductStatus
+  useProductStatus,
 } from "../api/DetailsRangeNumber";
 
 export default function AdsCategoryDetails({
@@ -19,17 +19,15 @@ export default function AdsCategoryDetails({
   const { data: categoryDetails } = useCategoryDetails(
     selectedCategory?.uniqueId
   );
-  const {data: depositPriceList } = useDepositPriceList();
-  const {data: rentPriceList } = useRentPriceList();
-  const {data:meterageList} = useMeterageList();
-  const {data:numberOfRoom} = useNumberOfRoom();
-  const {data:numberOfUnitsPerFloor} = useNumberOfUnitsPerFloor();
-  const {data:productStatus} = useProductStatus();
-  const productStatusList = productStatus?.map((item)=> item.text);
+  const { data: depositPriceList } = useDepositPriceList();
+  const { data: rentPriceList } = useRentPriceList();
+  const { data: meterageList } = useMeterageList();
+  const { data: numberOfRoom } = useNumberOfRoom();
+  const { data: numberOfUnitsPerFloor } = useNumberOfUnitsPerFloor();
+  const { data: productStatus } = useProductStatus();
+  const productStatusList = productStatus?.map((item) => item.text);
 
-  
   if (categoryDetails) {
-
     const conditions = [
       {
         condition: categoryDetails.hasDepositFilter,
@@ -104,17 +102,12 @@ export default function AdsCategoryDetails({
         ),
       },
     ];
-    return(
+    return (
       <>
-      {
-        conditions.filter(item => item.condition).map(item=> item.component)
-      }
+        {conditions
+          .filter((item) => item.condition)
+          .map((item) => item.component)}
       </>
-    )
+    );
   }
 }
-
-
-
-
-
