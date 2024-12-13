@@ -4,6 +4,7 @@ import { useCategoryDetails } from "../api/CategoriesApi";
 import BtnComponent from "./BtnComponent";
 import NumeriComponent from "./NumeriComponent";
 import SwitchComponent from "./SwitchComponent";
+import { useDepositPriceList } from "../api/DetailsRangeNumber";
 
 export default function AdsCategoryDetails({
   openItems,
@@ -22,6 +23,8 @@ export default function AdsCategoryDetails({
   const { data: categoryDetails } = useCategoryDetails(
     selectedCategory?.uniqueId
   );
+  const { data: depositPriceList } = useDepositPriceList();
+  console.log(depositPriceList);
 
   if (categoryDetails) {
     return (
@@ -30,6 +33,8 @@ export default function AdsCategoryDetails({
           "deposit"
         ) : (
           <NumeriComponent
+            title="مبلغ بیعانه"
+            options={depositPriceList}
             openItems={openItems}
             prices={prices}
             setPrices={setPrices}

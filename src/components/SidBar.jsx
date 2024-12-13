@@ -111,6 +111,7 @@ export default function SidBar() {
                 {selectedCategory?.isLeaf !== true ? (
                   <>
                     <NumeriComponent
+                    title="قیمت"
                       openItems={openItems}
                       prices={prices}
                       setPrices={setPrices}

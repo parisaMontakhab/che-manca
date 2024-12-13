@@ -17,6 +17,8 @@ import FiberManualRecordRoundedIcon from "@mui/icons-material/FiberManualRecordR
 import { priceOptions } from "../data/PriceData";
 
 export default function NumeriComponent({
+  title,
+  options,
   openItems,
   handleClick,
   prices,
@@ -26,21 +28,21 @@ export default function NumeriComponent({
   return (
     <div>
       <ListItem
-        onClick={() => handleClick("price")}
+        onClick={() => handleClick(title)}
         className="ads-sideBar__listItem "
       >
-        {openItems["price"] ? (
+        {openItems[title] ? (
           <ExpandLess className="ads-sideBar__itemIcon" />
         ) : (
           <ExpandMore className="ads-sideBar__itemIcon" />
         )}
         <ListItemText
-          primary="قیمت"
+          primary={title}
           disableTypography
           className="ads-sideBar__collapsText"
         />
         {(prices.minPrice || prices.maxPrice) &&
-          (openItems["price"] ? (
+          (openItems[title] ? (
             <Button
               onClick={handleDeletPrice}
               className="ads-sideBar__deletBtn"
@@ -52,7 +54,7 @@ export default function NumeriComponent({
           ))}
       </ListItem>
 
-      <Collapse in={openItems["price"]} timeout="auto" unmountOnExit>
+      <Collapse in={openItems[title]} timeout="auto" unmountOnExit>
         <Box className="ads-sideBar__priceBox">
           <Autocomplete
             fullWidth
@@ -61,7 +63,7 @@ export default function NumeriComponent({
             )}
             size="small"
             className="ads-sideBar__priceAutocomplete"
-            options={priceOptions}
+            options={options}
             inputValue={prices.minPrice}
             onInputChange={(event, newValue) => {
               setPrices({ ...prices, minPrice: newValue });
