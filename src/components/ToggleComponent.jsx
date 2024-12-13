@@ -59,12 +59,36 @@ export default function ToggleComponent({ openItems, handleClick, title }) {
             exclusive
             onChange={handleChange}
             aria-label="Platform"
+            className="ads-sideBar__toggleGroup"
           >
-            <ToggleButton value={activityStatus.inEffective}>
+            <ToggleButton
+              value={activityStatus.inEffective}
+              className={
+                status === activityStatus.inEffective
+                  ? "ads-sideBar__toggleBtn--active"
+                  : "ads-sideBar__toggleBtn"
+              }
+            >
               بی تاثیر
             </ToggleButton>
-            <ToggleButton value={activityStatus.active}>فعال</ToggleButton>
-            <ToggleButton value={activityStatus.inActive}>
+            <ToggleButton
+              value={activityStatus.active}
+              className={
+                status === activityStatus.active
+                  ? "ads-sideBar__toggleBtn--active"
+                  : "ads-sideBar__toggleBtn"
+              }
+            >
+              فعال
+            </ToggleButton>
+            <ToggleButton
+              value={activityStatus.inActive}
+              className={
+                status === activityStatus.inActive
+                  ? "ads-sideBar__toggleBtn--active"
+                  : "ads-sideBar__toggleBtn"
+              }
+            >
               غیر فعال
             </ToggleButton>
           </ToggleButtonGroup>

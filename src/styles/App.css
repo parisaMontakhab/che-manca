@@ -298,6 +298,31 @@
   margin-top: 20px;
 }
 
+.ads-sideBar__toggleGroup{
+  border: 1px solid #05017b;
+  background-color: #05017b;
+  border-radius: 10px !important;
+}
+.ads-sideBar__toggleBtn{
+  font-family: 'IranYekan' !important;
+  color: white !important;
+}
+.ads-sideBar__toggleBtn--active{
+  font-family: 'IranYekan' !important;
+  color: #ffc107 !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*ads-page---ProductsCards*/
 
