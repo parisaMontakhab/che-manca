@@ -14,11 +14,17 @@ import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 import FiberManualRecordRoundedIcon from "@mui/icons-material/FiberManualRecordRounded";
 
+const activityStatus = { inEffective: 0, active: 1, inActive: 2 };
+
 export default function ToggleComponent({ openItems, handleClick, title }) {
-  const activityStatus = { ineffective: 0, active: 1, inactive: 2 };
-  const [status, setStatus] = useState(activityStatus.ineffective);
+  const [status, setStatus] = useState(activityStatus.inEffective);
+
   const handleChange = (event, newStatus) => {
     setStatus(newStatus);
+  };
+
+  const handleDelete = () => {
+    setStatus(activityStatus.inEffective);
   };
   return (
     <div>
@@ -36,12 +42,10 @@ export default function ToggleComponent({ openItems, handleClick, title }) {
           disableTypography
           className="ads-sideBar__collapsText"
         />
-        {true &&
+        {(status === activityStatus.active ||
+          status === activityStatus.inActive) &&
           (openItems[title] ? (
-            <Button
-              //onClick={handleDeletValue}
-              className="ads-sideBar__deletBtn"
-            >
+            <Button onClick={handleDelete} className="ads-sideBar__deletBtn">
               حذف
             </Button>
           ) : (
@@ -51,25 +55,22 @@ export default function ToggleComponent({ openItems, handleClick, title }) {
       <Collapse in={openItems[title]} timeout="auto" unmountOnExit>
         <Box className="ads-sideBar__priceBox">
           <ToggleButtonGroup
-            
             value={status}
             exclusive
             onChange={handleChange}
             aria-label="Platform"
           >
-            <ToggleButton value={activityStatus.ineffective}>
+            <ToggleButton value={activityStatus.inEffective}>
               بی تاثیر
             </ToggleButton>
             <ToggleButton value={activityStatus.active}>فعال</ToggleButton>
-            <ToggleButton value={activityStatus.inactive}>
+            <ToggleButton value={activityStatus.inActive}>
               غیر فعال
             </ToggleButton>
           </ToggleButtonGroup>
         </Box>
       </Collapse>
-       <Divider sx={{ width: "80%", marginTop: 2 }} />
+      <Divider sx={{ width: "80%", marginTop: 2 }} />
     </div>
   );
 }
-
-
