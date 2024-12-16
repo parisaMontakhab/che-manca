@@ -18,14 +18,26 @@ import {
 export default function StringComponent (  {title,
     options,
     openItems,
-    handleClick,}) {
+    handleClick}) {
     const [value, setValue] = useState([]);
     const [inputValue, setInputValue] = useState("");
+    const [idesList,setIdesList] = useState(null);
+    
+  
   
     const handleDeletValue = ()=>{
       setValue([]);
       setInputValue('');
     }
+
+    const handleSelectedId = (newInputValue)=>{
+        options?.map((option)=>{
+            if(option.text == newInputValue){
+                setIdesList(option.value)
+            }
+        })
+    }
+    
   
     return (
       <div>
@@ -65,16 +77,22 @@ export default function StringComponent (  {title,
               )}
               size="small"
               className="ads-sideBar__priceAutocomplete"
-              options={options || []}
+              options={options?.map((option)=>option.text) || []}
               getOptionLabel={(option) => String(option)}
               value={value}
               onChange={(event, newValue) => {
                 setValue(newValue);
+                
+               
+                
               }}
               inputValue={inputValue}
               onInputChange={(event, newInputValue) => {
                 setInputValue(newInputValue);
+               
+                handleSelectedId(newInputValue);
               }}
+              
               renderInput={(params) => (
                 <TextField
                   {...params}

@@ -10,6 +10,7 @@ import {
   useNumberOfUnitsPerFloor,
   useProductStatus,
 } from "../api/DetailsRangeNumber";
+import StringComponent from "./StringComponent";
 
 export default function AdsCategoryDetails({
   openItems,
@@ -25,7 +26,9 @@ export default function AdsCategoryDetails({
   const { data: numberOfRoom } = useNumberOfRoom();
   const { data: numberOfUnitsPerFloor } = useNumberOfUnitsPerFloor();
   const { data: productStatus } = useProductStatus();
+  console.log(productStatus)
   const productStatusList = productStatus?.map((item) => item.text);
+  const productValueList = productStatus?.map((item) => item.value);
 
   if (categoryDetails) {
     const conditions = [
@@ -92,9 +95,10 @@ export default function AdsCategoryDetails({
       {
         condition: categoryDetails.hasProductStatusFilter,
         component: (
-          <NumeriComponent
+          <StringComponent
             title="وضعیت محصول"
-            options={productStatusList}
+            options={productStatus}
+            idList={productValueList}
             openItems={openItems}
             handleClick={handleClick}
             key="productStatus"
