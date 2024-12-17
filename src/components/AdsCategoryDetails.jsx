@@ -12,6 +12,7 @@ import {
   useCreatedYear,
   useBrandName,
   useNumberOfSimCart,
+  useInternalMemoryCapacity,
 } from "../api/DetailsRangeNumber";
 import StringComponent from "./StringComponent";
 
@@ -32,6 +33,7 @@ export default function AdsCategoryDetails({
   const { data: createdYear } = useCreatedYear();
   const { data: brandName } = useBrandName();
   const { data: numberOfSimCart} = useNumberOfSimCart();
+  const {data:internalMemoryCapacity} = useInternalMemoryCapacity();
   
   if (categoryDetails) {
     const conditions = [
@@ -140,6 +142,18 @@ export default function AdsCategoryDetails({
             openItems={openItems}
             handleClick={handleClick}
             key="numberOfSimCart"
+          />
+        ),
+      },
+      {
+        condition: categoryDetails.hasInternalMemoryCapacityFilter,
+        component: (
+          <StringComponent
+            title="   میزان حافظه داخلی"
+            options={internalMemoryCapacity}
+            openItems={openItems}
+            handleClick={handleClick}
+            key="internalMemoryCapacity"
           />
         ),
       },
