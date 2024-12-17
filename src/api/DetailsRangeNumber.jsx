@@ -145,3 +145,18 @@ export  const useInternalMemoryCapacity = ()=>{
     })
 }
 
+//hasRamCapacityFilter//
+const fetchRamCapacity = async ()=>{
+    const response = await axios.get('https://client.mobile.chemanca.com/api/products/RamCapacity/GetAllRamCapacity');
+   
+    return response.data;
+}
+
+export  const useRamCapacity = ()=>{
+    return useQuery({
+        queryKey:['ramCapacity'],
+        queryFn:fetchRamCapacity
+    })
+}
+
+
