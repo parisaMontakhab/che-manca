@@ -11,6 +11,7 @@ import {
   useProductStatus,
   useCreatedYear,
   useBrandName,
+  useNumberOfSimCart,
 } from "../api/DetailsRangeNumber";
 import StringComponent from "./StringComponent";
 
@@ -30,6 +31,7 @@ export default function AdsCategoryDetails({
   const { data: productStatus } = useProductStatus();
   const { data: createdYear } = useCreatedYear();
   const { data: brandName } = useBrandName();
+  const { data: numberOfSimCart} = useNumberOfSimCart();
   
   if (categoryDetails) {
     const conditions = [
@@ -126,6 +128,18 @@ export default function AdsCategoryDetails({
             openItems={openItems}
             handleClick={handleClick}
             key="brandName"
+          />
+        ),
+      },
+      {
+        condition: categoryDetails.hasNumberOfSimCartFilter,
+        component: (
+          <NumeriComponent
+            title="  تعداد سیم کارت "
+            options={numberOfSimCart}
+            openItems={openItems}
+            handleClick={handleClick}
+            key="numberOfSimCart"
           />
         ),
       },
