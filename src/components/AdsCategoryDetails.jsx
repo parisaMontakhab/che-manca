@@ -9,6 +9,7 @@ import {
   useNumberOfRoom,
   useNumberOfUnitsPerFloor,
   useProductStatus,
+  useCreatedYear,
 } from "../api/DetailsRangeNumber";
 import StringComponent from "./StringComponent";
 
@@ -26,7 +27,8 @@ export default function AdsCategoryDetails({
   const { data: numberOfRoom } = useNumberOfRoom();
   const { data: numberOfUnitsPerFloor } = useNumberOfUnitsPerFloor();
   const { data: productStatus } = useProductStatus();
-
+  const { data: createdYear } = useCreatedYear();
+ 
   if (categoryDetails) {
     const conditions = [
       {
@@ -98,6 +100,18 @@ export default function AdsCategoryDetails({
             openItems={openItems}
             handleClick={handleClick}
             key="productStatus"
+          />
+        ),
+      },
+      {
+        condition: categoryDetails.hasCreatedYearFilter,
+        component: (
+          <NumeriComponent
+            title=" سال ساخت"
+            options={createdYear}
+            openItems={openItems}
+            handleClick={handleClick}
+            key="createdYear"
           />
         ),
       },
