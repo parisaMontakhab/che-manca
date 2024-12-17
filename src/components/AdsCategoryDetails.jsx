@@ -13,6 +13,7 @@ import {
   useBrandName,
   useNumberOfSimCart,
   useInternalMemoryCapacity,
+  useRamCapacity,
 } from "../api/DetailsRangeNumber";
 import StringComponent from "./StringComponent";
 
@@ -32,9 +33,10 @@ export default function AdsCategoryDetails({
   const { data: productStatus } = useProductStatus();
   const { data: createdYear } = useCreatedYear();
   const { data: brandName } = useBrandName();
-  const { data: numberOfSimCart} = useNumberOfSimCart();
-  const {data:internalMemoryCapacity} = useInternalMemoryCapacity();
-  
+  const { data: numberOfSimCart } = useNumberOfSimCart();
+  const { data: internalMemoryCapacity } = useInternalMemoryCapacity();
+  const { data: ramCapacity } = useRamCapacity();
+
   if (categoryDetails) {
     const conditions = [
       {
@@ -154,6 +156,18 @@ export default function AdsCategoryDetails({
             openItems={openItems}
             handleClick={handleClick}
             key="internalMemoryCapacity"
+          />
+        ),
+      },
+      {
+        condition: categoryDetails.hasRamCapacityFilter,
+        component: (
+          <StringComponent
+            title="     میزان حافظه Ram"
+            options={ramCapacity}
+            openItems={openItems}
+            handleClick={handleClick}
+            key="ramCapacity"
           />
         ),
       },
