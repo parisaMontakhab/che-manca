@@ -30,7 +30,7 @@ export default function AdsCategoryDetails({
   const { data: productStatus } = useProductStatus();
   const { data: createdYear } = useCreatedYear();
   const { data: brandName } = useBrandName();
-  console.log(brandName)
+  
   if (categoryDetails) {
     const conditions = [
       {
@@ -114,6 +114,18 @@ export default function AdsCategoryDetails({
             openItems={openItems}
             handleClick={handleClick}
             key="createdYear"
+          />
+        ),
+      },
+      {
+        condition: categoryDetails.hasBrandNameFilter,
+        component: (
+          <StringComponent
+            title=" انتخاب برند "
+            options={brandName}
+            openItems={openItems}
+            handleClick={handleClick}
+            key="brandName"
           />
         ),
       },
