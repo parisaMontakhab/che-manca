@@ -89,3 +89,16 @@ export  const useProductStatus = ()=>{
     })
 }
 
+// hasCreatedYearFilter//
+const fetchCreatedYear = async ()=>{
+    const response = await axios.get('https://client.mobile.chemanca.com/api/advertisements/AdsDetail/GetAllGroupedCreatedYearAsync');
+   
+    return response.data;
+}
+
+export  const useCreatedYear = ()=>{
+    return useQuery({
+        queryKey:['createdYear'],
+        queryFn:fetchCreatedYear
+    })
+}
