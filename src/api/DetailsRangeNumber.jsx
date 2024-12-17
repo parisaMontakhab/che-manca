@@ -131,3 +131,17 @@ export  const useNumberOfSimCart = ()=>{
     })
 }
 
+//hasInternalMemoryCapacityFilter//
+const fetchInternalMemoryCapacity = async ()=>{
+    const response = await axios.get('https://client.mobile.chemanca.com/api/products/InternalMemoryCapacity/GetAllInternalMemoryCapacity');
+   
+    return response.data;
+}
+
+export  const useInternalMemoryCapacity = ()=>{
+    return useQuery({
+        queryKey:['internalMemoryCapacity'],
+        queryFn:fetchInternalMemoryCapacity
+    })
+}
+
