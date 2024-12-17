@@ -102,3 +102,17 @@ export  const useCreatedYear = ()=>{
         queryFn:fetchCreatedYear
     })
 }
+
+//hasBrandNameFilter //
+const fetchBrandName = async ()=>{
+    const response = await axios.get('https://client.mobile.chemanca.com/api/products/Brand/GetAllBrand');
+   
+    return response.data;
+}
+
+export  const useBrandName = ()=>{
+    return useQuery({
+        queryKey:['brandName'],
+        queryFn:fetchBrandName
+    })
+}

@@ -10,6 +10,7 @@ import {
   useNumberOfUnitsPerFloor,
   useProductStatus,
   useCreatedYear,
+  useBrandName,
 } from "../api/DetailsRangeNumber";
 import StringComponent from "./StringComponent";
 
@@ -28,7 +29,8 @@ export default function AdsCategoryDetails({
   const { data: numberOfUnitsPerFloor } = useNumberOfUnitsPerFloor();
   const { data: productStatus } = useProductStatus();
   const { data: createdYear } = useCreatedYear();
- 
+  const { data: brandName } = useBrandName();
+  console.log(brandName)
   if (categoryDetails) {
     const conditions = [
       {
