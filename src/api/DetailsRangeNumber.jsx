@@ -116,3 +116,18 @@ export  const useBrandName = ()=>{
         queryFn:fetchBrandName
     })
 }
+
+//hasNumberOfSimCartFilter//
+const fetchNumberOfSimCart = async ()=>{
+    const response = await axios.get('https://client.mobile.chemanca.com/api/advertisements/AdsDetail/GetAllGroupedNumberOfSimcartAsync');
+   
+    return response.data;
+}
+
+export  const useNumberOfSimCart = ()=>{
+    return useQuery({
+        queryKey:['numberOfSimCart'],
+        queryFn:fetchNumberOfSimCart
+    })
+}
+
