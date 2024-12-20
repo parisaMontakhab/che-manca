@@ -304,3 +304,16 @@ export  const useSexFilter = ()=>{
         queryFn:fetchSexFilter
     })
 }
+//hasClothTypeFilter//
+const fetchClothType = async ()=>{
+    const response = await axios.get('https://client.mobile.chemanca.com/api/products/ClothType/GetAllClothType');
+   
+    return response.data;
+}
+
+export  const useClothType = ()=>{
+    return useQuery({
+        queryKey:['clothType'],
+        queryFn:fetchClothType
+    })
+}
