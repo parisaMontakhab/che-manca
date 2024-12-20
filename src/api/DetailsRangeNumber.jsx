@@ -252,7 +252,7 @@ export  const useGameConsoleModel = ()=>{
         queryFn:fetchGameConsoleModel
     })
 }
-//hasCarpetTexture//
+//hasTextureFilter//
 const fetchCarpetTexture = async ()=>{
     const response = await axios.get('https://client.mobile.chemanca.com/api/products/CarpetTexture/GetAllCarpetTexture');
    
@@ -263,5 +263,18 @@ export  const useCarpetTexture = ()=>{
     return useQuery({
         queryKey:['carpetTexture'],
         queryFn:fetchCarpetTexture
+    })
+}
+//hasDimentionFilter//
+const fetchCarpetDimention = async ()=>{
+    const response = await axios.get('https://client.mobile.chemanca.com/api/products/CarpetDimension/GetAllCarpetDimension');
+   
+    return response.data;
+}
+
+export  const useCarpetdimention = ()=>{
+    return useQuery({
+        queryKey:['carpetDimention'],
+        queryFn:fetchCarpetDimention
     })
 }
