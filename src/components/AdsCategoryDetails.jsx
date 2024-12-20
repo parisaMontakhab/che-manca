@@ -14,6 +14,7 @@ import {
   useNumberOfSimCart,
   useInternalMemoryCapacity,
   useRamCapacity,
+  useColorFilter,
 } from "../api/DetailsRangeNumber";
 import StringComponent from "./StringComponent";
 
@@ -36,6 +37,7 @@ export default function AdsCategoryDetails({
   const { data: numberOfSimCart } = useNumberOfSimCart();
   const { data: internalMemoryCapacity } = useInternalMemoryCapacity();
   const { data: ramCapacity } = useRamCapacity();
+  const{data:colorFilter} = useColorFilter();
 
   if (categoryDetails) {
     const conditions = [

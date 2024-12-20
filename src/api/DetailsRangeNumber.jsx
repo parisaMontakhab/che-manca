@@ -158,5 +158,18 @@ export  const useRamCapacity = ()=>{
         queryFn:fetchRamCapacity
     })
 }
+//hasColorFilter//
+const fetchColor = async ()=>{
+    const response = await axios.get('https://client.mobile.chemanca.com/api/products/Color/GetAllColor');
+   
+    return response.data;
+}
+
+export  const useColorFilter = ()=>{
+    return useQuery({
+        queryKey:['colorFilter'],
+        queryFn:fetchColor
+    })
+}
 
 
