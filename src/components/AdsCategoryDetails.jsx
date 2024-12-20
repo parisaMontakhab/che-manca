@@ -17,6 +17,7 @@ import {
   useColorFilter,
   useDisplayDimention,
   useOperationSystemName,
+  useProcessorModel,
 } from "../api/DetailsRangeNumber";
 import StringComponent from "./StringComponent";
 
@@ -42,6 +43,8 @@ export default function AdsCategoryDetails({
   const{data:colorFilter} = useColorFilter();
  const{data:displayDimention} = useDisplayDimention();
  const{data:operationSystemName} = useOperationSystemName();
+ const{data:processorModel} = useProcessorModel();
+ 
 
   if (categoryDetails) {
     const conditions = [
@@ -210,6 +213,18 @@ export default function AdsCategoryDetails({
             openItems={openItems}
             handleClick={handleClick}
             key="operationSystemName"
+          />
+        ),
+      },
+      {
+        condition: categoryDetails.hasProcessorModelFilter,
+        component: (
+          <StringComponent
+            title="      مدل پردازنده "
+            options={processorModel}
+            openItems={openItems}
+            handleClick={handleClick}
+            key="processorModel"
           />
         ),
       },
