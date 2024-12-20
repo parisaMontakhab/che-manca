@@ -278,3 +278,16 @@ export  const useCarpetDimention = ()=>{
         queryFn:fetchCarpetDimention
     })
 }
+//hasConsumptionFilter//
+const fetchElectricConsumption = async ()=>{
+    const response = await axios.get('https://client.mobile.chemanca.com/api/products/ElectricConsumption/GetAllElectricConsumption');
+   
+    return response.data;
+}
+
+export  const useElectricConsumption = ()=>{
+    return useQuery({
+        queryKey:['electricConsumption'],
+        queryFn:fetchElectricConsumption
+    })
+}
