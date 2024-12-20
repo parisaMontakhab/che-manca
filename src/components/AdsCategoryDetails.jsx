@@ -21,6 +21,7 @@ import {
   useModemType,
   useJoystickType,
   useGameConsoleModel,
+  useCarpetTexture,
 } from "../api/DetailsRangeNumber";
 import StringComponent from "./StringComponent";
 
@@ -50,6 +51,7 @@ export default function AdsCategoryDetails({
  const {data:modemType}= useModemType();
  const{data:joystickType} = useJoystickType();
  const{data:gameConsoleModel} = useGameConsoleModel();
+ const{data:carpetTexture} = useCarpetTexture();
 
   if (categoryDetails) {
     const conditions = [
@@ -266,6 +268,18 @@ export default function AdsCategoryDetails({
             openItems={openItems}
             handleClick={handleClick}
             key="gameConsoleModel"
+          />
+        ),
+      },
+      {
+        condition: categoryDetails.hasTextureFilter,
+        component: (
+          <StringComponent
+            title="       جنس فرش یا موکت  "
+            options={carpetTexture}
+            openItems={openItems}
+            handleClick={handleClick}
+            key="carpetTexture"
           />
         ),
       },
