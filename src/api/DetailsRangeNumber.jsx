@@ -226,4 +226,17 @@ export  const useModemType = ()=>{
         queryFn:fetchModemType
     })
 }
+//hasJoystickTypefilter//
+const fetchJoystickType = async ()=>{
+    const response = await axios.get('https://client.mobile.chemanca.com/api/products/GameConsoleModel/GetAllGameConsoleModel');
+   
+    return response.data;
+}
+
+export  const useJoystickType = ()=>{
+    return useQuery({
+        queryKey:['joystickType'],
+        queryFn:fetchJoystickType
+    })
+}
 
