@@ -239,4 +239,16 @@ export  const useJoystickType = ()=>{
         queryFn:fetchJoystickType
     })
 }
+//hasGameConsoleModelFilter//
+const fetchGameConsoleModel = async ()=>{
+    const response = await axios.get('https://client.mobile.chemanca.com/api/products/GameConsoleModel/GetAllGameConsoleModel');
+   
+    return response.data;
+}
 
+export  const useGameConsoleModel = ()=>{
+    return useQuery({
+        queryKey:['gameConsoleModel'],
+        queryFn:fetchGameConsoleModel
+    })
+}
