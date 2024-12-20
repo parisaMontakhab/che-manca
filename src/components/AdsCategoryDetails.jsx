@@ -38,6 +38,7 @@ export default function AdsCategoryDetails({
   const { data: internalMemoryCapacity } = useInternalMemoryCapacity();
   const { data: ramCapacity } = useRamCapacity();
   const{data:colorFilter} = useColorFilter();
+ 
 
   if (categoryDetails) {
     const conditions = [
@@ -170,6 +171,18 @@ export default function AdsCategoryDetails({
             openItems={openItems}
             handleClick={handleClick}
             key="ramCapacity"
+          />
+        ),
+      },
+      {
+        condition: categoryDetails.hasColorFilter,
+        component: (
+          <StringComponent
+            title=" انتخاب رنگ "
+            options={colorFilter}
+            openItems={openItems}
+            handleClick={handleClick}
+            key="colorFilter"
           />
         ),
       },
