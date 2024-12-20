@@ -24,6 +24,7 @@ import {
   useCarpetTexture,
   useCarpetDimention,
   useElectricConsumption,
+  useSexFilter,
 } from "../api/DetailsRangeNumber";
 import StringComponent from "./StringComponent";
 
@@ -56,6 +57,7 @@ export default function AdsCategoryDetails({
  const{data:carpetTexture} = useCarpetTexture();
  const{data:carpetDimention} = useCarpetDimention();
  const{ data:electricConsumption} = useElectricConsumption();
+ const{data:sexFilter} = useSexFilter();
  
 
   if (categoryDetails) {
@@ -309,6 +311,18 @@ export default function AdsCategoryDetails({
             openItems={openItems}
             handleClick={handleClick}
             key="electricConsumption"
+          />
+        ),
+      },
+      {
+        condition: categoryDetails.hasSexFilter,
+        component: (
+          <StringComponent
+            title=" نوع جنسیت"
+            options={sexFilter}
+            openItems={openItems}
+            handleClick={handleClick}
+            key="sexFilter"
           />
         ),
       },
