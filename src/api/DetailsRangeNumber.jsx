@@ -272,7 +272,7 @@ const fetchCarpetDimention = async ()=>{
     return response.data;
 }
 
-export  const useCarpetdimention = ()=>{
+export  const useCarpetDimention = ()=>{
     return useQuery({
         queryKey:['carpetDimention'],
         queryFn:fetchCarpetDimention

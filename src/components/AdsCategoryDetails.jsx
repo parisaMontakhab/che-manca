@@ -22,6 +22,7 @@ import {
   useJoystickType,
   useGameConsoleModel,
   useCarpetTexture,
+  useCarpetDimention,
 } from "../api/DetailsRangeNumber";
 import StringComponent from "./StringComponent";
 
@@ -52,6 +53,7 @@ export default function AdsCategoryDetails({
  const{data:joystickType} = useJoystickType();
  const{data:gameConsoleModel} = useGameConsoleModel();
  const{data:carpetTexture} = useCarpetTexture();
+ const{data:carpetDimention} = useCarpetDimention();
 
   if (categoryDetails) {
     const conditions = [
@@ -280,6 +282,18 @@ export default function AdsCategoryDetails({
             openItems={openItems}
             handleClick={handleClick}
             key="carpetTexture"
+          />
+        ),
+      },
+      {
+        condition: categoryDetails.hasDimentionFilter,
+        component: (
+          <StringComponent
+            title="      ابعاد فرش یا موکت "
+            options={carpetDimention}
+            openItems={openItems}
+            handleClick={handleClick}
+            key="carpetDimention"
           />
         ),
       },
