@@ -48,19 +48,18 @@ export default function AdsCategoryDetails({
   const { data: numberOfSimCart } = useNumberOfSimCart();
   const { data: internalMemoryCapacity } = useInternalMemoryCapacity();
   const { data: ramCapacity } = useRamCapacity();
-  const{data:colorFilter} = useColorFilter();
- const{data:displayDimention} = useDisplayDimention();
- const{data:operationSystemName} = useOperationSystemName();
- const{data:processorModel} = useProcessorModel();
- const {data:modemType}= useModemType();
- const{data:joystickType} = useJoystickType();
- const{data:gameConsoleModel} = useGameConsoleModel();
- const{data:carpetTexture} = useCarpetTexture();
- const{data:carpetDimention} = useCarpetDimention();
- const{ data:electricConsumption} = useElectricConsumption();
- const{data:sexFilter} = useSexFilter();
- const{data:clothType} = useClothType();
- 
+  const { data: colorFilter } = useColorFilter();
+  const { data: displayDimention } = useDisplayDimention();
+  const { data: operationSystemName } = useOperationSystemName();
+  const { data: processorModel } = useProcessorModel();
+  const { data: modemType } = useModemType();
+  const { data: joystickType } = useJoystickType();
+  const { data: gameConsoleModel } = useGameConsoleModel();
+  const { data: carpetTexture } = useCarpetTexture();
+  const { data: carpetDimention } = useCarpetDimention();
+  const { data: electricConsumption } = useElectricConsumption();
+  const { data: sexFilter } = useSexFilter();
+  const { data: clothType } = useClothType();
 
   if (categoryDetails) {
     const conditions = [

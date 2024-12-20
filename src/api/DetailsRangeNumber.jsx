@@ -3,317 +3,363 @@ import axios from "axios";
 
 // DepositFilter//
 
-const fetchDepositPriceList = async ()=>{
-    const response = await axios.get('https://client.mobile.chemanca.com/api/advertisements/AdsDetail/GetAllGroupedDepositePricesAsync');
-    return response.data;
-}
+const fetchDepositPriceList = async () => {
+  const response = await axios.get(
+    "https://client.mobile.chemanca.com/api/advertisements/AdsDetail/GetAllGroupedDepositePricesAsync"
+  );
+  return response.data;
+};
 
-export const useDepositPriceList = ()=>{
-    return useQuery({
-        queryKey:['depositPriceList'],
-        queryFn: fetchDepositPriceList
-    })
+export const useDepositPriceList = () => {
+  return useQuery({
+    queryKey: ["depositPriceList"],
+    queryFn: fetchDepositPriceList,
+  });
 };
 
 //RentPriceFilter//
-const fetchRentPriceList = async ()=>{
-    const response = await axios.get('https://client.mobile.chemanca.com/api/advertisements/AdsDetail/GetAllGroupedRentPricesAsync');
-    
-    return response.data;
-}
+const fetchRentPriceList = async () => {
+  const response = await axios.get(
+    "https://client.mobile.chemanca.com/api/advertisements/AdsDetail/GetAllGroupedRentPricesAsync"
+  );
 
-export const useRentPriceList = ()=>{
-    return useQuery({
-        queryKey:['rentPriceList'],
-        queryFn: fetchRentPriceList
-    })
+  return response.data;
+};
+
+export const useRentPriceList = () => {
+  return useQuery({
+    queryKey: ["rentPriceList"],
+    queryFn: fetchRentPriceList,
+  });
 };
 
 //MetrageFilter//
 
-const fetchMeterageList = async ()=>{
-    const response = await axios.get('https://client.mobile.chemanca.com/api/advertisements/AdsDetail/GetAllGroupedMeterageAsync');
-   
-    return response.data;
-}
+const fetchMeterageList = async () => {
+  const response = await axios.get(
+    "https://client.mobile.chemanca.com/api/advertisements/AdsDetail/GetAllGroupedMeterageAsync"
+  );
 
-export  const useMeterageList = ()=>{
-    return useQuery({
-        queryKey:['meterageList'],
-        queryFn:fetchMeterageList
-    })
-}
+  return response.data;
+};
+
+export const useMeterageList = () => {
+  return useQuery({
+    queryKey: ["meterageList"],
+    queryFn: fetchMeterageList,
+  });
+};
 
 //NumberOfRoomFilter//
 
-const fetchNumberOfRoom = async ()=>{
-    const response = await axios.get('https://client.mobile.chemanca.com/api/advertisements/AdsDetail/GetAllGroupedNumberOfRoomPerFloorAsync');
-   
-    return response.data;
-}
+const fetchNumberOfRoom = async () => {
+  const response = await axios.get(
+    "https://client.mobile.chemanca.com/api/advertisements/AdsDetail/GetAllGroupedNumberOfRoomPerFloorAsync"
+  );
 
-export  const useNumberOfRoom = ()=>{
-    return useQuery({
-        queryKey:['numberOfRoom'],
-        queryFn:fetchNumberOfRoom
-    })
-}
+  return response.data;
+};
+
+export const useNumberOfRoom = () => {
+  return useQuery({
+    queryKey: ["numberOfRoom"],
+    queryFn: fetchNumberOfRoom,
+  });
+};
 
 //NumberOfUnitsPerFloorFilter//
 
-const fetchNumberOfUnitsPerFloor = async ()=>{
-    const response = await axios.get('https://client.mobile.chemanca.com/api/advertisements/AdsDetail/GetAllGroupedUnitsPerFloorAsync');
-   
-    return response.data;
-}
+const fetchNumberOfUnitsPerFloor = async () => {
+  const response = await axios.get(
+    "https://client.mobile.chemanca.com/api/advertisements/AdsDetail/GetAllGroupedUnitsPerFloorAsync"
+  );
 
-export  const useNumberOfUnitsPerFloor = ()=>{
-    return useQuery({
-        queryKey:['numberOfUnitsPerFloor'],
-        queryFn:fetchNumberOfUnitsPerFloor
-    })
-}
+  return response.data;
+};
+
+export const useNumberOfUnitsPerFloor = () => {
+  return useQuery({
+    queryKey: ["numberOfUnitsPerFloor"],
+    queryFn: fetchNumberOfUnitsPerFloor,
+  });
+};
 
 //ProductsStatusFilter//
 
-const fetchProductStatus = async ()=>{
-    const response = await axios.get('https://client.mobile.chemanca.com/api/products/ProductStatus/GetAllProductStaus');
-   
-    return response.data;
-}
+const fetchProductStatus = async () => {
+  const response = await axios.get(
+    "https://client.mobile.chemanca.com/api/products/ProductStatus/GetAllProductStaus"
+  );
 
-export  const useProductStatus = ()=>{
-    return useQuery({
-        queryKey:['productStatus'],
-        queryFn:fetchProductStatus
-    })
-}
+  return response.data;
+};
+
+export const useProductStatus = () => {
+  return useQuery({
+    queryKey: ["productStatus"],
+    queryFn: fetchProductStatus,
+  });
+};
 
 // hasCreatedYearFilter//
-const fetchCreatedYear = async ()=>{
-    const response = await axios.get('https://client.mobile.chemanca.com/api/advertisements/AdsDetail/GetAllGroupedCreatedYearAsync');
-   
-    return response.data;
-}
+const fetchCreatedYear = async () => {
+  const response = await axios.get(
+    "https://client.mobile.chemanca.com/api/advertisements/AdsDetail/GetAllGroupedCreatedYearAsync"
+  );
 
-export  const useCreatedYear = ()=>{
-    return useQuery({
-        queryKey:['createdYear'],
-        queryFn:fetchCreatedYear
-    })
-}
+  return response.data;
+};
+
+export const useCreatedYear = () => {
+  return useQuery({
+    queryKey: ["createdYear"],
+    queryFn: fetchCreatedYear,
+  });
+};
 
 //hasBrandNameFilter //
-const fetchBrandName = async ()=>{
-    const response = await axios.get('https://client.mobile.chemanca.com/api/products/Brand/GetAllBrand');
-   
-    return response.data;
-}
+const fetchBrandName = async () => {
+  const response = await axios.get(
+    "https://client.mobile.chemanca.com/api/products/Brand/GetAllBrand"
+  );
 
-export  const useBrandName = ()=>{
-    return useQuery({
-        queryKey:['brandName'],
-        queryFn:fetchBrandName
-    })
-}
+  return response.data;
+};
+
+export const useBrandName = () => {
+  return useQuery({
+    queryKey: ["brandName"],
+    queryFn: fetchBrandName,
+  });
+};
 
 //hasNumberOfSimCartFilter//
-const fetchNumberOfSimCart = async ()=>{
-    const response = await axios.get('https://client.mobile.chemanca.com/api/advertisements/AdsDetail/GetAllGroupedNumberOfSimcartAsync');
-   
-    return response.data;
-}
+const fetchNumberOfSimCart = async () => {
+  const response = await axios.get(
+    "https://client.mobile.chemanca.com/api/advertisements/AdsDetail/GetAllGroupedNumberOfSimcartAsync"
+  );
 
-export  const useNumberOfSimCart = ()=>{
-    return useQuery({
-        queryKey:['numberOfSimCart'],
-        queryFn:fetchNumberOfSimCart
-    })
-}
+  return response.data;
+};
+
+export const useNumberOfSimCart = () => {
+  return useQuery({
+    queryKey: ["numberOfSimCart"],
+    queryFn: fetchNumberOfSimCart,
+  });
+};
 
 //hasInternalMemoryCapacityFilter//
-const fetchInternalMemoryCapacity = async ()=>{
-    const response = await axios.get('https://client.mobile.chemanca.com/api/products/InternalMemoryCapacity/GetAllInternalMemoryCapacity');
-   
-    return response.data;
-}
+const fetchInternalMemoryCapacity = async () => {
+  const response = await axios.get(
+    "https://client.mobile.chemanca.com/api/products/InternalMemoryCapacity/GetAllInternalMemoryCapacity"
+  );
 
-export  const useInternalMemoryCapacity = ()=>{
-    return useQuery({
-        queryKey:['internalMemoryCapacity'],
-        queryFn:fetchInternalMemoryCapacity
-    })
-}
+  return response.data;
+};
+
+export const useInternalMemoryCapacity = () => {
+  return useQuery({
+    queryKey: ["internalMemoryCapacity"],
+    queryFn: fetchInternalMemoryCapacity,
+  });
+};
 
 //hasRamCapacityFilter//
-const fetchRamCapacity = async ()=>{
-    const response = await axios.get('https://client.mobile.chemanca.com/api/products/RamCapacity/GetAllRamCapacity');
-   
-    return response.data;
-}
+const fetchRamCapacity = async () => {
+  const response = await axios.get(
+    "https://client.mobile.chemanca.com/api/products/RamCapacity/GetAllRamCapacity"
+  );
 
-export  const useRamCapacity = ()=>{
-    return useQuery({
-        queryKey:['ramCapacity'],
-        queryFn:fetchRamCapacity
-    })
-}
+  return response.data;
+};
+
+export const useRamCapacity = () => {
+  return useQuery({
+    queryKey: ["ramCapacity"],
+    queryFn: fetchRamCapacity,
+  });
+};
 //hasColorFilter//
-const fetchColor = async ()=>{
-    const response = await axios.get('https://client.mobile.chemanca.com/api/products/Color/GetAllColor');
-   
-    return response.data;
-}
+const fetchColor = async () => {
+  const response = await axios.get(
+    "https://client.mobile.chemanca.com/api/products/Color/GetAllColor"
+  );
 
-export  const useColorFilter = ()=>{
-    return useQuery({
-        queryKey:['colorFilter'],
-        queryFn:fetchColor
-    })
-}
+  return response.data;
+};
+
+export const useColorFilter = () => {
+  return useQuery({
+    queryKey: ["colorFilter"],
+    queryFn: fetchColor,
+  });
+};
 
 //hasDisplaydimentionFilter//
-const fetchDisplayDimention = async ()=>{
-    const response = await axios.get('https://client.mobile.chemanca.com/api/products/DisplayDimension/GetAllDisplayDimension');
-   
-    return response.data;
-}
+const fetchDisplayDimention = async () => {
+  const response = await axios.get(
+    "https://client.mobile.chemanca.com/api/products/DisplayDimension/GetAllDisplayDimension"
+  );
 
-export  const useDisplayDimention = ()=>{
-    return useQuery({
-        queryKey:['displayDimention'],
-        queryFn:fetchDisplayDimention
-    })
-}
+  return response.data;
+};
+
+export const useDisplayDimention = () => {
+  return useQuery({
+    queryKey: ["displayDimention"],
+    queryFn: fetchDisplayDimention,
+  });
+};
 
 //hasOperationSystemNameFilter//
-const fetchOperationsystemName = async ()=>{
-    const response = await axios.get('https://client.mobile.chemanca.com/api/products/OperationSystem/GetAllOperationSystem');
-   
-    return response.data;
-}
+const fetchOperationsystemName = async () => {
+  const response = await axios.get(
+    "https://client.mobile.chemanca.com/api/products/OperationSystem/GetAllOperationSystem"
+  );
 
-export  const useOperationSystemName = ()=>{
-    return useQuery({
-        queryKey:['operationSystemName'],
-        queryFn:fetchOperationsystemName
-    })
-}
+  return response.data;
+};
+
+export const useOperationSystemName = () => {
+  return useQuery({
+    queryKey: ["operationSystemName"],
+    queryFn: fetchOperationsystemName,
+  });
+};
 
 //hasProcessorModelFilter//
-const fetchProcessorModel = async ()=>{
-    const response = await axios.get('https://client.mobile.chemanca.com/api/products/ProcessorModel/GetAllProcessorModel');
-   
-    return response.data;
-}
+const fetchProcessorModel = async () => {
+  const response = await axios.get(
+    "https://client.mobile.chemanca.com/api/products/ProcessorModel/GetAllProcessorModel"
+  );
 
-export  const useProcessorModel = ()=>{
-    return useQuery({
-        queryKey:['processorModel'],
-        queryFn:fetchProcessorModel
-    })
-}
+  return response.data;
+};
+
+export const useProcessorModel = () => {
+  return useQuery({
+    queryKey: ["processorModel"],
+    queryFn: fetchProcessorModel,
+  });
+};
 //hasModemOrrouterTypefilter//
-const fetchModemType = async ()=>{
-    const response = await axios.get('https://client.mobile.chemanca.com/api/products/ModemRouterBrand/GetAllModemRouterBrand');
-   
-    return response.data;
-}
+const fetchModemType = async () => {
+  const response = await axios.get(
+    "https://client.mobile.chemanca.com/api/products/ModemRouterBrand/GetAllModemRouterBrand"
+  );
 
-export  const useModemType = ()=>{
-    return useQuery({
-        queryKey:['modemType'],
-        queryFn:fetchModemType
-    })
-}
+  return response.data;
+};
+
+export const useModemType = () => {
+  return useQuery({
+    queryKey: ["modemType"],
+    queryFn: fetchModemType,
+  });
+};
 //hasJoystickTypefilter//
-const fetchJoystickType = async ()=>{
-    const response = await axios.get('https://client.mobile.chemanca.com/api/products/JoyStickType/GetAllJoyStickType');
-   
-    return response.data;
-}
+const fetchJoystickType = async () => {
+  const response = await axios.get(
+    "https://client.mobile.chemanca.com/api/products/JoyStickType/GetAllJoyStickType"
+  );
 
-export  const useJoystickType = ()=>{
-    return useQuery({
-        queryKey:['joystickType'],
-        queryFn:fetchJoystickType
-    })
-}
+  return response.data;
+};
+
+export const useJoystickType = () => {
+  return useQuery({
+    queryKey: ["joystickType"],
+    queryFn: fetchJoystickType,
+  });
+};
 //hasGameConsoleModelFilter//
-const fetchGameConsoleModel = async ()=>{
-    const response = await axios.get('https://client.mobile.chemanca.com/api/products/GameConsoleModel/GetAllGameConsoleModel');
-   
-    return response.data;
-}
+const fetchGameConsoleModel = async () => {
+  const response = await axios.get(
+    "https://client.mobile.chemanca.com/api/products/GameConsoleModel/GetAllGameConsoleModel"
+  );
 
-export  const useGameConsoleModel = ()=>{
-    return useQuery({
-        queryKey:['gameConsoleModel'],
-        queryFn:fetchGameConsoleModel
-    })
-}
+  return response.data;
+};
+
+export const useGameConsoleModel = () => {
+  return useQuery({
+    queryKey: ["gameConsoleModel"],
+    queryFn: fetchGameConsoleModel,
+  });
+};
 //hasTextureFilter//
-const fetchCarpetTexture = async ()=>{
-    const response = await axios.get('https://client.mobile.chemanca.com/api/products/CarpetTexture/GetAllCarpetTexture');
-   
-    return response.data;
-}
+const fetchCarpetTexture = async () => {
+  const response = await axios.get(
+    "https://client.mobile.chemanca.com/api/products/CarpetTexture/GetAllCarpetTexture"
+  );
 
-export  const useCarpetTexture = ()=>{
-    return useQuery({
-        queryKey:['carpetTexture'],
-        queryFn:fetchCarpetTexture
-    })
-}
+  return response.data;
+};
+
+export const useCarpetTexture = () => {
+  return useQuery({
+    queryKey: ["carpetTexture"],
+    queryFn: fetchCarpetTexture,
+  });
+};
 //hasDimentionFilter//
-const fetchCarpetDimention = async ()=>{
-    const response = await axios.get('https://client.mobile.chemanca.com/api/products/CarpetDimension/GetAllCarpetDimension');
-   
-    return response.data;
-}
+const fetchCarpetDimention = async () => {
+  const response = await axios.get(
+    "https://client.mobile.chemanca.com/api/products/CarpetDimension/GetAllCarpetDimension"
+  );
 
-export  const useCarpetDimention = ()=>{
-    return useQuery({
-        queryKey:['carpetDimention'],
-        queryFn:fetchCarpetDimention
-    })
-}
+  return response.data;
+};
+
+export const useCarpetDimention = () => {
+  return useQuery({
+    queryKey: ["carpetDimention"],
+    queryFn: fetchCarpetDimention,
+  });
+};
 //hasConsumptionFilter//
-const fetchElectricConsumption = async ()=>{
-    const response = await axios.get('https://client.mobile.chemanca.com/api/products/ElectricConsumption/GetAllElectricConsumption');
-   
-    return response.data;
-}
+const fetchElectricConsumption = async () => {
+  const response = await axios.get(
+    "https://client.mobile.chemanca.com/api/products/ElectricConsumption/GetAllElectricConsumption"
+  );
 
-export  const useElectricConsumption = ()=>{
-    return useQuery({
-        queryKey:['electricConsumption'],
-        queryFn:fetchElectricConsumption
-    })
-}
+  return response.data;
+};
+
+export const useElectricConsumption = () => {
+  return useQuery({
+    queryKey: ["electricConsumption"],
+    queryFn: fetchElectricConsumption,
+  });
+};
 //hasSexfilter//
-const fetchSexFilter = async ()=>{
-    const response = await axios.get('https://client.mobile.chemanca.com/api/products/Gender/GetAllGender');
-   
-    return response.data;
-}
+const fetchSexFilter = async () => {
+  const response = await axios.get(
+    "https://client.mobile.chemanca.com/api/products/Gender/GetAllGender"
+  );
 
-export  const useSexFilter = ()=>{
-    return useQuery({
-        queryKey:['sexFilter'],
-        queryFn:fetchSexFilter
-    })
-}
+  return response.data;
+};
+
+export const useSexFilter = () => {
+  return useQuery({
+    queryKey: ["sexFilter"],
+    queryFn: fetchSexFilter,
+  });
+};
 //hasClothTypeFilter//
-const fetchClothType = async ()=>{
-    const response = await axios.get('https://client.mobile.chemanca.com/api/products/ClothType/GetAllClothType');
-   
-    return response.data;
-}
+const fetchClothType = async () => {
+  const response = await axios.get(
+    "https://client.mobile.chemanca.com/api/products/ClothType/GetAllClothType"
+  );
 
-export  const useClothType = ()=>{
-    return useQuery({
-        queryKey:['clothType'],
-        queryFn:fetchClothType
-    })
-}
+  return response.data;
+};
+
+export const useClothType = () => {
+  return useQuery({
+    queryKey: ["clothType"],
+    queryFn: fetchClothType,
+  });
+};
