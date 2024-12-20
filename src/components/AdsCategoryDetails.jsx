@@ -25,6 +25,7 @@ import {
   useCarpetDimention,
   useElectricConsumption,
   useSexFilter,
+  useClothType,
 } from "../api/DetailsRangeNumber";
 import StringComponent from "./StringComponent";
 
@@ -58,6 +59,7 @@ export default function AdsCategoryDetails({
  const{data:carpetDimention} = useCarpetDimention();
  const{ data:electricConsumption} = useElectricConsumption();
  const{data:sexFilter} = useSexFilter();
+ const{data:clothType} = useClothType();
  
 
   if (categoryDetails) {
@@ -323,6 +325,18 @@ export default function AdsCategoryDetails({
             openItems={openItems}
             handleClick={handleClick}
             key="sexFilter"
+          />
+        ),
+      },
+      {
+        condition: categoryDetails.hasClothTypeFilter,
+        component: (
+          <StringComponent
+            title="  نوع لباس"
+            options={clothType}
+            openItems={openItems}
+            handleClick={handleClick}
+            key="clothType"
           />
         ),
       },
