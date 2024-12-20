@@ -15,6 +15,7 @@ import {
   useInternalMemoryCapacity,
   useRamCapacity,
   useColorFilter,
+  useDisplayDimention,
 } from "../api/DetailsRangeNumber";
 import StringComponent from "./StringComponent";
 
@@ -38,7 +39,7 @@ export default function AdsCategoryDetails({
   const { data: internalMemoryCapacity } = useInternalMemoryCapacity();
   const { data: ramCapacity } = useRamCapacity();
   const{data:colorFilter} = useColorFilter();
- 
+ const{data:displayDimention} = useDisplayDimention();
 
   if (categoryDetails) {
     const conditions = [
@@ -183,6 +184,18 @@ export default function AdsCategoryDetails({
             openItems={openItems}
             handleClick={handleClick}
             key="colorFilter"
+          />
+        ),
+      },
+      {
+        condition: categoryDetails.hasDisplayDimentionFilter,
+        component: (
+          <StringComponent
+            title="  ابعاد صفحه نمایش "
+            options={displayDimention}
+            openItems={openItems}
+            handleClick={handleClick}
+            key="displayDimention"
           />
         ),
       },

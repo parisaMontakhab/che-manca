@@ -173,16 +173,16 @@ export  const useColorFilter = ()=>{
 }
 
 //hasDisplaydimentionFilter//
-const fetchDimentionFilter = async ()=>{
+const fetchDisplayDimention = async ()=>{
     const response = await axios.get('https://client.mobile.chemanca.com/api/products/DisplayDimension/GetAllDisplayDimension');
    
     return response.data;
 }
 
-export  const useDimentionFilter = ()=>{
+export  const useDisplayDimention = ()=>{
     return useQuery({
-        queryKey:['dimentionFilter'],
-        queryFn:fetchDimentionFilter
+        queryKey:['displayDimention'],
+        queryFn:fetchDisplayDimention
     })
 }
 
