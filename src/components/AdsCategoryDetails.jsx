@@ -18,6 +18,7 @@ import {
   useDisplayDimention,
   useOperationSystemName,
   useProcessorModel,
+  useModemType,
 } from "../api/DetailsRangeNumber";
 import StringComponent from "./StringComponent";
 
@@ -44,7 +45,7 @@ export default function AdsCategoryDetails({
  const{data:displayDimention} = useDisplayDimention();
  const{data:operationSystemName} = useOperationSystemName();
  const{data:processorModel} = useProcessorModel();
- 
+ const {data:modemType}= useModemType();
 
   if (categoryDetails) {
     const conditions = [
@@ -225,6 +226,18 @@ export default function AdsCategoryDetails({
             openItems={openItems}
             handleClick={handleClick}
             key="processorModel"
+          />
+        ),
+      },
+      {
+        condition: categoryDetails.hasModemOrRouterTypeFilter,
+        component: (
+          <StringComponent
+            title="      نوع مودم  "
+            options={modemType}
+            openItems={openItems}
+            handleClick={handleClick}
+            key="modemType"
           />
         ),
       },
