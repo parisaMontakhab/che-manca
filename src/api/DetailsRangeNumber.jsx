@@ -213,4 +213,17 @@ export  const useProcessorModel = ()=>{
         queryFn:fetchProcessorModel
     })
 }
+//hasModemOrrouterTypefilter//
+const fetchModemType = async ()=>{
+    const response = await axios.get('https://client.mobile.chemanca.com/api/products/ModemRouterBrand/GetAllModemRouterBrand');
+   
+    return response.data;
+}
+
+export  const useModemType = ()=>{
+    return useQuery({
+        queryKey:['modemType'],
+        queryFn:fetchModemType
+    })
+}
 
