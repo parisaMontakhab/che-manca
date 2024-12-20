@@ -291,3 +291,16 @@ export  const useElectricConsumption = ()=>{
         queryFn:fetchElectricConsumption
     })
 }
+//hasSexfilter//
+const fetchSexFilter = async ()=>{
+    const response = await axios.get('https://client.mobile.chemanca.com/api/products/Gender/GetAllGender');
+   
+    return response.data;
+}
+
+export  const useSexFilter = ()=>{
+    return useQuery({
+        queryKey:['sexFilter'],
+        queryFn:fetchSexFilter
+    })
+}
