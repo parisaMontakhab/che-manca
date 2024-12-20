@@ -23,6 +23,7 @@ import {
   useGameConsoleModel,
   useCarpetTexture,
   useCarpetDimention,
+  useElectricConsumption,
 } from "../api/DetailsRangeNumber";
 import StringComponent from "./StringComponent";
 
@@ -54,6 +55,8 @@ export default function AdsCategoryDetails({
  const{data:gameConsoleModel} = useGameConsoleModel();
  const{data:carpetTexture} = useCarpetTexture();
  const{data:carpetDimention} = useCarpetDimention();
+ const{ data:electricConsumption} = useElectricConsumption();
+ 
 
   if (categoryDetails) {
     const conditions = [
@@ -294,6 +297,18 @@ export default function AdsCategoryDetails({
             openItems={openItems}
             handleClick={handleClick}
             key="carpetDimention"
+          />
+        ),
+      },
+      {
+        condition: categoryDetails.hasConsumptionFilter,
+        component: (
+          <StringComponent
+            title="     میزان مصرف"
+            options={electricConsumption}
+            openItems={openItems}
+            handleClick={handleClick}
+            key="electricConsumption"
           />
         ),
       },
