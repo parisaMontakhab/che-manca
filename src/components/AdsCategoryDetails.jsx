@@ -16,6 +16,7 @@ import {
   useRamCapacity,
   useColorFilter,
   useDisplayDimention,
+  useOperationSystemName,
 } from "../api/DetailsRangeNumber";
 import StringComponent from "./StringComponent";
 
@@ -40,6 +41,7 @@ export default function AdsCategoryDetails({
   const { data: ramCapacity } = useRamCapacity();
   const{data:colorFilter} = useColorFilter();
  const{data:displayDimention} = useDisplayDimention();
+ const{data:operationSystemName} = useOperationSystemName();
 
   if (categoryDetails) {
     const conditions = [
@@ -196,6 +198,18 @@ export default function AdsCategoryDetails({
             openItems={openItems}
             handleClick={handleClick}
             key="displayDimention"
+          />
+        ),
+      },
+      {
+        condition: categoryDetails.hasOperationSystemNameFilter,
+        component: (
+          <StringComponent
+            title="    نوع سیستم عامل "
+            options={operationSystemName}
+            openItems={openItems}
+            handleClick={handleClick}
+            key="operationSystemName"
           />
         ),
       },
