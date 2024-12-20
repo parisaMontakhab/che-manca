@@ -19,6 +19,7 @@ import {
   useOperationSystemName,
   useProcessorModel,
   useModemType,
+  useJoystickType,
 } from "../api/DetailsRangeNumber";
 import StringComponent from "./StringComponent";
 
@@ -46,6 +47,7 @@ export default function AdsCategoryDetails({
  const{data:operationSystemName} = useOperationSystemName();
  const{data:processorModel} = useProcessorModel();
  const {data:modemType}= useModemType();
+ const{data:joystickType} = useJoystickType();
 
   if (categoryDetails) {
     const conditions = [
@@ -238,6 +240,18 @@ export default function AdsCategoryDetails({
             openItems={openItems}
             handleClick={handleClick}
             key="modemType"
+          />
+        ),
+      },
+      {
+        condition: categoryDetails.hasJoystickTypeFilter,
+        component: (
+          <StringComponent
+            title="      نوع دسته بازی   "
+            options={joystickType}
+            openItems={openItems}
+            handleClick={handleClick}
+            key="joystickType"
           />
         ),
       },

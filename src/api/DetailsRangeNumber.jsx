@@ -228,7 +228,7 @@ export  const useModemType = ()=>{
 }
 //hasJoystickTypefilter//
 const fetchJoystickType = async ()=>{
-    const response = await axios.get('https://client.mobile.chemanca.com/api/products/GameConsoleModel/GetAllGameConsoleModel');
+    const response = await axios.get('https://client.mobile.chemanca.com/api/products/JoyStickType/GetAllJoyStickType');
    
     return response.data;
 }
