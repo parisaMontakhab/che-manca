@@ -200,3 +200,17 @@ export  const useOperationSystemName = ()=>{
     })
 }
 
+//hasProcessorModelFilter//
+const fetchProcessorModel = async ()=>{
+    const response = await axios.get('https://client.mobile.chemanca.com/api/products/ProcessorModel/GetAllProcessorModel');
+   
+    return response.data;
+}
+
+export  const useProcessorModel = ()=>{
+    return useQuery({
+        queryKey:['processorModel'],
+        queryFn:fetchProcessorModel
+    })
+}
+
