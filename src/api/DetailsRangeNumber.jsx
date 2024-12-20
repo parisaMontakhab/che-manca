@@ -186,4 +186,17 @@ export  const useDisplayDimention = ()=>{
     })
 }
 
+//hasOperationSystemNameFilter//
+const fetchOperationsystemName = async ()=>{
+    const response = await axios.get('https://client.mobile.chemanca.com/api/products/OperationSystem/GetAllOperationSystem');
+   
+    return response.data;
+}
+
+export  const useOperationSystemName = ()=>{
+    return useQuery({
+        queryKey:['operationSystemName'],
+        queryFn:fetchOperationsystemName
+    })
+}
 
