@@ -252,3 +252,16 @@ export  const useGameConsoleModel = ()=>{
         queryFn:fetchGameConsoleModel
     })
 }
+//hasCarpetTexture//
+const fetchCarpetTexture = async ()=>{
+    const response = await axios.get('https://client.mobile.chemanca.com/api/products/CarpetTexture/GetAllCarpetTexture');
+   
+    return response.data;
+}
+
+export  const useCarpetTexture = ()=>{
+    return useQuery({
+        queryKey:['carpetTexture'],
+        queryFn:fetchCarpetTexture
+    })
+}
