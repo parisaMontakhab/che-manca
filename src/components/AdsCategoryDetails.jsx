@@ -20,6 +20,7 @@ import {
   useProcessorModel,
   useModemType,
   useJoystickType,
+  useGameConsoleModel,
 } from "../api/DetailsRangeNumber";
 import StringComponent from "./StringComponent";
 
@@ -48,6 +49,7 @@ export default function AdsCategoryDetails({
  const{data:processorModel} = useProcessorModel();
  const {data:modemType}= useModemType();
  const{data:joystickType} = useJoystickType();
+ const{data:gameConsoleModel} = useGameConsoleModel();
 
   if (categoryDetails) {
     const conditions = [
@@ -252,6 +254,18 @@ export default function AdsCategoryDetails({
             openItems={openItems}
             handleClick={handleClick}
             key="joystickType"
+          />
+        ),
+      },
+      {
+        condition: categoryDetails.hasGameConsoleModelFilter,
+        component: (
+          <StringComponent
+            title="        نوع کنسول   "
+            options={gameConsoleModel}
+            openItems={openItems}
+            handleClick={handleClick}
+            key="gameConsoleModel"
           />
         ),
       },
