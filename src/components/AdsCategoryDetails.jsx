@@ -38,6 +38,7 @@ import {
   useCarInsuranceStatus,
   useKilogramWeight,
   useChooseRoommateGender,
+  useBedtype,
 } from "../api/DetailsRangeNumber";
 import StringComponent from "./StringComponent";
 
@@ -84,6 +85,7 @@ export default function AdsCategoryDetails({
   const { data: carInsuranceStatus } = useCarInsuranceStatus();
   const { data: kilogramWeight } = useKilogramWeight();
   const{data:chooseRoommateGender}= useChooseRoommateGender();
+  const{data:bedType} = useBedtype();
 
   if (categoryDetails) {
     const conditions = [
@@ -504,6 +506,18 @@ export default function AdsCategoryDetails({
             openItems={openItems}
             handleClick={handleClick}
             key="chooseRoommateGender"
+          />
+        ),
+      },
+      {
+        condition: categoryDetails.hasBedTypeFilter,
+        component: (
+          <StringComponent
+            title="    نوع تخت خواب "
+            options={bedType}
+            openItems={openItems}
+            handleClick={handleClick}
+            key="bedType"
           />
         ),
       },
