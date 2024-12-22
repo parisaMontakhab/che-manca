@@ -36,6 +36,7 @@ import {
   useCarGearboxType,
   useCarEngineStatus,
   useCarInsuranceStatus,
+  useKilogramWeight,
 } from "../api/DetailsRangeNumber";
 import StringComponent from "./StringComponent";
 
@@ -70,16 +71,17 @@ export default function AdsCategoryDetails({
   const { data: electricConsumption } = useElectricConsumption();
   const { data: sexFilter } = useSexFilter();
   const { data: clothType } = useClothType();
-  const {data:clockType} = useClockType();
-  const {data:jewelryType} = useJewelryType();
-  const{data:jewelryMaterial} = useJewelryMaterial();
-  const{data:carOperation} = useCarOperation();
-  const{data:carBodyStatus} = useCarBodyStatus();
-  const{data: carChassisStatus} = useCarChassisStatus();
-  const{data:carFuel}= useCarFuel();
-  const{data:carGearboxType} = useCarGearboxType();
-  const{data:carEngineStatus} = useCarEngineStatus();
-  const{data:carInsuranceStatus}= useCarInsuranceStatus();
+  const { data: clockType } = useClockType();
+  const { data: jewelryType } = useJewelryType();
+  const { data: jewelryMaterial } = useJewelryMaterial();
+  const { data: carOperation } = useCarOperation();
+  const { data: carBodyStatus } = useCarBodyStatus();
+  const { data: carChassisStatus } = useCarChassisStatus();
+  const { data: carFuel } = useCarFuel();
+  const { data: carGearboxType } = useCarGearboxType();
+  const { data: carEngineStatus } = useCarEngineStatus();
+  const { data: carInsuranceStatus } = useCarInsuranceStatus();
+  const { data: kilogramWeight } = useKilogramWeight();
 
   if (categoryDetails) {
     const conditions = [
@@ -459,7 +461,7 @@ export default function AdsCategoryDetails({
         condition: categoryDetails.hasCarEngineStatusFilter,
         component: (
           <StringComponent
-            title=" وضعیت موتور خودرو" 
+            title=" وضعیت موتور خودرو"
             options={carEngineStatus}
             openItems={openItems}
             handleClick={handleClick}
@@ -471,11 +473,23 @@ export default function AdsCategoryDetails({
         condition: categoryDetails.hasCarInsuranceStatusFilter,
         component: (
           <StringComponent
-            title="   وضعیت بیمه خودرو " 
+            title="   وضعیت بیمه خودرو "
             options={carInsuranceStatus}
             openItems={openItems}
             handleClick={handleClick}
             key="carInsuranceStatus"
+          />
+        ),
+      },
+      {
+        condition: categoryDetails.hasKilogramWeightFilter,
+        component: (
+          <StringComponent
+            title="   میزان وزن"
+            options={kilogramWeight}
+            openItems={openItems}
+            handleClick={handleClick}
+            key="kilogramWeight"
           />
         ),
       },
