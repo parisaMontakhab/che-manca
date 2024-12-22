@@ -558,5 +558,20 @@ export const useBedtype = () => {
     queryFn: fetchBedType,
   });
 };
+//hasNearUniversityFilter//
+const fetchNearUniversity = async () => {
+  const response = await axios.get(
+    "https://client.mobile.chemanca.com/api/basicInfo/University/GetAllUniversity"
+  );
+
+  return response.data;
+};
+
+export const useNearUniversity = () => {
+  return useQuery({
+    queryKey: ["nearUniversity"],
+    queryFn: fetchNearUniversity,
+  });
+};
 
 
