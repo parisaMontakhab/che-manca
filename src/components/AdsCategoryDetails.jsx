@@ -817,6 +817,17 @@ export default function AdsCategoryDetails({
           />
         ),
       },
+      {
+        condition: categoryDetails.hasObligationNotBeAtHomeFilter,
+        component: (
+          <ToggleComponent
+            title=" عدم حضور در منزل  " 
+            openItems={openItems}
+            handleClick={handleClick}
+            key="hasObligationNotBeAtHome"
+          />
+        ),
+      },
       
       
       
