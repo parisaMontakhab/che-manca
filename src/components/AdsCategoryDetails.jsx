@@ -34,6 +34,7 @@ import {
   useCarChassisStatus,
   useCarFuel,
   useCarGearboxType,
+  useCarEngineStatus,
 } from "../api/DetailsRangeNumber";
 import StringComponent from "./StringComponent";
 
@@ -76,6 +77,7 @@ export default function AdsCategoryDetails({
   const{data: carChassisStatus} = useCarChassisStatus();
   const{data:carFuel}= useCarFuel();
   const{data:carGearboxType} = useCarGearboxType();
+  const{data:carEngineStatus} = useCarEngineStatus();
 
   if (categoryDetails) {
     const conditions = [
@@ -448,6 +450,18 @@ export default function AdsCategoryDetails({
             openItems={openItems}
             handleClick={handleClick}
             key="carGearboxType"
+          />
+        ),
+      },
+      {
+        condition: categoryDetails.hasCarEngineStatusFilter,
+        component: (
+          <StringComponent
+            title=" وضعیت موتور خودرو" 
+            options={carEngineStatus}
+            openItems={openItems}
+            handleClick={handleClick}
+            key="carEngineStatus"
           />
         ),
       },
