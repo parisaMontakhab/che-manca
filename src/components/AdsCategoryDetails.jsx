@@ -773,6 +773,17 @@ export default function AdsCategoryDetails({
           />
         ),
       },
+      {
+        condition: categoryDetails.hasDirectFlightFilter,
+        component: (
+          <ToggleComponent
+            title="  پرواز مستقیم  " 
+            openItems={openItems}
+            handleClick={handleClick}
+            key="hasDirectFlight"
+          />
+        ),
+      },
       
       
     ];
