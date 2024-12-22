@@ -483,3 +483,19 @@ export const useCarGearboxType = () => {
     queryFn: fetchCarGearboxType,
   });
 };
+//hasCarEngineStatusFilter//
+const fetchCarEngineStatus = async () => {
+  const response = await axios.get(
+    "https://client.mobile.chemanca.com/api/products/CarEngineStatus/GetAllCarEngineStatus"
+  );
+
+  return response.data;
+};
+
+export const useCarEngineStatus = () => {
+  return useQuery({
+    queryKey: ["carEngineStatus"],
+    queryFn: fetchCarEngineStatus,
+  });
+};
+
