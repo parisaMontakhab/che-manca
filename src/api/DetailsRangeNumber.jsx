@@ -528,4 +528,19 @@ export const useKilogramWeight = () => {
     queryFn: fetchKilogramWeight,
   });
 };
+//hasChooseRoommateGenderFilter//
+const fetchChooseRoommateGender = async () => {
+  const response = await axios.get(
+    "https://client.mobile.chemanca.com/api/products/Gender/GetAllGender"
+  );
+
+  return response.data;
+};
+
+export const useChooseRoommateGender = () => {
+  return useQuery({
+    queryKey: ["chooseRoommateGender"],
+    queryFn: fetchChooseRoommateGender,
+  });
+};
 
