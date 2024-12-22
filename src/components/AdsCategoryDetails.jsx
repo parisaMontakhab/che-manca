@@ -630,6 +630,17 @@ export default function AdsCategoryDetails({
           />
         ),
       },
+      {
+        condition: categoryDetails.hasWCFilter,
+        component: (
+          <ToggleComponent
+            title="  سرویس بهداشتی  " 
+            openItems={openItems}
+            handleClick={handleClick}
+            key="hasWC"
+          />
+        ),
+      },
       
       
     ];
