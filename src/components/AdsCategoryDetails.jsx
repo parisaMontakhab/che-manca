@@ -795,6 +795,17 @@ export default function AdsCategoryDetails({
           />
         ),
       },
+      {
+        condition: categoryDetails.hasInsideCityFilter,
+        component: (
+          <ToggleComponent
+            title=" داخل شهر  " 
+            openItems={openItems}
+            handleClick={handleClick}
+            key="hasInsideCity"
+          />
+        ),
+      },
       
       
       
