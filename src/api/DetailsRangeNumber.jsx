@@ -573,5 +573,20 @@ export const useNearUniversity = () => {
     queryFn: fetchNearUniversity,
   });
 };
+//hasRoomTypeFilter//
+const fetchRoomType = async () => {
+  const response = await axios.get(
+    "https://client.mobile.chemanca.com/api/products/RoomType/GetAllRoomType"
+  );
+
+  return response.data;
+};
+
+export const useRoomType = () => {
+  return useQuery({
+    queryKey: ["roomType"],
+    queryFn: fetchRoomType,
+  });
+};
 
 
