@@ -586,6 +586,17 @@ export default function AdsCategoryDetails({
           />
         ),
       },
+      {
+        condition: categoryDetails.hasWarehouseFilter,
+        component: (
+          <ToggleComponent
+            title="  انباری " 
+            openItems={openItems}
+            handleClick={handleClick}
+            key="hasWarehouse"
+          />
+        ),
+      },
       
     ];
     return (
