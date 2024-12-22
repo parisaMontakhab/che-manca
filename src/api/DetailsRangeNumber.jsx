@@ -378,3 +378,18 @@ export const useClockType = () => {
     queryFn: fetchClockType,
   });
 };
+//hasJewelryTypeFilter//
+const fetchJewelryType = async () => {
+  const response = await axios.get(
+    "https://client.mobile.chemanca.com/api/products/JewelryType/GetAllJewelryType"
+  );
+
+  return response.data;
+};
+
+export const useJewelryType = () => {
+  return useQuery({
+    queryKey: ["jewelryType"],
+    queryFn: fetchJewelryType,
+  });
+};
