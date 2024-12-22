@@ -39,6 +39,7 @@ import {
   useKilogramWeight,
   useChooseRoommateGender,
   useBedtype,
+  useNearUniversity,
 } from "../api/DetailsRangeNumber";
 import StringComponent from "./StringComponent";
 
@@ -86,6 +87,7 @@ export default function AdsCategoryDetails({
   const { data: kilogramWeight } = useKilogramWeight();
   const{data:chooseRoommateGender}= useChooseRoommateGender();
   const{data:bedType} = useBedtype();
+  const{data:nearUniversity} = useNearUniversity();
 
   if (categoryDetails) {
     const conditions = [
@@ -518,6 +520,18 @@ export default function AdsCategoryDetails({
             openItems={openItems}
             handleClick={handleClick}
             key="bedType"
+          />
+        ),
+      },
+      {
+        condition: categoryDetails.hasNearUniversityFilter,
+        component: (
+          <StringComponent
+            title="    نزدیک دانشگاه "
+            options={nearUniversity}
+            openItems={openItems}
+            handleClick={handleClick}
+            key="nearUniversity"
           />
         ),
       },
