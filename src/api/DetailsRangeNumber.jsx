@@ -468,3 +468,18 @@ export const useCarFuel = () => {
     queryFn: fetchCarFuel,
   });
 };
+//hasCarGearboxTypeFilter//
+const fetchCarGearboxType = async () => {
+  const response = await axios.get(
+    "https://client.mobile.chemanca.com/api/products/CarGearboxType/GetAllCarGearboxType"
+  );
+
+  return response.data;
+};
+
+export const useCarGearboxType = () => {
+  return useQuery({
+    queryKey: ["carGearboxType"],
+    queryFn: fetchCarGearboxType,
+  });
+};
