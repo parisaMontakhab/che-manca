@@ -568,11 +568,21 @@ export default function AdsCategoryDetails({
         condition: categoryDetails.hasElevatorFilter,
         component: (
           <ToggleComponent
-            title="  آسانسور "
-            
+            title="  آسانسور " 
             openItems={openItems}
             handleClick={handleClick}
             key="hasElevator"
+          />
+        ),
+      },
+      {
+        condition: categoryDetails.hasParkingFilter,
+        component: (
+          <ToggleComponent
+            title="  پارکینگ " 
+            openItems={openItems}
+            handleClick={handleClick}
+            key="hasParking"
           />
         ),
       },
