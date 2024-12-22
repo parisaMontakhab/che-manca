@@ -543,4 +543,20 @@ export const useChooseRoommateGender = () => {
     queryFn: fetchChooseRoommateGender,
   });
 };
+//hasBedTypeFilter//
+const fetchBedType = async () => {
+  const response = await axios.get(
+    "https://client.mobile.chemanca.com/api/products/BedType/GetAllBedType"
+  );
+
+  return response.data;
+};
+
+export const useBedtype = () => {
+  return useQuery({
+    queryKey: ["bedType"],
+    queryFn: fetchBedType,
+  });
+};
+
 
