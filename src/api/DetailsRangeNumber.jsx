@@ -453,3 +453,18 @@ export const useCarChassisStatus = () => {
     queryFn: fetchCarChassisStatus,
   });
 };
+//hasCarFuelFilter//
+const fetchCarFuel = async () => {
+  const response = await axios.get(
+    "https://client.mobile.chemanca.com/api/products/CarFuelStatus/GetAllCarFuelStatus"
+  );
+
+  return response.data;
+};
+
+export const useCarFuel = () => {
+  return useQuery({
+    queryKey: ["carFuel"],
+    queryFn: fetchCarFuel,
+  });
+};
