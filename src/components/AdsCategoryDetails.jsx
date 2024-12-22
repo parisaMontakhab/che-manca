@@ -751,6 +751,18 @@ export default function AdsCategoryDetails({
           />
         ),
       },
+      {
+        condition: categoryDetails.hasSeparableFilter,
+        component: (
+          <ToggleComponent
+            title=" بار قابل تفکیک  " 
+            openItems={openItems}
+            handleClick={handleClick}
+            key="hasSeparable"
+          />
+        ),
+      },
+      
       
     ];
     return (
