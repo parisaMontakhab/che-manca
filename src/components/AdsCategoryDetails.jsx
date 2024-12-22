@@ -718,6 +718,17 @@ export default function AdsCategoryDetails({
           />
         ),
       },
+      {
+        condition: categoryDetails.hasUSBPortFilter,
+        component: (
+          <ToggleComponent
+            title="  پورت USB " 
+            openItems={openItems}
+            handleClick={handleClick}
+            key="hasUSBPort"
+          />
+        ),
+      },
       
     ];
     return (
