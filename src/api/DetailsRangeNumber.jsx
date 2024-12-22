@@ -588,5 +588,21 @@ export const useRoomType = () => {
     queryFn: fetchRoomType,
   });
 };
+//hasRentJustForFilter//
+const fetchRentJustFor = async () => {
+  const response = await axios.get(
+    "https://client.mobile.chemanca.com/api/products/Gender/GetAllGender"
+  );
+
+  return response.data;
+};
+
+export const useRentJustFor = () => {
+  return useQuery({
+    queryKey: ["rentJustFor"],
+    queryFn: fetchRentJustFor,
+  });
+};
+
 
 
