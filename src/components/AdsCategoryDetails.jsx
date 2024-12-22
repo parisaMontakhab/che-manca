@@ -28,6 +28,7 @@ import {
   useClothType,
   useClockType,
   useJewelryType,
+  useJewelryMaterial,
 } from "../api/DetailsRangeNumber";
 import StringComponent from "./StringComponent";
 
@@ -64,6 +65,7 @@ export default function AdsCategoryDetails({
   const { data: clothType } = useClothType();
   const {data:clockType} = useClockType();
   const {data:jewelryType} = useJewelryType();
+  const{data:jewelryMaterial} = useJewelryMaterial();
 
   if (categoryDetails) {
     const conditions = [
@@ -364,6 +366,18 @@ export default function AdsCategoryDetails({
             openItems={openItems}
             handleClick={handleClick}
             key="jewelryType"
+          />
+        ),
+      },
+      {
+        condition: categoryDetails.hasJewelryMaterialFilter,
+        component: (
+          <StringComponent
+            title="      جنسیت جواهرات و بدلیجات "
+            options={jewelryMaterial}
+            openItems={openItems}
+            handleClick={handleClick}
+            key="jewelryMaterial"
           />
         ),
       },
