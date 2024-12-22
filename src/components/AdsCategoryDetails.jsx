@@ -740,6 +740,17 @@ export default function AdsCategoryDetails({
           />
         ),
       },
+      {
+        condition: categoryDetails.hasGameEquipmentFilter,
+        component: (
+          <ToggleComponent
+            title="  تجهیزات بازی  " 
+            openItems={openItems}
+            handleClick={handleClick}
+            key="hasGameEquipment"
+          />
+        ),
+      },
       
     ];
     return (
