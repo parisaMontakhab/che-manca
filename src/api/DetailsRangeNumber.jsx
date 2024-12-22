@@ -408,3 +408,18 @@ export const useJewelryMaterial = () => {
     queryFn: fetchJewelryMaterial,
   });
 };
+//hasCarOperationFilter//
+const fetchCarOperation = async () => {
+  const response = await axios.get(
+    "https://client.mobile.chemanca.com/api/products/CarOperationKilometer/GetAllCarOperationKilometer"
+  );
+
+  return response.data;
+};
+
+export const useCarOperation = () => {
+  return useQuery({
+    queryKey: ["carOperation"],
+    queryFn: fetchCarOperation,
+  });
+};
