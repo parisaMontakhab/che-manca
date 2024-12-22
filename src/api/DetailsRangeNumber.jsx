@@ -498,4 +498,19 @@ export const useCarEngineStatus = () => {
     queryFn: fetchCarEngineStatus,
   });
 };
+//hasCarInsuranceStatusFilter//
+const fetchCarInsuranceStatus = async () => {
+  const response = await axios.get(
+    "https://client.mobile.chemanca.com/api/products/CarInsuranceStatus/GetAllCarInsuranceStatus"
+  );
+
+  return response.data;
+};
+
+export const useCarInsuranceStatus = () => {
+  return useQuery({
+    queryKey: ["carInsuranceStatus"],
+    queryFn: fetchCarInsuranceStatus,
+  });
+};
 
