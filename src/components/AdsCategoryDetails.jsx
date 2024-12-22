@@ -597,6 +597,17 @@ export default function AdsCategoryDetails({
           />
         ),
       },
+      {
+        condition: categoryDetails.hasRenovatedFilter,
+        component: (
+          <ToggleComponent
+            title="  بازسازی  " 
+            openItems={openItems}
+            handleClick={handleClick}
+            key="hasRenovated"
+          />
+        ),
+      },
       
     ];
     return (
