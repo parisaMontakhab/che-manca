@@ -685,6 +685,17 @@ export default function AdsCategoryDetails({
           />
         ),
       },
+      {
+        condition: categoryDetails.hasChargableFilter,
+        component: (
+          <ToggleComponent
+            title="      شارژ  " 
+            openItems={openItems}
+            handleClick={handleClick}
+            key="hasChargable"
+          />
+        ),
+      },
       
     ];
     return (
