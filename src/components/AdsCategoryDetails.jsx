@@ -707,6 +707,17 @@ export default function AdsCategoryDetails({
           />
         ),
       },
+      {
+        condition: categoryDetails.hasHDMIPortFilter,
+        component: (
+          <ToggleComponent
+            title="  پورت HDMI " 
+            openItems={openItems}
+            handleClick={handleClick}
+            key="hasHDMIPort"
+          />
+        ),
+      },
       
     ];
     return (
