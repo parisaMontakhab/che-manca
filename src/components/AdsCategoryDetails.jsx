@@ -41,6 +41,7 @@ import {
   useBedtype,
   useNearUniversity,
   useRoomType,
+  useRentJustFor,
 } from "../api/DetailsRangeNumber";
 import StringComponent from "./StringComponent";
 
@@ -86,10 +87,11 @@ export default function AdsCategoryDetails({
   const { data: carEngineStatus } = useCarEngineStatus();
   const { data: carInsuranceStatus } = useCarInsuranceStatus();
   const { data: kilogramWeight } = useKilogramWeight();
-  const{data:chooseRoommateGender}= useChooseRoommateGender();
-  const{data:bedType} = useBedtype();
-  const{data:nearUniversity} = useNearUniversity();
-  const{data:roomType} = useRoomType();
+  const { data: chooseRoommateGender } = useChooseRoommateGender();
+  const { data: bedType } = useBedtype();
+  const { data: nearUniversity } = useNearUniversity();
+  const { data: roomType } = useRoomType();
+  const { data: rentJustFor } = useRentJustFor();
 
   if (categoryDetails) {
     const conditions = [
@@ -546,6 +548,18 @@ export default function AdsCategoryDetails({
             openItems={openItems}
             handleClick={handleClick}
             key="roomType"
+          />
+        ),
+      },
+      {
+        condition: categoryDetails.hasRentJustForFilter,
+        component: (
+          <StringComponent
+            title="   اجاره داده میشه فقط به "
+            options={rentJustFor}
+            openItems={openItems}
+            handleClick={handleClick}
+            key="rentJustFor"
           />
         ),
       },
