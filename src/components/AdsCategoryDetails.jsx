@@ -27,6 +27,7 @@ import {
   useSexFilter,
   useClothType,
   useClockType,
+  useJewelryType,
 } from "../api/DetailsRangeNumber";
 import StringComponent from "./StringComponent";
 
@@ -62,6 +63,7 @@ export default function AdsCategoryDetails({
   const { data: sexFilter } = useSexFilter();
   const { data: clothType } = useClothType();
   const {data:clockType} = useClockType();
+  const {data:jewelryType} = useJewelryType();
 
   if (categoryDetails) {
     const conditions = [
@@ -350,6 +352,18 @@ export default function AdsCategoryDetails({
             openItems={openItems}
             handleClick={handleClick}
             key="clockType"
+          />
+        ),
+      },
+      {
+        condition: categoryDetails.hasJewelryTypeFilter,
+        component: (
+          <StringComponent
+            title="    نوع جواهر و بدلیجات"
+            options={jewelryType}
+            openItems={openItems}
+            handleClick={handleClick}
+            key="jewelryType"
           />
         ),
       },
