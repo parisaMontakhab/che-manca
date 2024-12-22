@@ -806,6 +806,17 @@ export default function AdsCategoryDetails({
           />
         ),
       },
+      {
+        condition: categoryDetails.hasAllIncludeBillFilter,
+        component: (
+          <ToggleComponent
+            title="  قبض آل اینکلود  " 
+            openItems={openItems}
+            handleClick={handleClick}
+            key="hasAllIncludeBill"
+          />
+        ),
+      },
       
       
       
