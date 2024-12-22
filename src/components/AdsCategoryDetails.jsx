@@ -641,7 +641,17 @@ export default function AdsCategoryDetails({
           />
         ),
       },
-      
+      {
+        condition: categoryDetails.hasBidelFilter,
+        component: (
+          <ToggleComponent
+            title="   بیده  " 
+            openItems={openItems}
+            handleClick={handleClick}
+            key="hasBidel"
+          />
+        ),
+      },
       
     ];
     return (
