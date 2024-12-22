@@ -363,3 +363,18 @@ export const useClothType = () => {
     queryFn: fetchClothType,
   });
 };
+//hasClockTypeFilter//
+const fetchClockType = async () => {
+  const response = await axios.get(
+    "https://client.mobile.chemanca.com/api/products/ClockType/GetAllClockType"
+  );
+
+  return response.data;
+};
+
+export const useClockType = () => {
+  return useQuery({
+    queryKey: ["clockType"],
+    queryFn: fetchClockType,
+  });
+};
