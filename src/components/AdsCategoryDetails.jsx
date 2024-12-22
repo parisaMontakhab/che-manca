@@ -619,6 +619,17 @@ export default function AdsCategoryDetails({
           />
         ),
       },
+      {
+        condition: categoryDetails.hasWarmingFilter,
+        component: (
+          <ToggleComponent
+            title="  گرمایشی  " 
+            openItems={openItems}
+            handleClick={handleClick}
+            key="hasWarming"
+          />
+        ),
+      },
       
       
     ];
