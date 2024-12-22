@@ -31,6 +31,7 @@ import {
   useJewelryMaterial,
   useCarOperation,
   useCarBodyStatus,
+  useCarChassisStatus,
 } from "../api/DetailsRangeNumber";
 import StringComponent from "./StringComponent";
 
@@ -70,6 +71,7 @@ export default function AdsCategoryDetails({
   const{data:jewelryMaterial} = useJewelryMaterial();
   const{data:carOperation} = useCarOperation();
   const{data:carBodyStatus} = useCarBodyStatus();
+  const{data: carChassisStatus} = useCarChassisStatus();
 
   if (categoryDetails) {
     const conditions = [
@@ -406,6 +408,18 @@ export default function AdsCategoryDetails({
             openItems={openItems}
             handleClick={handleClick}
             key="carBodyStatus"
+          />
+        ),
+      },
+      {
+        condition: categoryDetails.hasCarChassisStatusFilter,
+        component: (
+          <StringComponent
+            title="         وضعیت شاسی خودرو "
+            options={carChassisStatus}
+            openItems={openItems}
+            handleClick={handleClick}
+            key="carChassisStatus"
           />
         ),
       },
