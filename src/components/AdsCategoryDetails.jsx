@@ -40,6 +40,7 @@ import {
   useChooseRoommateGender,
   useBedtype,
   useNearUniversity,
+  useRoomType,
 } from "../api/DetailsRangeNumber";
 import StringComponent from "./StringComponent";
 
@@ -88,6 +89,7 @@ export default function AdsCategoryDetails({
   const{data:chooseRoommateGender}= useChooseRoommateGender();
   const{data:bedType} = useBedtype();
   const{data:nearUniversity} = useNearUniversity();
+  const{data:roomType} = useRoomType();
 
   if (categoryDetails) {
     const conditions = [
@@ -532,6 +534,18 @@ export default function AdsCategoryDetails({
             openItems={openItems}
             handleClick={handleClick}
             key="nearUniversity"
+          />
+        ),
+      },
+      {
+        condition: categoryDetails.hasRoomTypeFilter,
+        component: (
+          <StringComponent
+            title="    نوع اتاق خواب "
+            options={roomType}
+            openItems={openItems}
+            handleClick={handleClick}
+            key="roomType"
           />
         ),
       },
