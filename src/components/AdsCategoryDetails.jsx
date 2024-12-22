@@ -784,6 +784,18 @@ export default function AdsCategoryDetails({
           />
         ),
       },
+      {
+        condition: categoryDetails.hasGoodAccessPointFilter,
+        component: (
+          <ToggleComponent
+            title="   دسترسی خوب  " 
+            openItems={openItems}
+            handleClick={handleClick}
+            key="hasGoodAccessPoint"
+          />
+        ),
+      },
+      
       
       
     ];
