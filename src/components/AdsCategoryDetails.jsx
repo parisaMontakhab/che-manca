@@ -37,6 +37,7 @@ import {
   useCarEngineStatus,
   useCarInsuranceStatus,
   useKilogramWeight,
+  useChooseRoommateGender,
 } from "../api/DetailsRangeNumber";
 import StringComponent from "./StringComponent";
 
@@ -82,6 +83,7 @@ export default function AdsCategoryDetails({
   const { data: carEngineStatus } = useCarEngineStatus();
   const { data: carInsuranceStatus } = useCarInsuranceStatus();
   const { data: kilogramWeight } = useKilogramWeight();
+  const{data:chooseRoommateGender}= useChooseRoommateGender();
 
   if (categoryDetails) {
     const conditions = [
@@ -490,6 +492,18 @@ export default function AdsCategoryDetails({
             openItems={openItems}
             handleClick={handleClick}
             key="kilogramWeight"
+          />
+        ),
+      },
+      {
+        condition: categoryDetails.hasChooseRoommateGenderFilter,
+        component: (
+          <StringComponent
+            title="    جنسیت هم اتاقی "
+            options={chooseRoommateGender}
+            openItems={openItems}
+            handleClick={handleClick}
+            key="chooseRoommateGender"
           />
         ),
       },
