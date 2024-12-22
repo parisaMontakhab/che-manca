@@ -33,6 +33,7 @@ import {
   useCarBodyStatus,
   useCarChassisStatus,
   useCarFuel,
+  useCarGearboxType,
 } from "../api/DetailsRangeNumber";
 import StringComponent from "./StringComponent";
 
@@ -74,6 +75,7 @@ export default function AdsCategoryDetails({
   const{data:carBodyStatus} = useCarBodyStatus();
   const{data: carChassisStatus} = useCarChassisStatus();
   const{data:carFuel}= useCarFuel();
+  const{data:carGearboxType} = useCarGearboxType();
 
   if (categoryDetails) {
     const conditions = [
@@ -434,6 +436,18 @@ export default function AdsCategoryDetails({
             openItems={openItems}
             handleClick={handleClick}
             key="carFuel"
+          />
+        ),
+      },
+      {
+        condition: categoryDetails.hasCarGearboxTypeFilter,
+        component: (
+          <StringComponent
+            title="           نوع گیربکس خودرو "
+            options={carGearboxType}
+            openItems={openItems}
+            handleClick={handleClick}
+            key="carGearboxType"
           />
         ),
       },
