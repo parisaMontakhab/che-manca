@@ -729,6 +729,17 @@ export default function AdsCategoryDetails({
           />
         ),
       },
+      {
+        condition: categoryDetails.hasLANPortFilter,
+        component: (
+          <ToggleComponent
+            title="  پورت LAN " 
+            openItems={openItems}
+            handleClick={handleClick}
+            key="hasLANPort"
+          />
+        ),
+      },
       
     ];
     return (
