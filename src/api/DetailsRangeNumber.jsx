@@ -423,3 +423,18 @@ export const useCarOperation = () => {
     queryFn: fetchCarOperation,
   });
 };
+//hasCarBodyStatusFilter//
+const fetchCarBodyStatus = async () => {
+  const response = await axios.get(
+    "https://client.mobile.chemanca.com/api/products/CarBodyStatus/GetAllCarBodyStatus"
+  );
+
+  return response.data;
+};
+
+export const useCarBodyStatus = () => {
+  return useQuery({
+    queryKey: ["carBodyStatus"],
+    queryFn: fetchCarBodyStatus,
+  });
+};
