@@ -696,6 +696,17 @@ export default function AdsCategoryDetails({
           />
         ),
       },
+      {
+        condition: categoryDetails.hasTouchableDisplayFilter,
+        component: (
+          <ToggleComponent
+            title="      صفحه نمایشگر لمسی  " 
+            openItems={openItems}
+            handleClick={handleClick}
+            key="hasTouchableDisplay"
+          />
+        ),
+      },
       
     ];
     return (
