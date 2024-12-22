@@ -513,4 +513,19 @@ export const useCarInsuranceStatus = () => {
     queryFn: fetchCarInsuranceStatus,
   });
 };
+//hasKilogramWeightFilter//
+const fetchKilogramWeight = async () => {
+  const response = await axios.get(
+    "https://client.mobile.chemanca.com/api/products/Kilogram/GetAllKilogram"
+  );
+
+  return response.data;
+};
+
+export const useKilogramWeight = () => {
+  return useQuery({
+    queryKey: ["kilogramWeight"],
+    queryFn: fetchKilogramWeight,
+  });
+};
 
