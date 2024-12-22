@@ -29,6 +29,7 @@ import {
   useClockType,
   useJewelryType,
   useJewelryMaterial,
+  useCarOperation,
 } from "../api/DetailsRangeNumber";
 import StringComponent from "./StringComponent";
 
@@ -66,6 +67,7 @@ export default function AdsCategoryDetails({
   const {data:clockType} = useClockType();
   const {data:jewelryType} = useJewelryType();
   const{data:jewelryMaterial} = useJewelryMaterial();
+  const{data:carOperation} = useCarOperation();
 
   if (categoryDetails) {
     const conditions = [
@@ -378,6 +380,18 @@ export default function AdsCategoryDetails({
             openItems={openItems}
             handleClick={handleClick}
             key="jewelryMaterial"
+          />
+        ),
+      },
+      {
+        condition: categoryDetails.hasCarOperationFilter,
+        component: (
+          <StringComponent
+            title="        کیلومتر خودرو  "
+            options={carOperation}
+            openItems={openItems}
+            handleClick={handleClick}
+            key="carOperation"
           />
         ),
       },
