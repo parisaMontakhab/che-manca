@@ -393,3 +393,18 @@ export const useJewelryType = () => {
     queryFn: fetchJewelryType,
   });
 };
+//hasJewelryMaterialFilter//
+const fetchJewelryMaterial = async () => {
+  const response = await axios.get(
+    "https://client.mobile.chemanca.com/api/products/JewelryMaterial/GetAllJewelryMaterial"
+  );
+
+  return response.data;
+};
+
+export const useJewelryMaterial = () => {
+  return useQuery({
+    queryKey: ["jewelryMaterial"],
+    queryFn: fetchJewelryMaterial,
+  });
+};
