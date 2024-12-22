@@ -26,6 +26,7 @@ import {
   useElectricConsumption,
   useSexFilter,
   useClothType,
+  useClockType,
 } from "../api/DetailsRangeNumber";
 import StringComponent from "./StringComponent";
 
@@ -60,6 +61,7 @@ export default function AdsCategoryDetails({
   const { data: electricConsumption } = useElectricConsumption();
   const { data: sexFilter } = useSexFilter();
   const { data: clothType } = useClothType();
+  const {data:clockType} = useClockType();
 
   if (categoryDetails) {
     const conditions = [
@@ -336,6 +338,18 @@ export default function AdsCategoryDetails({
             openItems={openItems}
             handleClick={handleClick}
             key="clothType"
+          />
+        ),
+      },
+      {
+        condition: categoryDetails.hasClockTypeFilter,
+        component: (
+          <StringComponent
+            title="   نوع ساعت"
+            options={clockType}
+            openItems={openItems}
+            handleClick={handleClick}
+            key="clockType"
           />
         ),
       },
