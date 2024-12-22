@@ -44,6 +44,7 @@ import {
   useRentJustFor,
 } from "../api/DetailsRangeNumber";
 import StringComponent from "./StringComponent";
+import ToggleComponent from "./ToggleComponent";
 
 export default function AdsCategoryDetails({
   openItems,
@@ -563,6 +564,19 @@ export default function AdsCategoryDetails({
           />
         ),
       },
+      {
+        condition: categoryDetails.hasElevatorFilter,
+        component: (
+          <ToggleComponent
+            title="  آسانسور "
+            
+            openItems={openItems}
+            handleClick={handleClick}
+            key="hasElevator"
+          />
+        ),
+      },
+      
     ];
     return (
       <>

@@ -156,7 +156,7 @@ export default function SidBar() {
                         />
                       </FormGroup>
                     </SwitchComponent>
-                   <ToggleComponent openItems={openItems} handleClick={handleClick} title="تستی"/>
+                   
                   </>
                 ) : (
                   <AdsCategoryDetails
