@@ -762,6 +762,17 @@ export default function AdsCategoryDetails({
           />
         ),
       },
+      {
+        condition: categoryDetails.hasIncludePackageOfDocumentsFilter,
+        component: (
+          <ToggleComponent
+            title=" قبول مدارک  " 
+            openItems={openItems}
+            handleClick={handleClick}
+            key="hasIncludePackageOfDocuments"
+          />
+        ),
+      },
       
       
     ];
