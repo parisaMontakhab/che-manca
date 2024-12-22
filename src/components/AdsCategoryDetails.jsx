@@ -608,6 +608,18 @@ export default function AdsCategoryDetails({
           />
         ),
       },
+      {
+        condition: categoryDetails.hasCoolingFilter,
+        component: (
+          <ToggleComponent
+            title="  سرمایشی  " 
+            openItems={openItems}
+            handleClick={handleClick}
+            key="hasCooling"
+          />
+        ),
+      },
+      
       
     ];
     return (
