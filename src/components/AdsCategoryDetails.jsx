@@ -652,6 +652,17 @@ export default function AdsCategoryDetails({
           />
         ),
       },
+      {
+        condition: categoryDetails.hasHouseContractFilter,
+        component: (
+          <ToggleComponent
+            title="   قرارداد خونه  " 
+            openItems={openItems}
+            handleClick={handleClick}
+            key="hasHouseContract"
+          />
+        ),
+      },
       
     ];
     return (
