@@ -667,7 +667,7 @@ export default function AdsCategoryDetails({
         condition: categoryDetails.isPossibleToBuyInInstallmentFilter,
         component: (
           <ToggleComponent
-            title="    قابلیت خرید اقساطی  " 
+            title="    قابل خرید اقساطی  " 
             openItems={openItems}
             handleClick={handleClick}
             key="isPossibleToBuyInInstallment"
