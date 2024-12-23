@@ -232,7 +232,9 @@
   width: 80% !important;
   margin-bottom: 10px;
 }
-
+.ads-sideBar__box{
+  width: 80% !important;
+}
 .ads-sideBar__priceBox__title {
   font-family: "IranYekan" !important;
   font-size: 12px !important;

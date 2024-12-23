@@ -9,7 +9,7 @@ import { useCities } from "../api/LocationApi";
 import ErrorBtn from "../commons/ErrorBtn";
 import LoadingText from "../commons/LoadingText";
 
-export default function LocationSearch() {
+export default function LocationSearch({title}) {
   const [selectedCountry, setSelectedCountry] = useState(null);
   const [selectedSubCountry, setselectedSubCountry] = useState(null);
   const [selectedCity, setSelectedCity] = useState(null);
@@ -42,7 +42,7 @@ export default function LocationSearch() {
   };
 
   return (
-    <Box my={8}>
+    <Box my={title ? '': 8} className={title ? "ads-sideBar__box" : ''} >
       {" "}
       {isCountriesLoading ? (
         <LoadingText />
@@ -50,6 +50,8 @@ export default function LocationSearch() {
         <ErrorBtn />
       ) : (
         <Autocomplete
+        
+        size={title ? "small" : ''}
           PaperComponent={(props) => (
             <Paper {...props} className="autocomplete-listbox" />
           )}
@@ -78,6 +80,8 @@ export default function LocationSearch() {
           <ErrorBtn />
         ) : (
           <Autocomplete
+          
+          size={title ? "small" : ''}
             PaperComponent={(props) => (
               <Paper {...props} className="autocomplete-listbox" />
             )}
@@ -108,6 +112,7 @@ export default function LocationSearch() {
           <ErrorBtn />
         ) : (
           <Autocomplete
+          size={title ? "small" : ''}
             PaperComponent={(props) => (
               <Paper {...props} className="autocomplete-listbox" />
             )}
