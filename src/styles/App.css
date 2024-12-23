@@ -36,9 +36,19 @@
 .locationSearch-input {
   background-color: #fff;
 }
+.locationSearch-input--size {
+  background-color: #fff;
+}
+
 .locationSearch-input .MuiOutlinedInput-root {
   color: gray;
   font-family: "IranYekan", sans-serif;
+  margin-bottom: 10px;
+}
+.locationSearch-input--size .MuiOutlinedInput-root {
+  color: gray;
+  font-family: "IranYekan", sans-serif;
+  font-size: 12px;
   margin-bottom: 10px;
 }
 
@@ -48,7 +58,18 @@
   border: 1px solid;
   border: 1px solid gray;
 }
+.locationSearch-input--size
+  .MuiOutlinedInput-root.Mui-focused
+  .MuiOutlinedInput-notchedOutline {
+  border: 1px solid;
+  border: 1px solid gray;
+}
 .locationSearch-input:hover
+  .MuiOutlinedInput-root
+  .MuiOutlinedInput-notchedOutline {
+  border: 1px solid gray;
+}
+.locationSearch-input--size:hover
   .MuiOutlinedInput-root
   .MuiOutlinedInput-notchedOutline {
   border: 1px solid gray;

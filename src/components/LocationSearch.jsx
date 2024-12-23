@@ -64,9 +64,9 @@ export default function LocationSearch({title}) {
           onChange={handleCountryChange}
           renderInput={(params) => (
             <TextField
-              className="locationSearch-input"
+              className={title? "locationSearch-input--size"  : "locationSearch-input" }
               type="search"
-              sx={{ "& ::placeholder": { fontFamily: "IranYekan" } }}
+              
               {...params}
               placeholder="اول کشورتو انتخاب کن"
             />
@@ -94,9 +94,9 @@ export default function LocationSearch({title}) {
             onChange={handlesubCountryChange}
             renderInput={(params) => (
               <TextField
-                className="locationSearch-input"
+              className={title? "locationSearch-input--size"  : "locationSearch-input" }
                 type="search"
-                sx={{ "& ::placeholder": { fontFamily: "IranYekan" } }}
+               
                 {...params}
                 placeholder="حالا استانتو سرچ کن"
               />
@@ -125,9 +125,9 @@ export default function LocationSearch({title}) {
             onChange={(event, newCity) => setSelectedCity(newCity)}
             renderInput={(params) => (
               <TextField
-                className="locationSearch-input"
+              className={title? "locationSearch-input--size"  : "locationSearch-input" }
                 type="search"
-                sx={{ "& ::placeholder": { fontFamily: "IranYekan" } }}
+               
                 {...params}
                 placeholder="اینجاهم باید شهرتو انتخاب کنی"
               />
