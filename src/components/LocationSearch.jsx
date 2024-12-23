@@ -9,7 +9,7 @@ import { useCities } from "../api/LocationApi";
 import ErrorBtn from "../commons/ErrorBtn";
 import LoadingText from "../commons/LoadingText";
 
-export default function LocationSearch({ title }) {
+export default function LocationSearch({ title ,sendDataToParent}) {
   const [selectedCountry, setSelectedCountry] = useState(null);
   const [selectedSubCountry, setselectedSubCountry] = useState(null);
   const [selectedCity, setSelectedCity] = useState(null);
@@ -41,7 +41,12 @@ export default function LocationSearch({ title }) {
     setSelectedCity(null);
   };
   const handleCityChange = (event, newCity) => {
+    
     setSelectedCity(newCity);
+    if(sendDataToParent!== undefined){
+      sendDataToParent(newCity);
+    }
+    
   };
 
   return (
