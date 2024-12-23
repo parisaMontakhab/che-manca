@@ -9,7 +9,7 @@ import { useCities } from "../api/LocationApi";
 import ErrorBtn from "../commons/ErrorBtn";
 import LoadingText from "../commons/LoadingText";
 
-export default function LocationSearch({ title, setHasValue }) {
+export default function LocationSearch({ title }) {
   const [selectedCountry, setSelectedCountry] = useState(null);
   const [selectedSubCountry, setselectedSubCountry] = useState(null);
   const [selectedCity, setSelectedCity] = useState(null);
@@ -40,11 +40,9 @@ export default function LocationSearch({ title, setHasValue }) {
     setselectedSubCountry(newSubCountry);
     setSelectedCity(null);
   };
-  const handleCityChange = (event, newCity)=>{
+  const handleCityChange = (event, newCity) => {
     setSelectedCity(newCity);
-    setHasValue(newCity);
-    
-  }
+  };
 
   return (
     <Box my={title ? "" : 8} className={title ? "ads-sideBar__box" : ""}>
