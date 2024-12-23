@@ -45,6 +45,7 @@ import {
 } from "../api/DetailsRangeNumber";
 import StringComponent from "./StringComponent";
 import ToggleComponent from "./ToggleComponent";
+import LocationComponent from "./LocationComponent";
 
 export default function AdsCategoryDetails({
   openItems,
@@ -825,6 +826,17 @@ export default function AdsCategoryDetails({
             openItems={openItems}
             handleClick={handleClick}
             key="hasObligationNotBeAtHome"
+          />
+        ),
+      },
+      {
+        condition: categoryDetails.hasOriginFilter,
+        component: (
+          <LocationComponent
+            title="    مبدا پرواز  " 
+            openItems={openItems}
+            handleClick={handleClick}
+            key="hasOriginFilter"
           />
         ),
       },
