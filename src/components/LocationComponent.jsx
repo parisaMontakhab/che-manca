@@ -40,7 +40,9 @@ export default function LocationComponent({ title, openItems, handleClick }) {
         />
         {dataFromChild &&
           (openItems[title] ? (
-            <Button className="ads-sideBar__deletBtn">حذف</Button>
+            <Button
+            onClick={()=>setDataFromChild('')}
+             className="ads-sideBar__deletBtn">حذف</Button>
           ) : (
             <FiberManualRecordRoundedIcon className="ads-sideBar__deletIcon" />
           ))}
