@@ -66,7 +66,7 @@ export default function HomePage() {
             ﺑﭽﺴﺒﻮن ﺑﻪ ما.
           </Typography>
         </Box>
-        <LocationSearch cities={cities} />
+        <LocationSearch />
         <Box className="homePage__cityBox">
           <Typography variant="h6" className="homePage__description" my={4}>
             شهرهای پربازدید

@@ -42,6 +42,7 @@ export default function LocationSearch({ title, setHasValue }) {
   };
   const handleCityChange = (event, newCity)=>{
     setSelectedCity(newCity);
+    setHasValue(newCity);
     
   }
 
