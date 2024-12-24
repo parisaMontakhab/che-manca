@@ -72,7 +72,14 @@ export default function LocationComponent({ title, openItems, handleClick }) {
           ))}
       </ListItem>
       <Collapse in={openItems[title]} timeout="auto">
-        <LocationSearch title={title} />
+        <LocationSearch title={title} 
+        sendCountryValueToParent={handleCountryValueFromChild}
+        sendSubcountryValueToParent={handleSubCountryValueFromChild}
+        sendCityValueToParent={handleCityValueFromChild}
+        sendcountryInputToParent={handleCountryInputFromChild}
+        sendSubCountryInputToParent={handleSubCountryInputfromChild}
+        sendCityInputToParent={handleCityInputFromChild}
+        />
       </Collapse>
       <Divider sx={{ width: "80%", marginTop: 2 }} />
     </div>
