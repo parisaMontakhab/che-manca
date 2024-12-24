@@ -18,6 +18,7 @@ import FiberManualRecordRoundedIcon from "@mui/icons-material/FiberManualRecordR
 
 export default function LocationComponent({ title, openItems, handleClick }) {
   //states//
+  const [resetKey, setResetKey] = useState(0);
   const [countryValueFromChild, setCountryValueFromChild] = useState("");
   const [subCountryValueFromChild, setSubCountryValueFromChild] = useState("");
   const [cityValueFromChild, setCityValueFromChild] = useState("");
@@ -25,7 +26,7 @@ export default function LocationComponent({ title, openItems, handleClick }) {
   const [subCountryInputFromChild, setSubCountryInputFromChild] = useState("");
   const [cityInputFromChild, setCityInputFromChild] = useState("");
 
-  //functions// 
+  //functions//
   //values//
   const handleCountryValueFromChild = (data) => {
     setCountryValueFromChild(data);
@@ -46,7 +47,12 @@ export default function LocationComponent({ title, openItems, handleClick }) {
   const handleCityInputFromChild = (data) => {
     setCityInputFromChild(data);
   };
+  //handleDeleteBtn//
 
+  const handleDeleteBtn = () => {
+    setCityInputFromChild("");
+    setResetKey((prevKey) => prevKey + 1);
+  };
 
   return (
     <div>
@@ -66,20 +72,23 @@ export default function LocationComponent({ title, openItems, handleClick }) {
         />
         {cityInputFromChild &&
           (openItems[title] ? (
-            <Button 
-            className="ads-sideBar__deletBtn">حذف</Button>
+            <Button onClick={handleDeleteBtn} className="ads-sideBar__deletBtn">
+              حذف
+            </Button>
           ) : (
             <FiberManualRecordRoundedIcon className="ads-sideBar__deletIcon" />
           ))}
       </ListItem>
       <Collapse in={openItems[title]} timeout="auto">
-        <LocationSearch title={title} 
-        sendCountryValueToParent={handleCountryValueFromChild}
-        sendSubcountryValueToParent={handleSubCountryValueFromChild}
-        sendCityValueToParent={handleCityValueFromChild}
-        sendcountryInputToParent={handleCountryInputFromChild}
-        sendSubCountryInputToParent={handleSubCountryInputfromChild}
-        sendCityInputToParent={handleCityInputFromChild}
+        <LocationSearch
+          key={resetKey}
+          title={title}
+          sendCountryValueToParent={handleCountryValueFromChild}
+          sendSubcountryValueToParent={handleSubCountryValueFromChild}
+          sendCityValueToParent={handleCityValueFromChild}
+          sendcountryInputToParent={handleCountryInputFromChild}
+          sendSubCountryInputToParent={handleSubCountryInputfromChild}
+          sendCityInputToParent={handleCityInputFromChild}
         />
       </Collapse>
       <Divider sx={{ width: "80%", marginTop: 2 }} />
