@@ -9,7 +9,7 @@ import { useCities } from "../api/LocationApi";
 import ErrorBtn from "../commons/ErrorBtn";
 import LoadingText from "../commons/LoadingText";
 
-export default function LocationSearch({ title }) {
+export default function LocationSearch({ title ,sendCountryValueToParent,sendSubcountryValueToParent,sendCityValueToParent,sendcountryInputToParent,sendSubCountryInputToParent,sendCityInputToParent}) {
   const [selectedCountry, setSelectedCountry] = useState(null);
   const [selectedSubCountry, setselectedSubCountry] = useState(null);
   const [selectedCity, setSelectedCity] = useState(null);
@@ -39,16 +39,28 @@ export default function LocationSearch({ title }) {
     setSelectedCity(null);
     setSubCountryInputValue("");
     setCityInputValue("");
+    if((sendCountryValueToParent && sendSubCountryInputToParent) !== undefined){
+      sendCountryValueToParent(newCountry);
+      sendcountryInputToParent(newCountry);
+    }
   };
 
   const handlesubCountryChange = (event, newSubCountry) => {
     setselectedSubCountry(newSubCountry);
     setSelectedCity(null);
     setCityInputValue("");
+    if((sendSubcountryValueToParent && sendSubCountryInputToParent) !== undefined){
+      sendSubcountryValueToParent(newSubCountry);
+      sendSubCountryInputToParent(newSubCountry);
+    }
   };
 
   const handleCityChange = (event, newCity) => {
     setSelectedCity(newCity);
+    if((sendCityValueToParent && sendCityInputToParent) !== undefined){
+      sendCityValueToParent(newCity);
+      sendCityInputToParent(newCity);
+    }
    
   };
 
