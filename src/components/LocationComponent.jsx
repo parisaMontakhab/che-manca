@@ -17,7 +17,12 @@ import ExpandMore from "@mui/icons-material/ExpandMore";
 import FiberManualRecordRoundedIcon from "@mui/icons-material/FiberManualRecordRounded";
 
 export default function LocationComponent({ title, openItems, handleClick }) {
- 
+  const [countryValueFromChild, setCountryValueFromChild] = useState("");
+  const [subCountryValueFromChild, setSubCountryValueFromChild] = useState("");
+  const [cityValueFromChild, setCityValueFromChild] = useState("");
+  const [countryInputFromChild, setCountryInputFromChild] = useState("");
+  const [subCountryFromChild, setSubCountryFromChild] = useState("");
+  const [cityInputFromChild, setCityInputFromChild] = useState("");
 
   return (
     <div>
@@ -37,14 +42,12 @@ export default function LocationComponent({ title, openItems, handleClick }) {
         />
         {false &&
           (openItems[title] ? (
-            <Button
-            
-             className="ads-sideBar__deletBtn">حذف</Button>
+            <Button className="ads-sideBar__deletBtn">حذف</Button>
           ) : (
             <FiberManualRecordRoundedIcon className="ads-sideBar__deletIcon" />
           ))}
       </ListItem>
-      <Collapse in={openItems[title]} timeout="auto" >
+      <Collapse in={openItems[title]} timeout="auto">
         <LocationSearch title={title} />
       </Collapse>
       <Divider sx={{ width: "80%", marginTop: 2 }} />
