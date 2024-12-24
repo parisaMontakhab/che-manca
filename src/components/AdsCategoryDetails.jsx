@@ -856,7 +856,7 @@ export default function AdsCategoryDetails({
         condition: categoryDetails.hasDepartureDateFilter,
         component: (
           <DatePickComponent
-            title=" تاریخ "
+            title=" تاریخ پرواز "
             openItems={openItems}
             handleClick={handleClick}
             key="hasDepartureDateFilter"

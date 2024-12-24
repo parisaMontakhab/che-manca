@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   ListItem,
   ListItemText,
@@ -21,7 +21,9 @@ import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import dayjs from "dayjs";
 
 export default function DatePickComponent({ openItems, handleClick, title }) {
+  const [selectedDate, setSelectedDate] = useState(null);
   const today = dayjs();
+
   return (
     <div>
       <ListItem
@@ -38,18 +40,27 @@ export default function DatePickComponent({ openItems, handleClick, title }) {
           disableTypography
           className="ads-sideBar__collapsText"
         />
-        {true &&
+        {selectedDate &&
           (openItems[title] ? (
-            <Button className="ads-sideBar__deletBtn">حذف</Button>
+            <Button
+              onClick={() => setSelectedDate(null)}
+              className="ads-sideBar__deletBtn"
+            >
+              حذف
+            </Button>
           ) : (
             <FiberManualRecordRoundedIcon className="ads-sideBar__deletIcon" />
           ))}
       </ListItem>
-      <Collapse in={openItems[title]} timeout="auto" >
+      <Collapse in={openItems[title]} timeout="auto">
         <Box className="ads-sideBar__priceBox">
           <LocalizationProvider dateAdapter={AdapterDayjs}>
             <DemoContainer components={["DatePicker"]}>
-              <DatePicker minDate={today} />
+              <DatePicker
+                value={selectedDate}
+                onChange={(newvalue) => setSelectedDate(newvalue)}
+                minDate={today}
+              />
             </DemoContainer>
           </LocalizationProvider>
         </Box>
