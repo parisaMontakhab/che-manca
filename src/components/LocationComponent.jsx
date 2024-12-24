@@ -64,9 +64,10 @@ export default function LocationComponent({ title, openItems, handleClick }) {
           disableTypography
           className="ads-sideBar__collapsText"
         />
-        {false &&
+        {cityInputFromChild &&
           (openItems[title] ? (
-            <Button className="ads-sideBar__deletBtn">حذف</Button>
+            <Button 
+            className="ads-sideBar__deletBtn">حذف</Button>
           ) : (
             <FiberManualRecordRoundedIcon className="ads-sideBar__deletIcon" />
           ))}
