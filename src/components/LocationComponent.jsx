@@ -17,12 +17,36 @@ import ExpandMore from "@mui/icons-material/ExpandMore";
 import FiberManualRecordRoundedIcon from "@mui/icons-material/FiberManualRecordRounded";
 
 export default function LocationComponent({ title, openItems, handleClick }) {
+  //states//
   const [countryValueFromChild, setCountryValueFromChild] = useState("");
   const [subCountryValueFromChild, setSubCountryValueFromChild] = useState("");
   const [cityValueFromChild, setCityValueFromChild] = useState("");
   const [countryInputFromChild, setCountryInputFromChild] = useState("");
-  const [subCountryFromChild, setSubCountryFromChild] = useState("");
+  const [subCountryInputFromChild, setSubCountryInputFromChild] = useState("");
   const [cityInputFromChild, setCityInputFromChild] = useState("");
+
+  //functions// 
+  //values//
+  const handleCountryValueFromChild = (data) => {
+    setCountryValueFromChild(data);
+  };
+  const handleSubCountryValueFromChild = (data) => {
+    setSubCountryValueFromChild(data);
+  };
+  const handleCityValueFromChild = (data) => {
+    setCityValueFromChild(data);
+  };
+  //inputs//
+  const handleCountryInputFromChild = (data) => {
+    setCountryInputFromChild(data);
+  };
+  const handleSubCountryInputfromChild = (data) => {
+    setSubCountryInputFromChild(data);
+  };
+  const handleCityInputFromChild = (data) => {
+    setCityInputFromChild(data);
+  };
+
 
   return (
     <div>
