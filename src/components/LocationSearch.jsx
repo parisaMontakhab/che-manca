@@ -9,11 +9,14 @@ import { useCities } from "../api/LocationApi";
 import ErrorBtn from "../commons/ErrorBtn";
 import LoadingText from "../commons/LoadingText";
 
-export default function LocationSearch({ title ,sendDataToParent}) {
+export default function LocationSearch({ title, sendDataToParent }) {
   const [selectedCountry, setSelectedCountry] = useState(null);
   const [selectedSubCountry, setselectedSubCountry] = useState(null);
   const [selectedCity, setSelectedCity] = useState(null);
-
+  const [countryInputValue, setCountryInputValue] = useState("");
+  const [subCountryInputValue, setSubCountryInputValue] = useState("");
+  const [cityInputValue, setCityInputValue] = useState("");
+ 
   const {
     data: countries,
     isLoading: isCountriesLoading,
@@ -34,19 +37,21 @@ export default function LocationSearch({ title ,sendDataToParent}) {
     setSelectedCountry(newCountry);
     setselectedSubCountry(null);
     setSelectedCity(null);
+    setSubCountryInputValue("");
+    setCityInputValue("");
   };
 
   const handlesubCountryChange = (event, newSubCountry) => {
     setselectedSubCountry(newSubCountry);
     setSelectedCity(null);
+    setCityInputValue("");
   };
+
   const handleCityChange = (event, newCity) => {
-    
     setSelectedCity(newCity);
-    if(sendDataToParent!== undefined){
+    if (sendDataToParent !== undefined) {
       sendDataToParent(newCity);
     }
-    
   };
 
   return (
@@ -69,6 +74,10 @@ export default function LocationSearch({ title ,sendDataToParent}) {
           }))}
           value={selectedCountry}
           onChange={handleCountryChange}
+          inputValue={countryInputValue}
+          onInputChange={(event, newInputValue) =>
+            setCountryInputValue(newInputValue)
+          }
           renderInput={(params) => (
             <TextField
               className={
@@ -99,6 +108,10 @@ export default function LocationSearch({ title ,sendDataToParent}) {
             }))}
             value={selectedSubCountry}
             onChange={handlesubCountryChange}
+            inputValue={subCountryInputValue}
+            onInputChange={(event, newInputValue) =>
+              setSubCountryInputValue(newInputValue)
+            }
             renderInput={(params) => (
               <TextField
                 className={
@@ -131,6 +144,10 @@ export default function LocationSearch({ title ,sendDataToParent}) {
             }))}
             value={selectedCity}
             onChange={handleCityChange}
+            inputValue={cityInputValue}
+            onInputChange={(event, newInputValue) =>
+              setCityInputValue(newInputValue)
+            }
             renderInput={(params) => (
               <TextField
                 className={
