@@ -60,6 +60,21 @@ export default function DatePickComponent({ openItems, handleClick, title }) {
                 value={selectedDate}
                 onChange={(newvalue) => setSelectedDate(newvalue)}
                 minDate={today}
+                sx={{
+                    '& .MuiInputBase-root': {
+                      '&.Mui-focused': {
+                        borderColor: 'gray', // تغییر رنگ مرز به خاکی (gray) هنگام فوکوس
+                        boxShadow: 'none', // حذف سایه
+                      },
+                      // اضافه کردن استایل برای زمانی که input فوکوس نشده است
+                      border: '1px solid #ccc', // مرز معمولی (خاکی روشن) زمانی که فوکوس نیست
+                    },
+                    // برای حذف outline در هنگام فوکوس
+                    '& .MuiOutlinedInput-notchedOutline': {
+                      border: 'none', // مرز خاکی رنگ هنگام فوکوس
+                    },
+                  }}
+               
               />
             </DemoContainer>
           </LocalizationProvider>
