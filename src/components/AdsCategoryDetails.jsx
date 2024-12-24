@@ -569,7 +569,7 @@ export default function AdsCategoryDetails({
         condition: categoryDetails.hasElevatorFilter,
         component: (
           <ToggleComponent
-            title="  آسانسور " 
+            title="  آسانسور "
             openItems={openItems}
             handleClick={handleClick}
             key="hasElevator"
@@ -580,7 +580,7 @@ export default function AdsCategoryDetails({
         condition: categoryDetails.hasParkingFilter,
         component: (
           <ToggleComponent
-            title="  پارکینگ " 
+            title="  پارکینگ "
             openItems={openItems}
             handleClick={handleClick}
             key="hasParking"
@@ -591,7 +591,7 @@ export default function AdsCategoryDetails({
         condition: categoryDetails.hasWarehouseFilter,
         component: (
           <ToggleComponent
-            title="  انباری " 
+            title="  انباری "
             openItems={openItems}
             handleClick={handleClick}
             key="hasWarehouse"
@@ -602,7 +602,7 @@ export default function AdsCategoryDetails({
         condition: categoryDetails.hasRenovatedFilter,
         component: (
           <ToggleComponent
-            title="  بازسازی  " 
+            title="  بازسازی  "
             openItems={openItems}
             handleClick={handleClick}
             key="hasRenovated"
@@ -613,7 +613,7 @@ export default function AdsCategoryDetails({
         condition: categoryDetails.hasCoolingFilter,
         component: (
           <ToggleComponent
-            title="  سرمایشی  " 
+            title="  سرمایشی  "
             openItems={openItems}
             handleClick={handleClick}
             key="hasCooling"
@@ -624,7 +624,7 @@ export default function AdsCategoryDetails({
         condition: categoryDetails.hasWarmingFilter,
         component: (
           <ToggleComponent
-            title="  گرمایشی  " 
+            title="  گرمایشی  "
             openItems={openItems}
             handleClick={handleClick}
             key="hasWarming"
@@ -635,7 +635,7 @@ export default function AdsCategoryDetails({
         condition: categoryDetails.hasWCFilter,
         component: (
           <ToggleComponent
-            title="  سرویس بهداشتی  " 
+            title="  سرویس بهداشتی  "
             openItems={openItems}
             handleClick={handleClick}
             key="hasWC"
@@ -646,7 +646,7 @@ export default function AdsCategoryDetails({
         condition: categoryDetails.hasBidelFilter,
         component: (
           <ToggleComponent
-            title="   بیده  " 
+            title="   بیده  "
             openItems={openItems}
             handleClick={handleClick}
             key="hasBidel"
@@ -657,7 +657,7 @@ export default function AdsCategoryDetails({
         condition: categoryDetails.hasHouseContractFilter,
         component: (
           <ToggleComponent
-            title="   قرارداد خونه  " 
+            title="   قرارداد خونه  "
             openItems={openItems}
             handleClick={handleClick}
             key="hasHouseContract"
@@ -668,7 +668,7 @@ export default function AdsCategoryDetails({
         condition: categoryDetails.isPossibleToBuyInInstallmentFilter,
         component: (
           <ToggleComponent
-            title="    قابل خرید اقساطی  " 
+            title="    قابل خرید اقساطی  "
             openItems={openItems}
             handleClick={handleClick}
             key="isPossibleToBuyInInstallment"
@@ -679,7 +679,7 @@ export default function AdsCategoryDetails({
         condition: categoryDetails.isChargableFilter,
         component: (
           <ToggleComponent
-            title="    قابل  شارژ  " 
+            title="    قابل  شارژ  "
             openItems={openItems}
             handleClick={handleClick}
             key="isChargable"
@@ -690,7 +690,7 @@ export default function AdsCategoryDetails({
         condition: categoryDetails.hasChargableFilter,
         component: (
           <ToggleComponent
-            title="      شارژ  " 
+            title="      شارژ  "
             openItems={openItems}
             handleClick={handleClick}
             key="hasChargable"
@@ -701,7 +701,7 @@ export default function AdsCategoryDetails({
         condition: categoryDetails.hasTouchableDisplayFilter,
         component: (
           <ToggleComponent
-            title="      صفحه نمایشگر لمسی  " 
+            title="      صفحه نمایشگر لمسی  "
             openItems={openItems}
             handleClick={handleClick}
             key="hasTouchableDisplay"
@@ -712,7 +712,7 @@ export default function AdsCategoryDetails({
         condition: categoryDetails.hasHDMIPortFilter,
         component: (
           <ToggleComponent
-            title="  پورت HDMI " 
+            title="  پورت HDMI "
             openItems={openItems}
             handleClick={handleClick}
             key="hasHDMIPort"
@@ -723,7 +723,7 @@ export default function AdsCategoryDetails({
         condition: categoryDetails.hasUSBPortFilter,
         component: (
           <ToggleComponent
-            title="  پورت USB " 
+            title="  پورت USB "
             openItems={openItems}
             handleClick={handleClick}
             key="hasUSBPort"
@@ -734,7 +734,7 @@ export default function AdsCategoryDetails({
         condition: categoryDetails.hasLANPortFilter,
         component: (
           <ToggleComponent
-            title="  پورت LAN " 
+            title="  پورت LAN "
             openItems={openItems}
             handleClick={handleClick}
             key="hasLANPort"
@@ -745,7 +745,7 @@ export default function AdsCategoryDetails({
         condition: categoryDetails.hasGameEquipmentFilter,
         component: (
           <ToggleComponent
-            title="  تجهیزات بازی  " 
+            title="  تجهیزات بازی  "
             openItems={openItems}
             handleClick={handleClick}
             key="hasGameEquipment"
@@ -756,7 +756,7 @@ export default function AdsCategoryDetails({
         condition: categoryDetails.hasSeparableFilter,
         component: (
           <ToggleComponent
-            title=" بار قابل تفکیک  " 
+            title=" بار قابل تفکیک  "
             openItems={openItems}
             handleClick={handleClick}
             key="hasSeparable"
@@ -767,7 +767,7 @@ export default function AdsCategoryDetails({
         condition: categoryDetails.hasIncludePackageOfDocumentsFilter,
         component: (
           <ToggleComponent
-            title=" قبول مدارک  " 
+            title=" قبول مدارک  "
             openItems={openItems}
             handleClick={handleClick}
             key="hasIncludePackageOfDocuments"
@@ -778,7 +778,7 @@ export default function AdsCategoryDetails({
         condition: categoryDetails.hasDirectFlightFilter,
         component: (
           <ToggleComponent
-            title="  پرواز مستقیم  " 
+            title="  پرواز مستقیم  "
             openItems={openItems}
             handleClick={handleClick}
             key="hasDirectFlight"
@@ -789,7 +789,7 @@ export default function AdsCategoryDetails({
         condition: categoryDetails.hasGoodAccessPointFilter,
         component: (
           <ToggleComponent
-            title="   دسترسی خوب  " 
+            title="   دسترسی خوب  "
             openItems={openItems}
             handleClick={handleClick}
             key="hasGoodAccessPoint"
@@ -800,7 +800,7 @@ export default function AdsCategoryDetails({
         condition: categoryDetails.hasInsideCityFilter,
         component: (
           <ToggleComponent
-            title=" داخل شهر  " 
+            title=" داخل شهر  "
             openItems={openItems}
             handleClick={handleClick}
             key="hasInsideCity"
@@ -811,7 +811,7 @@ export default function AdsCategoryDetails({
         condition: categoryDetails.hasAllIncludeBillFilter,
         component: (
           <ToggleComponent
-            title="  قبض آل اینکلود  " 
+            title="  قبض آل اینکلود  "
             openItems={openItems}
             handleClick={handleClick}
             key="hasAllIncludeBill"
@@ -822,7 +822,7 @@ export default function AdsCategoryDetails({
         condition: categoryDetails.hasObligationNotBeAtHomeFilter,
         component: (
           <ToggleComponent
-            title=" عدم حضور در منزل  " 
+            title=" عدم حضور در منزل  "
             openItems={openItems}
             handleClick={handleClick}
             key="hasObligationNotBeAtHome"
@@ -833,16 +833,24 @@ export default function AdsCategoryDetails({
         condition: categoryDetails.hasOriginFilter,
         component: (
           <LocationComponent
-            title="    مبدا پرواز  " 
+            title=" مبدا پرواز  "
             openItems={openItems}
             handleClick={handleClick}
             key="hasOriginFilter"
           />
         ),
       },
-      
-      
-      
+      {
+        condition: categoryDetails.hasDestinationFilter,
+        component: (
+          <LocationComponent
+            title="مقصد پرواز "
+            openItems={openItems}
+            handleClick={handleClick}
+            key="hasDestinationFilter"
+          />
+        ),
+      },
     ];
     return (
       <>
