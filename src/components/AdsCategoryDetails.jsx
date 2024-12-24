@@ -46,6 +46,7 @@ import {
 import StringComponent from "./StringComponent";
 import ToggleComponent from "./ToggleComponent";
 import LocationComponent from "./LocationComponent";
+import DatePickComponent from "./DatePickComponent";
 
 export default function AdsCategoryDetails({
   openItems,
@@ -848,6 +849,17 @@ export default function AdsCategoryDetails({
             openItems={openItems}
             handleClick={handleClick}
             key="hasDestinationFilter"
+          />
+        ),
+      },
+      {
+        condition: categoryDetails.hasDepartureDateFilter,
+        component: (
+          <DatePickComponent
+            title="مقصد پرواز "
+            openItems={openItems}
+            handleClick={handleClick}
+            key="hasDepartureDateFilter"
           />
         ),
       },
