@@ -263,15 +263,6 @@ const filterModel = [
         key:"hasDepartureDateFilter",
         value:null
     },
+  
 
-
-
-
-
-
-
-
-
-    
-
-]
+];
