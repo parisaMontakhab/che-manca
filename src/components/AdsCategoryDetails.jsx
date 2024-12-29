@@ -42,7 +42,7 @@ import {
   useNearUniversity,
   useRoomType,
   useRentJustFor,
-} from "../api/Adsfilterdetails";
+} from "../api/FilterDetailsAds";
 import StringComponent from "./StringComponent";
 import ToggleComponent from "./ToggleComponent";
 import LocationComponent from "./LocationComponent";
