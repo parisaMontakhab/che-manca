@@ -106,7 +106,7 @@ export default function AdsCategoryDetails({
             options={depositPriceList}
             openItems={openItems}
             handleClick={handleClick}
-            key="deposit"
+            key="hasDepositFilter"
           />
         ),
       },
@@ -118,7 +118,7 @@ export default function AdsCategoryDetails({
             options={rentPriceList}
             openItems={openItems}
             handleClick={handleClick}
-            key="rent"
+            key="hasRentPriceFilter"
           />
         ),
       },
@@ -130,7 +130,7 @@ export default function AdsCategoryDetails({
             options={meterageList}
             openItems={openItems}
             handleClick={handleClick}
-            key="meterage"
+            key="hasMeterageFilter"
           />
         ),
       },
@@ -142,7 +142,7 @@ export default function AdsCategoryDetails({
             options={numberOfRoom}
             openItems={openItems}
             handleClick={handleClick}
-            key="numberOfRoom"
+            key="hasNumberOfRoomFilter"
           />
         ),
       },
@@ -154,7 +154,7 @@ export default function AdsCategoryDetails({
             options={numberOfUnitsPerFloor}
             openItems={openItems}
             handleClick={handleClick}
-            key="numberOfUnitsPerfloor"
+            key="hasNumberOfUnitsPerFloorFilter"
           />
         ),
       },
@@ -166,7 +166,7 @@ export default function AdsCategoryDetails({
             options={productStatus}
             openItems={openItems}
             handleClick={handleClick}
-            key="productStatus"
+            key="hasProductStatusFilter"
           />
         ),
       },
@@ -178,7 +178,7 @@ export default function AdsCategoryDetails({
             options={createdYear}
             openItems={openItems}
             handleClick={handleClick}
-            key="createdYear"
+            key="hasCreatedYearFilter"
           />
         ),
       },
@@ -190,7 +190,7 @@ export default function AdsCategoryDetails({
             options={brandName}
             openItems={openItems}
             handleClick={handleClick}
-            key="brandName"
+            key="hasBrandNameFilter"
           />
         ),
       },
@@ -202,7 +202,7 @@ export default function AdsCategoryDetails({
             options={numberOfSimCart}
             openItems={openItems}
             handleClick={handleClick}
-            key="numberOfSimCart"
+            key="hasNumberOfSimCartFilter"
           />
         ),
       },
@@ -214,7 +214,7 @@ export default function AdsCategoryDetails({
             options={internalMemoryCapacity}
             openItems={openItems}
             handleClick={handleClick}
-            key="internalMemoryCapacity"
+            key="hasInternalMemoryCapacityFilter"
           />
         ),
       },
@@ -226,7 +226,7 @@ export default function AdsCategoryDetails({
             options={ramCapacity}
             openItems={openItems}
             handleClick={handleClick}
-            key="ramCapacity"
+            key="hasRamCapacityFilter"
           />
         ),
       },
@@ -238,7 +238,7 @@ export default function AdsCategoryDetails({
             options={colorFilter}
             openItems={openItems}
             handleClick={handleClick}
-            key="colorFilter"
+            key="hasColorFilter"
           />
         ),
       },
@@ -250,7 +250,7 @@ export default function AdsCategoryDetails({
             options={displayDimention}
             openItems={openItems}
             handleClick={handleClick}
-            key="displayDimention"
+            key="hasDisplayDimentionFilter"
           />
         ),
       },
@@ -262,7 +262,7 @@ export default function AdsCategoryDetails({
             options={operationSystemName}
             openItems={openItems}
             handleClick={handleClick}
-            key="operationSystemName"
+            key="hasOperationSystemNameFilter"
           />
         ),
       },
@@ -274,7 +274,7 @@ export default function AdsCategoryDetails({
             options={processorModel}
             openItems={openItems}
             handleClick={handleClick}
-            key="processorModel"
+            key="hasProcessorModelFilter"
           />
         ),
       },
@@ -286,7 +286,7 @@ export default function AdsCategoryDetails({
             options={modemType}
             openItems={openItems}
             handleClick={handleClick}
-            key="modemType"
+            key="hasModemOrRouterTypeFilter"
           />
         ),
       },
@@ -298,7 +298,7 @@ export default function AdsCategoryDetails({
             options={joystickType}
             openItems={openItems}
             handleClick={handleClick}
-            key="joystickType"
+            key="hasJoystickTypeFilter"
           />
         ),
       },
@@ -310,7 +310,7 @@ export default function AdsCategoryDetails({
             options={gameConsoleModel}
             openItems={openItems}
             handleClick={handleClick}
-            key="gameConsoleModel"
+            key="hasGameConsoleModelFilter"
           />
         ),
       },
@@ -318,11 +318,11 @@ export default function AdsCategoryDetails({
         condition: categoryDetails.hasTextureFilter,
         component: (
           <StringComponent
-            title="       جنس فرش یا موکت  "
+            title=" جنس فرش یا موکت  "
             options={carpetTexture}
             openItems={openItems}
             handleClick={handleClick}
-            key="carpetTexture"
+            key="hasTextureFilter"
           />
         ),
       },
@@ -330,11 +330,11 @@ export default function AdsCategoryDetails({
         condition: categoryDetails.hasDimentionFilter,
         component: (
           <StringComponent
-            title="      ابعاد فرش یا موکت "
+            title="  ابعاد فرش یا موکت "
             options={carpetDimention}
             openItems={openItems}
             handleClick={handleClick}
-            key="carpetDimention"
+            key="hasDimentionFilter"
           />
         ),
       },
@@ -346,7 +346,7 @@ export default function AdsCategoryDetails({
             options={electricConsumption}
             openItems={openItems}
             handleClick={handleClick}
-            key="electricConsumption"
+            key="hasConsumptionFilter"
           />
         ),
       },
@@ -358,7 +358,7 @@ export default function AdsCategoryDetails({
             options={sexFilter}
             openItems={openItems}
             handleClick={handleClick}
-            key="sexFilter"
+            key="hasSexFilter"
           />
         ),
       },
@@ -370,7 +370,7 @@ export default function AdsCategoryDetails({
             options={clothType}
             openItems={openItems}
             handleClick={handleClick}
-            key="clothType"
+            key="hasClothTypeFilter"
           />
         ),
       },
@@ -382,7 +382,7 @@ export default function AdsCategoryDetails({
             options={clockType}
             openItems={openItems}
             handleClick={handleClick}
-            key="clockType"
+            key="hasClockTypeFilter"
           />
         ),
       },
@@ -394,7 +394,7 @@ export default function AdsCategoryDetails({
             options={jewelryType}
             openItems={openItems}
             handleClick={handleClick}
-            key="jewelryType"
+            key="hasJewelryTypeFilter"
           />
         ),
       },
@@ -406,7 +406,7 @@ export default function AdsCategoryDetails({
             options={jewelryMaterial}
             openItems={openItems}
             handleClick={handleClick}
-            key="jewelryMaterial"
+            key="hasJewelryMaterialFilter"
           />
         ),
       },
@@ -418,7 +418,7 @@ export default function AdsCategoryDetails({
             options={carOperation}
             openItems={openItems}
             handleClick={handleClick}
-            key="carOperation"
+            key="hasCarOperationFilter"
           />
         ),
       },
@@ -430,7 +430,7 @@ export default function AdsCategoryDetails({
             options={carBodyStatus}
             openItems={openItems}
             handleClick={handleClick}
-            key="carBodyStatus"
+            key="hasCarBodyStatusFilter"
           />
         ),
       },
@@ -442,7 +442,7 @@ export default function AdsCategoryDetails({
             options={carChassisStatus}
             openItems={openItems}
             handleClick={handleClick}
-            key="carChassisStatus"
+            key="hasCarChassisStatusFilter"
           />
         ),
       },
@@ -454,7 +454,7 @@ export default function AdsCategoryDetails({
             options={carFuel}
             openItems={openItems}
             handleClick={handleClick}
-            key="carFuel"
+            key="hasCarFuelFilter"
           />
         ),
       },
@@ -466,7 +466,7 @@ export default function AdsCategoryDetails({
             options={carGearboxType}
             openItems={openItems}
             handleClick={handleClick}
-            key="carGearboxType"
+            key="hasCarGearboxTypeFilter"
           />
         ),
       },
@@ -478,7 +478,7 @@ export default function AdsCategoryDetails({
             options={carEngineStatus}
             openItems={openItems}
             handleClick={handleClick}
-            key="carEngineStatus"
+            key="hasCarEngineStatusFilter"
           />
         ),
       },
@@ -490,7 +490,7 @@ export default function AdsCategoryDetails({
             options={carInsuranceStatus}
             openItems={openItems}
             handleClick={handleClick}
-            key="carInsuranceStatus"
+            key="hasCarInsuranceStatusFilter"
           />
         ),
       },
@@ -502,7 +502,7 @@ export default function AdsCategoryDetails({
             options={kilogramWeight}
             openItems={openItems}
             handleClick={handleClick}
-            key="kilogramWeight"
+            key="hasKilogramWeightFilter"
           />
         ),
       },
@@ -514,7 +514,7 @@ export default function AdsCategoryDetails({
             options={chooseRoommateGender}
             openItems={openItems}
             handleClick={handleClick}
-            key="chooseRoommateGender"
+            key="hasChooseRoommateGenderFilter"
           />
         ),
       },
@@ -526,7 +526,7 @@ export default function AdsCategoryDetails({
             options={bedType}
             openItems={openItems}
             handleClick={handleClick}
-            key="bedType"
+            key="hasBedTypeFilter"
           />
         ),
       },
@@ -538,7 +538,7 @@ export default function AdsCategoryDetails({
             options={nearUniversity}
             openItems={openItems}
             handleClick={handleClick}
-            key="nearUniversity"
+            key="hasNearUniversityFilter"
           />
         ),
       },
@@ -550,7 +550,7 @@ export default function AdsCategoryDetails({
             options={roomType}
             openItems={openItems}
             handleClick={handleClick}
-            key="roomType"
+            key="hasRoomTypeFilter"
           />
         ),
       },
@@ -562,7 +562,7 @@ export default function AdsCategoryDetails({
             options={rentJustFor}
             openItems={openItems}
             handleClick={handleClick}
-            key="rentJustFor"
+            key="hasRentJustForFilter"
           />
         ),
       },
@@ -573,7 +573,7 @@ export default function AdsCategoryDetails({
             title="  آسانسور "
             openItems={openItems}
             handleClick={handleClick}
-            key="hasElevator"
+            key="hasElevatorFilter"
           />
         ),
       },
@@ -584,7 +584,7 @@ export default function AdsCategoryDetails({
             title="  پارکینگ "
             openItems={openItems}
             handleClick={handleClick}
-            key="hasParking"
+            key="hasParkingFilter"
           />
         ),
       },
@@ -595,7 +595,7 @@ export default function AdsCategoryDetails({
             title="  انباری "
             openItems={openItems}
             handleClick={handleClick}
-            key="hasWarehouse"
+            key="hasWarehouseFilter"
           />
         ),
       },
@@ -606,7 +606,7 @@ export default function AdsCategoryDetails({
             title="  بازسازی  "
             openItems={openItems}
             handleClick={handleClick}
-            key="hasRenovated"
+            key="hasRenovatedFilter"
           />
         ),
       },
@@ -617,7 +617,7 @@ export default function AdsCategoryDetails({
             title="  سرمایشی  "
             openItems={openItems}
             handleClick={handleClick}
-            key="hasCooling"
+            key="hasCoolingFilter"
           />
         ),
       },
@@ -628,7 +628,7 @@ export default function AdsCategoryDetails({
             title="  گرمایشی  "
             openItems={openItems}
             handleClick={handleClick}
-            key="hasWarming"
+            key="hasWarmingFilter"
           />
         ),
       },
@@ -639,7 +639,7 @@ export default function AdsCategoryDetails({
             title="  سرویس بهداشتی  "
             openItems={openItems}
             handleClick={handleClick}
-            key="hasWC"
+            key="hasWCFilter"
           />
         ),
       },
@@ -650,7 +650,7 @@ export default function AdsCategoryDetails({
             title="   بیده  "
             openItems={openItems}
             handleClick={handleClick}
-            key="hasBidel"
+            key="hasBidelFilter"
           />
         ),
       },
@@ -661,7 +661,7 @@ export default function AdsCategoryDetails({
             title="   قرارداد خونه  "
             openItems={openItems}
             handleClick={handleClick}
-            key="hasHouseContract"
+            key="hasHouseContractFilter"
           />
         ),
       },
@@ -672,7 +672,7 @@ export default function AdsCategoryDetails({
             title="    قابل خرید اقساطی  "
             openItems={openItems}
             handleClick={handleClick}
-            key="isPossibleToBuyInInstallment"
+            key="isPossibleToBuyInInstallmentFilter"
           />
         ),
       },
@@ -683,7 +683,7 @@ export default function AdsCategoryDetails({
             title="    قابل  شارژ  "
             openItems={openItems}
             handleClick={handleClick}
-            key="isChargable"
+            key="isChargableFilter"
           />
         ),
       },
@@ -694,7 +694,7 @@ export default function AdsCategoryDetails({
             title="      شارژ  "
             openItems={openItems}
             handleClick={handleClick}
-            key="hasChargable"
+            key="hasChargableFilter"
           />
         ),
       },
@@ -705,7 +705,7 @@ export default function AdsCategoryDetails({
             title="      صفحه نمایشگر لمسی  "
             openItems={openItems}
             handleClick={handleClick}
-            key="hasTouchableDisplay"
+            key="hasTouchableDisplayFilter"
           />
         ),
       },
@@ -716,7 +716,7 @@ export default function AdsCategoryDetails({
             title="  پورت HDMI "
             openItems={openItems}
             handleClick={handleClick}
-            key="hasHDMIPort"
+            key="hasHDMIPortFilter"
           />
         ),
       },
@@ -727,7 +727,7 @@ export default function AdsCategoryDetails({
             title="  پورت USB "
             openItems={openItems}
             handleClick={handleClick}
-            key="hasUSBPort"
+            key="hasUSBPortFilter"
           />
         ),
       },
@@ -738,7 +738,7 @@ export default function AdsCategoryDetails({
             title="  پورت LAN "
             openItems={openItems}
             handleClick={handleClick}
-            key="hasLANPort"
+            key="hasLANPortFilter"
           />
         ),
       },
@@ -749,7 +749,7 @@ export default function AdsCategoryDetails({
             title="  تجهیزات بازی  "
             openItems={openItems}
             handleClick={handleClick}
-            key="hasGameEquipment"
+            key="hasGameEquipmentFilter"
           />
         ),
       },
@@ -760,7 +760,7 @@ export default function AdsCategoryDetails({
             title=" بار قابل تفکیک  "
             openItems={openItems}
             handleClick={handleClick}
-            key="hasSeparable"
+            key="hasSeparableFilter"
           />
         ),
       },
@@ -771,7 +771,7 @@ export default function AdsCategoryDetails({
             title=" قبول مدارک  "
             openItems={openItems}
             handleClick={handleClick}
-            key="hasIncludePackageOfDocuments"
+            key="hasIncludePackageOfDocumentsFilter"
           />
         ),
       },
@@ -782,7 +782,7 @@ export default function AdsCategoryDetails({
             title="  پرواز مستقیم  "
             openItems={openItems}
             handleClick={handleClick}
-            key="hasDirectFlight"
+            key="hasDirectFlightFilter"
           />
         ),
       },
@@ -793,7 +793,7 @@ export default function AdsCategoryDetails({
             title="   دسترسی خوب  "
             openItems={openItems}
             handleClick={handleClick}
-            key="hasGoodAccessPoint"
+            key="hasGoodAccessPointFilter"
           />
         ),
       },
@@ -804,7 +804,7 @@ export default function AdsCategoryDetails({
             title=" داخل شهر  "
             openItems={openItems}
             handleClick={handleClick}
-            key="hasInsideCity"
+            key="hasInsideCityFilter"
           />
         ),
       },
@@ -815,7 +815,7 @@ export default function AdsCategoryDetails({
             title="  قبض آل اینکلود  "
             openItems={openItems}
             handleClick={handleClick}
-            key="hasAllIncludeBill"
+            key="hasAllIncludeBillFilter"
           />
         ),
       },
@@ -826,7 +826,7 @@ export default function AdsCategoryDetails({
             title=" عدم حضور در منزل  "
             openItems={openItems}
             handleClick={handleClick}
-            key="hasObligationNotBeAtHome"
+            key="hasObligationNotBeAtHomeFilter"
           />
         ),
       },
