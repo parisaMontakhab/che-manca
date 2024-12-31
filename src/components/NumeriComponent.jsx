@@ -73,7 +73,7 @@ export default function NumeriComponent({
             value={value}
             onChange={(event, newValue) => {
               setValue(newValue);
-              handleUpdateGetAllAdsModel();
+              handleUpdateGetAllAdsModel(newValue);
             }}
             inputValue={inputValue}
             onInputChange={(event, newInputValue) => {

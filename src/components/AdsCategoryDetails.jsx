@@ -322,7 +322,7 @@ export default function AdsCategoryDetails({
 }) {
   //state//
   const [getAllAdsModel, setGetAllAdsModel] = useState(initialGetAllAdsModel);
-  
+
   //from api//
   const { data: categoryDetails } = useCategoryDetails(
     selectedCategory?.uniqueId
@@ -367,10 +367,16 @@ export default function AdsCategoryDetails({
   const { data: roomType } = useRoomType();
   const { data: rentJustFor } = useRentJustFor();
   //functions//
-  const hasDepositFilter = useCallback(()=>{
-    console.log("salam")
-  },[getAllAdsModel])
+  const hasDepositFilter = useCallback((value) => {
+    setGetAllAdsModel((prevModel) => 
+      prevModel.map((model)=>
+        model.key == "hasDepositFilter" ? {...model,value} : model
+      )
+    
+    );
+  }, []);
 
+ 
   if (categoryDetails) {
     const conditions = [
       {
