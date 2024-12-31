@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { Component, useCallback, useState } from "react";
 import { FormGroup, Typography, FormControlLabel, Switch } from "@mui/material";
 import { useCategoryDetails } from "../api/CategoriesApi";
 import NumeriComponent from "./NumeriComponent";
@@ -48,284 +48,282 @@ import ToggleComponent from "./ToggleComponent";
 import LocationComponent from "./LocationComponent";
 import DatePickComponent from "./DatePickComponent";
 
-
-const filterModel = [
+const initialGetAllAdsModel = [
   {
-      key:"hasDepositFilter",
-      value:null
+    key: "hasDepositFilter",
+    value: null,
   },
   {
-      key:"hasRentPriceFilter",
-      value:null
+    key: "hasRentPriceFilter",
+    value: null,
   },
   {
-      key:"hasMeterageFilter",
-      value:null
+    key: "hasMeterageFilter",
+    value: null,
   },
   {
-      key:"hasNumberOfRoomFilter",
-      value:null
+    key: "hasNumberOfRoomFilter",
+    value: null,
   },
   {
-      key:"hasNumberOfUnitsPerFloorFilter",
-      value:null
+    key: "hasNumberOfUnitsPerFloorFilter",
+    value: null,
   },
   {
-      key:"hasProductStatusFilter",
-      value:null
+    key: "hasProductStatusFilter",
+    value: null,
   },
   {
-      key:"hasCreatedYearFilter",
-      value:null
+    key: "hasCreatedYearFilter",
+    value: null,
   },
   {
-      key:"hasBrandNameFilter",
-      value:null
+    key: "hasBrandNameFilter",
+    value: null,
   },
   {
-      key:"hasNumberOfSimCartFilter",
-      value:null
+    key: "hasNumberOfSimCartFilter",
+    value: null,
   },
   {
-      key:"hasInternalMemoryCapacityFilter",
-      value:null
+    key: "hasInternalMemoryCapacityFilter",
+    value: null,
   },
   {
-      key:"hasRamCapacityFilter",
-      value:null
+    key: "hasRamCapacityFilter",
+    value: null,
   },
   {
-      key:"hasColorFilter",
-      value:null
+    key: "hasColorFilter",
+    value: null,
   },
   {
-      key:"hasDisplayDimentionFilter",
-      value:null
+    key: "hasDisplayDimentionFilter",
+    value: null,
   },
   {
-      key:"hasOperationSystemNameFilter",
-      value:null
+    key: "hasOperationSystemNameFilter",
+    value: null,
   },
   {
-      key:"hasProcessorModelFilter",
-      value:null
+    key: "hasProcessorModelFilter",
+    value: null,
   },
   {
-      key:"hasModemOrRouterTypeFilter",
-      value:null
+    key: "hasModemOrRouterTypeFilter",
+    value: null,
   },
   {
-      key:"hasJoystickTypeFilter",
-      value:null
+    key: "hasJoystickTypeFilter",
+    value: null,
   },
   {
-      key:"hasGameConsoleModelFilter",
-      value:null
+    key: "hasGameConsoleModelFilter",
+    value: null,
   },
   {
-      key:"hasTextureFilter",
-      value:null
+    key: "hasTextureFilter",
+    value: null,
   },
   {
-      key:"hasDimentionFilter",
-      value:null
+    key: "hasDimentionFilter",
+    value: null,
   },
   {
-      key:"hasConsumptionFilter",
-      value:null
+    key: "hasConsumptionFilter",
+    value: null,
   },
   {
-      key:"hasSexFilter",
-      value:null
+    key: "hasSexFilter",
+    value: null,
   },
   {
-      key:"hasClothTypeFilter",
-      value:null
+    key: "hasClothTypeFilter",
+    value: null,
   },
   {
-      key:"hasClockTypeFilter",
-      value:null
+    key: "hasClockTypeFilter",
+    value: null,
   },
   {
-      key:"hasJewelryTypeFilter",
-      value:null
+    key: "hasJewelryTypeFilter",
+    value: null,
   },
   {
-      key:"hasJewelryMaterialFilter",
-      value:null
+    key: "hasJewelryMaterialFilter",
+    value: null,
   },
   {
-      key:"hasCarOperationFilter",
-      value:null
+    key: "hasCarOperationFilter",
+    value: null,
   },
   {
-      key:"hasCarBodyStatusFilter",
-      value:null
+    key: "hasCarBodyStatusFilter",
+    value: null,
   },
   {
-      key:"hasCarChassisStatusFilter",
-      value:null
+    key: "hasCarChassisStatusFilter",
+    value: null,
   },
   {
-      key:"hasCarFuelFilter",
-      value:null
+    key: "hasCarFuelFilter",
+    value: null,
   },
   {
-      key:"hasCarGearboxTypeFilter",
-      value:null
+    key: "hasCarGearboxTypeFilter",
+    value: null,
   },
   {
-      key:"hasCarEngineStatusFilter",
-      value:null
+    key: "hasCarEngineStatusFilter",
+    value: null,
   },
   {
-      key:"hasCarInsuranceStatusFilter",
-      value:null
+    key: "hasCarInsuranceStatusFilter",
+    value: null,
   },
   {
-      key:"hasKilogramWeightFilter",
-      value:null
+    key: "hasKilogramWeightFilter",
+    value: null,
   },
   {
-      key:"hasChooseRoommateGenderFilter",
-      value:null
+    key: "hasChooseRoommateGenderFilter",
+    value: null,
   },
   {
-      key:"hasBedTypeFilter",
-      value:null
+    key: "hasBedTypeFilter",
+    value: null,
   },
   {
-      key:"hasNearUniversityFilter",
-      value:null
+    key: "hasNearUniversityFilter",
+    value: null,
   },
   {
-      key:"hasRoomTypeFilter",
-      value:null
+    key: "hasRoomTypeFilter",
+    value: null,
   },
   {
-      key:"hasRentJustForFilter",
-      value:null
+    key: "hasRentJustForFilter",
+    value: null,
   },
   {
-      key:"hasElevatorFilter",
-      value:null
+    key: "hasElevatorFilter",
+    value: null,
   },
   {
-      key:"hasParkingFilter",
-      value:null
+    key: "hasParkingFilter",
+    value: null,
   },
   {
-      key:"hasWarehouseFilter",
-      value:null
+    key: "hasWarehouseFilter",
+    value: null,
   },
   {
-      key:"hasRenovatedFilter",
-      value:null
+    key: "hasRenovatedFilter",
+    value: null,
   },
   {
-      key:"hasCoolingFilter",
-      value:null
+    key: "hasCoolingFilter",
+    value: null,
   },
   {
-      key:"hasWarmingFilter",
-      value:null
+    key: "hasWarmingFilter",
+    value: null,
   },
   {
-      key:"hasWCFilter",
-      value:null
+    key: "hasWCFilter",
+    value: null,
   },
   {
-      key:"hasBidelFilter",
-      value:null
+    key: "hasBidelFilter",
+    value: null,
   },
   {
-      key:"hasHouseContractFilter",
-      value:null
+    key: "hasHouseContractFilter",
+    value: null,
   },
   {
-      key:"isPossibleToBuyInInstallmentFilter",
-      value:null
+    key: "isPossibleToBuyInInstallmentFilter",
+    value: null,
   },
   {
-      key:"isChargableFilter",
-      value:null
+    key: "isChargableFilter",
+    value: null,
   },
   {
-      key:"hasChargableFilter",
-      value:null
+    key: "hasChargableFilter",
+    value: null,
   },
   {
-      key:"hasTouchableDisplayFilter",
-      value:null
+    key: "hasTouchableDisplayFilter",
+    value: null,
   },
   {
-      key:"hasHDMIPortFilter",
-      value:null
+    key: "hasHDMIPortFilter",
+    value: null,
   },
   {
-      key:"hasUSBPortFilter",
-      value:null
+    key: "hasUSBPortFilter",
+    value: null,
   },
   {
-      key:"hasLANPortFilter",
-      value:null
+    key: "hasLANPortFilter",
+    value: null,
   },
   {
-      key:"hasGameEquipmentFilter",
-      value:null
+    key: "hasGameEquipmentFilter",
+    value: null,
   },
   {
-      key:"hasSeparableFilter",
-      value:null
+    key: "hasSeparableFilter",
+    value: null,
   },
   {
-      key:"hasIncludePackageOfDocumentsFilter",
-      value:null
+    key: "hasIncludePackageOfDocumentsFilter",
+    value: null,
   },
   {
-      key:"hasDirectFlightFilter",
-      value:null
+    key: "hasDirectFlightFilter",
+    value: null,
   },
   {
-      key:"hasGoodAccessPointFilter",
-      value:null
+    key: "hasGoodAccessPointFilter",
+    value: null,
   },
   {
-      key:"hasInsideCityFilter",
-      value:null
+    key: "hasInsideCityFilter",
+    value: null,
   },
   {
-      key:"hasAllIncludeBillFilter",
-      value:null
+    key: "hasAllIncludeBillFilter",
+    value: null,
   },
   {
-      key:"hasObligationNotBeAtHomeFilter",
-      value:null
+    key: "hasObligationNotBeAtHomeFilter",
+    value: null,
   },
   {
-      key:"hasOriginFilter",
-      value:null
+    key: "hasOriginFilter",
+    value: null,
   },
   {
-      key:"hasDestinationFilter",
-      value:null
+    key: "hasDestinationFilter",
+    value: null,
   },
   {
-      key:"hasDepartureDateFilter",
-      value:null
+    key: "hasDepartureDateFilter",
+    value: null,
   },
-
-
 ];
-
-
 
 export default function AdsCategoryDetails({
   openItems,
   selectedCategory,
   handleClick,
 }) {
-  const [getAllAdsModel,setGetAllAdsModel] = useState(filterModel);
+  //state//
+  const [getAllAdsModel, setGetAllAdsModel] = useState(initialGetAllAdsModel);
+  
+  //from api//
   const { data: categoryDetails } = useCategoryDetails(
     selectedCategory?.uniqueId
   );
@@ -368,6 +366,10 @@ export default function AdsCategoryDetails({
   const { data: nearUniversity } = useNearUniversity();
   const { data: roomType } = useRoomType();
   const { data: rentJustFor } = useRentJustFor();
+  //functions//
+  const hasDepositFilter = useCallback(()=>{
+    console.log("salam")
+  },[getAllAdsModel])
 
   if (categoryDetails) {
     const conditions = [
@@ -379,6 +381,7 @@ export default function AdsCategoryDetails({
             options={depositPriceList}
             openItems={openItems}
             handleClick={handleClick}
+            handleUpdateGetAllAdsModel={hasDepositFilter}
             key="hasDepositFilter"
           />
         ),

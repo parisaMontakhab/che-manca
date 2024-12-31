@@ -20,14 +20,15 @@ export default function NumeriComponent({
   options,
   openItems,
   handleClick,
+  handleUpdateGetAllAdsModel,
 }) {
   const [value, setValue] = useState([]);
   const [inputValue, setInputValue] = useState("");
 
-  const handleDeletValue = ()=>{
+  const handleDeletValue = () => {
     setValue([]);
-    setInputValue('');
-  }
+    setInputValue("");
+  };
 
   return (
     <div>
@@ -72,6 +73,7 @@ export default function NumeriComponent({
             value={value}
             onChange={(event, newValue) => {
               setValue(newValue);
+              handleUpdateGetAllAdsModel();
             }}
             inputValue={inputValue}
             onInputChange={(event, newInputValue) => {
