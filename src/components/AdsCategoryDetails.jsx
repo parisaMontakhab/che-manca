@@ -367,6 +367,7 @@ export default function AdsCategoryDetails({
   const { data: roomType } = useRoomType();
   const { data: rentJustFor } = useRentJustFor();
   //functions//
+  //on numeric component//
   const handleUpdateHasDeposit = useCallback((value) => {
     setGetAllAdsModel((prevModel) => 
       prevModel.map((model)=>
@@ -423,6 +424,7 @@ export default function AdsCategoryDetails({
     
     );
   }, []);
+  //on string component//
   const handleUpdateHasProductStatus = useCallback((value) => {
     setGetAllAdsModel((prevModel) => 
       prevModel.map((model)=>
@@ -431,7 +433,15 @@ export default function AdsCategoryDetails({
     
     );
   }, []);
-console.log(getAllAdsModel)
+  const handleUpdateHasBrandName = useCallback((value) => {
+    setGetAllAdsModel((prevModel) => 
+      prevModel.map((model)=>
+        model.key == "hasBrandNameFilter" ? {...model,value} : model
+      )
+    
+    );
+  }, []);
+
  
   if (categoryDetails) {
     const conditions = [
@@ -534,6 +544,7 @@ console.log(getAllAdsModel)
             options={brandName}
             openItems={openItems}
             handleClick={handleClick}
+            handleUpdateGetAllAdsModel={handleUpdateHasBrandName}
             key="hasBrandNameFilter"
           />
         ),
