@@ -561,6 +561,14 @@ export default function AdsCategoryDetails({
     
     );
   }, []);
+  const handleUpdateHasJewelryType = useCallback((value) => {
+    setGetAllAdsModel((prevModel) => 
+      prevModel.map((model)=>
+        model.key == "hasJewelryTypeFilter" ? {...model,value} : model
+      )
+    
+    );
+  }, []);
 
  
   if (categoryDetails) {
@@ -881,10 +889,11 @@ export default function AdsCategoryDetails({
         condition: categoryDetails.hasJewelryTypeFilter,
         component: (
           <StringComponent
-            title="    نوع جواهر و بدلیجات"
+            title="  نوع جواهر و بدلیجات"
             options={jewelryType}
             openItems={openItems}
             handleClick={handleClick}
+            handleUpdateGetAllAdsModel={handleUpdateHasJewelryType}
             key="hasJewelryTypeFilter"
           />
         ),
