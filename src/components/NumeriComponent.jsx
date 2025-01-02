@@ -28,6 +28,7 @@ export default function NumeriComponent({
   const handleDeletValue = () => {
     setValue([]);
     setInputValue("");
+    handleUpdateGetAllAdsModel(null)
   };
 
   return (
@@ -78,6 +79,7 @@ export default function NumeriComponent({
             inputValue={inputValue}
             onInputChange={(event, newInputValue) => {
               setInputValue(newInputValue);
+              
               
             }}
             renderInput={(params) => (
