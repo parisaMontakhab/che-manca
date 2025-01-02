@@ -585,6 +585,14 @@ export default function AdsCategoryDetails({
     
     );
   }, []);
+  const handleUpdateHasCarBodyStatus = useCallback((value) => {
+    setGetAllAdsModel((prevModel) => 
+      prevModel.map((model)=>
+        model.key == "hasCarBodyStatusFilter" ? {...model,value} : model
+      )
+    
+    );
+  }, []);
 
  
   if (categoryDetails) {
@@ -944,10 +952,11 @@ export default function AdsCategoryDetails({
         condition: categoryDetails.hasCarBodyStatusFilter,
         component: (
           <StringComponent
-            title="         وضعیت بدنه خودرو  "
+            title=" وضعیت بدنه خودرو  "
             options={carBodyStatus}
             openItems={openItems}
             handleClick={handleClick}
+            handleUpdateGetAllAdsModel={handleUpdateHasCarBodyStatus}
             key="hasCarBodyStatusFilter"
           />
         ),
