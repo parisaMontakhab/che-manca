@@ -505,10 +505,18 @@ export default function AdsCategoryDetails({
     
     );
   }, []);
-  const handleUpdateHasGameconsoleModel = useCallback((value) => {
+  const handleUpdateHasGameConsoleModel = useCallback((value) => {
     setGetAllAdsModel((prevModel) => 
       prevModel.map((model)=>
         model.key == "hasGameConsoleModelFilter" ? {...model,value} : model
+      )
+    
+    );
+  }, []);
+  const handleUpdateHasTexture = useCallback((value) => {
+    setGetAllAdsModel((prevModel) => 
+      prevModel.map((model)=>
+        model.key == "hasTextureFilter" ? {...model,value} : model
       )
     
     );
@@ -746,7 +754,7 @@ export default function AdsCategoryDetails({
             options={gameConsoleModel}
             openItems={openItems}
             handleClick={handleClick}
-            handleUpdateGetAllAdsModel={handleUpdateHasGameconsoleModel}
+            handleUpdateGetAllAdsModel={handleUpdateHasGameConsoleModel}
             key="hasGameConsoleModelFilter"
           />
         ),
@@ -759,6 +767,7 @@ export default function AdsCategoryDetails({
             options={carpetTexture}
             openItems={openItems}
             handleClick={handleClick}
+            handleUpdateGetAllAdsModel={handleUpdateHasTexture}
             key="hasTextureFilter"
           />
         ),
