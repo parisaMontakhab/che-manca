@@ -529,6 +529,14 @@ export default function AdsCategoryDetails({
     
     );
   }, []);
+  const handleUpdateHasConsumption = useCallback((value) => {
+    setGetAllAdsModel((prevModel) => 
+      prevModel.map((model)=>
+        model.key == "hasConsumptionFilter" ? {...model,value} : model
+      )
+    
+    );
+  }, []);
 
  
   if (categoryDetails) {
@@ -797,10 +805,11 @@ export default function AdsCategoryDetails({
         condition: categoryDetails.hasConsumptionFilter,
         component: (
           <StringComponent
-            title="     میزان مصرف"
+            title=" میزان مصرف"
             options={electricConsumption}
             openItems={openItems}
             handleClick={handleClick}
+            handleUpdateGetAllAdsModel={handleUpdateHasConsumption}
             key="hasConsumptionFilter"
           />
         ),
