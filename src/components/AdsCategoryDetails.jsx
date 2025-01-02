@@ -673,6 +673,14 @@ export default function AdsCategoryDetails({
     
     );
   }, []);
+  const handleUpdateHasRentJustFor = useCallback((value) => {
+    setGetAllAdsModel((prevModel) => 
+      prevModel.map((model)=>
+        model.key == "hasRentJustForFilter" ? {...model,value} : model
+      )
+    
+    );
+  }, []);
 
  
   if (categoryDetails) {
@@ -1175,10 +1183,11 @@ export default function AdsCategoryDetails({
         condition: categoryDetails.hasRentJustForFilter,
         component: (
           <StringComponent
-            title="   اجاره داده میشه فقط به "
+            title=" اجاره داده میشه فقط به "
             options={rentJustFor}
             openItems={openItems}
             handleClick={handleClick}
+            handleUpdateGetAllAdsModel={handleUpdateHasRentJustFor}
             key="hasRentJustForFilter"
           />
         ),
