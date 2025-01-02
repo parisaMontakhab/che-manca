@@ -545,6 +545,14 @@ export default function AdsCategoryDetails({
     
     );
   }, []);
+  const handleUpdateHasClothType = useCallback((value) => {
+    setGetAllAdsModel((prevModel) => 
+      prevModel.map((model)=>
+        model.key == "hasClothTypeFilter" ? {...model,value} : model
+      )
+    
+    );
+  }, []);
 
  
   if (categoryDetails) {
@@ -826,7 +834,7 @@ export default function AdsCategoryDetails({
         condition: categoryDetails.hasSexFilter,
         component: (
           <StringComponent
-            title=" نوع جنسیت"
+            title="نوع جنسیت"
             options={sexFilter}
             openItems={openItems}
             handleClick={handleClick}
@@ -839,10 +847,11 @@ export default function AdsCategoryDetails({
         condition: categoryDetails.hasClothTypeFilter,
         component: (
           <StringComponent
-            title="  نوع لباس"
+            title=" نوع لباس"
             options={clothType}
             openItems={openItems}
             handleClick={handleClick}
+            handleUpdateGetAllAdsModel={handleUpdateHasClothType}
             key="hasClothTypeFilter"
           />
         ),
