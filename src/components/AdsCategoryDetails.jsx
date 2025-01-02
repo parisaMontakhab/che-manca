@@ -553,6 +553,14 @@ export default function AdsCategoryDetails({
     
     );
   }, []);
+  const handleUpdateHasClockType = useCallback((value) => {
+    setGetAllAdsModel((prevModel) => 
+      prevModel.map((model)=>
+        model.key == "hasClockTypeFilter" ? {...model,value} : model
+      )
+    
+    );
+  }, []);
 
  
   if (categoryDetails) {
@@ -860,10 +868,11 @@ export default function AdsCategoryDetails({
         condition: categoryDetails.hasClockTypeFilter,
         component: (
           <StringComponent
-            title="   نوع ساعت"
+            title=" نوع ساعت"
             options={clockType}
             openItems={openItems}
             handleClick={handleClick}
+            handleUpdateGetAllAdsModel={handleUpdateHasClockType}
             key="hasClockTypeFilter"
           />
         ),
