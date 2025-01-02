@@ -505,6 +505,14 @@ export default function AdsCategoryDetails({
     
     );
   }, []);
+  const handleUpdateHasGameconsoleModel = useCallback((value) => {
+    setGetAllAdsModel((prevModel) => 
+      prevModel.map((model)=>
+        model.key == "hasGameConsoleModelFilter" ? {...model,value} : model
+      )
+    
+    );
+  }, []);
 
  
   if (categoryDetails) {
@@ -734,10 +742,11 @@ export default function AdsCategoryDetails({
         condition: categoryDetails.hasGameConsoleModelFilter,
         component: (
           <StringComponent
-            title="        نوع کنسول   "
+            title=" نوع کنسول "
             options={gameConsoleModel}
             openItems={openItems}
             handleClick={handleClick}
+            handleUpdateGetAllAdsModel={handleUpdateHasGameconsoleModel}
             key="hasGameConsoleModelFilter"
           />
         ),
