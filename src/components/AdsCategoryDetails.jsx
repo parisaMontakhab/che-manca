@@ -457,6 +457,14 @@ export default function AdsCategoryDetails({
     
     );
   }, []);
+  const handleUpdateHasColor = useCallback((value) => {
+    setGetAllAdsModel((prevModel) => 
+      prevModel.map((model)=>
+        model.key == "hasColorFilter" ? {...model,value} : model
+      )
+    
+    );
+  }, []);
 
  
   if (categoryDetails) {
@@ -612,6 +620,7 @@ export default function AdsCategoryDetails({
             options={colorFilter}
             openItems={openItems}
             handleClick={handleClick}
+            handleUpdateGetAllAdsModel={handleUpdateHasColor}
             key="hasColorFilter"
           />
         ),
