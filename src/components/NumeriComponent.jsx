@@ -78,6 +78,7 @@ export default function NumeriComponent({
             inputValue={inputValue}
             onInputChange={(event, newInputValue) => {
               setInputValue(newInputValue);
+              
             }}
             renderInput={(params) => (
               <TextField

@@ -407,6 +407,14 @@ export default function AdsCategoryDetails({
     
     );
   }, []);
+  const handleUpdateHasCreatedYear = useCallback((value) => {
+    setGetAllAdsModel((prevModel) => 
+      prevModel.map((model)=>
+        model.key == "hasCreatedYearFilter" ? {...model,value} : model
+      )
+    
+    );
+  }, []);
 
  
   if (categoryDetails) {
@@ -496,6 +504,7 @@ export default function AdsCategoryDetails({
             options={createdYear}
             openItems={openItems}
             handleClick={handleClick}
+            handleUpdateGetAllAdsModel={handleUpdateHasCreatedYear}
             key="hasCreatedYearFilter"
           />
         ),
