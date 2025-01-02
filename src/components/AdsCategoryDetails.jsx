@@ -569,6 +569,14 @@ export default function AdsCategoryDetails({
     
     );
   }, []);
+  const handleUpdateHasJewelryMaterial = useCallback((value) => {
+    setGetAllAdsModel((prevModel) => 
+      prevModel.map((model)=>
+        model.key == "hasJewelryMaterialFilter" ? {...model,value} : model
+      )
+    
+    );
+  }, []);
 
  
   if (categoryDetails) {
@@ -889,7 +897,7 @@ export default function AdsCategoryDetails({
         condition: categoryDetails.hasJewelryTypeFilter,
         component: (
           <StringComponent
-            title="  نوع جواهر و بدلیجات"
+            title=" نوع جواهر و بدلیجات"
             options={jewelryType}
             openItems={openItems}
             handleClick={handleClick}
@@ -902,10 +910,11 @@ export default function AdsCategoryDetails({
         condition: categoryDetails.hasJewelryMaterialFilter,
         component: (
           <StringComponent
-            title="      جنسیت جواهرات و بدلیجات "
+            title=" جنسیت جواهرات و بدلیجات "
             options={jewelryMaterial}
             openItems={openItems}
             handleClick={handleClick}
+            handleUpdateGetAllAdsModel={handleUpdateHasJewelryMaterial}
             key="hasJewelryMaterialFilter"
           />
         ),
