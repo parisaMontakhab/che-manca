@@ -649,10 +649,18 @@ export default function AdsCategoryDetails({
     
     );
   }, []);
-  const handleUpdateBedType = useCallback((value) => {
+  const handleUpdateHasBedType = useCallback((value) => {
     setGetAllAdsModel((prevModel) => 
       prevModel.map((model)=>
         model.key == "hasBedTypeFilter" ? {...model,value} : model
+      )
+    
+    );
+  }, []);
+  const handleUpdateHasNearUniversity = useCallback((value) => {
+    setGetAllAdsModel((prevModel) => 
+      prevModel.map((model)=>
+        model.key == "hasNearUniversityFilter" ? {...model,value} : model
       )
     
     );
@@ -1124,7 +1132,7 @@ export default function AdsCategoryDetails({
             options={bedType}
             openItems={openItems}
             handleClick={handleClick}
-            handleUpdateGetAllAdsModel={handleUpdateBedType}
+            handleUpdateGetAllAdsModel={handleUpdateHasBedType}
             key="hasBedTypeFilter"
           />
         ),
@@ -1133,10 +1141,11 @@ export default function AdsCategoryDetails({
         condition: categoryDetails.hasNearUniversityFilter,
         component: (
           <StringComponent
-            title="    نزدیک دانشگاه "
+            title="  نزدیک دانشگاه "
             options={nearUniversity}
             openItems={openItems}
             handleClick={handleClick}
+            handleUpdateGetAllAdsModel={handleUpdateHasNearUniversity}
             key="hasNearUniversityFilter"
           />
         ),
