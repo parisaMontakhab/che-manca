@@ -633,6 +633,14 @@ export default function AdsCategoryDetails({
     
     );
   }, []);
+  const handleUpdateHasKilogramWeight = useCallback((value) => {
+    setGetAllAdsModel((prevModel) => 
+      prevModel.map((model)=>
+        model.key == "hasKilogramWeightFilter" ? {...model,value} : model
+      )
+    
+    );
+  }, []);
 
  
   if (categoryDetails) {
@@ -1070,10 +1078,11 @@ export default function AdsCategoryDetails({
         condition: categoryDetails.hasKilogramWeightFilter,
         component: (
           <StringComponent
-            title="   میزان وزن"
+            title=" میزان وزن"
             options={kilogramWeight}
             openItems={openItems}
             handleClick={handleClick}
+            handleUpdateGetAllAdsModel={handleUpdateHasKilogramWeight}
             key="hasKilogramWeightFilter"
           />
         ),
