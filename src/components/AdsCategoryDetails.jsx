@@ -367,7 +367,7 @@ export default function AdsCategoryDetails({
   const { data: roomType } = useRoomType();
   const { data: rentJustFor } = useRentJustFor();
   //functions//
-  const hasDepositFilter = useCallback((value) => {
+  const handleUpdateHasDeposit = useCallback((value) => {
     setGetAllAdsModel((prevModel) => 
       prevModel.map((model)=>
         model.key == "hasDepositFilter" ? {...model,value} : model
@@ -387,7 +387,7 @@ export default function AdsCategoryDetails({
             options={depositPriceList}
             openItems={openItems}
             handleClick={handleClick}
-            handleUpdateGetAllAdsModel={hasDepositFilter}
+            handleUpdateGetAllAdsModel={handleUpdateHasDeposit}
             key="hasDepositFilter"
           />
         ),
