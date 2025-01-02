@@ -465,6 +465,14 @@ export default function AdsCategoryDetails({
     
     );
   }, []);
+  const handleUpdateHasDisplayDimention = useCallback((value) => {
+    setGetAllAdsModel((prevModel) => 
+      prevModel.map((model)=>
+        model.key == "hasDisplayDimentionFilter" ? {...model,value} : model
+      )
+    
+    );
+  }, []);
 
  
   if (categoryDetails) {
@@ -633,6 +641,7 @@ export default function AdsCategoryDetails({
             options={displayDimention}
             openItems={openItems}
             handleClick={handleClick}
+            handleUpdateGetAllAdsModel={handleUpdateHasDisplayDimention}
             key="hasDisplayDimentionFilter"
           />
         ),
