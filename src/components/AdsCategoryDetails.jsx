@@ -537,6 +537,14 @@ export default function AdsCategoryDetails({
     
     );
   }, []);
+  const handleUpdateHasSex = useCallback((value) => {
+    setGetAllAdsModel((prevModel) => 
+      prevModel.map((model)=>
+        model.key == "hasSexFilter" ? {...model,value} : model
+      )
+    
+    );
+  }, []);
 
  
   if (categoryDetails) {
@@ -822,6 +830,7 @@ export default function AdsCategoryDetails({
             options={sexFilter}
             openItems={openItems}
             handleClick={handleClick}
+            handleUpdateGetAllAdsModel={handleUpdateHasSex}
             key="hasSexFilter"
           />
         ),
