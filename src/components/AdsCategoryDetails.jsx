@@ -391,6 +391,14 @@ export default function AdsCategoryDetails({
     
     );
   }, []);
+  const handleUpdateHasNumberOfRoom = useCallback((value) => {
+    setGetAllAdsModel((prevModel) => 
+      prevModel.map((model)=>
+        model.key == "hasNumberOfRoomFilter" ? {...model,value} : model
+      )
+    
+    );
+  }, []);
 
  
   if (categoryDetails) {
@@ -442,6 +450,7 @@ export default function AdsCategoryDetails({
             options={numberOfRoom}
             openItems={openItems}
             handleClick={handleClick}
+            handleUpdateGetAllAdsModel={handleUpdateHasNumberOfRoom}
             key="hasNumberOfRoomFilter"
           />
         ),
