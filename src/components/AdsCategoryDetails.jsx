@@ -489,6 +489,14 @@ export default function AdsCategoryDetails({
     
     );
   }, []);
+  const handleUpdateHasModemType = useCallback((value) => {
+    setGetAllAdsModel((prevModel) => 
+      prevModel.map((model)=>
+        model.key == "hasModemOrRouterTypeFilter" ? {...model,value} : model
+      )
+    
+    );
+  }, []);
 
  
   if (categoryDetails) {
@@ -692,10 +700,11 @@ export default function AdsCategoryDetails({
         condition: categoryDetails.hasModemOrRouterTypeFilter,
         component: (
           <StringComponent
-            title="      نوع مودم  "
+            title=" نوع مودم  "
             options={modemType}
             openItems={openItems}
             handleClick={handleClick}
+            handleUpdateGetAllAdsModel={handleUpdateHasModemType}
             key="hasModemOrRouterTypeFilter"
           />
         ),
