@@ -383,6 +383,14 @@ export default function AdsCategoryDetails({
     
     );
   }, []);
+  const handleUpdateHasMeterage = useCallback((value) => {
+    setGetAllAdsModel((prevModel) => 
+      prevModel.map((model)=>
+        model.key == "hasMeterageFilter" ? {...model,value} : model
+      )
+    
+    );
+  }, []);
 
  
   if (categoryDetails) {
@@ -421,6 +429,7 @@ export default function AdsCategoryDetails({
             options={meterageList}
             openItems={openItems}
             handleClick={handleClick}
+            handleUpdateGetAllAdsModel={handleUpdateHasMeterage}
             key="hasMeterageFilter"
           />
         ),
