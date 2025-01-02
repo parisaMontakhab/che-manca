@@ -481,6 +481,14 @@ export default function AdsCategoryDetails({
     
     );
   }, []);
+  const handleUpdateHasProcessorModel = useCallback((value) => {
+    setGetAllAdsModel((prevModel) => 
+      prevModel.map((model)=>
+        model.key == "hasProcessorModelFilter" ? {...model,value} : model
+      )
+    
+    );
+  }, []);
 
  
   if (categoryDetails) {
@@ -671,10 +679,11 @@ export default function AdsCategoryDetails({
         condition: categoryDetails.hasProcessorModelFilter,
         component: (
           <StringComponent
-            title="      مدل پردازنده "
+            title=" مدل پردازنده "
             options={processorModel}
             openItems={openItems}
             handleClick={handleClick}
+            handleUpdateGetAllAdsModel={handleUpdateHasProcessorModel}
             key="hasProcessorModelFilter"
           />
         ),
