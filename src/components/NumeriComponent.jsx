@@ -74,13 +74,13 @@ export default function NumeriComponent({
             value={value}
             onChange={(event, newValue) => {
               setValue(newValue);
-              handleUpdateGetAllAdsModel(newValue);
+              
             }}
             inputValue={inputValue}
             onInputChange={(event, newInputValue) => {
               setInputValue(newInputValue);
               
-              
+              handleUpdateGetAllAdsModel(newInputValue);
             }}
             renderInput={(params) => (
               <TextField

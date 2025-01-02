@@ -20,6 +20,7 @@ export default function StringComponent({
   options,
   openItems,
   handleClick,
+  handleUpdateGetAllAdsModel
 }) {
   const [value, setValue] = useState([]);
   const [inputValue, setInputValue] = useState("");
@@ -29,12 +30,14 @@ export default function StringComponent({
   const handleDeletValue = () => {
     setValue([]);
     setInputValue("");
+    handleUpdateGetAllAdsModel(null)
   };
 
   const handleSelectedId = (newInputValue) => {
     options?.map((option) => {
       if (option.text == newInputValue) {
         setIdesList(option.value);
+        handleUpdateGetAllAdsModel(option.value)
       }
     });
   };
@@ -82,6 +85,7 @@ export default function StringComponent({
             value={value}
             onChange={(event, newValue) => {
               setValue(newValue);
+              
             }}
             inputValue={inputValue}
             onInputChange={(event, newInputValue) => {

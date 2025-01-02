@@ -423,8 +423,16 @@ export default function AdsCategoryDetails({
     
     );
   }, []);
-
- console.log(getAllAdsModel)
+  const handleUpdateHasProductStatus = useCallback((value) => {
+    setGetAllAdsModel((prevModel) => 
+      prevModel.map((model)=>
+        model.key == "hasProductStatusFilter" ? {...model,value} : model
+      )
+    
+    );
+  }, []);
+console.log(getAllAdsModel)
+ 
   if (categoryDetails) {
     const conditions = [
       {
@@ -500,6 +508,7 @@ export default function AdsCategoryDetails({
             options={productStatus}
             openItems={openItems}
             handleClick={handleClick}
+            handleUpdateGetAllAdsModel={handleUpdateHasProductStatus}
             key="hasProductStatusFilter"
           />
         ),
