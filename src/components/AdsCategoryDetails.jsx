@@ -593,6 +593,14 @@ export default function AdsCategoryDetails({
     
     );
   }, []);
+  const handleUpdateHasCarChassisStatus = useCallback((value) => {
+    setGetAllAdsModel((prevModel) => 
+      prevModel.map((model)=>
+        model.key == "hasCarChassisStatusFilter" ? {...model,value} : model
+      )
+    
+    );
+  }, []);
 
  
   if (categoryDetails) {
@@ -965,10 +973,11 @@ export default function AdsCategoryDetails({
         condition: categoryDetails.hasCarChassisStatusFilter,
         component: (
           <StringComponent
-            title="         وضعیت شاسی خودرو "
+            title=" وضعیت شاسی خودرو "
             options={carChassisStatus}
             openItems={openItems}
             handleClick={handleClick}
+            handleUpdateGetAllAdsModel={handleUpdateHasCarChassisStatus}
             key="hasCarChassisStatusFilter"
           />
         ),
