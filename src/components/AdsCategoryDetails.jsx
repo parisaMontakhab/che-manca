@@ -449,6 +449,14 @@ export default function AdsCategoryDetails({
     
     );
   }, []);
+  const handleUpdateHasRamCapacity = useCallback((value) => {
+    setGetAllAdsModel((prevModel) => 
+      prevModel.map((model)=>
+        model.key == "hasRamCapacityFilter" ? {...model,value} : model
+      )
+    
+    );
+  }, []);
 
  
   if (categoryDetails) {
@@ -587,10 +595,11 @@ export default function AdsCategoryDetails({
         condition: categoryDetails.hasRamCapacityFilter,
         component: (
           <StringComponent
-            title="     میزان حافظه Ram"
+            title=" میزان حافظه Ram"
             options={ramCapacity}
             openItems={openItems}
             handleClick={handleClick}
+            handleUpdateGetAllAdsModel={handleUpdateHasRamCapacity}
             key="hasRamCapacityFilter"
           />
         ),
