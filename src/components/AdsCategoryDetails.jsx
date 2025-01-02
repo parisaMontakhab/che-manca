@@ -441,6 +441,14 @@ export default function AdsCategoryDetails({
     
     );
   }, []);
+  const handleUpdateHasInternalMemoryCapacity = useCallback((value) => {
+    setGetAllAdsModel((prevModel) => 
+      prevModel.map((model)=>
+        model.key == "hasInternalMemoryCapacityFilter" ? {...model,value} : model
+      )
+    
+    );
+  }, []);
 
  
   if (categoryDetails) {
@@ -570,6 +578,7 @@ export default function AdsCategoryDetails({
             options={internalMemoryCapacity}
             openItems={openItems}
             handleClick={handleClick}
+            handleUpdateGetAllAdsModel={handleUpdateHasInternalMemoryCapacity}
             key="hasInternalMemoryCapacityFilter"
           />
         ),
