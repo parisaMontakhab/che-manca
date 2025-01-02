@@ -601,6 +601,14 @@ export default function AdsCategoryDetails({
     
     );
   }, []);
+  const handleUpdateHasCarFuel = useCallback((value) => {
+    setGetAllAdsModel((prevModel) => 
+      prevModel.map((model)=>
+        model.key == "hasCarFuelFilter" ? {...model,value} : model
+      )
+    
+    );
+  }, []);
 
  
   if (categoryDetails) {
@@ -986,10 +994,11 @@ export default function AdsCategoryDetails({
         condition: categoryDetails.hasCarFuelFilter,
         component: (
           <StringComponent
-            title="         نوع سوخت خودرو"
+            title=" نوع سوخت خودرو"
             options={carFuel}
             openItems={openItems}
             handleClick={handleClick}
+            handleUpdateGetAllAdsModel={handleUpdateHasCarFuel}
             key="hasCarFuelFilter"
           />
         ),
