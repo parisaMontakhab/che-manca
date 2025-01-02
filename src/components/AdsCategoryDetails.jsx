@@ -649,6 +649,14 @@ export default function AdsCategoryDetails({
     
     );
   }, []);
+  const handleUpdateBedType = useCallback((value) => {
+    setGetAllAdsModel((prevModel) => 
+      prevModel.map((model)=>
+        model.key == "hasBedTypeFilter" ? {...model,value} : model
+      )
+    
+    );
+  }, []);
 
  
   if (categoryDetails) {
@@ -1112,10 +1120,11 @@ export default function AdsCategoryDetails({
         condition: categoryDetails.hasBedTypeFilter,
         component: (
           <StringComponent
-            title="    نوع تخت خواب "
+            title=" نوع تخت خواب "
             options={bedType}
             openItems={openItems}
             handleClick={handleClick}
+            handleUpdateGetAllAdsModel={handleUpdateBedType}
             key="hasBedTypeFilter"
           />
         ),
