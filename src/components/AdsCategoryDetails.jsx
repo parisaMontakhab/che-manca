@@ -609,6 +609,14 @@ export default function AdsCategoryDetails({
     
     );
   }, []);
+  const handleUpdateHasCarGearBoxType = useCallback((value) => {
+    setGetAllAdsModel((prevModel) => 
+      prevModel.map((model)=>
+        model.key == "hasCarGearboxTypeFilter" ? {...model,value} : model
+      )
+    
+    );
+  }, []);
 
  
   if (categoryDetails) {
@@ -1007,10 +1015,11 @@ export default function AdsCategoryDetails({
         condition: categoryDetails.hasCarGearboxTypeFilter,
         component: (
           <StringComponent
-            title="           نوع گیربکس خودرو "
+            title=" نوع گیربکس خودرو "
             options={carGearboxType}
             openItems={openItems}
             handleClick={handleClick}
+            handleUpdateGetAllAdsModel={handleUpdateHasCarGearBoxType}
             key="hasCarGearboxTypeFilter"
           />
         ),
