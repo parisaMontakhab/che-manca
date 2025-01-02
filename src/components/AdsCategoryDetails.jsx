@@ -577,6 +577,14 @@ export default function AdsCategoryDetails({
     
     );
   }, []);
+  const handleUpdateHasCarOperation = useCallback((value) => {
+    setGetAllAdsModel((prevModel) => 
+      prevModel.map((model)=>
+        model.key == "hasCarOperationFilter" ? {...model,value} : model
+      )
+    
+    );
+  }, []);
 
  
   if (categoryDetails) {
@@ -923,10 +931,11 @@ export default function AdsCategoryDetails({
         condition: categoryDetails.hasCarOperationFilter,
         component: (
           <StringComponent
-            title="        کیلومتر خودرو  "
+            title=" کیلومتر خودرو  "
             options={carOperation}
             openItems={openItems}
             handleClick={handleClick}
+            handleUpdateGetAllAdsModel={handleUpdateHasCarOperation}
             key="hasCarOperationFilter"
           />
         ),
