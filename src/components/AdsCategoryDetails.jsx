@@ -617,6 +617,14 @@ export default function AdsCategoryDetails({
     
     );
   }, []);
+  const handleUpdateHasCarEngineStatus = useCallback((value) => {
+    setGetAllAdsModel((prevModel) => 
+      prevModel.map((model)=>
+        model.key == "hasCarEngineStatusFilter" ? {...model,value} : model
+      )
+    
+    );
+  }, []);
 
  
   if (categoryDetails) {
@@ -1032,6 +1040,7 @@ export default function AdsCategoryDetails({
             options={carEngineStatus}
             openItems={openItems}
             handleClick={handleClick}
+            handleUpdateGetAllAdsModel={handleUpdateHasCarEngineStatus}
             key="hasCarEngineStatusFilter"
           />
         ),
