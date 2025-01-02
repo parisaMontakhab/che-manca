@@ -641,6 +641,14 @@ export default function AdsCategoryDetails({
     
     );
   }, []);
+  const handleUpdateHasChooseRoommateGender = useCallback((value) => {
+    setGetAllAdsModel((prevModel) => 
+      prevModel.map((model)=>
+        model.key == "hasChooseRoommateGenderFilter" ? {...model,value} : model
+      )
+    
+    );
+  }, []);
 
  
   if (categoryDetails) {
@@ -1091,10 +1099,11 @@ export default function AdsCategoryDetails({
         condition: categoryDetails.hasChooseRoommateGenderFilter,
         component: (
           <StringComponent
-            title="    جنسیت هم اتاقی "
+            title="جنسیت هم اتاقی "
             options={chooseRoommateGender}
             openItems={openItems}
             handleClick={handleClick}
+            handleUpdateGetAllAdsModel={handleUpdateHasChooseRoommateGender}
             key="hasChooseRoommateGenderFilter"
           />
         ),
