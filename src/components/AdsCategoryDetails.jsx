@@ -375,6 +375,14 @@ export default function AdsCategoryDetails({
     
     );
   }, []);
+  const handleUpdateHasRentPrice = useCallback((value) => {
+    setGetAllAdsModel((prevModel) => 
+      prevModel.map((model)=>
+        model.key == "hasRentPriceFilter" ? {...model,value} : model
+      )
+    
+    );
+  }, []);
 
  
   if (categoryDetails) {
@@ -400,6 +408,7 @@ export default function AdsCategoryDetails({
             options={rentPriceList}
             openItems={openItems}
             handleClick={handleClick}
+            handleUpdateGetAllAdsModel={handleUpdateHasRentPrice}
             key="hasRentPriceFilter"
           />
         ),
