@@ -473,6 +473,14 @@ export default function AdsCategoryDetails({
     
     );
   }, []);
+  const handleUpdateHasOperationSystemName = useCallback((value) => {
+    setGetAllAdsModel((prevModel) => 
+      prevModel.map((model)=>
+        model.key == "hasOperationSystemNameFilter" ? {...model,value} : model
+      )
+    
+    );
+  }, []);
 
  
   if (categoryDetails) {
@@ -637,7 +645,7 @@ export default function AdsCategoryDetails({
         condition: categoryDetails.hasDisplayDimentionFilter,
         component: (
           <StringComponent
-            title="  ابعاد صفحه نمایش "
+            title=" ابعاد صفحه نمایش "
             options={displayDimention}
             openItems={openItems}
             handleClick={handleClick}
@@ -650,10 +658,11 @@ export default function AdsCategoryDetails({
         condition: categoryDetails.hasOperationSystemNameFilter,
         component: (
           <StringComponent
-            title="    نوع سیستم عامل "
+            title=" نوع سیستم عامل "
             options={operationSystemName}
             openItems={openItems}
             handleClick={handleClick}
+            handleUpdateGetAllAdsModel={handleUpdateHasOperationSystemName}
             key="hasOperationSystemNameFilter"
           />
         ),
