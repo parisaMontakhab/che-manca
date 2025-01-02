@@ -625,6 +625,14 @@ export default function AdsCategoryDetails({
     
     );
   }, []);
+  const handleUpdateHasCarInsuranceStatus = useCallback((value) => {
+    setGetAllAdsModel((prevModel) => 
+      prevModel.map((model)=>
+        model.key == "hasCarInsuranceStatusFilter" ? {...model,value} : model
+      )
+    
+    );
+  }, []);
 
  
   if (categoryDetails) {
@@ -1049,10 +1057,11 @@ export default function AdsCategoryDetails({
         condition: categoryDetails.hasCarInsuranceStatusFilter,
         component: (
           <StringComponent
-            title="   وضعیت بیمه خودرو "
+            title=" وضعیت بیمه خودرو "
             options={carInsuranceStatus}
             openItems={openItems}
             handleClick={handleClick}
+            handleUpdateGetAllAdsModel={handleUpdateHasCarInsuranceStatus}
             key="hasCarInsuranceStatusFilter"
           />
         ),
