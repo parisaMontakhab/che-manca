@@ -415,6 +415,14 @@ export default function AdsCategoryDetails({
     
     );
   }, []);
+  const handleUpdateHasNumberOfsimCart = useCallback((value) => {
+    setGetAllAdsModel((prevModel) => 
+      prevModel.map((model)=>
+        model.key == "hasNumberOfSimCartFilter" ? {...model,value} : model
+      )
+    
+    );
+  }, []);
 
  
   if (categoryDetails) {
@@ -529,6 +537,7 @@ export default function AdsCategoryDetails({
             options={numberOfSimCart}
             openItems={openItems}
             handleClick={handleClick}
+            handleUpdateGetAllAdsModel={handleUpdateHasNumberOfsimCart}
             key="hasNumberOfSimCartFilter"
           />
         ),
