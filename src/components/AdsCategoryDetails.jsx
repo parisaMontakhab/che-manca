@@ -399,6 +399,14 @@ export default function AdsCategoryDetails({
     
     );
   }, []);
+  const handleUpdateHasNumberOfUnitsPerFloor = useCallback((value) => {
+    setGetAllAdsModel((prevModel) => 
+      prevModel.map((model)=>
+        model.key == "hasNumberOfUnitsPerFloorFilter" ? {...model,value} : model
+      )
+    
+    );
+  }, []);
 
  
   if (categoryDetails) {
@@ -463,6 +471,7 @@ export default function AdsCategoryDetails({
             options={numberOfUnitsPerFloor}
             openItems={openItems}
             handleClick={handleClick}
+            handleUpdateGetAllAdsModel={handleUpdateHasNumberOfUnitsPerFloor}
             key="hasNumberOfUnitsPerFloorFilter"
           />
         ),
