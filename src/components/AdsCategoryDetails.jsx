@@ -665,6 +665,14 @@ export default function AdsCategoryDetails({
     
     );
   }, []);
+  const handleUpdateHasRoomType = useCallback((value) => {
+    setGetAllAdsModel((prevModel) => 
+      prevModel.map((model)=>
+        model.key == "hasRoomTypeFilter" ? {...model,value} : model
+      )
+    
+    );
+  }, []);
 
  
   if (categoryDetails) {
@@ -1154,10 +1162,11 @@ export default function AdsCategoryDetails({
         condition: categoryDetails.hasRoomTypeFilter,
         component: (
           <StringComponent
-            title="    نوع اتاق خواب "
+            title=" نوع اتاق خواب "
             options={roomType}
             openItems={openItems}
             handleClick={handleClick}
+            handleUpdateGetAllAdsModel={handleUpdateHasRoomType}
             key="hasRoomTypeFilter"
           />
         ),
