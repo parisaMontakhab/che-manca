@@ -497,6 +497,14 @@ export default function AdsCategoryDetails({
     
     );
   }, []);
+  const handleUpdateHasJoystickType = useCallback((value) => {
+    setGetAllAdsModel((prevModel) => 
+      prevModel.map((model)=>
+        model.key == "hasJoystickTypeFilter" ? {...model,value} : model
+      )
+    
+    );
+  }, []);
 
  
   if (categoryDetails) {
@@ -700,7 +708,7 @@ export default function AdsCategoryDetails({
         condition: categoryDetails.hasModemOrRouterTypeFilter,
         component: (
           <StringComponent
-            title=" نوع مودم  "
+            title=" نوع مودم "
             options={modemType}
             openItems={openItems}
             handleClick={handleClick}
@@ -713,10 +721,11 @@ export default function AdsCategoryDetails({
         condition: categoryDetails.hasJoystickTypeFilter,
         component: (
           <StringComponent
-            title="      نوع دسته بازی   "
+            title=" نوع دسته بازی "
             options={joystickType}
             openItems={openItems}
             handleClick={handleClick}
+            handleUpdateGetAllAdsModel={handleUpdateHasJoystickType}
             key="hasJoystickTypeFilter"
           />
         ),
