@@ -818,6 +818,14 @@ export default function AdsCategoryDetails({
     
     );
   }, []);
+  const handleUpdateHasSeparable = useCallback((value) => {
+    setGetAllAdsModel((prevModel) => 
+      prevModel.map((model)=>
+        model.key == "hasSeparableFilter" ? {...model,value} : model
+      )
+    
+    );
+  }, []);
 
 
  
@@ -1541,6 +1549,7 @@ export default function AdsCategoryDetails({
             title=" بار قابل تفکیک  "
             openItems={openItems}
             handleClick={handleClick}
+            handleUpdateGetAllAdsModel={handleUpdateHasSeparable}
             key="hasSeparableFilter"
           />
         ),
