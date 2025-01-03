@@ -770,6 +770,14 @@ export default function AdsCategoryDetails({
     
     );
   }, []);
+  const handleUpdateHasChargable = useCallback((value) => {
+    setGetAllAdsModel((prevModel) => 
+      prevModel.map((model)=>
+        model.key == "hasChargableFilter" ? {...model,value} : model
+      )
+    
+    );
+  }, []);
 
 
  
@@ -1418,9 +1426,10 @@ export default function AdsCategoryDetails({
         condition: categoryDetails.hasChargableFilter,
         component: (
           <ToggleComponent
-            title="      شارژ  "
+            title=" شارژ  "
             openItems={openItems}
             handleClick={handleClick}
+            handleUpdateGetAllAdsModel={handleUpdateHasChargable}
             key="hasChargableFilter"
           />
         ),
