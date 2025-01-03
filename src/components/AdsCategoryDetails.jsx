@@ -834,6 +834,14 @@ export default function AdsCategoryDetails({
     
     );
   }, []);
+  const handleUpdateDirectFlight = useCallback((value) => {
+    setGetAllAdsModel((prevModel) => 
+      prevModel.map((model)=>
+        model.key == "hasDirectFlightFilter" ? {...model,value} : model
+      )
+    
+    );
+  }, []);
 
 
  
@@ -1581,6 +1589,7 @@ export default function AdsCategoryDetails({
             title="  پرواز مستقیم  "
             openItems={openItems}
             handleClick={handleClick}
+            handleUpdateGetAllAdsModel={handleUpdateDirectFlight}
             key="hasDirectFlightFilter"
           />
         ),
