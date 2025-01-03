@@ -714,6 +714,22 @@ export default function AdsCategoryDetails({
     
     );
   }, []);
+  const handleUpdateHasCooling = useCallback((value) => {
+    setGetAllAdsModel((prevModel) => 
+      prevModel.map((model)=>
+        model.key == "hasCoolingFilter" ? {...model,value} : model
+      )
+    
+    );
+  }, []);
+  const handleUpdateHasWarming = useCallback((value) => {
+    setGetAllAdsModel((prevModel) => 
+      prevModel.map((model)=>
+        model.key == "hasWarmingFilter" ? {...model,value} : model
+      )
+    
+    );
+  }, []);
 
 
  
@@ -1281,6 +1297,7 @@ export default function AdsCategoryDetails({
             title="  سرمایشی  "
             openItems={openItems}
             handleClick={handleClick}
+            handleUpdateGetAllAdsModel={handleUpdateHasCooling}
             key="hasCoolingFilter"
           />
         ),
@@ -1292,6 +1309,7 @@ export default function AdsCategoryDetails({
             title="  گرمایشی  "
             openItems={openItems}
             handleClick={handleClick}
+            handleUpdateGetAllAdsModel={handleUpdateHasWarming}
             key="hasWarmingFilter"
           />
         ),
