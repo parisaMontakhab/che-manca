@@ -786,6 +786,14 @@ export default function AdsCategoryDetails({
     
     );
   }, []);
+  const handleUpdateHasHDMIPort = useCallback((value) => {
+    setGetAllAdsModel((prevModel) => 
+      prevModel.map((model)=>
+        model.key == "hasHDMIPortFilter" ? {...model,value} : model
+      )
+    
+    );
+  }, []);
 
 
  
@@ -1461,6 +1469,7 @@ export default function AdsCategoryDetails({
             title="  پورت HDMI "
             openItems={openItems}
             handleClick={handleClick}
+            handleUpdateGetAllAdsModel={handleUpdateHasHDMIPort}
             key="hasHDMIPortFilter"
           />
         ),
