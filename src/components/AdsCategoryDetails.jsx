@@ -802,6 +802,14 @@ export default function AdsCategoryDetails({
     
     );
   }, []);
+  const handleUpdateHasLANPort = useCallback((value) => {
+    setGetAllAdsModel((prevModel) => 
+      prevModel.map((model)=>
+        model.key == "hasLANPortFilter" ? {...model,value} : model
+      )
+    
+    );
+  }, []);
 
 
  
@@ -1501,6 +1509,7 @@ export default function AdsCategoryDetails({
             title="  پورت LAN "
             openItems={openItems}
             handleClick={handleClick}
+            handleUpdateGetAllAdsModel={handleUpdateHasLANPort}
             key="hasLANPortFilter"
           />
         ),
