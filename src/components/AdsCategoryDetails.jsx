@@ -866,6 +866,14 @@ export default function AdsCategoryDetails({
     
     );
   }, []);
+  const handleUpdateHasObligationNotBeAtHome = useCallback((value) => {
+    setGetAllAdsModel((prevModel) => 
+      prevModel.map((model)=>
+        model.key == "hasObligationNotBeAtHomeFilter" ? {...model,value} : model
+      )
+    
+    );
+  }, []);
 
 
  
@@ -1661,6 +1669,7 @@ export default function AdsCategoryDetails({
             title=" عدم حضور در منزل  "
             openItems={openItems}
             handleClick={handleClick}
+            handleUpdateGetAllAdsModel={handleUpdateHasObligationNotBeAtHome}
             key="hasObligationNotBeAtHomeFilter"
           />
         ),
