@@ -891,6 +891,16 @@ export default function AdsCategoryDetails({
     
     );
   }, []);
+  //on datePick component"
+  const handleUpdateDepartureDate = useCallback((value) => {
+    setGetAllAdsModel((prevModel) => 
+      prevModel.map((model)=>
+        model.key == "hasDepartureDateFilter" ? {...model,value} : model
+      )
+    
+    );
+  }, []);
+
 
 
  
@@ -1722,6 +1732,7 @@ export default function AdsCategoryDetails({
             title=" تاریخ پرواز "
             openItems={openItems}
             handleClick={handleClick}
+            handleUpdateGetAllAdsModel={handleUpdateDepartureDate}
             key="hasDepartureDateFilter"
           />
         ),
