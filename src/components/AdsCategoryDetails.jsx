@@ -738,6 +738,14 @@ export default function AdsCategoryDetails({
     
     );
   }, []);
+  const handleUpdateHasBidel = useCallback((value) => {
+    setGetAllAdsModel((prevModel) => 
+      prevModel.map((model)=>
+        model.key == "hasBidelFilter" ? {...model,value} : model
+      )
+    
+    );
+  }, []);
 
 
  
@@ -1341,6 +1349,7 @@ export default function AdsCategoryDetails({
             title="   بیده  "
             openItems={openItems}
             handleClick={handleClick}
+            handleUpdateGetAllAdsModel={handleUpdateHasBidel}
             key="hasBidelFilter"
           />
         ),
