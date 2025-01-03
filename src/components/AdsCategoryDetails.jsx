@@ -706,6 +706,14 @@ export default function AdsCategoryDetails({
     
     );
   }, []);
+  const handleUpdateHasRenovated = useCallback((value) => {
+    setGetAllAdsModel((prevModel) => 
+      prevModel.map((model)=>
+        model.key == "hasRenovatedFilter" ? {...model,value} : model
+      )
+    
+    );
+  }, []);
 
 
  
@@ -1246,7 +1254,7 @@ export default function AdsCategoryDetails({
         condition: categoryDetails.hasWarehouseFilter,
         component: (
           <ToggleComponent
-            title="  انباری "
+            title="  انباری"
             openItems={openItems}
             handleClick={handleClick}
             handleUpdateGetAllAdsModel={handleUpdataHasWarehouse}
@@ -1258,9 +1266,10 @@ export default function AdsCategoryDetails({
         condition: categoryDetails.hasRenovatedFilter,
         component: (
           <ToggleComponent
-            title="  بازسازی  "
+            title="  بازسازی"
             openItems={openItems}
             handleClick={handleClick}
+            handleUpdateGetAllAdsModel={handleUpdateHasRenovated}
             key="hasRenovatedFilter"
           />
         ),
