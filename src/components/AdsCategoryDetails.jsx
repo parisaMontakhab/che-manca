@@ -778,6 +778,14 @@ export default function AdsCategoryDetails({
     
     );
   }, []);
+  const handleUpdateHasTouchableDisplay = useCallback((value) => {
+    setGetAllAdsModel((prevModel) => 
+      prevModel.map((model)=>
+        model.key == "hasTouchableDisplayFilter" ? {...model,value} : model
+      )
+    
+    );
+  }, []);
 
 
  
@@ -1438,9 +1446,10 @@ export default function AdsCategoryDetails({
         condition: categoryDetails.hasTouchableDisplayFilter,
         component: (
           <ToggleComponent
-            title="      صفحه نمایشگر لمسی  "
+            title="  صفحه نمایشگر لمسی  "
             openItems={openItems}
             handleClick={handleClick}
+            handleUpdateGetAllAdsModel={handleUpdateHasTouchableDisplay}
             key="hasTouchableDisplayFilter"
           />
         ),
