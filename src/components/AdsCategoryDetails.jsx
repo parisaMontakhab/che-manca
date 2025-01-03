@@ -698,6 +698,14 @@ export default function AdsCategoryDetails({
     
     );
   }, []);
+  const handleUpdataHasWarehouse = useCallback((value) => {
+    setGetAllAdsModel((prevModel) => 
+      prevModel.map((model)=>
+        model.key == "hasWarehouseFilter" ? {...model,value} : model
+      )
+    
+    );
+  }, []);
 
 
  
@@ -1241,6 +1249,7 @@ export default function AdsCategoryDetails({
             title="  انباری "
             openItems={openItems}
             handleClick={handleClick}
+            handleUpdateGetAllAdsModel={handleUpdataHasWarehouse}
             key="hasWarehouseFilter"
           />
         ),
