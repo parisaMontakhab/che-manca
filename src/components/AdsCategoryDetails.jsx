@@ -826,6 +826,14 @@ export default function AdsCategoryDetails({
     
     );
   }, []);
+  const handleUpdateHasIncludePackageOfDocuments = useCallback((value) => {
+    setGetAllAdsModel((prevModel) => 
+      prevModel.map((model)=>
+        model.key == "hasIncludePackageOfDocumentsFilter" ? {...model,value} : model
+      )
+    
+    );
+  }, []);
 
 
  
@@ -1561,6 +1569,7 @@ export default function AdsCategoryDetails({
             title=" قبول مدارک  "
             openItems={openItems}
             handleClick={handleClick}
+            handleUpdateGetAllAdsModel={handleUpdateHasIncludePackageOfDocuments}
             key="hasIncludePackageOfDocumentsFilter"
           />
         ),
