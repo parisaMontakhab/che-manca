@@ -369,541 +369,486 @@ export default function AdsCategoryDetails({
   //functions//
   //on numeric component//
   const handleUpdateHasDeposit = useCallback((value) => {
-    setGetAllAdsModel((prevModel) => 
-      prevModel.map((model)=>
-        model.key == "hasDepositFilter" ? {...model,value} : model
+    setGetAllAdsModel((prevModel) =>
+      prevModel.map((model) =>
+        model.key == "hasDepositFilter" ? { ...model, value } : model
       )
-    
     );
   }, []);
   const handleUpdateHasRentPrice = useCallback((value) => {
-    setGetAllAdsModel((prevModel) => 
-      prevModel.map((model)=>
-        model.key == "hasRentPriceFilter" ? {...model,value} : model
+    setGetAllAdsModel((prevModel) =>
+      prevModel.map((model) =>
+        model.key == "hasRentPriceFilter" ? { ...model, value } : model
       )
-    
     );
   }, []);
   const handleUpdateHasMeterage = useCallback((value) => {
-    setGetAllAdsModel((prevModel) => 
-      prevModel.map((model)=>
-        model.key == "hasMeterageFilter" ? {...model,value} : model
+    setGetAllAdsModel((prevModel) =>
+      prevModel.map((model) =>
+        model.key == "hasMeterageFilter" ? { ...model, value } : model
       )
-    
     );
   }, []);
   const handleUpdateHasNumberOfRoom = useCallback((value) => {
-    setGetAllAdsModel((prevModel) => 
-      prevModel.map((model)=>
-        model.key == "hasNumberOfRoomFilter" ? {...model,value} : model
+    setGetAllAdsModel((prevModel) =>
+      prevModel.map((model) =>
+        model.key == "hasNumberOfRoomFilter" ? { ...model, value } : model
       )
-    
     );
   }, []);
   const handleUpdateHasNumberOfUnitsPerFloor = useCallback((value) => {
-    setGetAllAdsModel((prevModel) => 
-      prevModel.map((model)=>
-        model.key == "hasNumberOfUnitsPerFloorFilter" ? {...model,value} : model
+    setGetAllAdsModel((prevModel) =>
+      prevModel.map((model) =>
+        model.key == "hasNumberOfUnitsPerFloorFilter"
+          ? { ...model, value }
+          : model
       )
-    
     );
   }, []);
   const handleUpdateHasCreatedYear = useCallback((value) => {
-    setGetAllAdsModel((prevModel) => 
-      prevModel.map((model)=>
-        model.key == "hasCreatedYearFilter" ? {...model,value} : model
+    setGetAllAdsModel((prevModel) =>
+      prevModel.map((model) =>
+        model.key == "hasCreatedYearFilter" ? { ...model, value } : model
       )
-    
     );
   }, []);
   const handleUpdateHasNumberOfsimCart = useCallback((value) => {
-    setGetAllAdsModel((prevModel) => 
-      prevModel.map((model)=>
-        model.key == "hasNumberOfSimCartFilter" ? {...model,value} : model
+    setGetAllAdsModel((prevModel) =>
+      prevModel.map((model) =>
+        model.key == "hasNumberOfSimCartFilter" ? { ...model, value } : model
       )
-    
     );
   }, []);
   //on string component//
   const handleUpdateHasProductStatus = useCallback((value) => {
-    setGetAllAdsModel((prevModel) => 
-      prevModel.map((model)=>
-        model.key == "hasProductStatusFilter" ? {...model,value} : model
+    setGetAllAdsModel((prevModel) =>
+      prevModel.map((model) =>
+        model.key == "hasProductStatusFilter" ? { ...model, value } : model
       )
-    
     );
   }, []);
   const handleUpdateHasBrandName = useCallback((value) => {
-    setGetAllAdsModel((prevModel) => 
-      prevModel.map((model)=>
-        model.key == "hasBrandNameFilter" ? {...model,value} : model
+    setGetAllAdsModel((prevModel) =>
+      prevModel.map((model) =>
+        model.key == "hasBrandNameFilter" ? { ...model, value } : model
       )
-    
     );
   }, []);
   const handleUpdateHasInternalMemoryCapacity = useCallback((value) => {
-    setGetAllAdsModel((prevModel) => 
-      prevModel.map((model)=>
-        model.key == "hasInternalMemoryCapacityFilter" ? {...model,value} : model
+    setGetAllAdsModel((prevModel) =>
+      prevModel.map((model) =>
+        model.key == "hasInternalMemoryCapacityFilter"
+          ? { ...model, value }
+          : model
       )
-    
     );
   }, []);
   const handleUpdateHasRamCapacity = useCallback((value) => {
-    setGetAllAdsModel((prevModel) => 
-      prevModel.map((model)=>
-        model.key == "hasRamCapacityFilter" ? {...model,value} : model
+    setGetAllAdsModel((prevModel) =>
+      prevModel.map((model) =>
+        model.key == "hasRamCapacityFilter" ? { ...model, value } : model
       )
-    
     );
   }, []);
   const handleUpdateHasColor = useCallback((value) => {
-    setGetAllAdsModel((prevModel) => 
-      prevModel.map((model)=>
-        model.key == "hasColorFilter" ? {...model,value} : model
+    setGetAllAdsModel((prevModel) =>
+      prevModel.map((model) =>
+        model.key == "hasColorFilter" ? { ...model, value } : model
       )
-    
     );
   }, []);
   const handleUpdateHasDisplayDimention = useCallback((value) => {
-    setGetAllAdsModel((prevModel) => 
-      prevModel.map((model)=>
-        model.key == "hasDisplayDimentionFilter" ? {...model,value} : model
+    setGetAllAdsModel((prevModel) =>
+      prevModel.map((model) =>
+        model.key == "hasDisplayDimentionFilter" ? { ...model, value } : model
       )
-    
     );
   }, []);
   const handleUpdateHasOperationSystemName = useCallback((value) => {
-    setGetAllAdsModel((prevModel) => 
-      prevModel.map((model)=>
-        model.key == "hasOperationSystemNameFilter" ? {...model,value} : model
+    setGetAllAdsModel((prevModel) =>
+      prevModel.map((model) =>
+        model.key == "hasOperationSystemNameFilter"
+          ? { ...model, value }
+          : model
       )
-    
     );
   }, []);
   const handleUpdateHasProcessorModel = useCallback((value) => {
-    setGetAllAdsModel((prevModel) => 
-      prevModel.map((model)=>
-        model.key == "hasProcessorModelFilter" ? {...model,value} : model
+    setGetAllAdsModel((prevModel) =>
+      prevModel.map((model) =>
+        model.key == "hasProcessorModelFilter" ? { ...model, value } : model
       )
-    
     );
   }, []);
   const handleUpdateHasModemType = useCallback((value) => {
-    setGetAllAdsModel((prevModel) => 
-      prevModel.map((model)=>
-        model.key == "hasModemOrRouterTypeFilter" ? {...model,value} : model
+    setGetAllAdsModel((prevModel) =>
+      prevModel.map((model) =>
+        model.key == "hasModemOrRouterTypeFilter" ? { ...model, value } : model
       )
-    
     );
   }, []);
   const handleUpdateHasJoystickType = useCallback((value) => {
-    setGetAllAdsModel((prevModel) => 
-      prevModel.map((model)=>
-        model.key == "hasJoystickTypeFilter" ? {...model,value} : model
+    setGetAllAdsModel((prevModel) =>
+      prevModel.map((model) =>
+        model.key == "hasJoystickTypeFilter" ? { ...model, value } : model
       )
-    
     );
   }, []);
   const handleUpdateHasGameConsoleModel = useCallback((value) => {
-    setGetAllAdsModel((prevModel) => 
-      prevModel.map((model)=>
-        model.key == "hasGameConsoleModelFilter" ? {...model,value} : model
+    setGetAllAdsModel((prevModel) =>
+      prevModel.map((model) =>
+        model.key == "hasGameConsoleModelFilter" ? { ...model, value } : model
       )
-    
     );
   }, []);
   const handleUpdateHasTexture = useCallback((value) => {
-    setGetAllAdsModel((prevModel) => 
-      prevModel.map((model)=>
-        model.key == "hasTextureFilter" ? {...model,value} : model
+    setGetAllAdsModel((prevModel) =>
+      prevModel.map((model) =>
+        model.key == "hasTextureFilter" ? { ...model, value } : model
       )
-    
     );
   }, []);
   const handleUpdateHasDimention = useCallback((value) => {
-    setGetAllAdsModel((prevModel) => 
-      prevModel.map((model)=>
-        model.key == "hasDimentionFilter" ? {...model,value} : model
+    setGetAllAdsModel((prevModel) =>
+      prevModel.map((model) =>
+        model.key == "hasDimentionFilter" ? { ...model, value } : model
       )
-    
     );
   }, []);
   const handleUpdateHasConsumption = useCallback((value) => {
-    setGetAllAdsModel((prevModel) => 
-      prevModel.map((model)=>
-        model.key == "hasConsumptionFilter" ? {...model,value} : model
+    setGetAllAdsModel((prevModel) =>
+      prevModel.map((model) =>
+        model.key == "hasConsumptionFilter" ? { ...model, value } : model
       )
-    
     );
   }, []);
   const handleUpdateHasSex = useCallback((value) => {
-    setGetAllAdsModel((prevModel) => 
-      prevModel.map((model)=>
-        model.key == "hasSexFilter" ? {...model,value} : model
+    setGetAllAdsModel((prevModel) =>
+      prevModel.map((model) =>
+        model.key == "hasSexFilter" ? { ...model, value } : model
       )
-    
     );
   }, []);
   const handleUpdateHasClothType = useCallback((value) => {
-    setGetAllAdsModel((prevModel) => 
-      prevModel.map((model)=>
-        model.key == "hasClothTypeFilter" ? {...model,value} : model
+    setGetAllAdsModel((prevModel) =>
+      prevModel.map((model) =>
+        model.key == "hasClothTypeFilter" ? { ...model, value } : model
       )
-    
     );
   }, []);
   const handleUpdateHasClockType = useCallback((value) => {
-    setGetAllAdsModel((prevModel) => 
-      prevModel.map((model)=>
-        model.key == "hasClockTypeFilter" ? {...model,value} : model
+    setGetAllAdsModel((prevModel) =>
+      prevModel.map((model) =>
+        model.key == "hasClockTypeFilter" ? { ...model, value } : model
       )
-    
     );
   }, []);
   const handleUpdateHasJewelryType = useCallback((value) => {
-    setGetAllAdsModel((prevModel) => 
-      prevModel.map((model)=>
-        model.key == "hasJewelryTypeFilter" ? {...model,value} : model
+    setGetAllAdsModel((prevModel) =>
+      prevModel.map((model) =>
+        model.key == "hasJewelryTypeFilter" ? { ...model, value } : model
       )
-    
     );
   }, []);
   const handleUpdateHasJewelryMaterial = useCallback((value) => {
-    setGetAllAdsModel((prevModel) => 
-      prevModel.map((model)=>
-        model.key == "hasJewelryMaterialFilter" ? {...model,value} : model
+    setGetAllAdsModel((prevModel) =>
+      prevModel.map((model) =>
+        model.key == "hasJewelryMaterialFilter" ? { ...model, value } : model
       )
-    
     );
   }, []);
   const handleUpdateHasCarOperation = useCallback((value) => {
-    setGetAllAdsModel((prevModel) => 
-      prevModel.map((model)=>
-        model.key == "hasCarOperationFilter" ? {...model,value} : model
+    setGetAllAdsModel((prevModel) =>
+      prevModel.map((model) =>
+        model.key == "hasCarOperationFilter" ? { ...model, value } : model
       )
-    
     );
   }, []);
   const handleUpdateHasCarBodyStatus = useCallback((value) => {
-    setGetAllAdsModel((prevModel) => 
-      prevModel.map((model)=>
-        model.key == "hasCarBodyStatusFilter" ? {...model,value} : model
+    setGetAllAdsModel((prevModel) =>
+      prevModel.map((model) =>
+        model.key == "hasCarBodyStatusFilter" ? { ...model, value } : model
       )
-    
     );
   }, []);
   const handleUpdateHasCarChassisStatus = useCallback((value) => {
-    setGetAllAdsModel((prevModel) => 
-      prevModel.map((model)=>
-        model.key == "hasCarChassisStatusFilter" ? {...model,value} : model
+    setGetAllAdsModel((prevModel) =>
+      prevModel.map((model) =>
+        model.key == "hasCarChassisStatusFilter" ? { ...model, value } : model
       )
-    
     );
   }, []);
   const handleUpdateHasCarFuel = useCallback((value) => {
-    setGetAllAdsModel((prevModel) => 
-      prevModel.map((model)=>
-        model.key == "hasCarFuelFilter" ? {...model,value} : model
+    setGetAllAdsModel((prevModel) =>
+      prevModel.map((model) =>
+        model.key == "hasCarFuelFilter" ? { ...model, value } : model
       )
-    
     );
   }, []);
   const handleUpdateHasCarGearBoxType = useCallback((value) => {
-    setGetAllAdsModel((prevModel) => 
-      prevModel.map((model)=>
-        model.key == "hasCarGearboxTypeFilter" ? {...model,value} : model
+    setGetAllAdsModel((prevModel) =>
+      prevModel.map((model) =>
+        model.key == "hasCarGearboxTypeFilter" ? { ...model, value } : model
       )
-    
     );
   }, []);
   const handleUpdateHasCarEngineStatus = useCallback((value) => {
-    setGetAllAdsModel((prevModel) => 
-      prevModel.map((model)=>
-        model.key == "hasCarEngineStatusFilter" ? {...model,value} : model
+    setGetAllAdsModel((prevModel) =>
+      prevModel.map((model) =>
+        model.key == "hasCarEngineStatusFilter" ? { ...model, value } : model
       )
-    
     );
   }, []);
   const handleUpdateHasCarInsuranceStatus = useCallback((value) => {
-    setGetAllAdsModel((prevModel) => 
-      prevModel.map((model)=>
-        model.key == "hasCarInsuranceStatusFilter" ? {...model,value} : model
+    setGetAllAdsModel((prevModel) =>
+      prevModel.map((model) =>
+        model.key == "hasCarInsuranceStatusFilter" ? { ...model, value } : model
       )
-    
     );
   }, []);
   const handleUpdateHasKilogramWeight = useCallback((value) => {
-    setGetAllAdsModel((prevModel) => 
-      prevModel.map((model)=>
-        model.key == "hasKilogramWeightFilter" ? {...model,value} : model
+    setGetAllAdsModel((prevModel) =>
+      prevModel.map((model) =>
+        model.key == "hasKilogramWeightFilter" ? { ...model, value } : model
       )
-    
     );
   }, []);
   const handleUpdateHasChooseRoommateGender = useCallback((value) => {
-    setGetAllAdsModel((prevModel) => 
-      prevModel.map((model)=>
-        model.key == "hasChooseRoommateGenderFilter" ? {...model,value} : model
+    setGetAllAdsModel((prevModel) =>
+      prevModel.map((model) =>
+        model.key == "hasChooseRoommateGenderFilter"
+          ? { ...model, value }
+          : model
       )
-    
     );
   }, []);
   const handleUpdateHasBedType = useCallback((value) => {
-    setGetAllAdsModel((prevModel) => 
-      prevModel.map((model)=>
-        model.key == "hasBedTypeFilter" ? {...model,value} : model
+    setGetAllAdsModel((prevModel) =>
+      prevModel.map((model) =>
+        model.key == "hasBedTypeFilter" ? { ...model, value } : model
       )
-    
     );
   }, []);
   const handleUpdateHasNearUniversity = useCallback((value) => {
-    setGetAllAdsModel((prevModel) => 
-      prevModel.map((model)=>
-        model.key == "hasNearUniversityFilter" ? {...model,value} : model
+    setGetAllAdsModel((prevModel) =>
+      prevModel.map((model) =>
+        model.key == "hasNearUniversityFilter" ? { ...model, value } : model
       )
-    
     );
   }, []);
   const handleUpdateHasRoomType = useCallback((value) => {
-    setGetAllAdsModel((prevModel) => 
-      prevModel.map((model)=>
-        model.key == "hasRoomTypeFilter" ? {...model,value} : model
+    setGetAllAdsModel((prevModel) =>
+      prevModel.map((model) =>
+        model.key == "hasRoomTypeFilter" ? { ...model, value } : model
       )
-    
     );
   }, []);
   const handleUpdateHasRentJustFor = useCallback((value) => {
-    setGetAllAdsModel((prevModel) => 
-      prevModel.map((model)=>
-        model.key == "hasRentJustForFilter" ? {...model,value} : model
+    setGetAllAdsModel((prevModel) =>
+      prevModel.map((model) =>
+        model.key == "hasRentJustForFilter" ? { ...model, value } : model
       )
-    
     );
   }, []);
   //on togglecomponent//
   const handleUpdtaeHasElevator = useCallback((value) => {
-    setGetAllAdsModel((prevModel) => 
-      prevModel.map((model)=>
-        model.key == "hasElevatorFilter" ? {...model,value} : model
+    setGetAllAdsModel((prevModel) =>
+      prevModel.map((model) =>
+        model.key == "hasElevatorFilter" ? { ...model, value } : model
       )
-    
     );
   }, []);
   const handleUpdateHasParking = useCallback((value) => {
-    setGetAllAdsModel((prevModel) => 
-      prevModel.map((model)=>
-        model.key == "hasParkingFilter" ? {...model,value} : model
+    setGetAllAdsModel((prevModel) =>
+      prevModel.map((model) =>
+        model.key == "hasParkingFilter" ? { ...model, value } : model
       )
-    
     );
   }, []);
   const handleUpdataHasWarehouse = useCallback((value) => {
-    setGetAllAdsModel((prevModel) => 
-      prevModel.map((model)=>
-        model.key == "hasWarehouseFilter" ? {...model,value} : model
+    setGetAllAdsModel((prevModel) =>
+      prevModel.map((model) =>
+        model.key == "hasWarehouseFilter" ? { ...model, value } : model
       )
-    
     );
   }, []);
   const handleUpdateHasRenovated = useCallback((value) => {
-    setGetAllAdsModel((prevModel) => 
-      prevModel.map((model)=>
-        model.key == "hasRenovatedFilter" ? {...model,value} : model
+    setGetAllAdsModel((prevModel) =>
+      prevModel.map((model) =>
+        model.key == "hasRenovatedFilter" ? { ...model, value } : model
       )
-    
     );
   }, []);
   const handleUpdateHasCooling = useCallback((value) => {
-    setGetAllAdsModel((prevModel) => 
-      prevModel.map((model)=>
-        model.key == "hasCoolingFilter" ? {...model,value} : model
+    setGetAllAdsModel((prevModel) =>
+      prevModel.map((model) =>
+        model.key == "hasCoolingFilter" ? { ...model, value } : model
       )
-    
     );
   }, []);
   const handleUpdateHasWarming = useCallback((value) => {
-    setGetAllAdsModel((prevModel) => 
-      prevModel.map((model)=>
-        model.key == "hasWarmingFilter" ? {...model,value} : model
+    setGetAllAdsModel((prevModel) =>
+      prevModel.map((model) =>
+        model.key == "hasWarmingFilter" ? { ...model, value } : model
       )
-    
     );
   }, []);
   const handleUpdateHasWc = useCallback((value) => {
-    setGetAllAdsModel((prevModel) => 
-      prevModel.map((model)=>
-        model.key == "hasWCFilter" ? {...model,value} : model
+    setGetAllAdsModel((prevModel) =>
+      prevModel.map((model) =>
+        model.key == "hasWCFilter" ? { ...model, value } : model
       )
-    
     );
   }, []);
   const handleUpdateHasBidel = useCallback((value) => {
-    setGetAllAdsModel((prevModel) => 
-      prevModel.map((model)=>
-        model.key == "hasBidelFilter" ? {...model,value} : model
+    setGetAllAdsModel((prevModel) =>
+      prevModel.map((model) =>
+        model.key == "hasBidelFilter" ? { ...model, value } : model
       )
-    
     );
   }, []);
   const handleUpdateHasHouseContract = useCallback((value) => {
-    setGetAllAdsModel((prevModel) => 
-      prevModel.map((model)=>
-        model.key == "hasHouseContractFilter" ? {...model,value} : model
+    setGetAllAdsModel((prevModel) =>
+      prevModel.map((model) =>
+        model.key == "hasHouseContractFilter" ? { ...model, value } : model
       )
-    
     );
   }, []);
   const handleUpdateIsPossibleToBuyInInstallment = useCallback((value) => {
-    setGetAllAdsModel((prevModel) => 
-      prevModel.map((model)=>
-        model.key == "isPossibleToBuyInInstallmentFilter" ? {...model,value} : model
+    setGetAllAdsModel((prevModel) =>
+      prevModel.map((model) =>
+        model.key == "isPossibleToBuyInInstallmentFilter"
+          ? { ...model, value }
+          : model
       )
-    
     );
   }, []);
   const handleUpdateIsChargable = useCallback((value) => {
-    setGetAllAdsModel((prevModel) => 
-      prevModel.map((model)=>
-        model.key == "isChargableFilter" ? {...model,value} : model
+    setGetAllAdsModel((prevModel) =>
+      prevModel.map((model) =>
+        model.key == "isChargableFilter" ? { ...model, value } : model
       )
-    
     );
   }, []);
   const handleUpdateHasChargable = useCallback((value) => {
-    setGetAllAdsModel((prevModel) => 
-      prevModel.map((model)=>
-        model.key == "hasChargableFilter" ? {...model,value} : model
+    setGetAllAdsModel((prevModel) =>
+      prevModel.map((model) =>
+        model.key == "hasChargableFilter" ? { ...model, value } : model
       )
-    
     );
   }, []);
   const handleUpdateHasTouchableDisplay = useCallback((value) => {
-    setGetAllAdsModel((prevModel) => 
-      prevModel.map((model)=>
-        model.key == "hasTouchableDisplayFilter" ? {...model,value} : model
+    setGetAllAdsModel((prevModel) =>
+      prevModel.map((model) =>
+        model.key == "hasTouchableDisplayFilter" ? { ...model, value } : model
       )
-    
     );
   }, []);
   const handleUpdateHasHDMIPort = useCallback((value) => {
-    setGetAllAdsModel((prevModel) => 
-      prevModel.map((model)=>
-        model.key == "hasHDMIPortFilter" ? {...model,value} : model
+    setGetAllAdsModel((prevModel) =>
+      prevModel.map((model) =>
+        model.key == "hasHDMIPortFilter" ? { ...model, value } : model
       )
-    
     );
   }, []);
   const handleUpdateHasUSBPort = useCallback((value) => {
-    setGetAllAdsModel((prevModel) => 
-      prevModel.map((model)=>
-        model.key == "hasUSBPortFilter" ? {...model,value} : model
+    setGetAllAdsModel((prevModel) =>
+      prevModel.map((model) =>
+        model.key == "hasUSBPortFilter" ? { ...model, value } : model
       )
-    
     );
   }, []);
   const handleUpdateHasLANPort = useCallback((value) => {
-    setGetAllAdsModel((prevModel) => 
-      prevModel.map((model)=>
-        model.key == "hasLANPortFilter" ? {...model,value} : model
+    setGetAllAdsModel((prevModel) =>
+      prevModel.map((model) =>
+        model.key == "hasLANPortFilter" ? { ...model, value } : model
       )
-    
     );
   }, []);
   const handleUpdateHasGameequipment = useCallback((value) => {
-    setGetAllAdsModel((prevModel) => 
-      prevModel.map((model)=>
-        model.key == "hasGameEquipmentFilter" ? {...model,value} : model
+    setGetAllAdsModel((prevModel) =>
+      prevModel.map((model) =>
+        model.key == "hasGameEquipmentFilter" ? { ...model, value } : model
       )
-    
     );
   }, []);
   const handleUpdateHasSeparable = useCallback((value) => {
-    setGetAllAdsModel((prevModel) => 
-      prevModel.map((model)=>
-        model.key == "hasSeparableFilter" ? {...model,value} : model
+    setGetAllAdsModel((prevModel) =>
+      prevModel.map((model) =>
+        model.key == "hasSeparableFilter" ? { ...model, value } : model
       )
-    
     );
   }, []);
   const handleUpdateHasIncludePackageOfDocuments = useCallback((value) => {
-    setGetAllAdsModel((prevModel) => 
-      prevModel.map((model)=>
-        model.key == "hasIncludePackageOfDocumentsFilter" ? {...model,value} : model
+    setGetAllAdsModel((prevModel) =>
+      prevModel.map((model) =>
+        model.key == "hasIncludePackageOfDocumentsFilter"
+          ? { ...model, value }
+          : model
       )
-    
     );
   }, []);
   const handleUpdateDirectFlight = useCallback((value) => {
-    setGetAllAdsModel((prevModel) => 
-      prevModel.map((model)=>
-        model.key == "hasDirectFlightFilter" ? {...model,value} : model
+    setGetAllAdsModel((prevModel) =>
+      prevModel.map((model) =>
+        model.key == "hasDirectFlightFilter" ? { ...model, value } : model
       )
-    
     );
   }, []);
   const handleUpdateHasGoodAccessPoint = useCallback((value) => {
-    setGetAllAdsModel((prevModel) => 
-      prevModel.map((model)=>
-        model.key == "hasGoodAccessPointFilter" ? {...model,value} : model
+    setGetAllAdsModel((prevModel) =>
+      prevModel.map((model) =>
+        model.key == "hasGoodAccessPointFilter" ? { ...model, value } : model
       )
-    
     );
   }, []);
   const handleUpdateHasInsideCity = useCallback((value) => {
-    setGetAllAdsModel((prevModel) => 
-      prevModel.map((model)=>
-        model.key == "hasInsideCityFilter" ? {...model,value} : model
+    setGetAllAdsModel((prevModel) =>
+      prevModel.map((model) =>
+        model.key == "hasInsideCityFilter" ? { ...model, value } : model
       )
-    
     );
   }, []);
   const handleUpdateHasAllIncludeBill = useCallback((value) => {
-    setGetAllAdsModel((prevModel) => 
-      prevModel.map((model)=>
-        model.key == "hasAllIncludeBillFilter" ? {...model,value} : model
+    setGetAllAdsModel((prevModel) =>
+      prevModel.map((model) =>
+        model.key == "hasAllIncludeBillFilter" ? { ...model, value } : model
       )
-    
     );
   }, []);
   const handleUpdateHasObligationNotBeAtHome = useCallback((value) => {
-    setGetAllAdsModel((prevModel) => 
-      prevModel.map((model)=>
-        model.key == "hasObligationNotBeAtHomeFilter" ? {...model,value} : model
+    setGetAllAdsModel((prevModel) =>
+      prevModel.map((model) =>
+        model.key == "hasObligationNotBeAtHomeFilter"
+          ? { ...model, value }
+          : model
       )
-    
     );
   }, []);
   //on locationsearch component//
   const handleUpdateHasOrigin = useCallback((value) => {
-    setGetAllAdsModel((prevModel) => 
-      prevModel.map((model)=>
-        model.key == "hasOriginFilter" ? {...model,value} : model
+    setGetAllAdsModel((prevModel) =>
+      prevModel.map((model) =>
+        model.key == "hasOriginFilter" ? { ...model, value } : model
       )
-    
     );
   }, []);
   const handleUpdateHasDestination = useCallback((value) => {
-    setGetAllAdsModel((prevModel) => 
-      prevModel.map((model)=>
-        model.key == "hasDestinationFilter" ? {...model,value} : model
+    setGetAllAdsModel((prevModel) =>
+      prevModel.map((model) =>
+        model.key == "hasDestinationFilter" ? { ...model, value } : model
       )
-    
     );
   }, []);
   //on datePick component"
   const handleUpdateDepartureDate = useCallback((value) => {
-    setGetAllAdsModel((prevModel) => 
-      prevModel.map((model)=>
-        model.key == "hasDepartureDateFilter" ? {...model,value} : model
+    setGetAllAdsModel((prevModel) =>
+      prevModel.map((model) =>
+        model.key == "hasDepartureDateFilter" ? { ...model, value } : model
       )
-    
     );
   }, []);
 
-
-console.log(getAllAdsModel)
- 
   if (categoryDetails) {
     const conditions = [
       {
@@ -1528,7 +1473,9 @@ console.log(getAllAdsModel)
             title="    قابل خرید اقساطی  "
             openItems={openItems}
             handleClick={handleClick}
-            handleUpdateGetAllAdsModel={handleUpdateIsPossibleToBuyInInstallment}
+            handleUpdateGetAllAdsModel={
+              handleUpdateIsPossibleToBuyInInstallment
+            }
             key="isPossibleToBuyInInstallmentFilter"
           />
         ),
@@ -1636,7 +1583,9 @@ console.log(getAllAdsModel)
             title=" قبول مدارک  "
             openItems={openItems}
             handleClick={handleClick}
-            handleUpdateGetAllAdsModel={handleUpdateHasIncludePackageOfDocuments}
+            handleUpdateGetAllAdsModel={
+              handleUpdateHasIncludePackageOfDocuments
+            }
             key="hasIncludePackageOfDocumentsFilter"
           />
         ),
