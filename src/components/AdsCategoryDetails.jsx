@@ -874,6 +874,15 @@ export default function AdsCategoryDetails({
     
     );
   }, []);
+  //on locationsearch component//
+  const handleUpdateHasOrigin = useCallback((value) => {
+    setGetAllAdsModel((prevModel) => 
+      prevModel.map((model)=>
+        model.key == "hasOriginFilter" ? {...model,value} : model
+      )
+    
+    );
+  }, []);
 
 
  
@@ -1681,6 +1690,7 @@ export default function AdsCategoryDetails({
             title=" مبدا پرواز  "
             openItems={openItems}
             handleClick={handleClick}
+            handleUpdateGetAllAdsModel={handleUpdateHasOrigin}
             key="hasOriginFilter"
           />
         ),
