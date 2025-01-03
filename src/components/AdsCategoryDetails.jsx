@@ -746,6 +746,14 @@ export default function AdsCategoryDetails({
     
     );
   }, []);
+  const handleUpdateHasHouseContract = useCallback((value) => {
+    setGetAllAdsModel((prevModel) => 
+      prevModel.map((model)=>
+        model.key == "hasHouseContractFilter" ? {...model,value} : model
+      )
+    
+    );
+  }, []);
 
 
  
@@ -1361,6 +1369,7 @@ export default function AdsCategoryDetails({
             title="   قرارداد خونه  "
             openItems={openItems}
             handleClick={handleClick}
+            handleUpdateGetAllAdsModel={handleUpdateHasHouseContract}
             key="hasHouseContractFilter"
           />
         ),
