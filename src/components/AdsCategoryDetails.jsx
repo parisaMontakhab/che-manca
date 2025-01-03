@@ -842,6 +842,14 @@ export default function AdsCategoryDetails({
     
     );
   }, []);
+  const handleUpdateHasGoodAccessPoint = useCallback((value) => {
+    setGetAllAdsModel((prevModel) => 
+      prevModel.map((model)=>
+        model.key == "hasGoodAccessPointFilter" ? {...model,value} : model
+      )
+    
+    );
+  }, []);
 
 
  
@@ -1601,6 +1609,7 @@ export default function AdsCategoryDetails({
             title="   دسترسی خوب  "
             openItems={openItems}
             handleClick={handleClick}
+            handleUpdateGetAllAdsModel={handleUpdateHasGoodAccessPoint}
             key="hasGoodAccessPointFilter"
           />
         ),
