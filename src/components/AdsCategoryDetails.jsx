@@ -754,6 +754,14 @@ export default function AdsCategoryDetails({
     
     );
   }, []);
+  const handleUpdateIsPossibleToBuyInInstallment = useCallback((value) => {
+    setGetAllAdsModel((prevModel) => 
+      prevModel.map((model)=>
+        model.key == "isPossibleToBuyInInstallmentFilter" ? {...model,value} : model
+      )
+    
+    );
+  }, []);
 
 
  
@@ -1381,6 +1389,7 @@ export default function AdsCategoryDetails({
             title="    قابل خرید اقساطی  "
             openItems={openItems}
             handleClick={handleClick}
+            handleUpdateGetAllAdsModel={handleUpdateIsPossibleToBuyInInstallment}
             key="isPossibleToBuyInInstallmentFilter"
           />
         ),
