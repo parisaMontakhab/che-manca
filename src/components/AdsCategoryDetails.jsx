@@ -794,6 +794,14 @@ export default function AdsCategoryDetails({
     
     );
   }, []);
+  const handleUpdateHasUSBPort = useCallback((value) => {
+    setGetAllAdsModel((prevModel) => 
+      prevModel.map((model)=>
+        model.key == "hasUSBPortFilter" ? {...model,value} : model
+      )
+    
+    );
+  }, []);
 
 
  
@@ -1481,6 +1489,7 @@ export default function AdsCategoryDetails({
             title="  پورت USB "
             openItems={openItems}
             handleClick={handleClick}
+            handleUpdateGetAllAdsModel={handleUpdateHasUSBPort}
             key="hasUSBPortFilter"
           />
         ),
