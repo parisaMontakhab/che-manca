@@ -730,6 +730,14 @@ export default function AdsCategoryDetails({
     
     );
   }, []);
+  const handleUpdateHasWc = useCallback((value) => {
+    setGetAllAdsModel((prevModel) => 
+      prevModel.map((model)=>
+        model.key == "hasWCFilter" ? {...model,value} : model
+      )
+    
+    );
+  }, []);
 
 
  
@@ -1321,6 +1329,7 @@ export default function AdsCategoryDetails({
             title="  سرویس بهداشتی  "
             openItems={openItems}
             handleClick={handleClick}
+            handleUpdateGetAllAdsModel={handleUpdateHasWc}
             key="hasWCFilter"
           />
         ),
