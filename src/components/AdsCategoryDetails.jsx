@@ -681,6 +681,16 @@ export default function AdsCategoryDetails({
     
     );
   }, []);
+  //on togglecomponent//
+  const handleUpdtaeHasElevator = useCallback((value) => {
+    setGetAllAdsModel((prevModel) => 
+      prevModel.map((model)=>
+        model.key == "hasElevatorFilter" ? {...model,value} : model
+      )
+    
+    );
+  }, []);
+
 
  
   if (categoryDetails) {
@@ -1199,6 +1209,7 @@ export default function AdsCategoryDetails({
             title="  آسانسور "
             openItems={openItems}
             handleClick={handleClick}
+            handleUpdateGetAllAdsModel={handleUpdtaeHasElevator}
             key="hasElevatorFilter"
           />
         ),

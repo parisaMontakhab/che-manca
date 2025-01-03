@@ -16,15 +16,17 @@ import FiberManualRecordRoundedIcon from "@mui/icons-material/FiberManualRecordR
 
 const activityStatus = { inEffective: 0, active: 1, inActive: 2 };
 
-export default function ToggleComponent({ openItems, handleClick, title }) {
+export default function ToggleComponent({ openItems, handleClick, title,handleUpdateGetAllAdsModel }) {
   const [status, setStatus] = useState(activityStatus.inEffective);
 
   const handleChange = (event, newStatus) => {
     setStatus(newStatus);
+    handleUpdateGetAllAdsModel(newStatus)
   };
 
   const handleDelete = () => {
     setStatus(activityStatus.inEffective);
+    handleUpdateGetAllAdsModel(null)
   };
   return (
     <div>
