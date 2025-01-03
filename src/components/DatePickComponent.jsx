@@ -20,9 +20,14 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import dayjs from "dayjs";
 
-export default function DatePickComponent({ openItems, handleClick, title }) {
+export default function DatePickComponent({ openItems, handleClick, title,handleUpdateGetAllAdsModel }) {
   const [selectedDate, setSelectedDate] = useState(null);
   const today = dayjs();
+
+  const epokConverter = (data)=>{
+    const epokDate = Math.floor(new Date(data).getTime()/1000.0);
+   handleUpdateGetAllAdsModel(epokDate);
+  }
 
   return (
     <div>
@@ -43,7 +48,12 @@ export default function DatePickComponent({ openItems, handleClick, title }) {
         {selectedDate &&
           (openItems[title] ? (
             <Button
-              onClick={() => setSelectedDate(null)}
+              onClick={() => 
+               {
+                setSelectedDate(null);
+                handleUpdateGetAllAdsModel(null);
+               }
+              }
               className="ads-sideBar__deletBtn"
             >
               حذف
@@ -58,7 +68,12 @@ export default function DatePickComponent({ openItems, handleClick, title }) {
             <DemoContainer components={["DatePicker"]}>
               <DatePicker
                 value={selectedDate}
-                onChange={(newvalue) => setSelectedDate(newvalue)}
+                onChange={(newvalue) => 
+                 {
+                  setSelectedDate(newvalue);
+                  epokConverter(newvalue);
+                 }
+                }
                 minDate={today}
                 sx={{
                     '& .MuiInputBase-root': {

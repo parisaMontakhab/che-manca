@@ -902,7 +902,7 @@ export default function AdsCategoryDetails({
   }, []);
 
 
-
+console.log(getAllAdsModel)
  
   if (categoryDetails) {
     const conditions = [
