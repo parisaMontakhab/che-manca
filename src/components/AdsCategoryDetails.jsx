@@ -858,6 +858,14 @@ export default function AdsCategoryDetails({
     
     );
   }, []);
+  const handleUpdateHasAllIncludeBill = useCallback((value) => {
+    setGetAllAdsModel((prevModel) => 
+      prevModel.map((model)=>
+        model.key == "hasAllIncludeBillFilter" ? {...model,value} : model
+      )
+    
+    );
+  }, []);
 
 
  
@@ -1641,6 +1649,7 @@ export default function AdsCategoryDetails({
             title="  قبض آل اینکلود  "
             openItems={openItems}
             handleClick={handleClick}
+            handleUpdateGetAllAdsModel={handleUpdateHasAllIncludeBill}
             key="hasAllIncludeBillFilter"
           />
         ),
