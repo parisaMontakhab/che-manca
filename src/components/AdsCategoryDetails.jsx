@@ -810,6 +810,14 @@ export default function AdsCategoryDetails({
     
     );
   }, []);
+  const handleUpdateHasGameequipment = useCallback((value) => {
+    setGetAllAdsModel((prevModel) => 
+      prevModel.map((model)=>
+        model.key == "hasGameEquipmentFilter" ? {...model,value} : model
+      )
+    
+    );
+  }, []);
 
 
  
@@ -1521,6 +1529,7 @@ export default function AdsCategoryDetails({
             title="  تجهیزات بازی  "
             openItems={openItems}
             handleClick={handleClick}
+            handleUpdateGetAllAdsModel={handleUpdateHasGameequipment}
             key="hasGameEquipmentFilter"
           />
         ),
