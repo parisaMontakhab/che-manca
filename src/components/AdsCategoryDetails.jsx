@@ -850,6 +850,14 @@ export default function AdsCategoryDetails({
     
     );
   }, []);
+  const handleUpdateHasInsideCity = useCallback((value) => {
+    setGetAllAdsModel((prevModel) => 
+      prevModel.map((model)=>
+        model.key == "hasInsideCityFilter" ? {...model,value} : model
+      )
+    
+    );
+  }, []);
 
 
  
@@ -1621,6 +1629,7 @@ export default function AdsCategoryDetails({
             title=" داخل شهر  "
             openItems={openItems}
             handleClick={handleClick}
+            handleUpdateGetAllAdsModel={handleUpdateHasInsideCity}
             key="hasInsideCityFilter"
           />
         ),
