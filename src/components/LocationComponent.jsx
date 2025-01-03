@@ -16,7 +16,7 @@ import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 import FiberManualRecordRoundedIcon from "@mui/icons-material/FiberManualRecordRounded";
 
-export default function LocationComponent({ title, openItems, handleClick }) {
+export default function LocationComponent({ title, openItems, handleClick,handleUpdateGetAllAdsModel }) {
   //states//
   const [resetKey, setResetKey] = useState(0);
   const [countryValueFromChild, setCountryValueFromChild] = useState("");
@@ -52,6 +52,7 @@ export default function LocationComponent({ title, openItems, handleClick }) {
   const handleDeleteBtn = () => {
     setCityInputFromChild("");
     setResetKey((prevKey) => prevKey + 1);
+    handleUpdateGetAllAdsModel(null)
   };
 
   return (
@@ -89,6 +90,7 @@ export default function LocationComponent({ title, openItems, handleClick }) {
           sendcountryInputToParent={handleCountryInputFromChild}
           sendSubCountryInputToParent={handleSubCountryInputfromChild}
           sendCityInputToParent={handleCityInputFromChild}
+          handleUpdateGetAllAdsModel={handleUpdateGetAllAdsModel}
         />
       </Collapse>
       <Divider sx={{ width: "80%", marginTop: 2 }} />

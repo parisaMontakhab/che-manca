@@ -9,7 +9,7 @@ import { useCities } from "../api/LocationApi";
 import ErrorBtn from "../commons/ErrorBtn";
 import LoadingText from "../commons/LoadingText";
 
-export default function LocationSearch({ title ,sendCountryValueToParent,sendSubcountryValueToParent,sendCityValueToParent,sendcountryInputToParent,sendSubCountryInputToParent,sendCityInputToParent}) {
+export default function LocationSearch({ title ,sendCountryValueToParent,sendSubcountryValueToParent,sendCityValueToParent,sendcountryInputToParent,sendSubCountryInputToParent,sendCityInputToParent,handleUpdateGetAllAdsModel}) {
   const [selectedCountry, setSelectedCountry] = useState(null);
   const [selectedSubCountry, setselectedSubCountry] = useState(null);
   const [selectedCity, setSelectedCity] = useState(null);
@@ -60,6 +60,7 @@ export default function LocationSearch({ title ,sendCountryValueToParent,sendSub
     if((sendCityValueToParent && sendCityInputToParent) !== undefined){
       sendCityValueToParent(newCity);
       sendCityInputToParent(newCity);
+      handleUpdateGetAllAdsModel(newCity.id)
     }
    
   };
