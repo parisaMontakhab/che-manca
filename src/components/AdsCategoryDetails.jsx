@@ -883,8 +883,16 @@ export default function AdsCategoryDetails({
     
     );
   }, []);
+  const handleUpdateHasDestination = useCallback((value) => {
+    setGetAllAdsModel((prevModel) => 
+      prevModel.map((model)=>
+        model.key == "hasDestinationFilter" ? {...model,value} : model
+      )
+    
+    );
+  }, []);
 
-console.log(getAllAdsModel)
+
  
   if (categoryDetails) {
     const conditions = [
@@ -1702,6 +1710,7 @@ console.log(getAllAdsModel)
             title="مقصد پرواز "
             openItems={openItems}
             handleClick={handleClick}
+            handleUpdateGetAllAdsModel={handleUpdateHasDestination}
             key="hasDestinationFilter"
           />
         ),
