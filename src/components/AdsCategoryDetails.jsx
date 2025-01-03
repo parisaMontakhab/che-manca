@@ -690,6 +690,14 @@ export default function AdsCategoryDetails({
     
     );
   }, []);
+  const handleUpdateHasParking = useCallback((value) => {
+    setGetAllAdsModel((prevModel) => 
+      prevModel.map((model)=>
+        model.key == "hasParkingFilter" ? {...model,value} : model
+      )
+    
+    );
+  }, []);
 
 
  
@@ -1221,6 +1229,7 @@ export default function AdsCategoryDetails({
             title="  پارکینگ "
             openItems={openItems}
             handleClick={handleClick}
+            handleUpdateGetAllAdsModel={handleUpdateHasParking}
             key="hasParkingFilter"
           />
         ),
