@@ -11,12 +11,17 @@ import {
   Divider,
   Paper,
 } from "@mui/material";
-import LocationSearch from "./LocationSearch";
+import LocationSearch from "../share/LocationSearch";
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 import FiberManualRecordRoundedIcon from "@mui/icons-material/FiberManualRecordRounded";
 
-export default function LocationComponent({ title, openItems, handleClick,handleUpdateGetAllAdsModel }) {
+export default function LocationComponent({
+  title,
+  openItems,
+  handleClick,
+  handleUpdateGetAllAdsModel,
+}) {
   //states//
   const [resetKey, setResetKey] = useState(0);
   const [countryValueFromChild, setCountryValueFromChild] = useState("");
@@ -52,7 +57,7 @@ export default function LocationComponent({ title, openItems, handleClick,handle
   const handleDeleteBtn = () => {
     setCityInputFromChild("");
     setResetKey((prevKey) => prevKey + 1);
-    handleUpdateGetAllAdsModel(null)
+    handleUpdateGetAllAdsModel(null);
   };
 
   return (
