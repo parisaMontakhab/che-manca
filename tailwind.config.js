@@ -5,7 +5,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {  fontFamily: {
+      iranYekan: ['"IranYekan"', 'sans-serif'],
+    },  margin: {
+      '5p': '5%',  // Add a custom class for 5% margin
+    },},
   },
   plugins: [],
 }
