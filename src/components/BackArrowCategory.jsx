@@ -17,10 +17,13 @@ export default function BackArrowCategory({selectedCategory,handleBackClick}) {
         <ListItemText
           disableTypography
           primary={selectedCategory.localizedName}
-          className="inline text-right text-black font-iranYekan mr-5p"
+          className="inline text-right text-black font-iranYekan mr-5p" 
         />
       </ListItem>
      
     </List>
   );
 }
+//calssname of listItem --> ads-sideBar__listItem 
+//classname of ListItemText one --> ads-sideBar__itemText--color
+//classname of ListItemText two --> ads-sideBar__itemText--margin
