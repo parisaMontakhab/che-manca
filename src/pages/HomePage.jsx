@@ -87,6 +87,7 @@ export default function HomePage() {
         <footer style={{ marginTop: "100px" }}>
           <Footer />
         </footer>
+       
       </Container>
     </>
   );
