@@ -35,9 +35,9 @@ export default function ToggleComponent({ openItems, handleClick, title,handleUp
         className="cursor-pointer flex items-center justify-center text-sm "
       >
         {openItems[title] ? (
-          <ExpandLess className="text-customGray min-w-0 ml-2 text-sm" />
+          <ExpandLess className="text-customGray min-w-0 ml-2 text-2xl" />
         ) : (
-          <ExpandMore className="text-customGray min-w-0 ml-2 text-sm" />
+          <ExpandMore className="text-customGray min-w-0 ml-2 text-2xl" />
         )}
         <ListItemText
           primary={title}
@@ -47,11 +47,11 @@ export default function ToggleComponent({ openItems, handleClick, title,handleUp
         {(status === activityStatus.active ||
           status === activityStatus.inActive) &&
           (openItems[title] ? (
-            <Button onClick={handleDelete} className="!font-iranYekan !text-customRed !ml-10">
+            <Button onClick={handleDelete} className="font-iranYekan text-customRed ml-10">
               حذف
             </Button>
           ) : (
-            <FiberManualRecordRoundedIcon className=" text-customRed ml-16 !text-xs" />
+            <FiberManualRecordRoundedIcon className=" text-customRed ml-16 text-xs" />
           ))}
       </ListItem>
       <Collapse in={openItems[title]} timeout="auto" unmountOnExit>
@@ -61,14 +61,14 @@ export default function ToggleComponent({ openItems, handleClick, title,handleUp
             exclusive
             onChange={handleChange}
             aria-label="Platform"
-            className="border-0 overflow-hidden bg-customBlu !rounded-lg"
+            className="border-0 overflow-hidden bg-customBlu rounded-lg"
           >
             <ToggleButton
               value={activityStatus.inEffective}
               className={
                 status === activityStatus.inEffective
-                  ? "!font-iranYekan !text-customYellow"
-                  : "!font-iranYekan !text-white"
+                  ? "font-iranYekan text-customYellow"
+                  : "font-iranYekan text-white"
               }
             >
               بی تاثیر
@@ -77,8 +77,8 @@ export default function ToggleComponent({ openItems, handleClick, title,handleUp
               value={activityStatus.active}
               className={
                 status === activityStatus.active
-                  ? "!font-iranYekan !text-customYellow"
-                  : "!font-iranYekan !text-white"
+                  ? "font-iranYekan text-customYellow"
+                  : "font-iranYekan text-white"
               }
             >
               فعال
@@ -87,8 +87,8 @@ export default function ToggleComponent({ openItems, handleClick, title,handleUp
               value={activityStatus.inActive}
               className={
                 status === activityStatus.inActive
-                  ? "!font-iranYekan !text-customYellow"
-                  : "!font-iranYekan !text-white"
+                  ? "font-iranYekan text-customYellow"
+                  : "font-iranYekan text-white"
               }
             >
               غیر فعال
@@ -96,7 +96,7 @@ export default function ToggleComponent({ openItems, handleClick, title,handleUp
           </ToggleButtonGroup>
         </Box>
       </Collapse>
-      <Divider className="!w-4/5 !mt-2" />
+      <Divider className="w-4/5 mt-2" />
     </div>
   );
 }
