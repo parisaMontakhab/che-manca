@@ -23,34 +23,41 @@ export default function SwitchComponent({
     <div>
       <ListItem
         onClick={() => handleClick(title)}
-        className="ads-sideBar__listItem "
+        className="cursor-pointer flex items-center justify-center text-sm "
       >
         {openItems[title] ? (
-          <ExpandLess className="ads-sideBar__itemIcon" />
+          <ExpandLess className="text-customGray min-w-0 ml-2 text-2xl" />
         ) : (
-          <ExpandMore className="ads-sideBar__itemIcon" />
+          <ExpandMore className="text-customGray min-w-0 ml-2 text-2xl" />
         )}
         <ListItemText
           primary={title}
           disableTypography
-          className="ads-sideBar__collapsText"
+          className="font-iranYekan font-semibold inline text-right"
         />
         {hasCheckedTrue &&
           (openItems[title] ? (
             <Button
               onClick={handleDeletChecked}
-              className="ads-sideBar__deletBtn"
+              className="font-iranYekan text-customRed ml-10"
             >
               حذف
             </Button>
           ) : (
-            <FiberManualRecordRoundedIcon className="ads-sideBar__deletIcon" />
+            <FiberManualRecordRoundedIcon className="text-customRed ml-16 text-xs" />
           ))}
       </ListItem>
       <Collapse in={openItems[title]} timeout="auto" unmountOnExit>
         {children}
       </Collapse>
-      <Divider sx={{ width: "80%", marginTop: 2 }} />
+      <Divider className="w-4/5 mt-2" />
     </div>
   );
 }
+
+//className of ListItem --> ads-sideBar__listItem 
+//className of ExpanLess --> ads-sideBar__itemIcon
+//className of ExpandMore --> ads-sideBar__itemIcon
+//className of ListItemText --> ads-sideBar__collapsText
+//className of Button --> ads-sideBar__deletBtn
+//className of FiberManualRecordRoundedIcon --> ads-sideBar__deletIcon"
