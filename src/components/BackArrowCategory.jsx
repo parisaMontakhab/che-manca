@@ -6,7 +6,7 @@ export default function BackArrowCategory({selectedCategory,handleBackClick}) {
   return (
     <List>
       <ListItem onClick={handleBackClick} className="cursor-pointer flex items-center justify-center text-sm">
-        <ArrowForwardIcon sx={{ marginLeft: 1, fontSize: 18 }} />
+        <ArrowForwardIcon className="ml-1 text-lg" />
         <ListItemText
           disableTypography
           primary="همه ی آگهی ها"
