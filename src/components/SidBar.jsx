@@ -11,7 +11,7 @@ import {
   FormControlLabel,
   Switch,
 } from "@mui/material";
-import { useCategories } from "../api/CategoriesApi";
+import { fetchCategories } from "../api/Categories/CategoriesApi";
 import { priceOptions } from "../data/PriceData";
 
 import Footer from "./Footer";
@@ -24,6 +24,7 @@ import NumeriComponent from "./NumeriComponent";
 import SwitchComponent from "./SwitchComponent";
 import AdsCategoryDetails from "./AdsCategoryDetails";
 import ToggleComponent from "./ToggleComponent";
+import { useQuery } from "@tanstack/react-query";
 
 export default function SidBar() {
   const [selectedCategory, setSelectedCategory] = useState({});
@@ -72,7 +73,11 @@ export default function SidBar() {
     data: categories,
     isLoading: isCategoriesLoading,
     isError: categoriesError,
-  } = useCategories(selectedCategory?.uniqueId);
+  } = useQuery({
+    queryKey: ["folan"],
+    queryFn: () => fetchCategories(selectedCategory?.uniqueId || ""),
+    // enabled: !!selectedCategory.uniqueId,
+  });
 
   return (
     <div>
@@ -156,7 +161,6 @@ export default function SidBar() {
                         />
                       </FormGroup>
                     </SwitchComponent>
-                   
                   </>
                 ) : (
                   <AdsCategoryDetails
