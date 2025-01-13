@@ -69,20 +69,21 @@ export default function SidBar() {
     setOpenCategory(null);
   };
 
-  // const {
-  //   data: categories,
-  //   isLoading: isCategoriesLoading,
-  //   isError: categoriesError,
-  // } = useQuery({
-  //   queryKey: ["folan"],
-  //   queryFn: () => fetchCategories(selectedCategory?.uniqueId || ""),
-  //   // enabled: !!selectedCategory.uniqueId,
-  // });
+  
    const {
     data: categories,
     isLoading: isCategoriesLoading,
     isError: categoriesError,
   } = useCategories(selectedCategory?.uniqueId)
+  // const {
+  //   data: categories,
+  //   isLoading: isCategoriesLoading,
+  //   isError: categoriesError,
+  // } = useQuery({
+  //   queryKey: ["categories", selectedCategory?.uniqueId],   
+  //   queryFn: () => fetchCategories(selectedCategory?.uniqueId || "")
+  
+  // });
 
   return (
     <div>
