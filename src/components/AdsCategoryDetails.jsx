@@ -1,6 +1,6 @@
 import React, { Component, useCallback, useState } from "react";
 import { FormGroup, Typography, FormControlLabel, Switch } from "@mui/material";
-import { useCategoryDetails } from "../api/Categories/CategoriesApi";
+import { getCategoryDetails } from "../api/Categories/CategoriesApi";
 import NumeriComponent from "./NumeriComponent";
 import {
   useDepositPriceList,
@@ -47,6 +47,7 @@ import StringComponent from "./StringComponent";
 import ToggleComponent from "./ToggleComponent";
 import LocationComponent from "./LocationComponent";
 import DatePickComponent from "./DatePickComponent";
+import { useQuery } from "@tanstack/react-query";
 
 const initialGetAllAdsModel = [
   {
@@ -324,9 +325,16 @@ export default function AdsCategoryDetails({
   const [getAllAdsModel, setGetAllAdsModel] = useState(initialGetAllAdsModel);
 
   //from api//
-  const { data: categoryDetails } = useCategoryDetails(
-    selectedCategory?.uniqueId
-  );
+  // const { data: categoryDetails } = useCategoryDetails(
+  //   selectedCategory?.uniqueId
+  // );
+
+  const{data:categoryDetails} = useQuery({
+    queryKey:["categoryDetails",selectedCategory.uniqueId],
+    queryFn:()=>getCategoryDetails(selectedCategory?.uniqueId),
+    enabled: !!selectedCategory.uniqueId,
+
+  })
   const { data: depositPriceList } = useDepositPriceList();
   const { data: rentPriceList } = useRentPriceList();
   const { data: meterageList } = useMeterageList();

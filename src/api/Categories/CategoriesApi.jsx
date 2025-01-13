@@ -43,10 +43,10 @@ queryFn: () => getCategories(parentId || ""),
 export const getCategoryDetails = async (adsCategoryId) =>
   await apiCall({ url: CATEGORYDETAILS_EP(adsCategoryId) });
 
-export const useCategoryDetails = (adsCategoryId) => {
-  return useQuery({
-    queryKey: ["categoryDetails", adsCategoryId],
-    queryFn: () => getCategoryDetails(adsCategoryId),
-    enabled: !!adsCategoryId,
-  });
-};
+// export const useCategoryDetails = (adsCategoryId) => {
+//   return useQuery({
+//     queryKey: ["categoryDetails", adsCategoryId],
+//     queryFn: () => getCategoryDetails(adsCategoryId),
+//     enabled: !!adsCategoryId,
+//   });
+// };
