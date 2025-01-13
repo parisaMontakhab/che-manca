@@ -5,13 +5,19 @@ import { CATEGORIES_EP } from "./endPoints";
 const baseURL = import.meta.env.VITE_CHEMANCHA_BASE_URL;
 
 async function apiCall({ url, options = { method: "get" } }) {
-  const response = await axios[options.method](`${baseURL}${url}`);
-  return response.data;
+  try {
+    const response = await axios[options.method](`${baseURL}${url}`);
+    return response.data;
+  } catch (error) {
+    console.error("Error occurred during API call:", error.message);
+   
+    throw error;
+  }
+}
 
   //export apiCall function to another file
   //add try catch logic for error handling
   //you can have global state with context or redux for handling ui errors
-}
 
 //categories//
 export const fetchCategories = async (parentId) =>
