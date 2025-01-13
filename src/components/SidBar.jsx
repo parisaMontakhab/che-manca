@@ -11,7 +11,7 @@ import {
   FormControlLabel,
   Switch,
 } from "@mui/material";
-import { fetchCategories, useCategories } from "../api/Categories/CategoriesApi";
+import { useCategories } from "../api/Categories/CategoriesApi";
 import { priceOptions } from "../data/PriceData";
 
 import Footer from "./Footer";

@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import { CATEGORIES_EP } from "./endPoints";
+import { CATEGORIES_EP,CATEGORYDETAILS_EP } from "./endPoints";
 
 const baseURL = import.meta.env.VITE_CHEMANCHA_BASE_URL;
 
@@ -20,30 +20,33 @@ async function apiCall({ url, options = { method: "get" } }) {
   //you can have global state with context or redux for handling ui errors
 
 //categories//
-export const fetchCategories = async (parentId) =>
+export const getCategories = async (parentId) =>
   await apiCall({ url: CATEGORIES_EP(parentId) });
 
 export const useCategories = (parentId) => {
 return useQuery({
 queryKey: ["categories", parentId],
-queryFn: () => fetchCategories(parentId || ""),
+queryFn: () => getCategories(parentId || ""),
 });
 
 };
 
 //categoryDetails//
 
-const fetchCategoryDetails = async (adsCategoryId) => {
-  const response = await axios.get(
-    `https://client.mobile.chemanca.com/api/advertisements/AdsCategoryDetail/GetAllAdvertisementCategoryDetails?categoryId=${adsCategoryId}`
-  );
-  return response.data;
-};
+// const fetchCategoryDetails = async (adsCategoryId) => {
+//   const response = await axios.get(
+//     `https://client.mobile.chemanca.com/api/advertisements/AdsCategoryDetail/GetAllAdvertisementCategoryDetails?categoryId=${adsCategoryId}`
+//   );
+//   return response.data;
+// };
+
+export const getCategoryDetails = async (adsCategoryId) =>
+  await apiCall({ url: CATEGORYDETAILS_EP(adsCategoryId) });
 
 export const useCategoryDetails = (adsCategoryId) => {
   return useQuery({
     queryKey: ["categoryDetails", adsCategoryId],
-    queryFn: () => fetchCategoryDetails(adsCategoryId),
+    queryFn: () => getCategoryDetails(adsCategoryId),
     enabled: !!adsCategoryId,
   });
 };
