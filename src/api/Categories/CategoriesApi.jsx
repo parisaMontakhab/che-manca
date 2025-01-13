@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { CATEGORIES_EP } from "./endPoints";
 
-const baseURL = import.meta.env.VITE_CHEMANCE_BASE_URL;
+const baseURL = import.meta.env.VITE_CHEMANCHA_BASE_URL;
 
 async function apiCall({ url, options = { method: "get" } }) {
   const response = await axios[options.method](`${baseURL}${url}`);
