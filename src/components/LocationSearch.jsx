@@ -2,9 +2,9 @@ import React from "react";
 import { useState } from "react";
 import { Box, TextField, Paper, Skeleton } from "@mui/material";
 import Autocomplete from "@mui/material/Autocomplete";
-import { useCountries } from "../api/LocationApi";
-import { useSubCountries } from "../api/LocationApi";
-import { useCities } from "../api/LocationApi";
+import { useCountries } from "../api/Location/LocationApi";
+import { useSubCountries } from "../api/Location/LocationApi";
+import { useCities } from "../api/Location/LocationApi";
 
 import ErrorBtn from "../commons/ErrorBtn";
 import LoadingText from "../commons/LoadingText";
