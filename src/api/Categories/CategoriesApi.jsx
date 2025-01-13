@@ -22,13 +22,14 @@ async function apiCall({ url, options = { method: "get" } }) {
 //categories//
 export const fetchCategories = async (parentId) =>
   await apiCall({ url: CATEGORIES_EP(parentId) });
-// export const useCategories = (parentId) => {
-// return useQuery({
-// queryKey: ["categories", parentId],
-// queryFn: () => fetchCategories(parentId),
-// });
-//there is no need to implement new custom hook for api call and you can use useQuery by itself
-// };
+
+export const useCategories = (parentId) => {
+return useQuery({
+queryKey: ["categories", parentId],
+queryFn: () => fetchCategories(parentId || ""),
+});
+
+};
 
 //categoryDetails//
 

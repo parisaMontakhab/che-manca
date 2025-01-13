@@ -11,7 +11,7 @@ import {
   FormControlLabel,
   Switch,
 } from "@mui/material";
-import { fetchCategories } from "../api/Categories/CategoriesApi";
+import { fetchCategories, useCategories } from "../api/Categories/CategoriesApi";
 import { priceOptions } from "../data/PriceData";
 
 import Footer from "./Footer";
@@ -69,15 +69,20 @@ export default function SidBar() {
     setOpenCategory(null);
   };
 
-  const {
+  // const {
+  //   data: categories,
+  //   isLoading: isCategoriesLoading,
+  //   isError: categoriesError,
+  // } = useQuery({
+  //   queryKey: ["folan"],
+  //   queryFn: () => fetchCategories(selectedCategory?.uniqueId || ""),
+  //   // enabled: !!selectedCategory.uniqueId,
+  // });
+   const {
     data: categories,
     isLoading: isCategoriesLoading,
     isError: categoriesError,
-  } = useQuery({
-    queryKey: ["folan"],
-    queryFn: () => fetchCategories(selectedCategory?.uniqueId || ""),
-    // enabled: !!selectedCategory.uniqueId,
-  });
+  } = useCategories(selectedCategory?.uniqueId)
 
   return (
     <div>
