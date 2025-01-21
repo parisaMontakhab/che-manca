@@ -16,6 +16,7 @@ export default {
         customBlu:'#05017b',
         customYellow:'#ffc107' // Define your custom gray color here
       },
+     
     },
   },
   plugins: [],
