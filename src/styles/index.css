@@ -56,3 +56,20 @@ body {
   overflow-y:scroll;
   
 }
+
+@layer components{
+  .custom-autocomplete-adSide .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+    @apply border-gray-500 border; /* Apply Tailwind's border color and width */
+  }
+  
+  .custom-autocomplete-adSide .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+    @apply border-gray-500 border; /* Optional hover state */
+  }
+  .custom-textField-adSide .MuiInputBase-input {
+    @apply font-iranYekan text-xs ; /* Apply custom font and font size */
+  }
+
+  .custom-textField-adSide .MuiInputBase-input::placeholder {
+    @apply font-iranYekan text-xs; /* Apply custom font and font size for placeholder */
+  }
+}

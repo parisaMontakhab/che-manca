@@ -2,10 +2,11 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   important:"#root",
+ 
   theme: {
     extend: {
       fontFamily: {
-        iranYekan: ['"IranYekan"', "sans-serif"],
+        iranYekan: ['IranYekan', "sans-serif"],
       },
       margin: {
         "5p": "5%", // Add a custom class for 5% margin

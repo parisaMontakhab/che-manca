@@ -75,11 +75,17 @@ export default function StringComponent({
         <Box className="flex items-center justify-around w-4/5 mb-2">
           <Autocomplete
             fullWidth
-            PaperComponent={(props) => (
-              <Paper {...props} className="ads-sideBar__pricePaper" />
-            )}
+            slotProps={{
+              paper: {
+                sx: {
+                  fontFamily: "'IranYekan', sans-serif",
+                  fontSize: '12px',
+                },
+              },
+            }}
+            
             size="small"
-            className=" "
+            className="custom-autocomplete-adSide "
             options={options?.map((option) => option.text) || []}
             getOptionLabel={(option) => String(option)}
             value={value}
@@ -97,7 +103,7 @@ export default function StringComponent({
               <TextField
                 {...params}
                 placeholder=" لطفا یه مورد انتخاب کن"
-                className="ads-sideBar__priceSpan"
+                className="custom-textField-adSide"
               />
             )}
           />
