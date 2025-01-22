@@ -6,18 +6,20 @@ export default function CategoryList({category,handleCategoryClick}) {
     <List >
       <ListItem
         onClick={() => handleCategoryClick(category)}
-        className="ads-sideBar__listItem"
+        className="cursor-pointer flex items-center justify-center text-sm hover:text-customGrayHover hover:font-bold"
       >
         <ListItemText
           primary={category.localizedName}
           disableTypography
           className={
             category.parentId === null
-              ? "ads-sideBar__itemText"
-              : "ads-sideBar__itemText--child"
+              ? "font-iranYekan inline text-right text-customGray"
+              : "font-iranYekan inline text-right text-customGray mr-[10%]"
           }
         />
       </ListItem>
     </List>
   );
 }
+//classname of listItem -- > ads-sideBar__listItem
+//classname of ListItemText --> ads-sideBar__itemText or ads-sideBar__itemText--child 
