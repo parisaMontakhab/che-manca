@@ -76,7 +76,7 @@ export default function SidBar() {
 
   return (
     <div>
-      <Grid2 container spacing={2} component="div" className="ads-container">
+      <Grid2 container spacing={2} component="div" className="grid">
         <Grid2 component="div" className="ads-sideBar__gridOne">
           <aside>
             <Box component="div" className="ads-sideBar">
@@ -227,3 +227,5 @@ export default function SidBar() {
     </div>
   );
 }
+
+//classname of 
