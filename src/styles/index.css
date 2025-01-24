@@ -72,4 +72,12 @@ body {
   .custom-textField-adSide .MuiInputBase-input::placeholder {
     @apply font-iranYekan text-xs; /* Apply custom font and font size for placeholder */
   }
+  .custom-switchChecked .MuiSwitch-switchBase.Mui-checked {
+    @apply text-[#a62626]; /* Apply the red color to the switch thumb */
+  }
+  
+  /* Custom styles for the checked switch track */
+  .custom-switchChecked .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track {
+    @apply bg-[#a62626]; /* Apply the red background to the track */
+  }
 }
