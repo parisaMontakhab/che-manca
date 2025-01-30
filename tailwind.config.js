@@ -17,7 +17,8 @@ export default {
         customBlu: "#05017b",
         customYellow: "#ffc107",
         customGrayHover: "#575656",
-        customBluHover:"#292778 "
+        customBluHover:"#292778 ",
+        customWhite:"#fff"
       },
     },
   },

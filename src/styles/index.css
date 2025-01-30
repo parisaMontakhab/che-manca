@@ -59,11 +59,11 @@ body {
 
 @layer components{
   .custom-autocomplete-adSide .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
-    @apply border-gray-500 border; /* Apply Tailwind's border color and width */
+    @apply border-customGray border; /* Apply Tailwind's border color and width */
   }
   
   .custom-autocomplete-adSide .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
-    @apply border-gray-500 border; /* Optional hover state */
+    @apply border-customGray border; /* Optional hover state */
   }
   .custom-textField-adSide .MuiInputBase-input {
     @apply font-iranYekan text-xs ; /* Apply custom font and font size */
@@ -79,5 +79,27 @@ body {
   /* Custom styles for the checked switch track */
   .custom-switchChecked .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track {
     @apply bg-[#a62626]; /* Apply the red background to the track */
+  }
+  /*Custom style for input from location search */
+  .custom-input-locationSearch .MuiOutlinedInput-root {
+    @apply text-customGray font-iranYekan bg-customWhite mb-[10px];
+  }
+  .custom-input-locationSearch .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline{
+    @apply border border-customGray;
+  }
+
+  .custom-input-locationSearch .MuiOutlinedInput-root.Mui-focused
+  .MuiOutlinedInput-notchedOutline{
+    @apply  border border-customGray;
+  }
+  .custom-input-locationSearch--size .MuiOutlinedInput-root{
+    @apply bg-customWhite text-xs font-iranYekan mb-[10px];
+  }
+  .custom-input-locationSearch--size .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline{
+    @apply border border-customGray;
+  }
+  .custom-input-locationSearch--size .MuiOutlinedInput-root.Mui-focused
+  .MuiOutlinedInput-notchedOutline {
+    @apply border border-customGray;
   }
 }
