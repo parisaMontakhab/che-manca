@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import { BRANDNAME_EP, COLOR_EP, CREATEDYEAR_EP, DEPOSITPRICELIST_EP,DISPLAYDIMENTION_EP,INTERNALMEMORYCAPACITY_EP,METERAGELIST_EP,NUMBEROFROOM_EP,NUMBEROFSIMCART_EP,NUMBEROFUNITSPERFLOOR_EP,PRODUCTSTATUS_EP,RAMCAPACITY_EP,RENTPRICELIST_EP } from "./endPoints";
+import { BRANDNAME_EP, COLOR_EP, CREATEDYEAR_EP, DEPOSITPRICELIST_EP,DISPLAYDIMENTION_EP,INTERNALMEMORYCAPACITY_EP,METERAGELIST_EP,NUMBEROFROOM_EP,NUMBEROFSIMCART_EP,NUMBEROFUNITSPERFLOOR_EP,OPERATIONSYSTEMNAME_EP,PRODUCTSTATUS_EP,RAMCAPACITY_EP,RENTPRICELIST_EP } from "./endPoints";
 
 const baseURL = import.meta.env.VITE_CHEMANCHA_BASE_URL;
 
@@ -164,18 +164,13 @@ export const useDisplayDimention = () => {
 };
 
 //hasOperationSystemNameFilter//
-const fetchOperationsystemName = async () => {
-  const response = await axios.get(
-    "https://client.mobile.chemanca.com/api/products/OperationSystem/GetAllOperationSystem"
-  );
-
-  return response.data;
-};
+export const getOperationsystemName = async () =>
+  await apiCall({ url: OPERATIONSYSTEMNAME_EP() });
 
 export const useOperationSystemName = () => {
   return useQuery({
     queryKey: ["operationSystemName"],
-    queryFn: fetchOperationsystemName,
+    queryFn: getOperationsystemName,
   });
 };
 
