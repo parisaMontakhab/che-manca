@@ -39,3 +39,6 @@ export const OPERATIONSYSTEMNAME_EP = () =>
 
 export const PROCESSORMODEL_EP = () =>
   "/products/ProcessorModel/GetAllProcessorModel";
+
+export const MODEMTYPE_EP = () =>
+  "/products/ModemRouterBrand/GetAllModemRouterBrand";

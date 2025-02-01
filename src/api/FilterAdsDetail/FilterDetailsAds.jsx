@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import { BRANDNAME_EP, COLOR_EP, CREATEDYEAR_EP, DEPOSITPRICELIST_EP,DISPLAYDIMENTION_EP,INTERNALMEMORYCAPACITY_EP,METERAGELIST_EP,NUMBEROFROOM_EP,NUMBEROFSIMCART_EP,NUMBEROFUNITSPERFLOOR_EP,OPERATIONSYSTEMNAME_EP,PROCESSORMODEL_EP,PRODUCTSTATUS_EP,RAMCAPACITY_EP,RENTPRICELIST_EP } from "./endPoints";
+import { BRANDNAME_EP, COLOR_EP, CREATEDYEAR_EP, DEPOSITPRICELIST_EP,DISPLAYDIMENTION_EP,INTERNALMEMORYCAPACITY_EP,METERAGELIST_EP,MODEMTYPE_EP,NUMBEROFROOM_EP,NUMBEROFSIMCART_EP,NUMBEROFUNITSPERFLOOR_EP,OPERATIONSYSTEMNAME_EP,PROCESSORMODEL_EP,PRODUCTSTATUS_EP,RAMCAPACITY_EP,RENTPRICELIST_EP } from "./endPoints";
 
 const baseURL = import.meta.env.VITE_CHEMANCHA_BASE_URL;
 
@@ -185,18 +185,13 @@ export const useProcessorModel = () => {
   });
 };
 //hasModemOrrouterTypefilter//
-const fetchModemType = async () => {
-  const response = await axios.get(
-    "https://client.mobile.chemanca.com/api/products/ModemRouterBrand/GetAllModemRouterBrand"
-  );
-
-  return response.data;
-};
+export const getModemType = async () =>
+  await apiCall({ url: MODEMTYPE_EP() });
 
 export const useModemType = () => {
   return useQuery({
     queryKey: ["modemType"],
-    queryFn: fetchModemType,
+    queryFn: getModemType,
   });
 };
 //hasJoystickTypefilter//
