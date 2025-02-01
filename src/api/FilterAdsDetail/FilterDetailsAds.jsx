@@ -13,6 +13,7 @@ import {
   ELECTRICCONSUMPTION_EP,
   GAMECONSOLEMODEL_EP,
   INTERNALMEMORYCAPACITY_EP,
+  JEWELRYMATERIAL_EP,
   JEWELRYTYPE_EP,
   JOYSTICKTYPE_EP,
   METERAGELIST_EP,
@@ -306,18 +307,13 @@ export const useJewelryType = () => {
   });
 };
 //hasJewelryMaterialFilter//
-const fetchJewelryMaterial = async () => {
-  const response = await axios.get(
-    "https://client.mobile.chemanca.com/api/products/JewelryMaterial/GetAllJewelryMaterial"
-  );
-
-  return response.data;
-};
+export const getJewelryMaterial = async () =>
+  await apiCall({ url: JEWELRYMATERIAL_EP() });
 
 export const useJewelryMaterial = () => {
   return useQuery({
     queryKey: ["jewelryMaterial"],
-    queryFn: fetchJewelryMaterial,
+    queryFn: getJewelryMaterial,
   });
 };
 //hasCarOperationFilter//

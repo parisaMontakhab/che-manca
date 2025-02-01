@@ -65,3 +65,5 @@ export const CLOTHTYPE_EP = () => "/products/ClothType/GetAllClothType";
 export const CLOCKTYPE_EP = () => "/products/ClockType/GetAllClockType";
 
 export const JEWELRYTYPE_EP = () => "/products/JewelryType/GetAllJewelryType";
+
+export const JEWELRYMATERIAL_EP = ()=>"/products/JewelryMaterial/GetAllJewelryMaterial";
