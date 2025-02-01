@@ -5,6 +5,7 @@ import {
   CARBODYSTATUS_EP,
   CARCHASSISTSTATUS_EP,
   CARFUEL_EP,
+  CARGEARBOBTYPE_EP,
   CAROPERATION_EP,
   CARPETDIMENTION_EP,
   CARPETTEXTURE_EP,
@@ -361,18 +362,13 @@ export const useCarFuel = () => {
   });
 };
 //hasCarGearboxTypeFilter//
-const fetchCarGearboxType = async () => {
-  const response = await axios.get(
-    "https://client.mobile.chemanca.com/api/products/CarGearboxType/GetAllCarGearboxType"
-  );
-
-  return response.data;
-};
+export const getCarGearboxType = async () =>
+  await apiCall({ url: CARGEARBOBTYPE_EP() });
 
 export const useCarGearboxType = () => {
   return useQuery({
     queryKey: ["carGearboxType"],
-    queryFn: fetchCarGearboxType,
+    queryFn: getCarGearboxType,
   });
 };
 //hasCarEngineStatusFilter//
