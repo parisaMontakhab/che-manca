@@ -3,3 +3,7 @@ export const DEPOSITPRICELIST_EP = () =>
 
 export const RENTPRICELIST_EP = () =>
   "/advertisements/AdsDetail/GetAllGroupedRentPricesAsync";
+
+
+export const METERAGELIST_EP = ()=>
+  "/advertisements/AdsDetail/GetAllGroupedMeterageAsync";

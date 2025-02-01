@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import { DEPOSITPRICELIST_EP,RENTPRICELIST_EP } from "./endPoints";
+import { DEPOSITPRICELIST_EP,METERAGELIST_EP,RENTPRICELIST_EP } from "./endPoints";
 
 const baseURL = import.meta.env.VITE_CHEMANCHA_BASE_URL;
 
@@ -41,18 +41,13 @@ export const useRentPriceList = () => {
 
 //MetrageFilter//
 
-const fetchMeterageList = async () => {
-  const response = await axios.get(
-    "https://client.mobile.chemanca.com/api/advertisements/AdsDetail/GetAllGroupedMeterageAsync"
-  );
-
-  return response.data;
-};
+export const getMeterageList = async () =>
+  await apiCall({ url: METERAGELIST_EP() });
 
 export const useMeterageList = () => {
   return useQuery({
     queryKey: ["meterageList"],
-    queryFn: fetchMeterageList,
+    queryFn: getMeterageList,
   });
 };
 
