@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import { BRANDNAME_EP, COLOR_EP, CREATEDYEAR_EP, DEPOSITPRICELIST_EP,DISPLAYDIMENTION_EP,INTERNALMEMORYCAPACITY_EP,JOYSTICKTYPE_EP,METERAGELIST_EP,MODEMTYPE_EP,NUMBEROFROOM_EP,NUMBEROFSIMCART_EP,NUMBEROFUNITSPERFLOOR_EP,OPERATIONSYSTEMNAME_EP,PROCESSORMODEL_EP,PRODUCTSTATUS_EP,RAMCAPACITY_EP,RENTPRICELIST_EP } from "./endPoints";
+import { BRANDNAME_EP, COLOR_EP, CREATEDYEAR_EP, DEPOSITPRICELIST_EP,DISPLAYDIMENTION_EP,GAMECONSOLEMODEL_EP,INTERNALMEMORYCAPACITY_EP,JOYSTICKTYPE_EP,METERAGELIST_EP,MODEMTYPE_EP,NUMBEROFROOM_EP,NUMBEROFSIMCART_EP,NUMBEROFUNITSPERFLOOR_EP,OPERATIONSYSTEMNAME_EP,PROCESSORMODEL_EP,PRODUCTSTATUS_EP,RAMCAPACITY_EP,RENTPRICELIST_EP } from "./endPoints";
 
 const baseURL = import.meta.env.VITE_CHEMANCHA_BASE_URL;
 
@@ -205,18 +205,13 @@ export const useJoystickType = () => {
   });
 };
 //hasGameConsoleModelFilter//
-const fetchGameConsoleModel = async () => {
-  const response = await axios.get(
-    "https://client.mobile.chemanca.com/api/products/GameConsoleModel/GetAllGameConsoleModel"
-  );
-
-  return response.data;
-};
+export const getGameConsoleModel = async () =>
+  await apiCall({ url: GAMECONSOLEMODEL_EP() });
 
 export const useGameConsoleModel = () => {
   return useQuery({
     queryKey: ["gameConsoleModel"],
-    queryFn: fetchGameConsoleModel,
+    queryFn: getGameConsoleModel,
   });
 };
 //hasTextureFilter//
