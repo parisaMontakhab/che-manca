@@ -37,6 +37,7 @@ import {
   PRODUCTSTATUS_EP,
   RAMCAPACITY_EP,
   RENTPRICELIST_EP,
+  ROOMTYPE_EP,
   SEX_EP,
 } from "./endPoints";
 
@@ -438,18 +439,13 @@ export const useNearUniversity = () => {
   });
 };
 //hasRoomTypeFilter//
-const fetchRoomType = async () => {
-  const response = await axios.get(
-    "https://client.mobile.chemanca.com/api/products/RoomType/GetAllRoomType"
-  );
-
-  return response.data;
-};
+export const getRoomType = async () =>
+  await apiCall({ url: ROOMTYPE_EP() });
 
 export const useRoomType = () => {
   return useQuery({
     queryKey: ["roomType"],
-    queryFn: fetchRoomType,
+    queryFn: getRoomType,
   });
 };
 //hasRentJustForFilter//

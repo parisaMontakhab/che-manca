@@ -96,3 +96,5 @@ export const CHOOSEROOMMATEGENDER_EP = () => "/products/Gender/GetAllGender";
 export const BEDTYPE_EP = () => "/products/BedType/GetAllBedType";
 
 export const NEARUNIVERSITY_EP = () => "/basicInfo/University/GetAllUniversity";
+
+export const ROOMTYPE_EP = () => "/products/RoomType/GetAllRoomType";
