@@ -56,7 +56,7 @@ async function apiCall({ url, options = { method: "get" } }) {
 }
 
 // DepositFilter//
-export const getDepositePriceList = async () =>
+ const getDepositePriceList = async () =>
   await apiCall({ url: DEPOSITPRICELIST_EP() });
 
 export const useDepositPriceList = () => {
@@ -67,7 +67,7 @@ export const useDepositPriceList = () => {
 };
 
 //RentPriceFilter//
-export const getRentPriceList = async () =>
+ const getRentPriceList = async () =>
   await apiCall({ url: RENTPRICELIST_EP() });
 
 export const useRentPriceList = () => {
@@ -79,7 +79,7 @@ export const useRentPriceList = () => {
 
 //MetrageFilter//
 
-export const getMeterageList = async () =>
+ const getMeterageList = async () =>
   await apiCall({ url: METERAGELIST_EP() });
 
 export const useMeterageList = () => {
@@ -91,7 +91,7 @@ export const useMeterageList = () => {
 
 //NumberOfRoomFilter//
 
-export const getNumberOfRoom = async () =>
+ const getNumberOfRoom = async () =>
   await apiCall({ url: NUMBEROFROOM_EP() });
 
 export const useNumberOfRoom = () => {
@@ -103,7 +103,7 @@ export const useNumberOfRoom = () => {
 
 //NumberOfUnitsPerFloorFilter//
 
-export const getNumberOfUnitsPerFloor = async () =>
+ const getNumberOfUnitsPerFloor = async () =>
   await apiCall({ url: NUMBEROFUNITSPERFLOOR_EP() });
 
 export const useNumberOfUnitsPerFloor = () => {
@@ -115,7 +115,7 @@ export const useNumberOfUnitsPerFloor = () => {
 
 //ProductsStatusFilter//
 
-export const getProductStatus = async () =>
+ const getProductStatus = async () =>
   await apiCall({ url: PRODUCTSTATUS_EP() });
 
 export const useProductStatus = () => {
@@ -126,7 +126,7 @@ export const useProductStatus = () => {
 };
 
 // hasCreatedYearFilter//
-export const getCreatedYear = async () =>
+ const getCreatedYear = async () =>
   await apiCall({ url: CREATEDYEAR_EP() });
 
 export const useCreatedYear = () => {
@@ -137,7 +137,7 @@ export const useCreatedYear = () => {
 };
 
 //hasBrandNameFilter //
-export const getBrandName = async () => await apiCall({ url: BRANDNAME_EP() });
+ const getBrandName = async () => await apiCall({ url: BRANDNAME_EP() });
 
 export const useBrandName = () => {
   return useQuery({
@@ -147,7 +147,7 @@ export const useBrandName = () => {
 };
 
 //hasNumberOfSimCartFilter//
-export const getNumberOfSimCart = async () =>
+ const getNumberOfSimCart = async () =>
   await apiCall({ url: NUMBEROFSIMCART_EP() });
 
 export const useNumberOfSimCart = () => {
@@ -158,7 +158,7 @@ export const useNumberOfSimCart = () => {
 };
 
 //hasInternalMemoryCapacityFilter//
-export const getInternalMemoryCapacity = async () =>
+ const getInternalMemoryCapacity = async () =>
   await apiCall({ url: INTERNALMEMORYCAPACITY_EP() });
 
 export const useInternalMemoryCapacity = () => {
@@ -169,7 +169,7 @@ export const useInternalMemoryCapacity = () => {
 };
 
 //hasRamCapacityFilter//
-export const getRamCapacity = async () =>
+ const getRamCapacity = async () =>
   await apiCall({ url: RAMCAPACITY_EP() });
 
 export const useRamCapacity = () => {
@@ -179,7 +179,7 @@ export const useRamCapacity = () => {
   });
 };
 //hasColorFilter//
-export const getColor = async () => await apiCall({ url: COLOR_EP() });
+ const getColor = async () => await apiCall({ url: COLOR_EP() });
 
 export const useColorFilter = () => {
   return useQuery({
@@ -189,7 +189,7 @@ export const useColorFilter = () => {
 };
 
 //hasDisplaydimentionFilter//
-export const getDisplayDimention = async () =>
+ const getDisplayDimention = async () =>
   await apiCall({ url: DISPLAYDIMENTION_EP() });
 
 export const useDisplayDimention = () => {
@@ -200,7 +200,7 @@ export const useDisplayDimention = () => {
 };
 
 //hasOperationSystemNameFilter//
-export const getOperationsystemName = async () =>
+ const getOperationsystemName = async () =>
   await apiCall({ url: OPERATIONSYSTEMNAME_EP() });
 
 export const useOperationSystemName = () => {
@@ -211,7 +211,7 @@ export const useOperationSystemName = () => {
 };
 
 //hasProcessorModelFilter//
-export const getProcessorModel = async () =>
+ const getProcessorModel = async () =>
   await apiCall({ url: PROCESSORMODEL_EP() });
 
 export const useProcessorModel = () => {
@@ -221,7 +221,7 @@ export const useProcessorModel = () => {
   });
 };
 //hasModemOrrouterTypefilter//
-export const getModemType = async () => await apiCall({ url: MODEMTYPE_EP() });
+ const getModemType = async () => await apiCall({ url: MODEMTYPE_EP() });
 
 export const useModemType = () => {
   return useQuery({
@@ -230,7 +230,7 @@ export const useModemType = () => {
   });
 };
 //hasJoystickTypefilter//
-export const getJoystickType = async () =>
+ const getJoystickType = async () =>
   await apiCall({ url: JOYSTICKTYPE_EP() });
 
 export const useJoystickType = () => {
@@ -240,7 +240,7 @@ export const useJoystickType = () => {
   });
 };
 //hasGameConsoleModelFilter//
-export const getGameConsoleModel = async () =>
+ const getGameConsoleModel = async () =>
   await apiCall({ url: GAMECONSOLEMODEL_EP() });
 
 export const useGameConsoleModel = () => {
@@ -250,7 +250,7 @@ export const useGameConsoleModel = () => {
   });
 };
 //hasTextureFilter//
-export const getCarpetTexture = async () =>
+ const getCarpetTexture = async () =>
   await apiCall({ url: CARPETTEXTURE_EP() });
 
 export const useCarpetTexture = () => {
@@ -260,7 +260,7 @@ export const useCarpetTexture = () => {
   });
 };
 //hasDimentionFilter//
-export const getCarpetDimention = async () =>
+ const getCarpetDimention = async () =>
   await apiCall({ url: CARPETDIMENTION_EP() });
 
 export const useCarpetDimention = () => {
@@ -270,7 +270,7 @@ export const useCarpetDimention = () => {
   });
 };
 //hasConsumptionFilter//
-export const getElectricConsumption = async () =>
+ const getElectricConsumption = async () =>
   await apiCall({ url: ELECTRICCONSUMPTION_EP() });
 
 export const useElectricConsumption = () => {
@@ -280,7 +280,7 @@ export const useElectricConsumption = () => {
   });
 };
 //hasSexfilter//
-export const getSexFilter = async () =>
+ const getSexFilter = async () =>
   await apiCall({ url: SEX_EP() });
 
 export const useSexFilter = () => {
@@ -290,7 +290,7 @@ export const useSexFilter = () => {
   });
 };
 //hasClothTypeFilter//
-export const getClothType = async () =>
+ const getClothType = async () =>
   await apiCall({ url: CLOTHTYPE_EP() });
 
 export const useClothType = () => {
@@ -300,7 +300,7 @@ export const useClothType = () => {
   });
 };
 //hasClockTypeFilter//
-export const getClockType = async () =>
+ const getClockType = async () =>
   await apiCall({ url: CLOCKTYPE_EP() });
 
 export const useClockType = () => {
@@ -310,7 +310,7 @@ export const useClockType = () => {
   });
 };
 //hasJewelryTypeFilter//
-export const getJewelryType = async () =>
+ const getJewelryType = async () =>
   await apiCall({ url: JEWELRYTYPE_EP() });
 
 export const useJewelryType = () => {
@@ -320,7 +320,7 @@ export const useJewelryType = () => {
   });
 };
 //hasJewelryMaterialFilter//
-export const getJewelryMaterial = async () =>
+ const getJewelryMaterial = async () =>
   await apiCall({ url: JEWELRYMATERIAL_EP() });
 
 export const useJewelryMaterial = () => {
@@ -330,7 +330,7 @@ export const useJewelryMaterial = () => {
   });
 };
 //hasCarOperationFilter//
-export const getCarOperation = async () =>
+ const getCarOperation = async () =>
   await apiCall({ url: CAROPERATION_EP() });
 
 export const useCarOperation = () => {
@@ -340,7 +340,7 @@ export const useCarOperation = () => {
   });
 };
 //hasCarBodyStatusFilter//
-export const getCarBodyStatus = async () =>
+ const getCarBodyStatus = async () =>
   await apiCall({ url: CARBODYSTATUS_EP() });
 
 export const useCarBodyStatus = () => {
@@ -350,7 +350,7 @@ export const useCarBodyStatus = () => {
   });
 };
 //hasCarChassisStatusFilter//
-export const getCarChassisStatus = async () =>
+ const getCarChassisStatus = async () =>
   await apiCall({ url: CARCHASSISTSTATUS_EP() });
 
 export const useCarChassisStatus = () => {
@@ -360,7 +360,7 @@ export const useCarChassisStatus = () => {
   });
 };
 //hasCarFuelFilter//
-export const getCarFuel = async () =>
+ const getCarFuel = async () =>
   await apiCall({ url: CARFUEL_EP() });
 
 export const useCarFuel = () => {
@@ -370,7 +370,7 @@ export const useCarFuel = () => {
   });
 };
 //hasCarGearboxTypeFilter//
-export const getCarGearboxType = async () =>
+ const getCarGearboxType = async () =>
   await apiCall({ url: CARGEARBOBTYPE_EP() });
 
 export const useCarGearboxType = () => {
@@ -380,7 +380,7 @@ export const useCarGearboxType = () => {
   });
 };
 //hasCarEngineStatusFilter//
-export const getCarEngineStatus = async () =>
+ const getCarEngineStatus = async () =>
   await apiCall({ url: CARENGINESTATUS_EP() });
 
 export const useCarEngineStatus = () => {
@@ -390,7 +390,7 @@ export const useCarEngineStatus = () => {
   });
 };
 //hasCarInsuranceStatusFilter//
-export const getCarInsuranceStatus = async () =>
+ const getCarInsuranceStatus = async () =>
   await apiCall({ url: CARINSURANCESTATUS_EP() });
 
 export const useCarInsuranceStatus = () => {
@@ -400,7 +400,7 @@ export const useCarInsuranceStatus = () => {
   });
 };
 //hasKilogramWeightFilter//
-export const gethKilogramWeight = async () =>
+ const gethKilogramWeight = async () =>
   await apiCall({ url: KILOGRAMWEIGHT_EP() });
 
 export const useKilogramWeight = () => {
@@ -410,7 +410,7 @@ export const useKilogramWeight = () => {
   });
 };
 //hasChooseRoommateGenderFilter//
-export const getChooseRoommateGender = async () =>
+ const getChooseRoommateGender = async () =>
   await apiCall({ url: CHOOSEROOMMATEGENDER_EP() });
 
 export const useChooseRoommateGender = () => {
@@ -420,7 +420,7 @@ export const useChooseRoommateGender = () => {
   });
 };
 //hasBedTypeFilter//
-export const getBedType = async () =>
+ const getBedType = async () =>
   await apiCall({ url: BEDTYPE_EP() });
 
 export const useBedtype = () => {
@@ -430,7 +430,7 @@ export const useBedtype = () => {
   });
 };
 //hasNearUniversityFilter//
-export const getNearUniversity = async () =>
+ const getNearUniversity = async () =>
   await apiCall({ url: NEARUNIVERSITY_EP() });
 
 export const useNearUniversity = () => {
@@ -440,7 +440,7 @@ export const useNearUniversity = () => {
   });
 };
 //hasRoomTypeFilter//
-export const getRoomType = async () =>
+ const getRoomType = async () =>
   await apiCall({ url: ROOMTYPE_EP() });
 
 export const useRoomType = () => {
@@ -450,7 +450,7 @@ export const useRoomType = () => {
   });
 };
 //hasRentJustForFilter//
-export const getRentJustFor = async () =>
+ const getRentJustFor = async () =>
   await apiCall({ url: RENTJUSTFOR_EP() });
 
 export const useRentJustFor = () => {
