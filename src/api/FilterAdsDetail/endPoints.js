@@ -26,3 +26,5 @@ export const NUMBEROFSIMCART_EP = () =>
 
 export const INTERNALMEMORYCAPACITY_EP = () =>
   "/products/InternalMemoryCapacity/GetAllInternalMemoryCapacity";
+
+export const RAMCAPACITY_EP = ()=>"/products/RamCapacity/GetAllRamCapacity";

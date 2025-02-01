@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import { BRANDNAME_EP, CREATEDYEAR_EP, DEPOSITPRICELIST_EP,INTERNALMEMORYCAPACITY_EP,METERAGELIST_EP,NUMBEROFROOM_EP,NUMBEROFSIMCART_EP,NUMBEROFUNITSPERFLOOR_EP,PRODUCTSTATUS_EP,RENTPRICELIST_EP } from "./endPoints";
+import { BRANDNAME_EP, CREATEDYEAR_EP, DEPOSITPRICELIST_EP,INTERNALMEMORYCAPACITY_EP,METERAGELIST_EP,NUMBEROFROOM_EP,NUMBEROFSIMCART_EP,NUMBEROFUNITSPERFLOOR_EP,PRODUCTSTATUS_EP,RAMCAPACITY_EP,RENTPRICELIST_EP } from "./endPoints";
 
 const baseURL = import.meta.env.VITE_CHEMANCHA_BASE_URL;
 
@@ -132,18 +132,13 @@ export const useInternalMemoryCapacity = () => {
 };
 
 //hasRamCapacityFilter//
-const fetchRamCapacity = async () => {
-  const response = await axios.get(
-    "https://client.mobile.chemanca.com/api/products/RamCapacity/GetAllRamCapacity"
-  );
-
-  return response.data;
-};
+export const getRamCapacity = async () =>
+  await apiCall({ url: RAMCAPACITY_EP() });
 
 export const useRamCapacity = () => {
   return useQuery({
     queryKey: ["ramCapacity"],
-    queryFn: fetchRamCapacity,
+    queryFn: getRamCapacity,
   });
 };
 //hasColorFilter//
