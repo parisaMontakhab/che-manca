@@ -4,6 +4,7 @@ import {
   BRANDNAME_EP,
   CARBODYSTATUS_EP,
   CARCHASSISTSTATUS_EP,
+  CARFUEL_EP,
   CAROPERATION_EP,
   CARPETDIMENTION_EP,
   CARPETTEXTURE_EP,
@@ -350,18 +351,13 @@ export const useCarChassisStatus = () => {
   });
 };
 //hasCarFuelFilter//
-const fetchCarFuel = async () => {
-  const response = await axios.get(
-    "https://client.mobile.chemanca.com/api/products/CarFuelStatus/GetAllCarFuelStatus"
-  );
-
-  return response.data;
-};
+export const getCarFuel = async () =>
+  await apiCall({ url: CARFUEL_EP() });
 
 export const useCarFuel = () => {
   return useQuery({
     queryKey: ["carFuel"],
-    queryFn: fetchCarFuel,
+    queryFn: getCarFuel,
   });
 };
 //hasCarGearboxTypeFilter//
