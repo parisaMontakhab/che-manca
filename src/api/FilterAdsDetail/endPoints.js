@@ -52,4 +52,8 @@ export const GAMECONSOLEMODEL_EP = () =>
 export const CARPETTEXTURE_EP = () =>
   "/products/CarpetTexture/GetAllCarpetTexture";
 
-export const CARPETDIMENTION_EP = ()=>"/products/CarpetDimension/GetAllCarpetDimension";
+export const CARPETDIMENTION_EP = () =>
+  "/products/CarpetDimension/GetAllCarpetDimension";
+
+export const ELECTRICCONSUMPTION_EP = () =>
+  "/products/ElectricConsumption/GetAllElectricConsumption";

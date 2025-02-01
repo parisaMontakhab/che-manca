@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import { BRANDNAME_EP, CARPETDIMENTION_EP, CARPETTEXTURE_EP, COLOR_EP, CREATEDYEAR_EP, DEPOSITPRICELIST_EP,DISPLAYDIMENTION_EP,GAMECONSOLEMODEL_EP,INTERNALMEMORYCAPACITY_EP,JOYSTICKTYPE_EP,METERAGELIST_EP,MODEMTYPE_EP,NUMBEROFROOM_EP,NUMBEROFSIMCART_EP,NUMBEROFUNITSPERFLOOR_EP,OPERATIONSYSTEMNAME_EP,PROCESSORMODEL_EP,PRODUCTSTATUS_EP,RAMCAPACITY_EP,RENTPRICELIST_EP } from "./endPoints";
+import { BRANDNAME_EP, CARPETDIMENTION_EP, CARPETTEXTURE_EP, COLOR_EP, CREATEDYEAR_EP, DEPOSITPRICELIST_EP,DISPLAYDIMENTION_EP,ELECTRICCONSUMPTION_EP,GAMECONSOLEMODEL_EP,INTERNALMEMORYCAPACITY_EP,JOYSTICKTYPE_EP,METERAGELIST_EP,MODEMTYPE_EP,NUMBEROFROOM_EP,NUMBEROFSIMCART_EP,NUMBEROFUNITSPERFLOOR_EP,OPERATIONSYSTEMNAME_EP,PROCESSORMODEL_EP,PRODUCTSTATUS_EP,RAMCAPACITY_EP,RENTPRICELIST_EP } from "./endPoints";
 
 const baseURL = import.meta.env.VITE_CHEMANCHA_BASE_URL;
 
@@ -235,18 +235,13 @@ export const useCarpetDimention = () => {
   });
 };
 //hasConsumptionFilter//
-const fetchElectricConsumption = async () => {
-  const response = await axios.get(
-    "https://client.mobile.chemanca.com/api/products/ElectricConsumption/GetAllElectricConsumption"
-  );
-
-  return response.data;
-};
+export const getElectricConsumption = async () =>
+  await apiCall({ url: ELECTRICCONSUMPTION_EP() });
 
 export const useElectricConsumption = () => {
   return useQuery({
     queryKey: ["electricConsumption"],
-    queryFn: fetchElectricConsumption,
+    queryFn: getElectricConsumption,
   });
 };
 //hasSexfilter//
