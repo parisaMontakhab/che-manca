@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import { BRANDNAME_EP, CREATEDYEAR_EP, DEPOSITPRICELIST_EP,METERAGELIST_EP,NUMBEROFROOM_EP,NUMBEROFUNITSPERFLOOR_EP,PRODUCTSTATUS_EP,RENTPRICELIST_EP } from "./endPoints";
+import { BRANDNAME_EP, CREATEDYEAR_EP, DEPOSITPRICELIST_EP,METERAGELIST_EP,NUMBEROFROOM_EP,NUMBEROFSIMCART_EP,NUMBEROFUNITSPERFLOOR_EP,PRODUCTSTATUS_EP,RENTPRICELIST_EP } from "./endPoints";
 
 const baseURL = import.meta.env.VITE_CHEMANCHA_BASE_URL;
 
@@ -110,18 +110,13 @@ export const useBrandName = () => {
 };
 
 //hasNumberOfSimCartFilter//
-const fetchNumberOfSimCart = async () => {
-  const response = await axios.get(
-    "https://client.mobile.chemanca.com/api/advertisements/AdsDetail/GetAllGroupedNumberOfSimcartAsync"
-  );
-
-  return response.data;
-};
+export const getNumberOfSimCart = async () =>
+  await apiCall({ url: NUMBEROFSIMCART_EP() });
 
 export const useNumberOfSimCart = () => {
   return useQuery({
     queryKey: ["numberOfSimCart"],
-    queryFn: fetchNumberOfSimCart,
+    queryFn: getNumberOfSimCart,
   });
 };
 

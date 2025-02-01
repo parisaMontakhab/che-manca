@@ -20,3 +20,5 @@ export const CREATEDYEAR_EP = () =>
   "/advertisements/AdsDetail/GetAllGroupedCreatedYearAsync";
 
 export const BRANDNAME_EP = () => "/products/Brand/GetAllBrand";
+
+export const NUMBEROFSIMCART_EP =()=>"/advertisements/AdsDetail/GetAllGroupedNumberOfSimcartAsync"
