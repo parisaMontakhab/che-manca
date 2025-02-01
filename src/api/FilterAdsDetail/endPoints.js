@@ -74,3 +74,6 @@ export const CAROPERATION_EP = () =>
 
 export const CARBODYSTATUS_EP = () =>
   "/products/CarBodyStatus/GetAllCarBodyStatus";
+
+export const CARCHASSISTSTATUS_EP = () =>
+  "/products/CarChassisStatus/GetAllCarChassisStatus";

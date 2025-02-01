@@ -3,6 +3,7 @@ import axios from "axios";
 import {
   BRANDNAME_EP,
   CARBODYSTATUS_EP,
+  CARCHASSISTSTATUS_EP,
   CAROPERATION_EP,
   CARPETDIMENTION_EP,
   CARPETTEXTURE_EP,
@@ -339,18 +340,13 @@ export const useCarBodyStatus = () => {
   });
 };
 //hasCarChassisStatusFilter//
-const fetchCarChassisStatus = async () => {
-  const response = await axios.get(
-    "https://client.mobile.chemanca.com/api/products/CarChassisStatus/GetAllCarChassisStatus"
-  );
-
-  return response.data;
-};
+export const getCarChassisStatus = async () =>
+  await apiCall({ url: CARCHASSISTSTATUS_EP() });
 
 export const useCarChassisStatus = () => {
   return useQuery({
     queryKey: ["carChassisStatus"],
-    queryFn: fetchCarChassisStatus,
+    queryFn: getCarChassisStatus,
   });
 };
 //hasCarFuelFilter//
