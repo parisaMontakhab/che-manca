@@ -46,4 +46,8 @@ export const MODEMTYPE_EP = () =>
 export const JOYSTICKTYPE_EP = () =>
   "/products/JoyStickType/GetAllJoyStickType";
 
-export const GAMECONSOLEMODEL_EP = ()=>"/products/GameConsoleModel/GetAllGameConsoleModel";
+export const GAMECONSOLEMODEL_EP = () =>
+  "/products/GameConsoleModel/GetAllGameConsoleModel";
+
+export const CARPETTEXTURE_EP = () =>
+  "/products/CarpetTexture/GetAllCarpetTexture";
