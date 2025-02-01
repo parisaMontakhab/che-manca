@@ -4,6 +4,7 @@ import {
   BRANDNAME_EP,
   CARPETDIMENTION_EP,
   CARPETTEXTURE_EP,
+  CLOCKTYPE_EP,
   CLOTHTYPE_EP,
   COLOR_EP,
   CREATEDYEAR_EP,
@@ -284,18 +285,13 @@ export const useClothType = () => {
   });
 };
 //hasClockTypeFilter//
-const fetchClockType = async () => {
-  const response = await axios.get(
-    "https://client.mobile.chemanca.com/api/products/ClockType/GetAllClockType"
-  );
-
-  return response.data;
-};
+export const getClockType = async () =>
+  await apiCall({ url: CLOCKTYPE_EP() });
 
 export const useClockType = () => {
   return useQuery({
     queryKey: ["clockType"],
-    queryFn: fetchClockType,
+    queryFn: getClockType,
   });
 };
 //hasJewelryTypeFilter//

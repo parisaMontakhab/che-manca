@@ -61,3 +61,6 @@ export const ELECTRICCONSUMPTION_EP = () =>
 export const SEX_EP = () => "/products/Gender/GetAllGender";
 
 export const CLOTHTYPE_EP = () => "/products/ClothType/GetAllClothType";
+
+export const CLOCKTYPE_EP = () => "/products/ClockType/GetAllClockType";
+
