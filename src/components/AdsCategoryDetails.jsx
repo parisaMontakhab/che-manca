@@ -1,6 +1,6 @@
 import React, { Component, useCallback, useState } from "react";
 import { FormGroup, Typography, FormControlLabel, Switch } from "@mui/material";
-import { getCategoryDetails, useCategoryDetails } from "../api/Categories/CategoriesApi";
+import {  useCategoryDetails } from "../api/Categories/CategoriesApi";
 import NumeriComponent from "./NumeriComponent";
 import {
   useDepositPriceList,

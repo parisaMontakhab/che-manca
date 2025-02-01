@@ -21,7 +21,7 @@ async function apiCall({ url, options = { method: "get" } }) {
 // }
 
 //country//
-export const getCountries = async () => await apiCall({ url: COUNTRIES_EP() });
+ const getCountries = async () => await apiCall({ url: COUNTRIES_EP() });
 
 export const useCountries = () => {
   return useQuery({
@@ -31,7 +31,7 @@ export const useCountries = () => {
 };
 
 //subcountry//
-export const getSubCountries = async (countryId) =>
+ const getSubCountries = async (countryId) =>
   await apiCall({ url: COUNTRIES_EP(countryId) });
 
 // const fetchSubCountries = async (countryId)=>{
@@ -49,7 +49,7 @@ export const useSubCountries = (countryId) => {
 };
 
 //city//
-export const getCities = async (subCountryId) =>
+ const getCities = async (subCountryId) =>
   await apiCall({ url: COUNTRIES_EP(subCountryId) });
 
 // const fetchCities = async (subCountryId) => {

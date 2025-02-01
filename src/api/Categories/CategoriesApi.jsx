@@ -20,7 +20,7 @@ async function apiCall({ url, options = { method: "get" } }) {
   //you can have global state with context or redux for handling ui errors
 
 //categories//
-export const getCategories = async (parentId) =>
+ const getCategories = async (parentId) =>
   await apiCall({ url: CATEGORIES_EP(parentId) });
 
 export const useCategories = (parentId) => {
@@ -40,7 +40,7 @@ queryFn: () => getCategories(parentId || ""),
 //   return response.data;
 // };
 
-export const getCategoryDetails = async (adsCategoryId) =>
+ const getCategoryDetails = async (adsCategoryId) =>
   await apiCall({ url: CATEGORYDETAILS_EP(adsCategoryId) });
 
 export const useCategoryDetails = (adsCategoryId) => {
