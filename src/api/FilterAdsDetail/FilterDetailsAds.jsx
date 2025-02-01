@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import { DEPOSITPRICELIST_EP,METERAGELIST_EP,NUMBEROFROOM_EP,NUMBEROFUNITSPERFLOOR_EP,PRODUCTSTATUS_EP,RENTPRICELIST_EP } from "./endPoints";
+import { CREATEDYEAR_EP, DEPOSITPRICELIST_EP,METERAGELIST_EP,NUMBEROFROOM_EP,NUMBEROFUNITSPERFLOOR_EP,PRODUCTSTATUS_EP,RENTPRICELIST_EP } from "./endPoints";
 
 const baseURL = import.meta.env.VITE_CHEMANCHA_BASE_URL;
 
@@ -88,18 +88,13 @@ export const useProductStatus = () => {
 };
 
 // hasCreatedYearFilter//
-const fetchCreatedYear = async () => {
-  const response = await axios.get(
-    "https://client.mobile.chemanca.com/api/advertisements/AdsDetail/GetAllGroupedCreatedYearAsync"
-  );
-
-  return response.data;
-};
+export const getCreatedYear = async () =>
+  await apiCall({ url: CREATEDYEAR_EP() });
 
 export const useCreatedYear = () => {
   return useQuery({
     queryKey: ["createdYear"],
-    queryFn: fetchCreatedYear,
+    queryFn: getCreatedYear,
   });
 };
 

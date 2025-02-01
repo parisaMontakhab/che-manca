@@ -15,3 +15,5 @@ export const NUMBEROFUNITSPERFLOOR_EP = () =>
 
 export const PRODUCTSTATUS_EP = () =>
   "/products/ProductStatus/GetAllProductStaus";
+
+export const CREATEDYEAR_EP = ()=>"/advertisements/AdsDetail/GetAllGroupedCreatedYearAsync"
