@@ -21,4 +21,8 @@ export const CREATEDYEAR_EP = () =>
 
 export const BRANDNAME_EP = () => "/products/Brand/GetAllBrand";
 
-export const NUMBEROFSIMCART_EP =()=>"/advertisements/AdsDetail/GetAllGroupedNumberOfSimcartAsync"
+export const NUMBEROFSIMCART_EP = () =>
+  "/advertisements/AdsDetail/GetAllGroupedNumberOfSimcartAsync";
+
+export const INTERNALMEMORYCAPACITY_EP = () =>
+  "/products/InternalMemoryCapacity/GetAllInternalMemoryCapacity";

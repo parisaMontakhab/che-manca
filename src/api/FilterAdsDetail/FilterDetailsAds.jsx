@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import { BRANDNAME_EP, CREATEDYEAR_EP, DEPOSITPRICELIST_EP,METERAGELIST_EP,NUMBEROFROOM_EP,NUMBEROFSIMCART_EP,NUMBEROFUNITSPERFLOOR_EP,PRODUCTSTATUS_EP,RENTPRICELIST_EP } from "./endPoints";
+import { BRANDNAME_EP, CREATEDYEAR_EP, DEPOSITPRICELIST_EP,INTERNALMEMORYCAPACITY_EP,METERAGELIST_EP,NUMBEROFROOM_EP,NUMBEROFSIMCART_EP,NUMBEROFUNITSPERFLOOR_EP,PRODUCTSTATUS_EP,RENTPRICELIST_EP } from "./endPoints";
 
 const baseURL = import.meta.env.VITE_CHEMANCHA_BASE_URL;
 
@@ -121,18 +121,13 @@ export const useNumberOfSimCart = () => {
 };
 
 //hasInternalMemoryCapacityFilter//
-const fetchInternalMemoryCapacity = async () => {
-  const response = await axios.get(
-    "https://client.mobile.chemanca.com/api/products/InternalMemoryCapacity/GetAllInternalMemoryCapacity"
-  );
-
-  return response.data;
-};
+export const getInternalMemoryCapacity = async () =>
+  await apiCall({ url: INTERNALMEMORYCAPACITY_EP() });
 
 export const useInternalMemoryCapacity = () => {
   return useQuery({
     queryKey: ["internalMemoryCapacity"],
-    queryFn: fetchInternalMemoryCapacity,
+    queryFn: getInternalMemoryCapacity,
   });
 };
 
