@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import { BRANDNAME_EP, CREATEDYEAR_EP, DEPOSITPRICELIST_EP,INTERNALMEMORYCAPACITY_EP,METERAGELIST_EP,NUMBEROFROOM_EP,NUMBEROFSIMCART_EP,NUMBEROFUNITSPERFLOOR_EP,PRODUCTSTATUS_EP,RAMCAPACITY_EP,RENTPRICELIST_EP } from "./endPoints";
+import { BRANDNAME_EP, COLOR_EP, CREATEDYEAR_EP, DEPOSITPRICELIST_EP,INTERNALMEMORYCAPACITY_EP,METERAGELIST_EP,NUMBEROFROOM_EP,NUMBEROFSIMCART_EP,NUMBEROFUNITSPERFLOOR_EP,PRODUCTSTATUS_EP,RAMCAPACITY_EP,RENTPRICELIST_EP } from "./endPoints";
 
 const baseURL = import.meta.env.VITE_CHEMANCHA_BASE_URL;
 
@@ -142,18 +142,13 @@ export const useRamCapacity = () => {
   });
 };
 //hasColorFilter//
-const fetchColor = async () => {
-  const response = await axios.get(
-    "https://client.mobile.chemanca.com/api/products/Color/GetAllColor"
-  );
-
-  return response.data;
-};
+export const getColor = async () =>
+  await apiCall({ url: COLOR_EP() });
 
 export const useColorFilter = () => {
   return useQuery({
     queryKey: ["colorFilter"],
-    queryFn: fetchColor,
+    queryFn: getColor,
   });
 };
 
