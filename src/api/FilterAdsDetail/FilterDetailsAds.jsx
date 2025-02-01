@@ -4,6 +4,7 @@ import {
   BRANDNAME_EP,
   CARPETDIMENTION_EP,
   CARPETTEXTURE_EP,
+  CLOTHTYPE_EP,
   COLOR_EP,
   CREATEDYEAR_EP,
   DEPOSITPRICELIST_EP,
@@ -273,18 +274,13 @@ export const useSexFilter = () => {
   });
 };
 //hasClothTypeFilter//
-const fetchClothType = async () => {
-  const response = await axios.get(
-    "https://client.mobile.chemanca.com/api/products/ClothType/GetAllClothType"
-  );
-
-  return response.data;
-};
+export const getClothType = async () =>
+  await apiCall({ url: CLOTHTYPE_EP() });
 
 export const useClothType = () => {
   return useQuery({
     queryKey: ["clothType"],
-    queryFn: fetchClothType,
+    queryFn: getClothType,
   });
 };
 //hasClockTypeFilter//
