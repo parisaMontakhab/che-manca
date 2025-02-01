@@ -42,3 +42,6 @@ export const PROCESSORMODEL_EP = () =>
 
 export const MODEMTYPE_EP = () =>
   "/products/ModemRouterBrand/GetAllModemRouterBrand";
+
+export const JOYSTICKTYPE_EP = () =>
+  "/products/JoyStickType/GetAllJoyStickType";

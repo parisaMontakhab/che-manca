@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import { BRANDNAME_EP, COLOR_EP, CREATEDYEAR_EP, DEPOSITPRICELIST_EP,DISPLAYDIMENTION_EP,INTERNALMEMORYCAPACITY_EP,METERAGELIST_EP,MODEMTYPE_EP,NUMBEROFROOM_EP,NUMBEROFSIMCART_EP,NUMBEROFUNITSPERFLOOR_EP,OPERATIONSYSTEMNAME_EP,PROCESSORMODEL_EP,PRODUCTSTATUS_EP,RAMCAPACITY_EP,RENTPRICELIST_EP } from "./endPoints";
+import { BRANDNAME_EP, COLOR_EP, CREATEDYEAR_EP, DEPOSITPRICELIST_EP,DISPLAYDIMENTION_EP,INTERNALMEMORYCAPACITY_EP,JOYSTICKTYPE_EP,METERAGELIST_EP,MODEMTYPE_EP,NUMBEROFROOM_EP,NUMBEROFSIMCART_EP,NUMBEROFUNITSPERFLOOR_EP,OPERATIONSYSTEMNAME_EP,PROCESSORMODEL_EP,PRODUCTSTATUS_EP,RAMCAPACITY_EP,RENTPRICELIST_EP } from "./endPoints";
 
 const baseURL = import.meta.env.VITE_CHEMANCHA_BASE_URL;
 
@@ -195,18 +195,13 @@ export const useModemType = () => {
   });
 };
 //hasJoystickTypefilter//
-const fetchJoystickType = async () => {
-  const response = await axios.get(
-    "https://client.mobile.chemanca.com/api/products/JoyStickType/GetAllJoyStickType"
-  );
-
-  return response.data;
-};
+export const getJoystickType = async () =>
+  await apiCall({ url: JOYSTICKTYPE_EP() });
 
 export const useJoystickType = () => {
   return useQuery({
     queryKey: ["joystickType"],
-    queryFn: fetchJoystickType,
+    queryFn: getJoystickType,
   });
 };
 //hasGameConsoleModelFilter//
