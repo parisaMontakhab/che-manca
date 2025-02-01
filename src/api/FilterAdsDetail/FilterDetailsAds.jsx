@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import { BRANDNAME_EP, COLOR_EP, CREATEDYEAR_EP, DEPOSITPRICELIST_EP,INTERNALMEMORYCAPACITY_EP,METERAGELIST_EP,NUMBEROFROOM_EP,NUMBEROFSIMCART_EP,NUMBEROFUNITSPERFLOOR_EP,PRODUCTSTATUS_EP,RAMCAPACITY_EP,RENTPRICELIST_EP } from "./endPoints";
+import { BRANDNAME_EP, COLOR_EP, CREATEDYEAR_EP, DEPOSITPRICELIST_EP,DISPLAYDIMENTION_EP,INTERNALMEMORYCAPACITY_EP,METERAGELIST_EP,NUMBEROFROOM_EP,NUMBEROFSIMCART_EP,NUMBEROFUNITSPERFLOOR_EP,PRODUCTSTATUS_EP,RAMCAPACITY_EP,RENTPRICELIST_EP } from "./endPoints";
 
 const baseURL = import.meta.env.VITE_CHEMANCHA_BASE_URL;
 
@@ -153,18 +153,13 @@ export const useColorFilter = () => {
 };
 
 //hasDisplaydimentionFilter//
-const fetchDisplayDimention = async () => {
-  const response = await axios.get(
-    "https://client.mobile.chemanca.com/api/products/DisplayDimension/GetAllDisplayDimension"
-  );
-
-  return response.data;
-};
+export const getDisplayDimention = async () =>
+  await apiCall({ url: DISPLAYDIMENTION_EP() });
 
 export const useDisplayDimention = () => {
   return useQuery({
     queryKey: ["displayDimention"],
-    queryFn: fetchDisplayDimention,
+    queryFn: getDisplayDimention,
   });
 };
 

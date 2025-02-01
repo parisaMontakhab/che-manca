@@ -30,3 +30,5 @@ export const INTERNALMEMORYCAPACITY_EP = () =>
 export const RAMCAPACITY_EP = ()=>"/products/RamCapacity/GetAllRamCapacity";
 
 export const COLOR_EP = ()=>"/products/Color/GetAllColor";
+
+export const DISPLAYDIMENTION_EP = ()=>"/products/DisplayDimension/GetAllDisplayDimension";
