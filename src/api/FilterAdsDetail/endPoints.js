@@ -71,3 +71,6 @@ export const JEWELRYMATERIAL_EP = () =>
 
 export const CAROPERATION_EP = () =>
   "/products/CarOperationKilometer/GetAllCarOperationKilometer";
+
+export const CARBODYSTATUS_EP = () =>
+  "/products/CarBodyStatus/GetAllCarBodyStatus";

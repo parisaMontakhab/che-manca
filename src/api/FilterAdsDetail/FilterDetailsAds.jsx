@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import {
   BRANDNAME_EP,
+  CARBODYSTATUS_EP,
   CAROPERATION_EP,
   CARPETDIMENTION_EP,
   CARPETTEXTURE_EP,
@@ -328,18 +329,13 @@ export const useCarOperation = () => {
   });
 };
 //hasCarBodyStatusFilter//
-const fetchCarBodyStatus = async () => {
-  const response = await axios.get(
-    "https://client.mobile.chemanca.com/api/products/CarBodyStatus/GetAllCarBodyStatus"
-  );
-
-  return response.data;
-};
+export const getCarBodyStatus = async () =>
+  await apiCall({ url: CARBODYSTATUS_EP() });
 
 export const useCarBodyStatus = () => {
   return useQuery({
     queryKey: ["carBodyStatus"],
-    queryFn: fetchCarBodyStatus,
+    queryFn: getCarBodyStatus,
   });
 };
 //hasCarChassisStatusFilter//
