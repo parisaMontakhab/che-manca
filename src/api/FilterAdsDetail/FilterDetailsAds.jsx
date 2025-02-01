@@ -28,6 +28,7 @@ import {
   KILOGRAMWEIGHT_EP,
   METERAGELIST_EP,
   MODEMTYPE_EP,
+  NEARUNIVERSITY_EP,
   NUMBEROFROOM_EP,
   NUMBEROFSIMCART_EP,
   NUMBEROFUNITSPERFLOOR_EP,
@@ -427,18 +428,13 @@ export const useBedtype = () => {
   });
 };
 //hasNearUniversityFilter//
-const fetchNearUniversity = async () => {
-  const response = await axios.get(
-    "https://client.mobile.chemanca.com/api/basicInfo/University/GetAllUniversity"
-  );
-
-  return response.data;
-};
+export const getNearUniversity = async () =>
+  await apiCall({ url: NEARUNIVERSITY_EP() });
 
 export const useNearUniversity = () => {
   return useQuery({
     queryKey: ["nearUniversity"],
-    queryFn: fetchNearUniversity,
+    queryFn: getNearUniversity,
   });
 };
 //hasRoomTypeFilter//

@@ -94,3 +94,5 @@ export const KILOGRAMWEIGHT_EP = () => "/products/Kilogram/GetAllKilogram";
 export const CHOOSEROOMMATEGENDER_EP = () => "/products/Gender/GetAllGender";
 
 export const BEDTYPE_EP = () => "/products/BedType/GetAllBedType";
+
+export const NEARUNIVERSITY_EP = () => "/basicInfo/University/GetAllUniversity";
