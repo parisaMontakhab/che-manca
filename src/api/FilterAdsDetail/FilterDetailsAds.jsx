@@ -11,6 +11,7 @@ import {
   CAROPERATION_EP,
   CARPETDIMENTION_EP,
   CARPETTEXTURE_EP,
+  CHOOSEROOMMATEGENDER_EP,
   CLOCKTYPE_EP,
   CLOTHTYPE_EP,
   COLOR_EP,
@@ -405,18 +406,13 @@ export const useKilogramWeight = () => {
   });
 };
 //hasChooseRoommateGenderFilter//
-const fetchChooseRoommateGender = async () => {
-  const response = await axios.get(
-    "https://client.mobile.chemanca.com/api/products/Gender/GetAllGender"
-  );
-
-  return response.data;
-};
+export const getChooseRoommateGender = async () =>
+  await apiCall({ url: CHOOSEROOMMATEGENDER_EP() });
 
 export const useChooseRoommateGender = () => {
   return useQuery({
     queryKey: ["chooseRoommateGender"],
-    queryFn: fetchChooseRoommateGender,
+    queryFn: getChooseRoommateGender,
   });
 };
 //hasBedTypeFilter//

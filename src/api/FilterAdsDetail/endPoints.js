@@ -90,3 +90,5 @@ export const CARINSURANCESTATUS_EP = () =>
   "/products/CarInsuranceStatus/GetAllCarInsuranceStatus";
 
 export const KILOGRAMWEIGHT_EP = () => "/products/Kilogram/GetAllKilogram";
+
+export const CHOOSEROOMMATEGENDER_EP = () => "/products/Gender/GetAllGender";
