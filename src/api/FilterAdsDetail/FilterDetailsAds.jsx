@@ -1,19 +1,30 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
+import { DEPOSITPRICELIST_EP } from "./endPoints";
+
+const baseURL = import.meta.env.VITE_CHEMANCHA_BASE_URL;
+
+async function apiCall({ url, options = { method: "get" } }) {
+  try {
+    const response = await axios[options.method](`${baseURL}${url}`);
+    return response.data;
+  } catch (error) {
+    console.error("Error occurred during API call:", error.message);
+   
+    throw error;
+  }
+}
 
 // DepositFilter//
+export const getDepositePriceList = async () =>
+  await apiCall({ url: DEPOSITPRICELIST_EP() });
 
-const fetchDepositPriceList = async () => {
-  const response = await axios.get(
-    "https://client.mobile.chemanca.com/api/advertisements/AdsDetail/GetAllGroupedDepositePricesAsync"
-  );
-  return response.data;
-};
+
 
 export const useDepositPriceList = () => {
   return useQuery({
     queryKey: ["depositPriceList"],
-    queryFn: fetchDepositPriceList,
+    queryFn: getDepositePriceList,
   });
 };
 
