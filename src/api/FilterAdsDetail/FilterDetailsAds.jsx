@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import { DEPOSITPRICELIST_EP } from "./endPoints";
+import { DEPOSITPRICELIST_EP,RENTPRICELIST_EP } from "./endPoints";
 
 const baseURL = import.meta.env.VITE_CHEMANCHA_BASE_URL;
 
@@ -29,18 +29,13 @@ export const useDepositPriceList = () => {
 };
 
 //RentPriceFilter//
-const fetchRentPriceList = async () => {
-  const response = await axios.get(
-    "https://client.mobile.chemanca.com/api/advertisements/AdsDetail/GetAllGroupedRentPricesAsync"
-  );
-
-  return response.data;
-};
+export const getRentPriceList = async () =>
+  await apiCall({ url: RENTPRICELIST_EP() });
 
 export const useRentPriceList = () => {
   return useQuery({
     queryKey: ["rentPriceList"],
-    queryFn: fetchRentPriceList,
+    queryFn: getRentPriceList,
   });
 };
 
