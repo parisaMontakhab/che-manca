@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import { CREATEDYEAR_EP, DEPOSITPRICELIST_EP,METERAGELIST_EP,NUMBEROFROOM_EP,NUMBEROFUNITSPERFLOOR_EP,PRODUCTSTATUS_EP,RENTPRICELIST_EP } from "./endPoints";
+import { BRANDNAME_EP, CREATEDYEAR_EP, DEPOSITPRICELIST_EP,METERAGELIST_EP,NUMBEROFROOM_EP,NUMBEROFUNITSPERFLOOR_EP,PRODUCTSTATUS_EP,RENTPRICELIST_EP } from "./endPoints";
 
 const baseURL = import.meta.env.VITE_CHEMANCHA_BASE_URL;
 
@@ -99,18 +99,13 @@ export const useCreatedYear = () => {
 };
 
 //hasBrandNameFilter //
-const fetchBrandName = async () => {
-  const response = await axios.get(
-    "https://client.mobile.chemanca.com/api/products/Brand/GetAllBrand"
-  );
-
-  return response.data;
-};
+export const getBrandName = async () =>
+  await apiCall({ url: BRANDNAME_EP() });
 
 export const useBrandName = () => {
   return useQuery({
     queryKey: ["brandName"],
-    queryFn: fetchBrandName,
+    queryFn: getBrandName,
   });
 };
 
