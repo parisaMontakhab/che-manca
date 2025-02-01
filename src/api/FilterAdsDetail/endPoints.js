@@ -88,3 +88,5 @@ export const CARENGINESTATUS_EP = () =>
 
 export const CARINSURANCESTATUS_EP = () =>
   "/products/CarInsuranceStatus/GetAllCarInsuranceStatus";
+
+export const KILOGRAMWEIGHT_EP = () => "/products/Kilogram/GetAllKilogram";

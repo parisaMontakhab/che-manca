@@ -23,6 +23,7 @@ import {
   JEWELRYMATERIAL_EP,
   JEWELRYTYPE_EP,
   JOYSTICKTYPE_EP,
+  KILOGRAMWEIGHT_EP,
   METERAGELIST_EP,
   MODEMTYPE_EP,
   NUMBEROFROOM_EP,
@@ -394,18 +395,13 @@ export const useCarInsuranceStatus = () => {
   });
 };
 //hasKilogramWeightFilter//
-const fetchKilogramWeight = async () => {
-  const response = await axios.get(
-    "https://client.mobile.chemanca.com/api/products/Kilogram/GetAllKilogram"
-  );
-
-  return response.data;
-};
+export const gethKilogramWeight = async () =>
+  await apiCall({ url: KILOGRAMWEIGHT_EP() });
 
 export const useKilogramWeight = () => {
   return useQuery({
     queryKey: ["kilogramWeight"],
-    queryFn: fetchKilogramWeight,
+    queryFn: gethKilogramWeight,
   });
 };
 //hasChooseRoommateGenderFilter//
