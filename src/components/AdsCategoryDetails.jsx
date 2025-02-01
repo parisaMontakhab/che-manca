@@ -1,6 +1,6 @@
 import React, { Component, useCallback, useState } from "react";
 import { FormGroup, Typography, FormControlLabel, Switch } from "@mui/material";
-import { getCategoryDetails } from "../api/Categories/CategoriesApi";
+import { getCategoryDetails, useCategoryDetails } from "../api/Categories/CategoriesApi";
 import NumeriComponent from "./NumeriComponent";
 import {
   useDepositPriceList,
@@ -325,16 +325,11 @@ export default function AdsCategoryDetails({
   const [getAllAdsModel, setGetAllAdsModel] = useState(initialGetAllAdsModel);
 
   //from api//
-  // const { data: categoryDetails } = useCategoryDetails(
-  //   selectedCategory?.uniqueId
-  // );
+  const { data: categoryDetails } = useCategoryDetails(
+    selectedCategory?.uniqueId
+  );
 
-  const{data:categoryDetails} = useQuery({
-    queryKey:["categoryDetails",selectedCategory.uniqueId],
-    queryFn:()=>getCategoryDetails(selectedCategory?.uniqueId),
-    enabled: !!selectedCategory.uniqueId,
 
-  })
   const { data: depositPriceList } = useDepositPriceList();
   const { data: rentPriceList } = useRentPriceList();
   const { data: meterageList } = useMeterageList();
