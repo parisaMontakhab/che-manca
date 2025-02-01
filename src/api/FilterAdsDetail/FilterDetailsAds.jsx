@@ -36,6 +36,7 @@ import {
   PROCESSORMODEL_EP,
   PRODUCTSTATUS_EP,
   RAMCAPACITY_EP,
+  RENTJUSTFOR_EP,
   RENTPRICELIST_EP,
   ROOMTYPE_EP,
   SEX_EP,
@@ -449,17 +450,12 @@ export const useRoomType = () => {
   });
 };
 //hasRentJustForFilter//
-const fetchRentJustFor = async () => {
-  const response = await axios.get(
-    "https://client.mobile.chemanca.com/api/products/Gender/GetAllGender"
-  );
-
-  return response.data;
-};
+export const getRentJustFor = async () =>
+  await apiCall({ url: RENTJUSTFOR_EP() });
 
 export const useRentJustFor = () => {
   return useQuery({
     queryKey: ["rentJustFor"],
-    queryFn: fetchRentJustFor,
+    queryFn: getRentJustFor,
   });
 };
