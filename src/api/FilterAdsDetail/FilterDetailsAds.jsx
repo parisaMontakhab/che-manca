@@ -1,6 +1,29 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import { BRANDNAME_EP, CARPETDIMENTION_EP, CARPETTEXTURE_EP, COLOR_EP, CREATEDYEAR_EP, DEPOSITPRICELIST_EP,DISPLAYDIMENTION_EP,ELECTRICCONSUMPTION_EP,GAMECONSOLEMODEL_EP,INTERNALMEMORYCAPACITY_EP,JOYSTICKTYPE_EP,METERAGELIST_EP,MODEMTYPE_EP,NUMBEROFROOM_EP,NUMBEROFSIMCART_EP,NUMBEROFUNITSPERFLOOR_EP,OPERATIONSYSTEMNAME_EP,PROCESSORMODEL_EP,PRODUCTSTATUS_EP,RAMCAPACITY_EP,RENTPRICELIST_EP } from "./endPoints";
+import {
+  BRANDNAME_EP,
+  CARPETDIMENTION_EP,
+  CARPETTEXTURE_EP,
+  COLOR_EP,
+  CREATEDYEAR_EP,
+  DEPOSITPRICELIST_EP,
+  DISPLAYDIMENTION_EP,
+  ELECTRICCONSUMPTION_EP,
+  GAMECONSOLEMODEL_EP,
+  INTERNALMEMORYCAPACITY_EP,
+  JOYSTICKTYPE_EP,
+  METERAGELIST_EP,
+  MODEMTYPE_EP,
+  NUMBEROFROOM_EP,
+  NUMBEROFSIMCART_EP,
+  NUMBEROFUNITSPERFLOOR_EP,
+  OPERATIONSYSTEMNAME_EP,
+  PROCESSORMODEL_EP,
+  PRODUCTSTATUS_EP,
+  RAMCAPACITY_EP,
+  RENTPRICELIST_EP,
+  SEX_EP,
+} from "./endPoints";
 
 const baseURL = import.meta.env.VITE_CHEMANCHA_BASE_URL;
 
@@ -10,7 +33,7 @@ async function apiCall({ url, options = { method: "get" } }) {
     return response.data;
   } catch (error) {
     console.error("Error occurred during API call:", error.message);
-   
+
     throw error;
   }
 }
@@ -18,8 +41,6 @@ async function apiCall({ url, options = { method: "get" } }) {
 // DepositFilter//
 export const getDepositePriceList = async () =>
   await apiCall({ url: DEPOSITPRICELIST_EP() });
-
-
 
 export const useDepositPriceList = () => {
   return useQuery({
@@ -99,8 +120,7 @@ export const useCreatedYear = () => {
 };
 
 //hasBrandNameFilter //
-export const getBrandName = async () =>
-  await apiCall({ url: BRANDNAME_EP() });
+export const getBrandName = async () => await apiCall({ url: BRANDNAME_EP() });
 
 export const useBrandName = () => {
   return useQuery({
@@ -142,8 +162,7 @@ export const useRamCapacity = () => {
   });
 };
 //hasColorFilter//
-export const getColor = async () =>
-  await apiCall({ url: COLOR_EP() });
+export const getColor = async () => await apiCall({ url: COLOR_EP() });
 
 export const useColorFilter = () => {
   return useQuery({
@@ -185,8 +204,7 @@ export const useProcessorModel = () => {
   });
 };
 //hasModemOrrouterTypefilter//
-export const getModemType = async () =>
-  await apiCall({ url: MODEMTYPE_EP() });
+export const getModemType = async () => await apiCall({ url: MODEMTYPE_EP() });
 
 export const useModemType = () => {
   return useQuery({
@@ -245,18 +263,13 @@ export const useElectricConsumption = () => {
   });
 };
 //hasSexfilter//
-const fetchSexFilter = async () => {
-  const response = await axios.get(
-    "https://client.mobile.chemanca.com/api/products/Gender/GetAllGender"
-  );
-
-  return response.data;
-};
+export const getSexFilter = async () =>
+  await apiCall({ url: SEX_EP() });
 
 export const useSexFilter = () => {
   return useQuery({
     queryKey: ["sexFilter"],
-    queryFn: fetchSexFilter,
+    queryFn: getSexFilter,
   });
 };
 //hasClothTypeFilter//
@@ -514,6 +527,3 @@ export const useRentJustFor = () => {
     queryFn: fetchRentJustFor,
   });
 };
-
-
-

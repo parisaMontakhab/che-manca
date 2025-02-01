@@ -57,3 +57,6 @@ export const CARPETDIMENTION_EP = () =>
 
 export const ELECTRICCONSUMPTION_EP = () =>
   "/products/ElectricConsumption/GetAllElectricConsumption";
+
+export const SEX_EP = () => "/products/Gender/GetAllGender";
+
