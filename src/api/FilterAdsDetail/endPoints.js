@@ -83,5 +83,8 @@ export const CARFUEL_EP = () => "/products/CarFuelStatus/GetAllCarFuelStatus";
 export const CARGEARBOBTYPE_EP = () =>
   "/products/CarGearboxType/GetAllCarGearboxType";
 
+export const CARENGINESTATUS_EP = () =>
+  "/products/CarEngineStatus/GetAllCarEngineStatus";
 
-export const CARENGINESTATUS_EP = ()=>"/products/CarEngineStatus/GetAllCarEngineStatus";
+export const CARINSURANCESTATUS_EP = () =>
+  "/products/CarInsuranceStatus/GetAllCarInsuranceStatus";

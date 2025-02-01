@@ -7,6 +7,7 @@ import {
   CARENGINESTATUS_EP,
   CARFUEL_EP,
   CARGEARBOBTYPE_EP,
+  CARINSURANCESTATUS_EP,
   CAROPERATION_EP,
   CARPETDIMENTION_EP,
   CARPETTEXTURE_EP,
@@ -383,18 +384,13 @@ export const useCarEngineStatus = () => {
   });
 };
 //hasCarInsuranceStatusFilter//
-const fetchCarInsuranceStatus = async () => {
-  const response = await axios.get(
-    "https://client.mobile.chemanca.com/api/products/CarInsuranceStatus/GetAllCarInsuranceStatus"
-  );
-
-  return response.data;
-};
+export const getCarInsuranceStatus = async () =>
+  await apiCall({ url: CARINSURANCESTATUS_EP() });
 
 export const useCarInsuranceStatus = () => {
   return useQuery({
     queryKey: ["carInsuranceStatus"],
-    queryFn: fetchCarInsuranceStatus,
+    queryFn: getCarInsuranceStatus,
   });
 };
 //hasKilogramWeightFilter//
