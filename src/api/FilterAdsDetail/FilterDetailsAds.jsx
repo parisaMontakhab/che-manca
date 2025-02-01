@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import {
   BRANDNAME_EP,
+  CAROPERATION_EP,
   CARPETDIMENTION_EP,
   CARPETTEXTURE_EP,
   CLOCKTYPE_EP,
@@ -317,18 +318,13 @@ export const useJewelryMaterial = () => {
   });
 };
 //hasCarOperationFilter//
-const fetchCarOperation = async () => {
-  const response = await axios.get(
-    "https://client.mobile.chemanca.com/api/products/CarOperationKilometer/GetAllCarOperationKilometer"
-  );
-
-  return response.data;
-};
+export const getCarOperation = async () =>
+  await apiCall({ url: CAROPERATION_EP() });
 
 export const useCarOperation = () => {
   return useQuery({
     queryKey: ["carOperation"],
-    queryFn: fetchCarOperation,
+    queryFn: getCarOperation,
   });
 };
 //hasCarBodyStatusFilter//
