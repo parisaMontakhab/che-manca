@@ -4,6 +4,7 @@ import {
   BRANDNAME_EP,
   CARBODYSTATUS_EP,
   CARCHASSISTSTATUS_EP,
+  CARENGINESTATUS_EP,
   CARFUEL_EP,
   CARGEARBOBTYPE_EP,
   CAROPERATION_EP,
@@ -372,18 +373,13 @@ export const useCarGearboxType = () => {
   });
 };
 //hasCarEngineStatusFilter//
-const fetchCarEngineStatus = async () => {
-  const response = await axios.get(
-    "https://client.mobile.chemanca.com/api/products/CarEngineStatus/GetAllCarEngineStatus"
-  );
-
-  return response.data;
-};
+export const getCarEngineStatus = async () =>
+  await apiCall({ url: CARENGINESTATUS_EP() });
 
 export const useCarEngineStatus = () => {
   return useQuery({
     queryKey: ["carEngineStatus"],
-    queryFn: fetchCarEngineStatus,
+    queryFn: getCarEngineStatus,
   });
 };
 //hasCarInsuranceStatusFilter//
