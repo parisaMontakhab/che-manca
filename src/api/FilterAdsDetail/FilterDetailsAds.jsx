@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import { DEPOSITPRICELIST_EP,METERAGELIST_EP,NUMBEROFROOM_EP,RENTPRICELIST_EP } from "./endPoints";
+import { DEPOSITPRICELIST_EP,METERAGELIST_EP,NUMBEROFROOM_EP,NUMBEROFUNITSPERFLOOR_EP,RENTPRICELIST_EP } from "./endPoints";
 
 const baseURL = import.meta.env.VITE_CHEMANCHA_BASE_URL;
 
@@ -65,18 +65,13 @@ export const useNumberOfRoom = () => {
 
 //NumberOfUnitsPerFloorFilter//
 
-const fetchNumberOfUnitsPerFloor = async () => {
-  const response = await axios.get(
-    "https://client.mobile.chemanca.com/api/advertisements/AdsDetail/GetAllGroupedUnitsPerFloorAsync"
-  );
-
-  return response.data;
-};
+export const getNumberOfUnitsPerFloor = async () =>
+  await apiCall({ url: NUMBEROFUNITSPERFLOOR_EP() });
 
 export const useNumberOfUnitsPerFloor = () => {
   return useQuery({
     queryKey: ["numberOfUnitsPerFloor"],
-    queryFn: fetchNumberOfUnitsPerFloor,
+    queryFn: getNumberOfUnitsPerFloor,
   });
 };
 

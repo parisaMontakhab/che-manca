@@ -9,3 +9,6 @@ export const METERAGELIST_EP = () =>
 
 export const NUMBEROFROOM_EP = () =>
   "/advertisements/AdsDetail/GetAllGroupedNumberOfRoomPerFloorAsync";
+
+export const NUMBEROFUNITSPERFLOOR_EP = () =>
+  "/advertisements/AdsDetail/GetAllGroupedUnitsPerFloorAsync";
