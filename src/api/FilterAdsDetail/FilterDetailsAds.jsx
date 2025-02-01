@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import {
+  BEDTYPE_EP,
   BRANDNAME_EP,
   CARBODYSTATUS_EP,
   CARCHASSISTSTATUS_EP,
@@ -416,18 +417,13 @@ export const useChooseRoommateGender = () => {
   });
 };
 //hasBedTypeFilter//
-const fetchBedType = async () => {
-  const response = await axios.get(
-    "https://client.mobile.chemanca.com/api/products/BedType/GetAllBedType"
-  );
-
-  return response.data;
-};
+export const getBedType = async () =>
+  await apiCall({ url: BEDTYPE_EP() });
 
 export const useBedtype = () => {
   return useQuery({
     queryKey: ["bedType"],
-    queryFn: fetchBedType,
+    queryFn: getBedType,
   });
 };
 //hasNearUniversityFilter//
