@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import { DEPOSITPRICELIST_EP,METERAGELIST_EP,RENTPRICELIST_EP } from "./endPoints";
+import { DEPOSITPRICELIST_EP,METERAGELIST_EP,NUMBEROFROOM_EP,RENTPRICELIST_EP } from "./endPoints";
 
 const baseURL = import.meta.env.VITE_CHEMANCHA_BASE_URL;
 
@@ -53,18 +53,13 @@ export const useMeterageList = () => {
 
 //NumberOfRoomFilter//
 
-const fetchNumberOfRoom = async () => {
-  const response = await axios.get(
-    "https://client.mobile.chemanca.com/api/advertisements/AdsDetail/GetAllGroupedNumberOfRoomPerFloorAsync"
-  );
-
-  return response.data;
-};
+export const getNumberOfRoom = async () =>
+  await apiCall({ url: NUMBEROFROOM_EP() });
 
 export const useNumberOfRoom = () => {
   return useQuery({
     queryKey: ["numberOfRoom"],
-    queryFn: fetchNumberOfRoom,
+    queryFn: getNumberOfRoom,
   });
 };
 
