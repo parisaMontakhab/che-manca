@@ -12,3 +12,6 @@ export const NUMBEROFROOM_EP = () =>
 
 export const NUMBEROFUNITSPERFLOOR_EP = () =>
   "/advertisements/AdsDetail/GetAllGroupedUnitsPerFloorAsync";
+
+export const PRODUCTSTATUS_EP = () =>
+  "/products/ProductStatus/GetAllProductStaus";

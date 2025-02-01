@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import { DEPOSITPRICELIST_EP,METERAGELIST_EP,NUMBEROFROOM_EP,NUMBEROFUNITSPERFLOOR_EP,RENTPRICELIST_EP } from "./endPoints";
+import { DEPOSITPRICELIST_EP,METERAGELIST_EP,NUMBEROFROOM_EP,NUMBEROFUNITSPERFLOOR_EP,PRODUCTSTATUS_EP,RENTPRICELIST_EP } from "./endPoints";
 
 const baseURL = import.meta.env.VITE_CHEMANCHA_BASE_URL;
 
@@ -77,18 +77,13 @@ export const useNumberOfUnitsPerFloor = () => {
 
 //ProductsStatusFilter//
 
-const fetchProductStatus = async () => {
-  const response = await axios.get(
-    "https://client.mobile.chemanca.com/api/products/ProductStatus/GetAllProductStaus"
-  );
-
-  return response.data;
-};
+export const getProductStatus = async () =>
+  await apiCall({ url: PRODUCTSTATUS_EP() });
 
 export const useProductStatus = () => {
   return useQuery({
     queryKey: ["productStatus"],
-    queryFn: fetchProductStatus,
+    queryFn: getProductStatus,
   });
 };
 
