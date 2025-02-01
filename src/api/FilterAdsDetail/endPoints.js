@@ -27,10 +27,15 @@ export const NUMBEROFSIMCART_EP = () =>
 export const INTERNALMEMORYCAPACITY_EP = () =>
   "/products/InternalMemoryCapacity/GetAllInternalMemoryCapacity";
 
-export const RAMCAPACITY_EP = ()=>"/products/RamCapacity/GetAllRamCapacity";
+export const RAMCAPACITY_EP = () => "/products/RamCapacity/GetAllRamCapacity";
 
-export const COLOR_EP = ()=>"/products/Color/GetAllColor";
+export const COLOR_EP = () => "/products/Color/GetAllColor";
 
-export const DISPLAYDIMENTION_EP = ()=>"/products/DisplayDimension/GetAllDisplayDimension";
+export const DISPLAYDIMENTION_EP = () =>
+  "/products/DisplayDimension/GetAllDisplayDimension";
 
-export const OPERATIONSYSTEMNAME_EP = ()=>"/products/OperationSystem/GetAllOperationSystem";
+export const OPERATIONSYSTEMNAME_EP = () =>
+  "/products/OperationSystem/GetAllOperationSystem";
+
+export const PROCESSORMODEL_EP = () =>
+  "/products/ProcessorModel/GetAllProcessorModel";

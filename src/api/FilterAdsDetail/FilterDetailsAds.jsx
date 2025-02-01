@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import { BRANDNAME_EP, COLOR_EP, CREATEDYEAR_EP, DEPOSITPRICELIST_EP,DISPLAYDIMENTION_EP,INTERNALMEMORYCAPACITY_EP,METERAGELIST_EP,NUMBEROFROOM_EP,NUMBEROFSIMCART_EP,NUMBEROFUNITSPERFLOOR_EP,OPERATIONSYSTEMNAME_EP,PRODUCTSTATUS_EP,RAMCAPACITY_EP,RENTPRICELIST_EP } from "./endPoints";
+import { BRANDNAME_EP, COLOR_EP, CREATEDYEAR_EP, DEPOSITPRICELIST_EP,DISPLAYDIMENTION_EP,INTERNALMEMORYCAPACITY_EP,METERAGELIST_EP,NUMBEROFROOM_EP,NUMBEROFSIMCART_EP,NUMBEROFUNITSPERFLOOR_EP,OPERATIONSYSTEMNAME_EP,PROCESSORMODEL_EP,PRODUCTSTATUS_EP,RAMCAPACITY_EP,RENTPRICELIST_EP } from "./endPoints";
 
 const baseURL = import.meta.env.VITE_CHEMANCHA_BASE_URL;
 
@@ -175,18 +175,13 @@ export const useOperationSystemName = () => {
 };
 
 //hasProcessorModelFilter//
-const fetchProcessorModel = async () => {
-  const response = await axios.get(
-    "https://client.mobile.chemanca.com/api/products/ProcessorModel/GetAllProcessorModel"
-  );
-
-  return response.data;
-};
+export const getProcessorModel = async () =>
+  await apiCall({ url: PROCESSORMODEL_EP() });
 
 export const useProcessorModel = () => {
   return useQuery({
     queryKey: ["processorModel"],
-    queryFn: fetchProcessorModel,
+    queryFn: getProcessorModel,
   });
 };
 //hasModemOrrouterTypefilter//
