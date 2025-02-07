@@ -78,7 +78,7 @@ export default function LocationSearch({
   };
 
   return (
-    <Box my={title ? "" : 8} className={title ? "ads-sideBar__box" : ""}>
+    <Box my={title ? "" : 8} className={title ? "w-[80%]" : ""}>
       {" "}
       {isCountriesLoading ? (
         <LoadingText />
@@ -87,9 +87,7 @@ export default function LocationSearch({
       ) : (
         <Autocomplete
           size={title ? "small" : ""}
-          PaperComponent={(props) => (
-            <Paper {...props} className="autocomplete-listbox" />
-          )}
+          
           id="country-search"
           options={countries?.map((country) => ({
             label: country.text,
@@ -104,7 +102,7 @@ export default function LocationSearch({
           renderInput={(params) => (
             <TextField
               className={
-                title ? "locationSearch-input--size" : "locationSearch-input"
+                title ? "custom-input-locationSearch--size" : "custom-input-locationSearch"
               }
               type="search"
               {...params}
@@ -121,9 +119,7 @@ export default function LocationSearch({
         ) : (
           <Autocomplete
             size={title ? "small" : ""}
-            PaperComponent={(props) => (
-              <Paper {...props} className="autocomplete-listbox" />
-            )}
+          
             id="province-search"
             options={subCountries?.map((subCountry) => ({
               label: subCountry.text,
@@ -138,7 +134,7 @@ export default function LocationSearch({
             renderInput={(params) => (
               <TextField
                 className={
-                  title ? "locationSearch-input--size" : "locationSearch-input"
+                  title ? "custom-input-locationSearch--size" : "custom-input-locationSearch"
                 }
                 type="search"
                 {...params}
@@ -157,9 +153,7 @@ export default function LocationSearch({
         ) : (
           <Autocomplete
             size={title ? "small" : ""}
-            PaperComponent={(props) => (
-              <Paper {...props} className="autocomplete-listbox" />
-            )}
+           
             id="city-search"
             options={cities?.map((city) => ({
               label: city.text,
@@ -174,7 +168,7 @@ export default function LocationSearch({
             renderInput={(params) => (
               <TextField
                 className={
-                  title ? "locationSearch-input--size" : "locationSearch-input"
+                  title ? "custom-input-locationSearch--size" : "custom-input-locationSearch"
                 }
                 type="search"
                 {...params}

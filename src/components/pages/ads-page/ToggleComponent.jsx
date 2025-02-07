@@ -32,43 +32,43 @@ export default function ToggleComponent({ openItems, handleClick, title,handleUp
     <div>
       <ListItem
         onClick={() => handleClick(title)}
-        className="ads-sideBar__listItem "
+        className="cursor-pointer flex items-center justify-center text-sm "
       >
         {openItems[title] ? (
-          <ExpandLess className="ads-sideBar__itemIcon" />
+          <ExpandLess className="text-customGray min-w-0 ml-2 text-2xl" />
         ) : (
-          <ExpandMore className="ads-sideBar__itemIcon" />
+          <ExpandMore className="text-customGray min-w-0 ml-2 text-2xl" />
         )}
         <ListItemText
           primary={title}
           disableTypography
-          className="ads-sideBar__collapsText"
+          className="font-iranYekan font-semibold inline text-right"
         />
         {(status === activityStatus.active ||
           status === activityStatus.inActive) &&
           (openItems[title] ? (
-            <Button onClick={handleDelete} className="ads-sideBar__deletBtn">
+            <Button onClick={handleDelete} className="font-iranYekan text-customRed ml-10">
               حذف
             </Button>
           ) : (
-            <FiberManualRecordRoundedIcon className="ads-sideBar__deletIcon" />
+            <FiberManualRecordRoundedIcon className=" text-customRed ml-16 text-xs" />
           ))}
       </ListItem>
       <Collapse in={openItems[title]} timeout="auto" unmountOnExit>
-        <Box className="ads-sideBar__priceBox">
+        <Box className="flex items-center justify-around w-4/5 mb-2">
           <ToggleButtonGroup
             value={status}
             exclusive
             onChange={handleChange}
             aria-label="Platform"
-            className="ads-sideBar__toggleGroup"
+            className="border-0 overflow-hidden bg-customBlu rounded-lg"
           >
             <ToggleButton
               value={activityStatus.inEffective}
               className={
                 status === activityStatus.inEffective
-                  ? "ads-sideBar__toggleBtn--active"
-                  : "ads-sideBar__toggleBtn"
+                  ? "font-iranYekan text-customYellow"
+                  : "font-iranYekan text-white"
               }
             >
               بی تاثیر
@@ -77,8 +77,8 @@ export default function ToggleComponent({ openItems, handleClick, title,handleUp
               value={activityStatus.active}
               className={
                 status === activityStatus.active
-                  ? "ads-sideBar__toggleBtn--active"
-                  : "ads-sideBar__toggleBtn"
+                  ? "font-iranYekan text-customYellow"
+                  : "font-iranYekan text-white"
               }
             >
               فعال
@@ -87,8 +87,8 @@ export default function ToggleComponent({ openItems, handleClick, title,handleUp
               value={activityStatus.inActive}
               className={
                 status === activityStatus.inActive
-                  ? "ads-sideBar__toggleBtn--active"
-                  : "ads-sideBar__toggleBtn"
+                  ? "font-iranYekan text-customYellow"
+                  : "font-iranYekan text-white"
               }
             >
               غیر فعال
@@ -96,7 +96,17 @@ export default function ToggleComponent({ openItems, handleClick, title,handleUp
           </ToggleButtonGroup>
         </Box>
       </Collapse>
-      <Divider sx={{ width: "80%", marginTop: 2 }} />
+      <Divider className="w-4/5 mt-2" />
     </div>
   );
 }
+
+//className of ListItem--> ads-sideBar__listItem
+//className of ExpanLess --> ads-sideBar__itemIcon
+//className of ExpandMore --> ads-sideBar__itemIcon
+//className of ListItemText --> ads-sideBar__collapsText
+//className of Button --> ads-sideBar__deletBtn
+//className of Fabure...(icon dayere) --> ads-sideBar__deletIcon
+//className of Box in Collapse --> ads-sideBar__priceBox
+//className of ToggleButtonGroup --> ads-sideBar__toggleGroup
+//className of ToggleButton is not active --> "ads-sideBar__toggleBtn" // is active --> "ads-sideBar__toggleBtn--active"

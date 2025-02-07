@@ -76,11 +76,11 @@ export default function SidBar() {
 
   return (
     <div>
-      <Grid2 container spacing={2} component="div" className="ads-container">
-        <Grid2 component="div" className="ads-sideBar__gridOne">
+      <Grid2 container spacing={2} component="div" className="grid">
+         <Grid2 component="div" className="mt-20 w-1/4 mr-16 h-screen "> {/*fixed inja bode  */}
           <aside>
-            <Box component="div" className="ads-sideBar">
-              <Typography sx={{ fontFamily: "IranYekan" }}>دسته ها</Typography>
+            <Box component="div" className="w-2/3 mr-auto overflow-auto">
+              <Typography className="font-iranYekan">دسته ها</Typography>
               <List>
                 {openCategory != null ? (
                   <BackArrowCategory
@@ -105,7 +105,7 @@ export default function SidBar() {
                   ))
                 )}
 
-                <Divider sx={{ width: "80%" }} />
+                <Divider  class="w-4/5" />
                 {selectedCategory?.isLeaf != true ? (
                   <>
                     <NumeriComponent
@@ -125,9 +125,9 @@ export default function SidBar() {
                     >
                       <FormGroup>
                         <FormControlLabel
-                          className="ads-sideBar__swichStatus"
+                          className="  flex justify-between  w-4/5  [direction:ltr] custom-switchChecked "
                           label={
-                            <Typography className="ads-sideBar__priceBox__title">
+                            <Typography className="font-iranYekan text-[12px]">
                               عکس دار
                             </Typography>
                           }
@@ -140,9 +140,9 @@ export default function SidBar() {
                           }
                         />
                         <FormControlLabel
-                          className="ads-sideBar__swichStatus"
+                          className="flex justify-between  w-4/5  [direction:ltr] custom-switchChecked"
                           label={
-                            <Typography className="ads-sideBar__priceBox__title ">
+                            <Typography className="font-iranYekan text-[12px] ">
                               فوری
                             </Typography>
                           }
@@ -171,7 +171,7 @@ export default function SidBar() {
                   />
                 )}
               </List>
-              <nav className="ads-sideBar__nav">
+              <nav className="text-[14px] text-customGray max-w-72 mt-2">
                 <Grid2
                   container
                   rowSpacing={2}
@@ -210,19 +210,21 @@ export default function SidBar() {
                   </Grid2>
                 </Grid2>
               </nav>
-              <Divider sx={{ width: "80%", marginTop: 2 }} />
+              <Divider className="w-4/5 mt-2" />
 
-              <footer className="ads-sideBar__footer">
+              <footer className="flex justify-center max-w-72 mt-5">
                 <Footer />
               </footer>
             </Box>
           </aside>
         </Grid2>
 
-        <Grid2 component="div" className="ads-sideBar__gridTwo">
+         <Grid2 component="div" className="mt-[90px] w-3/5 overflow-auto mr-[30%]"> {/*inja ads-sideBar__gridTwo bode */}
           <main>{/* <ProductsCards /> */}</main>
         </Grid2>
       </Grid2>
     </div>
   );
 }
+
+//classname of 

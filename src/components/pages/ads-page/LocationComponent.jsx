@@ -64,25 +64,25 @@ export default function LocationComponent({
     <div>
       <ListItem
         onClick={() => handleClick(title)}
-        className="ads-sideBar__listItem "
+        className="cursor-pointer flex items-center justify-center text-sm "
       >
         {openItems[title] ? (
-          <ExpandLess className="ads-sideBar__itemIcon" />
+          <ExpandLess className="text-customGray min-w-0 ml-2 text-2xl" />
         ) : (
-          <ExpandMore className="ads-sideBar__itemIcon" />
+          <ExpandMore className="text-customGray min-w-0 ml-2 text-2xl" />
         )}
         <ListItemText
           primary={title}
           disableTypography
-          className="ads-sideBar__collapsText"
+          className="font-iranYekan font-semibold inline text-right"
         />
         {cityInputFromChild &&
           (openItems[title] ? (
-            <Button onClick={handleDeleteBtn} className="ads-sideBar__deletBtn">
+            <Button onClick={handleDeleteBtn} className="font-iranYekan text-customRed ml-10">
               حذف
             </Button>
           ) : (
-            <FiberManualRecordRoundedIcon className="ads-sideBar__deletIcon" />
+            <FiberManualRecordRoundedIcon className="text-customRed ml-16 text-xs" />
           ))}
       </ListItem>
       <Collapse in={openItems[title]} timeout="auto">
@@ -98,7 +98,7 @@ export default function LocationComponent({
           handleUpdateGetAllAdsModel={handleUpdateGetAllAdsModel}
         />
       </Collapse>
-      <Divider sx={{ width: "80%", marginTop: 2 }} />
+      <Divider className="w-4/5 mt-2" />
     </div>
   );
 }

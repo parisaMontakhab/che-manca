@@ -24,9 +24,9 @@ export default function HomePage() {
       <Container maxWidth="sm">
         <header>
           <Box display="flex" justifyContent="center" alignItems="center" p={2}>
-            <img src={logo} alt="chemanca-logo" className="homePage-logo" />
+            <img src={logo} alt="chemanca-logo" className="max-w-[70%] block h-auto" />
           </Box>
-          <nav className="homePage__menu">
+          <nav className="grid justify-center justify-items-center border-b border-customGray pt-8 pb-4 text-customGray">
             <Grid2 container spacing={6}>
               <Grid2>
                 <NavLink href="#" color="inherit" underline="none">
@@ -57,18 +57,18 @@ export default function HomePage() {
           </nav>
         </header>
         <Box textAlign="center" my={2}>
-          <Typography className="homePage__description" variant="body1">
+          <Typography className="text-customGray font-iranYekan leading-8" variant="body1">
             بزرگترین ، ﭘﺎﯾﮕﺎه ﺧﺮﯾﺪ و ﻓﺮوش ﺑﯽ‌واﺳﻄﻪ‌!
           </Typography>
-          <Typography className="homePage__description" variant="body1">
+          <Typography className="text-customGray font-iranYekan leading-8" variant="body1">
             اﮔﻪ دﻧﺒﺎل ﭼﯿﺰی ﻫﺴﺘﯽ، ﺷﻬﺮت رو اﻧﺘﺨﺎب ﮐﻦ و ﺗﻮ دﺳﺘﻪ‌ﺑﻨﺪی‌ﻫﺎ ﺑﻪ دﻧﺒﺎﻟﺶ
             ﺑﮕﺮد. اﮔﺮ ﻫﻢ ﻣﯽ‌ﺧﻮای ﭼﯿﺰی ﺑﻔﺮوﺷﯽ، ﭼﻨﺪ ﺗﺎ ﻋﮑﺲ ﺧﻮب ازش ﺑﮕﯿﺮ و آﮔﻬﯿﺖ رو
             ﺑﭽﺴﺒﻮن ﺑﻪ ما.
           </Typography>
         </Box>
         <LocationSearch />
-        <Box className="homePage__cityBox">
-          <Typography variant="h6" className="homePage__description" my={4}>
+        <Box className="border-b border-customGray pb-4">
+          <Typography variant="h6" className="text-customGray font-iranYekan leading-8" my={4}>
             شهرهای پربازدید
           </Typography>
           <Grid2
@@ -79,11 +79,11 @@ export default function HomePage() {
           >
             {cities.map((city) => (
               <Grid2 key={city}>
-                <Typography className="homePage__cityItem">
+                <Typography className="text-customGray font-iranYekan">
                   <NavLink
                     to="/Ads"
                     color="inherit"
-                    sx={{ cursor: "pointer" }}
+                    className="cursor-pointer"
                     underline="none"
                   >
                     {city}
@@ -93,7 +93,7 @@ export default function HomePage() {
             ))}
           </Grid2>
         </Box>
-        <footer style={{ marginTop: "100px" }}>
+        <footer className="mt-[100px]">
           <Footer />
         </footer>
        

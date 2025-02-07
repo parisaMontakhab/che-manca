@@ -22,48 +22,48 @@ export default function NavBar() {
     <Container>
       <header>
         <Box display="flex">
-          <AppBar position="fixed" className="ads-navBar">
+          <AppBar position="fixed" className="bg-white shadow-none border-b-2 border-[#efecec] pl-32 pr-32">
             <Toolbar>
-              <img src={logo} alt="logo image" className="ads-navBar__logo" />
+              <img src={logo} alt="logo image" className="w-[15%] border-l border-[#efecec]" />
 
-              <Button className="ads-navBar__btn">
-                <LocationOnRoundedIcon sx={{ margin: 0.5, fontSize: 20 }} />
+              <Button className="flex items-center p-1 mx-[10px] text-customGray font-iranYekan hover:bg-[#f7f4f4] hover:text-customGrayHover hover:font-bold">
+                <LocationOnRoundedIcon className="m-1 text-[20px]" />
                 تهران
               </Button>
-              <Button className="ads-navBar__btn">
+              <Button className="flex items-center p-1 mx-[10px] text-customGray font-iranYekan hover:bg-[#f7f4f4] hover:text-customGrayHover hover:font-bold">
                 دسته ها
-                <ArrowDropDownRoundedIcon sx={{ margin: 0.5, fontSize: 22 }} />
+                <ArrowDropDownRoundedIcon className="m-1 text-[22px]" />
               </Button>
 
-              <Box component="div" className="ads-navBar__searchBox">
+              <Box component="div" className="flex items-center w-full max-w-[400px] bg-[#f1f1f1] rounded-[5px] p-1">
                 <InputBase
                   placeholder="جستجو در همهٔ  آگهی‌ها"
-                  className="ads-navBar__searchInput"
+                  className="mr-2 flex-1 text-[16px] font-iranYekan"
                 />
-                <SearchIcon className="ads-navBar__searchIcon" />
+                <SearchIcon className="text-customGray ml-2" />
               </Box>
-              <Box sx={{ marginRight: 18 }}>
-                <Button className="ads-navBar__btn">
+              <Box component="div" className="mr-32" display="flex">
+                <Button className="flex items-center p-1 mx-[10px] text-customGray font-iranYekan hover:bg-[#f7f4f4] hover:text-customGrayHover hover:font-bold">
                   <PersonOutlineRoundedIcon
-                    sx={{ margin: 0.5, fontSize: 20 }}
+                   className="m-1 text-[20px]"
                   />
                   دیوار من
                 </Button>
-                <Button className="ads-navBar__btn">
+                <Button className="flex items-center p-1 mx-[10px] text-customGray font-iranYekan hover:bg-[#f7f4f4] hover:text-customGrayHover hover:font-bold">
                   <ChatBubbleOutlineRoundedIcon
-                    sx={{ margin: 0.5, fontSize: 20 }}
+                     className="m-1 text-[20px]"
                   />
                   چت
                 </Button>
-                <Button className="ads-navBar__btn">
-                  <SupportRoundedIcon sx={{ margin: 0.5, fontSize: 20 }} />
+                <Button className="flex items-center p-1 mx-[10px] text-customGray font-iranYekan hover:bg-[#f7f4f4] hover:text-customGrayHover hover:font-bold">
+                  <SupportRoundedIcon  className="m-1 text-[20px]" />
                   پشتیبانی
                 </Button>
-                <Button className="ads-navBar__btn">
-                  <LanguageRoundedIcon sx={{ margin: 0.5, fontSize: 20 }} />
+                <Button className="flex items-center p-1 mx-[10px] text-customGray font-iranYekan hover:bg-[#f7f4f4] hover:text-customGrayHover hover:font-bold">
+                  <LanguageRoundedIcon className="m-1 text-[20px]" />
                   Fa
                 </Button>
-                <Button className="ads-navBar__adsBtn">ثبت آگهی</Button>
+                <Button className="flex items-center pl-4 pr-4 ml-2 mr-2 bg-customBlu text-customYellow font-iranYekan hover:bg-customBluHover">ثبت آگهی</Button>
               </Box>
             </Toolbar>
           </AppBar>

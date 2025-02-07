@@ -15,20 +15,21 @@ export default function Footer() {
       >
         <Grid2>
           <Link href="#">
-            <LinkedInIcon className="social-icon" />
+            <LinkedInIcon className="text-customGray" />
           </Link>
         </Grid2>
         <Grid2>
           <Link href="#">
-            <TelegramIcon className="social-icon" />
+            <TelegramIcon className="text-customGray" />
           </Link>
         </Grid2>
         <Grid2>
           <Link href="#">
-            <InstagramIcon className="social-icon" />
+            <InstagramIcon className="text-customGray" />
           </Link>
         </Grid2>
       </Grid2>
     </Box>
   );
 }
+//classname of Icons --> social-icon 

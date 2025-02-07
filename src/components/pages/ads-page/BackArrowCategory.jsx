@@ -5,21 +5,25 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 export default function BackArrowCategory({selectedCategory,handleBackClick}) {
   return (
     <List>
-      <ListItem onClick={handleBackClick} className="ads-sideBar__listItem">
-        <ArrowForwardIcon sx={{ marginLeft: 1, fontSize: 18 }} />
+      <ListItem onClick={handleBackClick} className="cursor-pointer flex items-center justify-center text-sm">
+        <ArrowForwardIcon className="ml-1 text-lg" />
         <ListItemText
           disableTypography
           primary="همه ی آگهی ها"
-          className="ads-sideBar__itemText--color"
+          className="inline text-right text-black font-iranYekan"
         />
       </ListItem>
       <ListItem>
         <ListItemText
           disableTypography
           primary={selectedCategory.localizedName}
-          className="ads-sideBar__itemText--margin"
+          className="inline text-right text-black font-iranYekan mr-5p" 
         />
       </ListItem>
+     
     </List>
   );
 }
+//calssname of listItem --> ads-sideBar__listItem 
+//classname of ListItemText one --> ads-sideBar__itemText--color
+//classname of ListItemText two --> ads-sideBar__itemText--margin
