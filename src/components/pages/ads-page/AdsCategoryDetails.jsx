@@ -1,6 +1,6 @@
 import React, { Component, useCallback, useState } from "react";
 import { FormGroup, Typography, FormControlLabel, Switch } from "@mui/material";
-import { useCategoryDetails } from "../api/CategoriesApi";
+import { useCategoryDetails } from "../../../api/CategoriesApi";
 import NumeriComponent from "./NumeriComponent";
 import {
   useDepositPriceList,
@@ -42,7 +42,7 @@ import {
   useNearUniversity,
   useRoomType,
   useRentJustFor,
-} from "../api/FilterDetailsAds";
+} from "../../../api/FilterDetailsAds";
 import StringComponent from "./StringComponent";
 import ToggleComponent from "./ToggleComponent";
 import LocationComponent from "./LocationComponent";

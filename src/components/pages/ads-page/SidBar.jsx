@@ -11,13 +11,13 @@ import {
   FormControlLabel,
   Switch,
 } from "@mui/material";
-import { useCategories } from "../api/CategoriesApi";
-import { priceOptions } from "../data/PriceData";
+import { useCategories } from "../../../api/CategoriesApi";
+import { priceOptions } from "../../../data/PriceData";
 
-import Footer from "./Footer";
+import Footer from "../share/Footer";
 
-import LoadingText from "../commons/LoadingText";
-import ErrorBtn from "../commons/ErrorBtn";
+import LoadingText from "../share/LoadingText";
+import ErrorBtn from "../share/ErrorBtn";
 import BackArrowCategory from "./BackArrowCategory";
 import CategoryList from "./CategoryList";
 import NumeriComponent from "./NumeriComponent";
@@ -156,7 +156,6 @@ export default function SidBar() {
                         />
                       </FormGroup>
                     </SwitchComponent>
-                   
                   </>
                 ) : (
                   <AdsCategoryDetails

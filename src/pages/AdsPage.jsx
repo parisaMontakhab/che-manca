@@ -1,6 +1,6 @@
 import React from "react";
-import NavBar from "../components/NavBar";
-import SidBar from "../components/SidBar";
+import NavBar from "../components/pages/share/NavBar";
+import SidBar from "../components/pages/ads-page/SidBar";
 import { Box, Container } from "@mui/material";
 
 

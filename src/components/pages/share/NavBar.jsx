@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../assets/images/logo/logo.png";
+import logo from "../../../assets/images/logo/logo.png";
 import Button from "@mui/material/Button";
 import LocationOnRoundedIcon from "@mui/icons-material/LocationOnRounded";
 import ArrowDropDownRoundedIcon from "@mui/icons-material/ArrowDropDownRounded";
