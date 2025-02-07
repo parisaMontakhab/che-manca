@@ -1,10 +1,10 @@
 import React from "react";
 import { Box, Container, Grid2, Typography } from "@mui/material";
-import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom'
+import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 
 import logo from "../assets/images/logo/logo.png";
-import Footer from "../components/Footer";
-import LocationSearch from "../components/LocationSearch";
+import Footer from "../components/pages/share/Footer";
+import LocationSearch from "../components/pages/share/LocationSearch";
 const cities = [
   "تهران",
   "مشهد",
@@ -79,7 +79,16 @@ export default function HomePage() {
           >
             {cities.map((city) => (
               <Grid2 key={city}>
-                <Typography className="homePage__cityItem"><NavLink to='/Ads' color="inherit"  sx={{cursor:'pointer'}} underline="none">{city}</NavLink></Typography>
+                <Typography className="homePage__cityItem">
+                  <NavLink
+                    to="/Ads"
+                    color="inherit"
+                    sx={{ cursor: "pointer" }}
+                    underline="none"
+                  >
+                    {city}
+                  </NavLink>
+                </Typography>
               </Grid2>
             ))}
           </Grid2>

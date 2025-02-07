@@ -2,21 +2,30 @@ import React from "react";
 import { useState } from "react";
 import { Box, TextField, Paper, Skeleton } from "@mui/material";
 import Autocomplete from "@mui/material/Autocomplete";
-import { useCountries } from "../api/LocationApi";
-import { useSubCountries } from "../api/LocationApi";
-import { useCities } from "../api/LocationApi";
+import { useCountries } from "../../../api/LocationApi";
+import { useSubCountries } from "../../../api/LocationApi";
+import { useCities } from "../../../api/LocationApi";
 
-import ErrorBtn from "../commons/ErrorBtn";
-import LoadingText from "../commons/LoadingText";
+import ErrorBtn from "./ErrorBtn";
+import LoadingText from "./LoadingText";
 
-export default function LocationSearch({ title ,sendCountryValueToParent,sendSubcountryValueToParent,sendCityValueToParent,sendcountryInputToParent,sendSubCountryInputToParent,sendCityInputToParent,handleUpdateGetAllAdsModel}) {
+export default function LocationSearch({
+  title,
+  sendCountryValueToParent,
+  sendSubcountryValueToParent,
+  sendCityValueToParent,
+  sendcountryInputToParent,
+  sendSubCountryInputToParent,
+  sendCityInputToParent,
+  handleUpdateGetAllAdsModel,
+}) {
   const [selectedCountry, setSelectedCountry] = useState(null);
   const [selectedSubCountry, setselectedSubCountry] = useState(null);
   const [selectedCity, setSelectedCity] = useState(null);
   const [countryInputValue, setCountryInputValue] = useState("");
   const [subCountryInputValue, setSubCountryInputValue] = useState("");
   const [cityInputValue, setCityInputValue] = useState("");
- 
+
   const {
     data: countries,
     isLoading: isCountriesLoading,
@@ -39,7 +48,9 @@ export default function LocationSearch({ title ,sendCountryValueToParent,sendSub
     setSelectedCity(null);
     setSubCountryInputValue("");
     setCityInputValue("");
-    if((sendCountryValueToParent && sendSubCountryInputToParent) !== undefined){
+    if (
+      (sendCountryValueToParent && sendSubCountryInputToParent) !== undefined
+    ) {
       sendCountryValueToParent(newCountry);
       sendcountryInputToParent(newCountry);
     }
@@ -49,7 +60,9 @@ export default function LocationSearch({ title ,sendCountryValueToParent,sendSub
     setselectedSubCountry(newSubCountry);
     setSelectedCity(null);
     setCityInputValue("");
-    if((sendSubcountryValueToParent && sendSubCountryInputToParent) !== undefined){
+    if (
+      (sendSubcountryValueToParent && sendSubCountryInputToParent) !== undefined
+    ) {
       sendSubcountryValueToParent(newSubCountry);
       sendSubCountryInputToParent(newSubCountry);
     }
@@ -57,12 +70,11 @@ export default function LocationSearch({ title ,sendCountryValueToParent,sendSub
 
   const handleCityChange = (event, newCity) => {
     setSelectedCity(newCity);
-    if((sendCityValueToParent && sendCityInputToParent) !== undefined){
+    if ((sendCityValueToParent && sendCityInputToParent) !== undefined) {
       sendCityValueToParent(newCity);
       sendCityInputToParent(newCity);
-      handleUpdateGetAllAdsModel(newCity.id)
+      handleUpdateGetAllAdsModel(newCity.id);
     }
-   
   };
 
   return (
